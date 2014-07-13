@@ -1,0 +1,81 @@
+<html>
+<head>
+    <script src = "http://d3js.org/d3.v3.min.js" charset = "utf-8"> </script>
+    <style type = "text/javascript"> </style>
+</head>
+
+<body>
+    
+    <script>
+      
+        var canvas = d3.select("body")                          // set Container
+                    .append("svg")                              // add svg
+                    .attr("width", 1000)                        // set container size
+                    .attr("height", 1000);
+        
+        
+        var circle_1 = canvas.append("circle")
+                    .attr("cx",50)
+                    .attr("cy",50)
+                    .attr("r",25)
+                    .transition()
+                    .duration(1500)
+                    .delay(1000)
+                    .each ("end", function() { d3.select(this).attr("fill", "blue")})
+                    .attr("cx", 550)
+                    .transition()
+                    .attr("cy", 350)
+                    .transition()
+                    .attr("r", 50)
+                    .transition()
+                    .each ("start", function() { d3.select(this).attr("fill", "green")})
+                    .attr("cx", 50)
+                    .ease("elastic")
+                    .transition()
+                    .duration(2000)
+                    .style("opacity", 0);
+
+        
+        var circle_2 = canvas.append("circle")
+                    .attr("cx",550)
+                    .attr("cy",150)
+                    .attr("r",25)
+                    .transition()
+                    .duration(1500)
+                    .delay(1000)
+                    .each ("start", function() { d3.select(this).attr("fill", "red")})
+                    .attr("r", 50)
+                    .attr("cx", 50)
+                    .transition()
+                    .attr("cy", 450)
+                    .transition()
+                    .attr("r", 25)
+                    .transition()
+                    .each ("end", function() { d3.select(this).attr("fill", "purple")})
+                    .attr("transform", "translate(550,150)");       // diagonal moving
+                    //.attr("cx", 550)
+                    //.attr("cy", 650);
+                    //.style("opacity", 0);
+                        
+                
+            
+            //circle.transition()
+            //.duration(1500)
+            //.attr("cx",50)
+            //.delay(1000)
+            //.transition()
+            //.attr("cy",200)
+            //.transition()
+            //.attr("cx",50)
+            //.each("end", function() { d3.select(this).attr("fill", "red") })
+            //.each("start", function() { d3.select(this).attr("fill", "red") });
+        
+        
+    
+    </script>
+
+
+
+</body>
+
+</html>
