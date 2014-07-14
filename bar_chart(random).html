@@ -8,7 +8,7 @@
     <style type = "text/css">
         body
         {
-            
+            text-align: center;
             background-color: yellow;
         }
         div.bar
@@ -17,6 +17,7 @@
             width: 25px;
             height: 100px;
             margin-right: 2px;
+            margin-left: 10px;
             background-color: blue;
         }
     </style>
@@ -27,12 +28,6 @@
     Random data bar chart
     <script>
         
-        var canvas = d3.select("body")
-        .append("div")
-        .attr("width", 500)
-        .attr("height", 500)
-        
-        
         var dataset = [];            // declare empty array
         for (var i=0; i<20; i++)     // generate random numbers in the dataset array
         {
@@ -41,16 +36,24 @@
             dataset.push(Math.floor(gen_num));
         }
     
-    canvas.selectAll("div")
-    .data(dataset)
-    .enter()
-    .append("div")
-    .attr("class", "bar")
-    .style("height", function(d) {
-           var setHeight = d * 5;
-           return setHeight + "px";
-           });
-
+        var canvas = d3.select("body")
+        .append("div")
+        .attr("width", function(d) {
+              var getWidth = dataset.length * 10;
+              return getWidth + "px";
+              })
+        .attr("height", 600)
+        .style("border", "1px solid black");
+        
+        canvas.selectAll("div")
+        .data(dataset)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", function(d) {
+               var setHeight = d * 5;
+               return setHeight + "px";
+               });
 
     </script>
 
