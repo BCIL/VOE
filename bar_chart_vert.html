@@ -38,12 +38,13 @@
                 .enter()
                 .append("rect")
                 .attr("x", function(d, i) { return x(i); })
-                .attr("y", function(d) { return height - y(d.age) })
+                .attr("y", function(d) { return height - 0.5 })
                 .attr("width", barWidth)
                 .transition()
                 .delay(function (d,i) { return i * 90 })
                 .duration(500)
                 .attr("height", function(d) { return y(d.age) })
+                .attr("y", function(d) { return height - y(d.age) - 0.5 })
                 .attr("fill", "blue");
         
         
