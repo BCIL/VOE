@@ -15,7 +15,7 @@
         {
             display: inline-block;
             width: 25px;
-            height: 100px;
+            height: 0px;
             margin-right: 2px;
             margin-left: 10px;
             background-color: blue;
@@ -50,6 +50,8 @@
         .enter()
         .append("div")
         .attr("class", "bar")
+        .transition()
+        .duration(1000)
         .style("height", function(d) {
                var setHeight = d * 5;
                return setHeight + "px";
