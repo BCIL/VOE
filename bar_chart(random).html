@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title> Random data bar chart </title>
+    <script type = "text/javascript"
+            src = "http://d3js.org/d3.v3.min.js">
+    </script>
+    <meta charset = "utf-8">
+    <style type = "text/css">
+        body
+        {
+            
+            background-color: yellow;
+        }
+        div.bar
+        {
+            display: inline-block;
+            width: 25px;
+            height: 100px;
+            margin-right: 2px;
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    Random data bar chart
+    <script>
+        
+        var canvas = d3.select("body")
+        .append("div")
+        .attr("width", 500)
+        .attr("height", 500)
+        
+        
+        var dataset = [];            // declare empty array
+        for (var i=0; i<20; i++)     // generate random numbers in the dataset array
+        {
+            // random number range : 1-50
+            var gen_num = Math.floor(Math.random() * 50 + 1);
+            dataset.push(Math.floor(gen_num));
+        }
+    
+    canvas.selectAll("div")
+    .data(dataset)
+    .enter()
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function(d) {
+           var setHeight = d * 5;
+           return setHeight + "px";
+           });
+
+
+    </script>
+
+</body>
+
+</html>
