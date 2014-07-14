@@ -1,6 +1,8 @@
 <html>
 <head>
-    <script src = "http://d3js.org/d3.v3.min.js" charset = "utf-8"> </script>
+    <title> Bar chart - name and age </title>
+    <script src = "http://d3js.org/d3.v3.min.js"
+            charset = "utf-8" > </script>
     <style type = "text/javescript"> </style>
 </head>
 
@@ -40,12 +42,12 @@
                 .attr("x", function(d, i) { return x(i); })
                 .attr("y", function(d) { return height - 0.5 })
                 .attr("width", barWidth)
+                .attr("fill", "blue")
                 .transition()
                 .delay(function (d,i) { return i * 90 })
                 .duration(500)
                 .attr("height", function(d) { return y(d.age) })
-                .attr("y", function(d) { return height - y(d.age) - 0.5 })
-                .attr("fill", "blue");
+                .attr("y", function(d) { return height - y(d.age) - 0.5 });
         
         
         canvas.selectAll("text")
@@ -58,7 +60,7 @@
                 .attr("x", function(d, i) { return x(i) + barWidth; })
                 .attr("y", function(d) { return height - y(d.age) })
                 .attr("dx", (-barWidth/2) )
-                .attr("dy", "1.2em" )
+                .attr("dy", 15 )
                 .attr("text-anchor", "middle")
                 .text(function(d) { return d.age })
                 .attr("fill", "white");
@@ -85,39 +87,5 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
