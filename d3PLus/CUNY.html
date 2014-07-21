@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title> d3plus testing </title>
+        <meta charset = "utf-8">
+            <link href = "http://www.d3plus.org/css/d3plus.css" rel = "stylesheet" />
+            <script src = "http://www.d3plus.org/js/d3.js"> </script>
+            <script src = "http://www.d3plus.org/js/d3plus.js"> </script>
+            <style type = "text/css"> </style>
+    </head>
+    
+    <body>
+        <div id="CUNY" style="position: relative; width: 800px; height: 600px; cursor: auto;">
+        <script>
+            
+            var college_data = [
+                               {"name": "Hunter", "size": 50},
+                               {"name": "Baruch", "size": 40},
+                               {"name": "Laguadia", "size": 15},
+                               {"name": "BMCC", "size": 17},
+                               {"name": "City", "size": 44},
+                               {"name": "John Jay", "size": 38},
+                               {"name": "Brooklyn", "size": 30},
+                               {"name": "City tech", "size": 25}
+                               ]
+                   
+            var positions = [
+                            {"name": "Hunter", "x": 35, "y": 17},
+                            {"name": "Baruch", "x": 10, "y": 14},
+                            {"name": "Laguadia", "x": 24, "y": 27},
+                            {"name": "BMCC", "x": 40, "y": 29},
+                            {"name": "City", "x": 50, "y": 10},
+                            {"name": "John Jay", "x": 55, "y": 21},
+                            {"name": "Brooklyn", "x": 20, "y": 5},
+                            {"name": "City tech", "x": 48, "y": 23}
+                            ];
+                            
+            var connections = [
+                               {"source": "Hunter", "target": "Baruch"},
+                               {"source": "Hunter", "target": "City tech"},
+                               {"source": "Laguadia", "target": "Hunter"},
+                               {"source": "Laguadia", "target": "BMCC"},
+                               {"source": "Brooklyn", "target": "Baruch"},
+                               {"source": "Brooklyn", "target": "City"},
+                               {"source": "City tech", "target": "John Jay"},
+                               {"source": "City", "target": "Hunter"}
+                               ]
+                   
+            var visualization = d3plus.viz()
+                                    .container("#CUNY") // container DIV to hold the visualization
+                                    .type("network")    // The type of visualization
+                                    .data(college_data) // sample dataset to attach to nodes
+                                    .nodes(positions)   // set each node position
+                                    .edges(connections) // node connection list
+                                    .size("size")       // set each node from the data
+                                    .id("name")         // set the key value
+                                    .draw()             // draw the data
+                                                   
+                                                   
+            </script>
+        
+        
+        
+    </body>
+    
+</html>
