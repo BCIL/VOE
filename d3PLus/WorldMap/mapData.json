@@ -1,0 +1,21 @@
+ [
+  {"population": 318434000, "country": "nausa", "name": "United States", "color": "blue"},
+  {"population": 1247010000, "country": "asind", "name": "India", "color": "yellowgreen"},
+  {"population": 252164800 , "country": "asidn", "name": "Indonesia", "color": "pink"},
+  {"population": 99902200 , "country": "asphl", "name": "Philippines", "color": "darkgreen"},
+  {"population": 50423955, "country": "askor", "name": "Korea", "color": "#3B9C9C"},
+  {"population": 1365740000, "country": "aschn", "name": "China", "color": "red"},
+  {"population": 46609700, "country": "euesp", "name": "Spain", "color": "orange"},
+  {"population": 65931000, "country": "eufra", "name": "France", "color": "brown"},
+  {"population": 47691000, "country": "sacol", "name": "Columbia", "color": "darkyellow"},
+  {"population": 11123034, "country": "eugrc", "name": "Greece", "color": "skyblue"},
+  {"population": 42669500, "country": "saarg", "name": "Argentina", "color": "cyan"},
+  {"population": 35427524, "country": "nacan", "name": "Canada", "color": "#FF2400"},
+  {"population": 86849100, "country": "afegy", "name": "Egypt", "color": "ochre"},
+  {"population": 8160900, "country": "euswe", "name": "Switzerland", "color": "#C11B17"},
+  //{"population": , "country": "", "name": "", "color": ""},
+  //{"population": , "country": "", "name": "", "color": ""},
+  //{"population": , "country": "", "name": "", "color": ""},
+  {"population": 202890000, "country": "sabra", "name": "Brazil", "color": "green"}
+  ]
+
