@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <title> Mouse Event </title>
+    <script type = "text/javascript"
+            src = "http://d3js.org/d3.v3.min.js"> </script>
+    <script type = "text/javascript"
+        src = "jquery.js"> </script>
+    
+    <meta charset = "utf-8">
+    <style type = "text/css">
+        table,th,td
+        {
+            border: 1px solid black;
+            border = collapse:collapse;
+        }
+    
+        
+    </style>
+    </head>
+  
+  <body>
+      
+      <script>
+          var windowWidth = $(window).width();      // using jquery for autoamtic detecting user's window size
+          var windowHeight = $(window).height();
+          
+        </script>
+      
+      <h1>Mouse Event</h1>
+      <figure>
+          <div class="fileContent"></div>
+          <div class="treeLayout"></div>
+          <dl>
+              <dt>MouseDown</dt>
+              <dd> - press the mouse button </dd>
+              <dt>MouseUP</dt>
+              <dd> - release the mouse button </dd>
+              <dt>MouseClick and doubleClick</dt>
+              <dd> - single and double mouse click </dd>
+              <dt>MouseOver</dt>
+              <dd> - place mouse cursor on the specific area </dd>
+              <dt>MouseOut </dt>
+              <dd> - move mouse cursor from the specific area </dd>
+          </dl>
+      </figure>
+      
+      
+      
+      <table style="width:windowWidth height:windowHeight">
+      <tr>
+          <td id="circle"> </td>
+          <td id="log"> </td>
+      </tr>
+      </table>
+
+      <script>
+          
+          
+            var textCanvas = d3.select("#log").append("text");
+            
+            
+            var svgContainer = d3.select("#circle")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 500);
+            
+            var circle = svgContainer.append("circle")
+            .attr("cx", 100)
+            .attr("cy", 100)
+            .attr("r" , 50)
+            //.style("fill", "blue");
+            
+            var curr_cx = circle.attr("cx"),
+            curr_cy = circle.attr("cy"),
+            curr_r = circle.attr("r");
+            
+            circle.on("mousedown", func_mouseDown);
+            circle.on("mouseup" , func_mouseUp);
+            circle.on("click" , func_mouseClick);
+            circle.on("mouseover" , func_mouseOver);
+            circle.on("mouseout" , func_mouseOut);
+            circle.on("dblclick", func_mouseDblclick)
+            
+            function func_mouseDown()
+            {
+                console.log("Mouse DOWN!!");
+                
+                textCanvas.text("Mouse Button Down!!")
+            }
+            function func_mouseUp()
+            {
+                console.log("Mouse UP!!");
+                
+                textCanvas.text("Mouse Button UP!! and..")
+            }
+            function func_mouseClick()
+            {
+                console.log("Mouse Click!!");
+                
+                d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("cx", 100)
+                .attr("cy", 100)
+                .attr("r" , 30)
+                .attr("fill", "green")
+                .attr("stroke-width", "3px")
+                
+                textCanvas
+                    .transition()
+                    .delay(500)
+                    .text("Mouse Click!!")
+            }
+            function func_mouseDblclick()
+            {
+                console.log("Mouse Click!!");
+
+                d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("cx", curr_cx * 2)
+                .attr("cy", curr_cy * 2)
+                .attr("r" , curr_r * 2)
+                .attr("fill", "blue")
+                textCanvas
+                    .transition()
+                    .delay(500)
+                    .text("Mouse Double Click!!")
+            }
+
+            function func_mouseOver()
+            {
+                console.log("Mouse Over!!")
+                d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("fill", "red");
+                
+                textCanvas.text("Mouse Over!!")
+            }
+            function func_mouseOut()
+            {
+                console.log("Mouse Out!!")
+                d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("cx", curr_cx)
+                .attr("cy", curr_cy)
+                .attr("r" , curr_r)
+                //circle.attr("fill", "green")
+                
+                textCanvas.text("Mouse Out!!")
+            }
+      
+      
+      
+        </script>
+      </body>
+</html>
