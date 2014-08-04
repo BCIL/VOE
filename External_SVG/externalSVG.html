@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title> External SVG </title>
+        <script type = "text/javascript"
+            src = "http://d3js.org/d3.v3.min.js"> </script>
+        
+        <meta charset = "utf-8">
+            
+            </head>
+    
+    <body>
+        <p> External SVG test </p>
+        
+        <script>
+            
+            /*
+             var canvas = d3.select("#extsvg")
+             .append("g")
+             .attr("id", "canvas")
+             .attr("width", 800)
+             .attr("height", 600)
+             //.call(d3.behavior.zoom().on("zoom", redraw));
+             .on("mousedown", function() {
+             d3.select(this)
+             .attr("transform", "translate(90)");
+             });
+            
+             d3.xml ("testSVG.svg", "image/svg+xml", function(xml)
+             {
+             var importNode = document.importNode(xml.documentElement, true);
+             d3.select("#extsvg").node().appendChild(importNode);
+             //document.body.appendChild(xml.documentElement);
+             
+             });
+            
+             
+             function redraw() {
+             window.consol && consol.log("here", d3.event.translate, d3.event.scale);
+             canvas.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")");
+             }
+             */
+
+            var dataset = [1];
+            var svg = d3.select("body")
+                        .append("svg")
+                        .attr("width", 1200)
+                        .attr("height", 800);
+            
+            d3.xml("testSVG.svg", function(xml) {
+                   var importedNode = document.importNode(xml.documentElement, true);
+                   svg.selectAll("g")
+                   .data(dataset)
+                   .enter()
+                   .append("g")
+                   .attr("transform", "translate( -500, 200)", "scale(1)")
+                         
+                   .each(function(d, i){                // draw svg file
+                         var draw = this.appendChild(importedNode.cloneNode(true));
+                         })
+                   .transition()
+                   .duration(2000)
+                   .attr("transform", "translate(0,0)", "scale(1)")
+                   });
+            
+            </script>
+            
+    </body>
+</html>
