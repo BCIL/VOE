@@ -1,0 +1,788 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:blogger="http://schemas.google.com/blogger/2008" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:georss="http://www.georss.org/georss" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:thr="http://purl.org/syndication/thread/1.0">
+<channel rdf:about="http://www.kawa.net/xp/index-e.html">
+<title>
+Kawa.net xp - ajax/JavaScript/Perl/CGI by Yusuke Kawasaki
+</title>
+<link>http://www.kawa.net/xp/index-e.html</link>
+<dc:date>2013-05-23T12:05:00+09:00</dc:date>
+<dc:language>en</dc:language>
+<dc:rights>
+Copyright 1995-2010 Yusuke Kawasaki. All rights reserved.
+</dc:rights>
+<description>Yusuke Kawasaki</description>
+<image rdf:resource="http://www.kawa.net/xp/images/xp-title-128x32.gif"/>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/html/tagparser-e.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2012/03/applecom-has-2xjpg-high-resolutionary.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/romanize/chinese-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/romanize/hangul-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/romanize/roman-demo-e.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2012/01/moving-to-bay-area.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2011/09/wisdom-of-earthquakes-released-at.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/feedpp/feedpp-e.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2011/04/ipad-2-javascript-benchmark-results-37.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2011/02/kdrawsprite-get-gpu-power-without.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/11/yapcasia-tokyo-2010-japans-perl-week.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/treepp/treepp-e.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/10/encodejpemoji-060-supports-unicode-60.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/08/rt-bookmarklet-for-unofficial-retweet.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/09/img2html-bookmarklet-for-blog-posting.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/08/yapcasia-en-group-opened-cfp-until.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/08/memorial-service-for-google-wave-at.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/08/shibuyajs-won-prize-at-lt-championship.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/08/flickr-is-still-bombing-on-organizr.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/08/bookmarklet-viewer-bookmarklet-for.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/jkl/parsexml-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/geo/html5geomap-e.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/05/meet-again-at-yapcasia-2010-tokyo-in.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/05/3d-bookmarklet-enjoy-3d-world-on-web-by.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/04/css3-powered-3d-presentation-osdctw.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/04/shibuya-perl-mongers-comes-into-taipei.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/04/ktween-101-released-more-faster-tween.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/romanize/japanese-e.html"/>
+<rdf:li rdf:resource="http://kawanet.blogspot.com/2010/02/iswf-iphone-appearance-simulator-for.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/romanize/romanize-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/overhttp/overhttp-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/animation/cube-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/cantonese/canton.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/ajaxtb/ajaxtb-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/ajaxcom/ajaxcom-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/xml/objtree-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/tips/yui-tooltips-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/tips/crash-safari/intelmac-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/service/jsan/search/index.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/animation/raster-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/game/ncross-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/date/w3cdtf-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/tips/dump/dom-tree.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/tips/dump/icab-omniweb-bug.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/cantonese/ccdict.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/data-scheme/base64-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/greasemonkey/myscripts-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/tips/mimetype/content-type-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/ajax/rss/rss-box-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/js/passwd/gen-passwds-e.html"/>
+<rdf:li rdf:resource="http://www.kawa.net/works/perl/catch/KCatch.pm.html"/>
+</rdf:Seq>
+</items>
+</channel>
+<openSearch:itemsPerPage>25</openSearch:itemsPerPage>
+<openSearch:startIndex>1</openSearch:startIndex>
+<openSearch:totalResults>80</openSearch:totalResults>
+<image rdf:about="http://www.kawa.net/xp/images/xp-title-128x32.gif">
+<url>http://www.kawa.net/xp/images/xp-title-128x32.gif</url>
+<title>
+Kawa.net xp - ajax/JavaScript/Perl/CGI by Yusuke Kawasaki
+</title>
+<link>http://www.kawa.net/xp/index-e.html</link>
+</image>
+<item rdf:about="http://www.kawa.net/works/perl/html/tagparser-e.html">
+<title>
+[Perl] HTML::TagParser - Yet another HTML tag parser by pure Perl implementation
+</title>
+<link>
+http://www.kawa.net/works/perl/html/tagparser-e.html
+</link>
+<dc:date>2012-05-05T23:21:00+09:00</dc:date>
+<dc:subject>Perl</dc:subject>
+<description>
+HTML::TagParser is a pure Perl implementaion for parsing HTML files. This module provides some methods like DOM. This module is not strict about XHTML format because many of HTML pages are not strict. You know, many pages use <br> elemtents instead of <br/> and have <p> elements which are not closed.
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2012/03/applecom-has-2xjpg-high-resolutionary.html">
+<title>
+Apple.com has "_2x.jpg" high resolutionary images for the new iPad
+</title>
+<link>
+http://kawanet.blogspot.com/2012/03/applecom-has-2xjpg-high-resolutionary.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2012-03-18T09:32:09.855-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://4.bp.blogspot.com/-0CYMq7WXM0E/T2XtyTJpbFI/AAAAAAAAEI4/3G3276FLaqs/s72-c/ipad_hero-compare.jpg" width="72" height="72"/>
+<description>
+<div dir="ltr" style="text-align: left;" trbidi="on">The new iPad's&nbsp;<i>resolutionary&nbsp;</i>Retina display&nbsp;looks cool, but, on the other hand, it terrifies designers in the Web industry. &nbsp;The new iPad is the first HiDPI device which works well for browsing PC websites.&nbsp;All images on the Web must be republished to enhance its experience on the new iPad and other upcoming HiDPI devices.<br /><br />Apple's website itself is also ongoing to support&nbsp;HiDPI displays. Many image files on the website have a couple resolutions of normal one and doubled one which has "<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">_2x</span>"&nbsp;suffix.&nbsp;Here is a sample:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-0CYMq7WXM0E/T2XtyTJpbFI/AAAAAAAAEI4/3G3276FLaqs/s1600/ipad_hero-compare.jpg" target="_blank"><img border="0" src="http://4.bp.blogspot.com/-0CYMq7WXM0E/T2XtyTJpbFI/AAAAAAAAEI4/3G3276FLaqs/s500/ipad_hero-compare.jpg" width="500" /></a></div><br />Traditional resolution version: 1454 x 605 pixel<br /><a href="http://images.apple.com/home/images/ipad_hero.jpg"><span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">http://images.apple.com/home/images/ipad_hero.jpg</span></a><br /><br />High resolution&nbsp;version: &nbsp;2908 x 1210 pixel (doubled!)<br /><a href="http://images.apple.com/home/images/ipad_hero_2x.jpg"><span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">http://images.apple.com/home/images/ipad_hero_<b>2x</b>.jpg</span></a><br /><div><br /></div><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"></div><div>Some images on the website still not have "<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">_2x</span>" version at this time, however.&nbsp;Any image files which has&nbsp;"<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">_2x</span>" version&nbsp;are automatically and&nbsp;progressively&nbsp;replaced by&nbsp;<a href="http://images.apple.com/v/ipad/a/scripts/image_replacer.js">image_replacer.js</a>&nbsp;according to the current display resolution setting.&nbsp;</div><div><br /></div><div><b><span class="Apple-style-span" style="font-family: Verdana, sans-serif;">TRY IT NOW ON YOUR MAC</span></b></div><br />You could try the future with HiDPI on your current Mac by enabling it with&nbsp;<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">Quartz Debug.app</span> shipped with <a href="https://developer.apple.com/downloads/index.action">Graphics Tools for Xcode</a>. Apple.com website would show "<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">_2x</span>" images when HiDPI is&nbsp;enabled on your Mac.<br /><br /><div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-hMwB1FtAwoo/T2Xz25dZMLI/AAAAAAAAEJE/-fHjFN1Ls8o/s1600/hidpi.png" imageanchor="1" style="border: 0; margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-hMwB1FtAwoo/T2Xz25dZMLI/AAAAAAAAEJE/-fHjFN1Ls8o/s500/hidpi.png" style="border-bottom-width: 0px; border-color: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; box-shadow: none;" width="500" /></a></div><b><span class="Apple-style-span" style="font-family: Verdana, sans-serif;">AUTO DETECTION</span></b><br /><br />Check&nbsp;<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;"><a href="javascript:alert('window.devicePixelRatio%20=%20'+window.devicePixelRatio);">window.devicePixelRatio</a></span> property to detect current display resolution by JavaScript.<br /><br /></div></div>
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/romanize/chinese-e.html">
+<title>
+Chinese Alphabet - Romanization of Chinese characters (Pinyin)
+</title>
+<link>
+http://www.kawa.net/works/ajax/romanize/chinese-e.html
+</link>
+<dc:date>2012-03-05T14:12:00+09:00</dc:date>
+<description>
+Pinyin is a romanization system (phonemic notation) of Chinese characters. Enter some Chinese phrases and push the button below. Both of Simplified Chinese (GB2312) and Traditional Chinese (BIG5) are allowed.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/romanize/hangul-e.html">
+<title>
+Korean Alphabet - Romanization of Korean characters (Hangul)
+</title>
+<link>
+http://www.kawa.net/works/ajax/romanize/hangul-e.html
+</link>
+<dc:date>2012-03-05T14:12:00+09:00</dc:date>
+<description>
+Hangul is phonemic characters used in Korea. Enter some Korean phrases and push the button below.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/perl/romanize/roman-demo-e.html">
+<title>
+Asian Alphabets - Lingua::*::Romanize::* - Online Demo
+</title>
+<link>
+http://www.kawa.net/works/perl/romanize/roman-demo-e.html
+</link>
+<dc:date>2012-03-05T06:08:00+09:00</dc:date>
+<description>
+This page is online-demo of Lingua::*::Romanize::* modules for Perl. Enter some CJK phrases and push the button below. Chinese, Japanese and Korean characters are available. This is not a translation system but to get phonemic notation by roman letters.
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2012/01/moving-to-bay-area.html">
+<title>Moving to the Bay Area</title>
+<link>
+http://kawanet.blogspot.com/2012/01/moving-to-bay-area.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2012-01-14T15:51:14.133-08:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://1.bp.blogspot.com/-T8v5ggJg4bI/TxIHgnMgy4I/AAAAAAAADDc/M2lRciWwuQs/s72-c/2012.jpeg" width="72" height="72"/>
+<description>
+<div dir="ltr" style="text-align: left;" trbidi="on">Hello 2012,<br /><br />For these 5 years, I have been working at the <a href="http://mtl.recruit.co.jp/about/index-en.html"><b>Media Technology Labs</b></a>&nbsp;(MTL) which is a R&amp;D department of <a href="http://www.recruit.jp/corporate/english/"><b>Recruit Co., Ltd.</b></a>, one of the most largest information media publishing companies in Japan. The company is spreading its&nbsp;business&nbsp;field to the global market. At January of 2012, I'll soon fly to the Bay Area&nbsp;of the center of universe&nbsp;to launch our new R&amp;D branch focusing&nbsp;the cutting-edge technologies of the&nbsp;Internet.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-T8v5ggJg4bI/TxIHgnMgy4I/AAAAAAAADDc/M2lRciWwuQs/s1600/2012.jpeg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-T8v5ggJg4bI/TxIHgnMgy4I/AAAAAAAADDc/M2lRciWwuQs/s500/2012.jpeg" width="500" /></a></div><br /></div>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2011/09/wisdom-of-earthquakes-released-at.html">
+<title>
+"Wisdom of Earthquakes" Released at TechCrunch Disrupt Hackathon SF 2011
+</title>
+<link>
+http://kawanet.blogspot.com/2011/09/wisdom-of-earthquakes-released-at.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2011-09-12T11:34:41.251-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://farm7.static.flickr.com/6158/6134568134_986f3a1339_t.jpg" width="72" height="72"/>
+<description>
+<div dir="ltr" style="text-align: left;" trbidi="on">I'm attending the <a href="http://disrupt.techcrunch.com/SF2011/">TechCrunch Disrupt SF 2011</a> held in San Francisco. Prior to the conference, I've hacked here at the huge hackathon filled with more than 700 hackers. It's a really exciting experience. I started hacking the "Wisdom of Earthquakes" web application and released it at the hackathon. <br /><br /><div align="center"><a href="http://www.flickr.com/photos/u-suke/6134568134/" target="_blank" title="TechCrunch Hackathon SF 2011 #tcdisrupt | Flickr - Photo Sharing!"><img alt="photo" border="0" src="http://farm7.static.flickr.com/6158/6134568134_986f3a1339.jpg" width="500" /></a></div><br />The hackathon started at Saturday noon and ended at the Sunday noon. Each team of hackers must finish their hack in 24 hours. <br /><br /><div align="center"><a href="http://www.flickr.com/photos/u-suke/6137354378/" target="_blank" title="TechCrunch Disrupt Hackathon SF 2011 #tcdisrupt | Flickr - Photo Sharing!"><img alt="photo" border="0" src="http://farm7.static.flickr.com/6177/6137354378_37eaeb7d31.jpg" width="500" /></a></div><br />I've also posted articles <a href="http://mtl.recruit.co.jp/blog/2011/09/tcdisrupt-hackathon.html">about the event</a> and <a href="http://kawa.at.webry.info/201109/article_2.html">food for hackers</a> on my Japanese blogs in detail. TechCrunch's official report is <a href="http://techcrunch.com/2011/09/11/and-the-2011-techcrunch-disrupt-sf-hackathon-winners-are/">here</a>.<br /><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;"><br /></span><br /><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;">Wisdom of Earthquakes</span><br /><h3> <span class="Apple-style-span" style="font-size: small; font-weight: normal;">After the lunch, the time has came for me to give a talk about my hack on the stage.</span></h3><div align="center"><a href="http://www.flickr.com/photos/u-suke/6138006657/" target="_blank" title="&quot;Wisdom of Earthquakes&quot; #tcdisrupt #hack4jp | Flickr - Photo Sharing!"><img alt="photo" border="0" src="http://farm7.static.flickr.com/6163/6138006657_20a3194485.jpg" width="500" /></a></div><br />I've hacked <a href="http://code.google.com/p/memorial-calendars/wiki/tcdisrupt">"Wisdom of Earthquakes"</a> which is a web application with a calendar and a map to tell the wisdom we can learn from earthquakes.<br /><br />This calendar shows 500+ memorial days of earthquakes hit in the history of the globe. The oldest one listed is the <a href="http://en.wikipedia.org/wiki/62_Pompeii_earthquake">62 Pompeii earthquake</a> in Italy. We could see almost every day on the calendar has had one or more earthquakes. The wisdom helps us do something to survive at the next coming disaster. <br /><br /><div align="center"><a href="http://memorial-calendars.googlecode.com/svn/trunk/pre2/index.html"><img border="0" src="http://4.bp.blogspot.com/-7zuRXsnTSho/Tm5IVbnq6pI/AAAAAAAAA7U/auSVvqqEZww/s500/wisdom.png" width="500" /></a></div><br />The app is shipped as an open source at:<br /><a href="http://code.google.com/p/memorial-calendars/wiki/tcdisrupt">http://code.google.com/p/memorial-calendars/wiki/tcdisrupt</a></div>
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/perl/feedpp/feedpp-e.html">
+<title>
+[Perl] XML::FeedPP - Parse/write/merge/edit RSS/RDF/Atom syndication feeds
+</title>
+<link>
+http://www.kawa.net/works/perl/feedpp/feedpp-e.html
+</link>
+<dc:date>2011-05-08T22:07:00+09:00</dc:date>
+<dc:subject>Perl</dc:subject>
+<description>
+XML::FeedPP is an all-purpose syndication utility that parses and publishes RSS 2.0, RSS 1.0 (RDF), Atom 0.3 and 1.0 feeds. It allows you to add new content, merge feeds, and convert among various formats. It is a pure Perl implementation and does not require any other module except for XML::TreePP. Released version: XML-FeedPP-0.43.tar.gz TARGZ CPAN Subversion repository: http://xml-treepp.googlecode.com/svn/trunk/XML-FeedPP/ SVN Documents: README README Changes Changes
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2011/04/ipad-2-javascript-benchmark-results-37.html">
+<title>
+iPad 2 JavaScript Benchmark Results 37% Faster Than iPad 1
+</title>
+<link>
+http://kawanet.blogspot.com/2011/04/ipad-2-javascript-benchmark-results-37.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2011-04-06T06:49:26.173-07:00</dc:date>
+<dc:subject>iOS</dc:subject>
+<dc:subject>iPad</dc:subject>
+<dc:subject>javascript</dc:subject>
+<dc:subject>Safari</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://4.bp.blogspot.com/-LF_qhcrB3rw/TZxql3wugLI/AAAAAAAAA3o/IVeCLmA7GNA/s72-c/ios-bench.png" width="72" height="72"/>
+<description>
+<a href="http://www.webkit.org/perf/sunspider/sunspider.html">SunSpider JavaScript Benchmark</a> marks 37% faster score on iPad 2 / iOS 4.3.1 / Mobile Safari 5.0 compared to iPad 1st gen.<br /><br /><a href="http://4.bp.blogspot.com/-LF_qhcrB3rw/TZxql3wugLI/AAAAAAAAA3o/IVeCLmA7GNA/s1600/ios-bench.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-LF_qhcrB3rw/TZxql3wugLI/AAAAAAAAA3o/IVeCLmA7GNA/s1600/ios-bench.png" width="477" /></a><br /><br />Also note that iPad 1 could get significant peformance improvement by updating iOS from 4.2.1 to 4.3.1. This means Mobile Safari 5.0's "Nitro" Engine enabled on&nbsp;iOS 4.3&nbsp;runs JavaScript quite fast.<br /><br />Benchmark results captured are below:<br /><br />iPad 2 - 4.3.1 and 4.3<br /><a href="https://picasaweb.google.com/www.kawa.net/Captures#5592447924009209490" style="margin-left: 1em;" target="_blank" title="SunSpider 0.9.1 / Total 2043.3ms / iPad 2 / iOS 4.3.1 / Moile Safari 5.0.2"><img border="0" height="256" src="https://lh6.googleusercontent.com/_gkSXygtOqmM/TZxdwb9wjpI/AAAAAAAANvg/4zzuww0RGBs/s512/IMG_20110406213431.jpg" width="192" /></a> <a href="https://picasaweb.google.com/www.kawa.net/Captures#5592433634865154786" style="margin-left: 1em;" target="_blank" title="SunSpider 0.9.1 / Total 2043.8ms / iPad 2 / iOS 4.3 / Moile Safari 5.0.2"><img border="0" height="256" src="https://lh4.googleusercontent.com/_gkSXygtOqmM/TZxQwswViuI/AAAAAAAANtw/6qE7CdlhzwA/s512/IMG_20110406203902.jpg" width="192" /></a><br /><br />iPad 1 - 4.3.1 and 4.2.1<br /><a href="https://picasaweb.google.com/www.kawa.net/Captures#5592442243541056962" style="margin-left: 1em;" target="_blank" title="SunSpider 0.9.1 / Total 3276.0ms / iPad 1 / iOS 4.3.1 / Moile Safari 5.0.2"><img border="0" height="256" src="https://lh3.googleusercontent.com/_gkSXygtOqmM/TZxYlyknPcI/AAAAAAAANuk/3dhPxOqTLYE/s512/IMG_20110406211130.jpg" width="192" /></a> <a href="https://picasaweb.google.com/www.kawa.net/Captures#5592434751802296722" style="margin-left: 1em;" target="_blank" title="SunSpider 0.9.1 / Total 8041.9ms / iPad 1 / iOS 4.2.1 / Moile Safari 5.0.2"><img border="0" height="256" src="https://lh4.googleusercontent.com/_gkSXygtOqmM/TZxRxtq5yZI/AAAAAAAANuI/_dLOcuyO3d4/s512/IMG_20110406204736.jpg" width="192" /></a><br /><br />PS.<br />My Mac results 344ms on Chrome and 360ms on Safari.<br />iPads are still nothing compared to Mac. :-&lt;<br /><br />* <a href="http://mtl.recruit.co.jp/blog/2011/04/ipad_2_javascript37safari_nitr.html">Japanese version of this post is here</a>.
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2011/02/kdrawsprite-get-gpu-power-without.html">
+<title>
+KDrawSprite: Get GPU power without cacheAsBitmapMatrix on AIR for iOS
+</title>
+<link>
+http://kawanet.blogspot.com/2011/02/kdrawsprite-get-gpu-power-without.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2011-02-14T06:22:51.063-08:00</dc:date>
+<dc:subject>actionscript</dc:subject>
+<dc:subject>AIR</dc:subject>
+<dc:subject>iOS</dc:subject>
+<dc:subject>iPad</dc:subject>
+<dc:subject>iPhone</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://1.bp.blogspot.com/--Bzdu32y9-0/TVk5IdLtyrI/AAAAAAAAA2Q/QPLKk8rlNMI/s72-c/adobe-air.jpeg" width="72" height="72"/>
+<description>
+KDrawSprite is an ActionScript library for mobile AIR applications using Packager for iPhone, AIR for iOS and AIR for Android to get more power of GPU. My iPhone app <a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http://itunes.apple.com/jp/app/korean-alphabet/id355690031%253Fmt=8%2526uo=6%2526partnerId=30">Korean Alphabet 1.2.2</a> is using this to get more than 30 fps on older devices, ex. iPod Touch 1st gen. A4 chip powered latest devices, such as iPad and iPhone 4, will performs 100 fps over with KDrawSprite.<br /><br />Source on github:<br /><a href="https://github.com/kawanet/as3kawalib/raw/master/src/net/kawa/display/KDrawSprite.as">https://github.com/kawanet/as3kawalib/raw/master/src/net/kawa/display/KDrawSprite.as</a><br />Document:<br /><a href="http://www.kawa.net/works/as/as3kawalib/docs/net/kawa/display/KDrawSprite.html">http://www.kawa.net/works/as/as3kawalib/docs/net/kawa/display/KDrawSprite.html</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" src="http://1.bp.blogspot.com/--Bzdu32y9-0/TVk5IdLtyrI/AAAAAAAAA2Q/QPLKk8rlNMI/s320/adobe-air.jpeg" /></div><br />KDrawSprite draws your vector image onto a bitmap image. You don't need to manipulate cacheAsBitmapMatrix and cacheAsBitmap properties. These are powerful, however, sometimes make our app crashed erratically. You need take more care for iPad which has larger screen but has less memory.<br /><br /><h3>How To Use This</h3>Simply call KDrawSprite.getSprite() instead of setting cacheAsBitmapMatrix and cacheAsBitmap properties.<br /><blockquote style="padding: 8px; border: 1px solid green; color: black; font-family: monospace; line-height: 1.3em;">var sprite:Sprite = new Sprite();<br />sprite.graphics.beginFill(0x336699);<br />sprite.graphics.drawCircle(50, 50, 50);<br /><br /><span style="color: blue;">// sprite.cacheAsBitmapMatrix = new Matrix(); // BEFORE<br />// sprite.cacheAsBitmap = true;</span><br /><br /><span style="color: red;">sprite = KDrawSprite.getSprite(sprite);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // AFTER</span><br /><br />addChild(sprite);<br />sprite.x = 100;<br />sprite.y = 100;<br />sprite.scaleX = 0.5;<br />sprite.height = 50;<br />sprite.rotation = 1;</blockquote>Bitmap operations such as moving, scaling and rotation will be GPU enabled.<br />KDrawSprite will also free memory of image rendered when it comes out of the Stage.<br /><br />You need call getSprite() or draw() method whenever you make changes on the vector source image. This also means any other needless re-rendering will not be invoked. Learn more on <a href="http://www.kawa.net/works/as/as3kawalib/docs/net/kawa/display/KDrawSprite.html">document</a>.<br /><br /><h3>Super Sampling Anti-Aliasing (2x SSAA)</h3>KDrawSprite supports 2x SSAA, super sampling anti-aliasing, in addition to NoAA per default.<br /><br /><h3>Note</h3>To get better performance and rendering quality, you <b>MUST</b> set stage.quality as StageQuality.LOW. Also use 2x SSAA when needed.<br /><blockquote style="padding: 8px; border: 1px solid green; color: black; font-family: monospace; line-height: 1.3em;">stage.quality = StageQuality.LOW; // must</blockquote><br />* <a href="http://kawa.at.webry.info/201102/article_3.html">Japanese version of this post is here</a>.
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/11/yapcasia-tokyo-2010-japans-perl-week.html">
+<title>YAPC::Asia Tokyo 2010 - Japan's Perl Week</title>
+<link>
+http://kawanet.blogspot.com/2010/11/yapcasia-tokyo-2010-japans-perl-week.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-10-31T09:19:30.704-07:00</dc:date>
+<dc:subject>perl</dc:subject>
+<dc:subject>yapcasia</dc:subject>
+<dc:subject>yapcasia2010</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://farm5.static.flickr.com/4089/5085375676_1f01b99593_t.jpg" width="72" height="72"/>
+<description>
+Autumn is the best season for Perl hackers to come to Japan as we have the YAPC::Asia in Tokyo. This year, at September 15-16, I attended the great conference held at the&nbsp;Tokyo Institute of Technology Univ.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5085375676/in/set-72157625105552309/" style="margin-left: 1em; margin-right: 1em;" target="_blank" title="YAPC::Asia 2010 Tokyo Auditorium | Flickr - Photo Sharing!"><img alt="photo" border="0" height="300" src="http://farm5.static.flickr.com/4089/5085375676_1f01b99593_z.jpg" width="400" /></a></div><br /><h3><span style="background-color: blue;">&nbsp;</span>&nbsp;Thursday, September 14 - Pre-Conference Meetup&nbsp;</h3><br />One day before the conference, we had the <a href="http://atnd.org/events/8375">PerlCasual#4</a>&nbsp;developer meetup event organized by <a href="http://twitter.com/yusukebe">@yusukebe</a>. The event was born as the antithesis of Shibuya.pm's technical talk events which were filled by too deep talks, such like x86, XS, binary etc., by&nbsp;super-guru hackers. Casual developers need another place.<br /><br />At the event, I gave at a&nbsp;lightening&nbsp;talk&nbsp;<a href="http://www.kawa.net/text/yapcasia/2010/perlcasual.html">"Reporting OSDC.TW - Shibuya.pm in Taipei."</a>&nbsp;This April, we went the <a href="http://kawanet.blogspot.com/2010/04/shibuya-perl-mongers-comes-into-taipei.html">OSDC.TW 2010</a> conference in Taiwan. Shibuya.pm people, including me, gave talks there.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://www.kawa.net/text/yapcasia/2010/perlcasual.html" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TM19q3NI-9I/AAAAAAAAA0Q/Vl3lBvGcm3Y/s400/yapcasia-2010-pre.jpeg" width="400" /></a></div><br />The first half of my talk reports the event and the reason we went there.<br />And the second is about my 3D JavaScript talks.<br />Try <a href="http://www.kawa.net/text/yapcasia/2010/perlcasual.html">my slide here</a> and push <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace;">[3]</span> key on your keyboard to view slides in 3D mode.<br /><br /><div style="text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5085367216/in/set-72157625105552309/" style="margin-right: 10px;" target="_blank" title="Strange Alien（変な外人）@obra | Flickr - Photo Sharing!"><img alt="photo" border="0" height="320" src="http://farm5.static.flickr.com/4111/5085367216_85ea347c65.jpg" width="240" /></a><a href="http://www.flickr.com/photos/u-suke/5084778691/in/set-72157625105552309/" target="_blank" title="Acme::Acotie - 名前空間クラッシャー | Flickr - Photo Sharing!"><img alt="photo" border="0" height="320" src="http://farm5.static.flickr.com/4109/5084778691_974587232d.jpg" width="240" /></a></div><br />Photo (left):&nbsp;<a href="http://twitter.com/obra">@obra</a>'s T-shirt shows he is a "Strange Alien."<br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">(right): the&nbsp;<a href="http://www.donzoko.net/gakuya/#Acmencyclopedia2010">Acmencyclopedia 2010</a>&nbsp;at&nbsp;the after-party of day #0.<br /><br /></div><h3><span style="background-color: blue;">&nbsp;</span>&nbsp;Friday, September 15 -&nbsp;Conference Day #1</h3><br />At the first day of the&nbsp;conference, I and my colleague&nbsp;<a href="http://twitter.com/#!/iandeth">@iandeth</a>&nbsp;gave a talk.&nbsp;His slides are&nbsp;<a href="http://mtl.recruit.co.jp/blog/2010/10/yapc_asia_2010_plackvm.html">here</a>.&nbsp;My part is about the <a href="http://mashupaward.jp/">Mashup Awards 6 (MA6)</a>, Japan's largest web application development contest.&nbsp;My slides are&nbsp;<a href="http://mtl.recruit.co.jp/blog/2010/10/yapcasia_2010_ma6_api.html">here</a>.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5085374874/in/set-72157625105552309/" style="margin-left: 1em; margin-right: 1em;" target="_blank" title="Centenial Hall 3F | Flickr - Photo Sharing!"><img alt="photo" border="0" height="300" src="http://farm5.static.flickr.com/4153/5085374874_56f4af7c6b_z.jpg" width="400" /></a></div><br />The&nbsp;day #1's&nbsp;after-party was the official party held in the venue.<br />@clkao's T-shirt shows "Taiwanese." It's easy for us to see his nationality.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5085375974/in/set-72157625105552309/" style="margin-right: 10px;" target="_blank" title="@tsuyoshikawa the PHP Hacker from GREE | Flickr - Photo Sharing!"><img alt="photo" border="0" height="320" src="http://farm5.static.flickr.com/4089/5085375974_5eea1f5c94_z.jpg" width="240" /></a><a href="http://www.flickr.com/photos/u-suke/5085375824/in/set-72157625105552309/" target="_blank" title="@clkao - 台湾人 Taiwanese | Flickr - Photo Sharing!"><img alt="photo" border="0" height="320" src="http://farm5.static.flickr.com/4126/5085375824_d759c32da9_z.jpg" width="240" /></a></div><br />My ex-colleague&nbsp;<a href="http://twitter.com/tsuyoshikawa">@tsuyoshikawa</a>&nbsp;is a Ruby guy but now working at a large PHP company. The company ordered him to give a talk at the Perl conference. It seems he is drunken from the stresses. :)<br /><br /><h3><span style="background-color: blue;">&nbsp;</span>&nbsp;Saturday, September 16 -&nbsp;Conference Day #2</h3><br />Day #2 was Saturday and sunny. Some speakers went down to a BoF looked like a picnic to have a beer under the sun.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5085868710/in/set-72157625105552309/" style="margin-left: 1em; margin-right: 1em; text-align: center;" target="_blank" title="東工大の芝生で昼間からビールを飲んでるお兄さん達 | Flickr - Photo Sharing!"><img alt="photo" border="0" height="300" src="http://farm5.static.flickr.com/4144/5085868710_dcde1016f0_z.jpg" width="400" /></a></div><br />On the other hand, as the closing keynote,&nbsp;<a href="http://twitter.com/miyagawa">@miyagawa</a>&nbsp;gave us the great talk filled with many of suggestions and encouragements for developers. The talk was this year's best talk in my opinion.<br /><br /><div style="text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5086220215/in/set-72157625105552309/" target="_blank" title="@miyagawa - Secret of success | Flickr - Photo Sharing!"><img alt="photo" border="0" height="300" src="http://farm5.static.flickr.com/4133/5086220215_c863b4da66_z.jpg" width="400" /></a></div><br />He showed us the "Secret of success" that he found during his work for Plack and his other projects.<br /><blockquote style="background: black; color: white; font-family: Trebuchet MS; margin-left: 40px; padding: 20px; width: 380px;"><b>Secret of success</b><br /><br />* Good artists borrow, Great artists steal<br />* Better late than too early<br />* JFDI (Just f* do it)<br />* STFUAWSC (Shut the f* up and write some code)<br />* TIMTOWTDI (There is more than one way to do it.) <br />&nbsp;&nbsp;BSCINABTE (But sometimes consistency is not a bad thing either)<br />* KISS (Keep it simple, stupid)<br />* glue language<br />* Naming</blockquote><br />Thank you so much, the YAPC organizers and volunteers.<br /><br /><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;"><span style="background-color: blue;">&nbsp;</span></span><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;">&nbsp;</span><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;">Sunday, September 17 -&nbsp;</span><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;">Hackathon</span><br /><br />Sunday,&nbsp;we had the post-conference-hackathon at <a href="http://twitter.com/hidek">@hidek</a>'s.<br /><br /><div style="text-align: center;"><a href="http://www.flickr.com/photos/u-suke/5088536531/in/set-72157625105552309/" style="margin-right: 10px;" target="_blank" title="Hackathon at @hidek's | Flickr - Photo Sharing!"><img alt="photo" border="0" height="148" src="http://farm5.static.flickr.com/4084/5088536531_c6653518eb.jpg" width="200" /></a><a href="http://www.flickr.com/photos/u-suke/5088536725/in/set-72157625105552309/" target="_blank" title="Hackathon at @hidek's | Flickr - Photo Sharing!"><img alt="photo" border="0" height="149" src="http://farm5.static.flickr.com/4124/5088536725_dea076aa43.jpg" width="200" /></a><br /><br /><a href="http://www.flickr.com/photos/u-suke/5089135834/in/set-72157625105552309/" style="margin-right: 10px;" target="_blank" title="Hackathon at @hidek's | Flickr - Photo Sharing!"><img alt="photo" border="0" height="149" src="http://farm5.static.flickr.com/4133/5089135834_61c47d1b6d.jpg" width="200" /></a><a href="http://www.flickr.com/photos/u-suke/5089136020/in/set-72157625105552309/" target="_blank" title="Footprints of Perl Hackers | Flickr - Photo Sharing!"><img alt="photo" border="0" height="149" src="http://farm5.static.flickr.com/4145/5089136020_e12a955943.jpg" width="200" /></a></div><br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">After the hackathon, we went to a <a href="http://en.wikipedia.org/wiki/Chankonabe">Chankonabe</a> restaurant near @hidek's as the 4th after-patry. We had too many after-parties this week with a lot of fun!<br /><br /><br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;"><span style="background-color: blue;">&nbsp;</span></span><span class="Apple-style-span" style="font-size: 19px; font-weight: bold;">&nbsp;Related Posts</span></div><ul><li><a href="http://www.slideshare.net/kawa0117/corporate-perl-in-recruit-opensocial-and-emoji-yapcasia-2009-tokyo">Corporate Perl in Recruit, OpenSocial and Emoji‎ - YAPC::Asia 2009 Tokyo</a>&nbsp;2009</li><li><a href="http://kawanet.blogspot.com/2007/04/yapcasia-2007-tokyo-party-hackathon.html">YAPC::Asia 2007 Tokyo + Party + Hackathon</a>&nbsp;2008</li><li><a href="http://kawanet.blogspot.com/2008/05/yapcasia-2008-tokyo-dom-manipulation-by.html">YAPC::Asia 2008 Tokyo - DOM manipulation by Wiimote/Gainer over HTTP</a>&nbsp;2007</li><li><a href="http://kawa.at.webry.info/200603/article_11.html">[YAPC] YAPC::Asia 2006 has just begun!</a>&nbsp;2006 (ja)</li></ul></div>
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/perl/treepp/treepp-e.html">
+<title>
+[Perl] XML::TreePP - A pure Perl implementation for parsing/writing xml file
+</title>
+<link>
+http://www.kawa.net/works/perl/treepp/treepp-e.html
+</link>
+<dc:date>2010-10-31T20:15:00+09:00</dc:date>
+<dc:subject>Perl</dc:subject>
+<description>
+XML::TreePP module parses XML file and expand it for a hash tree. And also this generates XML file from a hash tree. This module is a pure Perl implementation. You can also fetch an XML file from remote web server like an XMLHttpRequest object in JavaScript language. I think that XML::TreePP is enough fast and easy to use! Released version: XML-TreePP-0.41.tar.gz TARGZ CPAN Subversion repository: http://xml-treepp.googlecode.com/svn/trunk/XML-TreePP/ SVN Documents: README README Changes Changes
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/10/encodejpemoji-060-supports-unicode-60.html">
+<title>Encode::JP::Emoji 0.60 Supports Unicode 6.0 Emoji!</title>
+<link>
+http://kawanet.blogspot.com/2010/10/encodejpemoji-060-supports-unicode-60.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-10-24T05:50:55.641-07:00</dc:date>
+<dc:subject>emoji</dc:subject>
+<dc:subject>perl</dc:subject>
+<dc:subject>unicode</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://3.bp.blogspot.com/_cgZUdkW7lzE/TMQl_iuL1mI/AAAAAAAAAz0/lbmNBpjADNI/s72-c/emoji-group1-b.png" width="72" height="72"/>
+<description>
+<div class="separator" style="clear: both; text-align: left;">October 11,&nbsp;Unicode Consortium&nbsp;<a href="http://www.unicode.org/press/pr-6.0.html">released</a> Unicode Version 6.0 including Emoji code points and <a href="http://unicode.org/Public/UNIDATA/EmojiSources.txt">the mapping table</a>. Then, today, I've just shipped <a href="http://search.cpan.org/~kawasaki/Encode-JP-Emoji-0.60/lib/Encode/JP/Emoji.pm">Encode::JP::Emoji version 0.60</a>&nbsp;which supports encoding&nbsp;conversion&nbsp;for variant emojis between Unicode 6.0 and Japanese mobile phone carriers as a fast pure Perl module.</div><blockquote style="font-family: monospace;"><span class="Apple-style-span" style="color: #296d3b; font-size: small; line-height: 15px;">use Encode;<br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" />use Encode::JP::Emoji;<br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" /><br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" />my $sun = "\xF8\x9F";<br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" />Encode::from_to($sun, 'x-sjis-e4u-docomo', 'x-utf8-e4u-unicode');<br /># U+2600<br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" /><br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" />my $watch = encode_utf8 "\x{231A}";<br style="line-height: 16px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" />Encode::from_to($watch, 'x-utf8-e4u-unicode', 'x-utf8-e4u-kddiapp');<br /># U+E57A</span></blockquote><div class="separator" style="clear: both; text-align: left;">The code above means:</div><div class="separator" style="clear: both; text-align: left;">$sun: from DoCoMo's F8F9 (Shift_JIS) to Unicode 6.0's U+2600.</div><div class="separator" style="clear: both; text-align: left;">$watch: from Unicode 6.0's U+231A to KDDI's U+E57A (UTF-8).&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><h3>Encode::JP::Emoji's Encodings</h3><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Encode::JP::Emoji modules provides numbers of encodings.</div><div class="separator" style="clear: both; text-align: left;">Check the figures below to see which encoding to fit for your use.&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"></div><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">Group #1 uses each carrier's&nbsp;private code points as Perl's internal string which has UTF-8 flag on.</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_cgZUdkW7lzE/TMQl_iuL1mI/AAAAAAAAAz0/lbmNBpjADNI/s1600/emoji-group1-b.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TMQl_iuL1mI/AAAAAAAAAz0/lbmNBpjADNI/s400/emoji-group1-b.png" width="400" /></a></div><br />Group #2 uses Googles's private code points internaly. This means Google's encoding could be the interchange encoding for others.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_cgZUdkW7lzE/TMQmAUjSlZI/AAAAAAAAAz4/7b4mUn9W14s/s1600/emoji-group2-b.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TMQmAUjSlZI/AAAAAAAAAz4/7b4mUn9W14s/s400/emoji-group2-b.png" width="400" /></a></div><br />Group #3 also uses Google's internal.<br />See Unicode 6.0's emojis are supported here.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_cgZUdkW7lzE/TMQmBCKR6rI/AAAAAAAAAz8/JVPXoKqpKMo/s1600/emoji-group34-b.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/TMQmBCKR6rI/AAAAAAAAAz8/JVPXoKqpKMo/s400/emoji-group34-b.png" width="400" /></a></div><br />Tha last group #4 rejects any emojis above.<br />Use this group with <a href="http://search.cpan.org/dist/Encode-JP-Emoji/lib/Encode/JP/Emoji/FB_EMOJI_TEXT.pm">FB_EMOJI_TEXT</a> fallback function.<br /><br />For more detail, see <a href="http://search.cpan.org/dist/Encode-JP-Emoji/lib/Encode/JP/Emoji.pm">POD documents</a> on CPAN.<br /><br /><i>* <a href="http://kawa.at.webry.info/201010/article_2.html">Original post of this is posted in Japanese</a>.</i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/08/rt-bookmarklet-for-unofficial-retweet.html">
+<title>
+RT Bookmarklet for Unofficial Retweet Format "RT @kawanet:" of #Twitter.
+</title>
+<link>
+http://kawanet.blogspot.com/2010/08/rt-bookmarklet-for-unofficial-retweet.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-10-08T19:47:19.298-07:00</dc:date>
+<dc:subject>bookmarklet</dc:subject>
+<dc:subject>twitter</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://4.bp.blogspot.com/_cgZUdkW7lzE/TFxPWGOxKLI/AAAAAAAAAvY/RNgLP27GQes/s72-c/twitter-sample-4.png" width="72" height="72"/>
+<description>
+I love writing bookmarklets these days. :)<br /><br />The RT bookmarklet helps you to post a retweet by unofficial style like "RT @kawanet: ..."<br /><br />[ <a href="javascript:(function(){if (location.hostname=='twitter.com') {var t=$('textarea#status, textarea.twitter-anywhere-tweet-box-editor');var n=$('.screen-name:first, .tweet-user-block-screen-name:first, .tweet-screen-name:first').text();var b=$('.entry-content:first, .tweet-text:first').text();n=n.replace(/^@/,'');var r='RT @'+n+': '+b;if (t.length) {t.val(r);} else {location.href='http://twitter.com/home?status='+encodeURIComponent(r);}} else {location.href='http://twitter.com/';}})()">RT</a> ]<br /><br />Use the RT bookmarklet on tweet status (detail) page like below:<br /><a href="http://twitter.com/kawanet/status/20487928914"><img alt="" border="0" id="BLOGGER_PHOTO_ID_5502360085788174514" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/TFxPWGOxKLI/AAAAAAAAAvY/RNgLP27GQes/s400/twitter-sample-4.png" style="cursor: hand; cursor: pointer; display: block; height: 275px; margin: 0px auto 10px; text-align: center; width: 400px;" /></a><br />The tweet content will be quoted in a new tweet:<br /><a href="http://twitter.com/"><img alt="" border="0" id="BLOGGER_PHOTO_ID_5502360088617114610" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TFxPWQxPW_I/AAAAAAAAAvg/gQqM7zmD6Wk/s400/twitter-sample-6.png" style="cursor: hand; cursor: pointer; display: block; height: 99px; margin: 0px auto 10px; text-align: center; width: 400px;" /></a><br /><h3>BONUS</h3>This also runs at any other domain of twitter.com as a shortcut for <a href="http://twitter.com/">http://twitter.com/</a> top.<br /><br /><h3>UPDATES</h3>2010.10.09 <a href="http://twitter.com/#!/search/%23NewTwitter">#NewTwitter interface</a> supported.<br /><br /><i>* Original post of this is <a href="http://kawa.at.webry.info/201008/article_3.html">written in Japanese</a>.</i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/09/img2html-bookmarklet-for-blog-posting.html">
+<title>
+img2html - bookmarklet for blog posting with flickr, picasa, etc.
+</title>
+<link>
+http://kawanet.blogspot.com/2010/09/img2html-bookmarklet-for-blog-posting.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-09-26T05:41:35.558-07:00</dc:date>
+<dc:subject>bookmarklet</dc:subject>
+<dc:subject>flickr</dc:subject>
+<dc:subject>picasa</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJ85qOV6KRI/AAAAAAAAAys/buveE0vK_Bs/s72-c/cap-flickr.jpg" width="72" height="72"/>
+<description>
+The <tt>img2html</tt> bookmarklet below helps you to get a html source code with a <tt><img></tt>&nbsp;element which refers photo sharing service, ex. Yahoo's Flickr, Google's Picasa Web Album, etc.<br /><br /><a href="javascript:(function(){var x=240;var y=80;var c=window.img2html_history;if(!c){c={};window.img2html_history=c;}var a=document.getElementsByTagName('img');var p=0;var g;for(var i=0; i<a.length; i++){var tg = a[i];if(!tg.src)continue;if(c[tg.src])continue;var tp = tg.width * tg.height;if(p >= tp)continue;p = tp;g = tg;}var b=document.body;var w=b.style;var o=window.img2html_last;if(o&&!g){w.marginTop='0';window.img2html_history={};}if(o&&o.parentNode){o.parentNode.removeChild(o);}if (!g) return;c[g.src]=true;var l=location.href.replace(/"/g,'&quot;').replace(/#$/,'');var n=document.title.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');var z='';if(g.alt){z=g.alt.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');z='alt="'+z+'" ';}var h='<a href="'+l+'" target="_blank" title="'+n+'"><img src="'+g.src+'" width="'+g.width+'" height="'+g.height+'" border="0" '+z+'/></a>';var d=document.createElement('div');var u=d.style;u.padding='4px 120px 2px 4px';u.background='#FFFF99';u.margin='-'+(y+1)+'px 0 0 0';u.height=(y-6)+'px';u.position='relative';u.borderBottom='1px solid black';var m=document.createElement('img');m.src=g.src;var v=m.style;v.position='absolute';v.top='0';v.right='0';v.float='right';v.padding='0';v.margin='0';v.background='#FFFFFF';v.borderLeft='1px solid black';m.alt=g.alt;m.title=document.title;var t=document.createElement('textarea');t.value=h;var s=t.style;s.background='#FFFF99';s.border='0';s.wordBreak='break-all';s.fontSize='18px';s.lineHeight='18px';s.width='100%';s.padding='0';s.margin='0';s.overflow='hidden';s.fontFamily='monospace';s.height=(y-6)+'px';d.appendChild(m);d.appendChild(t);b.insertBefore(d,b.firstChild);w.marginTop=(y+1)+'px';if(m.height<y&&m.width<x){v.height=m.height+'px';}else{v.height=y+'px';if(m.clientWidth>x){v.width=x+'px';v.height='';}}var q=Math.floor((y-m.clientHeight)/2);var f=y-m.clientHeight-q;var r=Math.floor((y-m.clientWidth)/2);if(r<0)r=0;v.padding=q+'px '+r+'px '+f+'px '+r+'px';u.paddingRight=Math.floor(m.clientWidth+4)+'px';window.scrollTo(0,0);t.select();t.focus();window.img2html_last=d;})()" style="font-size: 120%; font-weight: bold; margin-left: 40px;">img2html</a><br /><br />You can also try just to click the link above for testing on the site.<br />It generates HTML source code like below:<br /><blockquote style="font-family: monospace; padding: 8px; border: 1px solid gray;">&lt;a href="Page URL" target="_blank" title="Page Title"&gt;&lt;img src="Image URL" width="Image Width" height="Image Height" border="0" alt="Image ALT" /&gt;&lt;/a&gt;</blockquote>The largest image on page is picked up by the bookmarklet.<br />This works on flickr.<br /><br /><a href="http://www.flickr.com/photos/u-suke/5024851856/" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJ85qOV6KRI/AAAAAAAAAys/buveE0vK_Bs/s1600/cap-flickr.jpg" /></a><br /><br />Also works on Picasa Web Album and any other websites.<br /><br /><a href="http://picasaweb.google.com/www.kawa.net/MashupAwards5Ceremony23#5409776742109241234" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJ85pocFWQI/AAAAAAAAAyo/NlS8RHwqHRU/s1600/cap-picasa.jpg" /></a><br /><br /><h3>Related Posts</h3><ul><li><a href="http://kawa.at.webry.info/201009/article_7.html">Original post of this</a> written in Japanese</li><li><a href="http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html">fr - a bookmarklet to get a link to flickr</a> (older version)</li></ul>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html">
+<title>fr - a bookmarklet to get a link to flickr</title>
+<link>
+http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-09-26T05:40:16.514-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://3.bp.blogspot.com/_cgZUdkW7lzE/S-BHxI48yDI/AAAAAAAAAt4/CW8Cm68VFUE/s72-c/flickr-bookmark-400.png" width="72" height="72"/>
+<description>
+The fr is a bookmarklet to help you to post your image on flickr to your blog. Tested on IE8, Firefox, Safari and Chrome.<br /><br />[<a href="javascript:(function(){var u=location.href;var z=window.Y?Y.D.getElementsByClassName('photoImgDiv')[0]:document.getElementById('photo');var g=z.getElementsByTagName('img')[0];if(!g)return;var n=document.getElementsByTagName('h1')[0].innerHTML.replace(/"/g,'&quot;');var h='<a href="'+u+'"><img src="'+g.src+'" title="'+n+'" width="'+g.width+'" height="'+g.height+'" border="0"/></a>';var t=document.createElement('TEXTAREA');var s=t.style;s.background='#FFFF99';s.border='1px solid gray';s.wordBreak='break-all';s.marginTop='1em';s.width='100%';s.height='4em';s.fontSize='18px';t.value=h;var b=document.getElementById(window.Y?'Main':'main');if(!b)b=document.body;var f=b.firstChild.tagName;if(f&&f.toUpperCase()=='TEXTAREA')b.removeChild(b.firstChild);b.insertBefore(t,b.firstChild);t.select();t.focus();})();" title="fr">fr</a>]<br /><br />Drag the link [fr] above onto your browser's bookmark toolbar, etc.<br /><br />Access a flickr photo detail page, then click the bookmarklet. This shows an HTML source code which contains the image and links to the flickr page like below:<br /><br /><a href="http://www.flickr.com/photos/u-suke/4550191832/"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 120px;" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/S-BHxI48yDI/AAAAAAAAAt4/CW8Cm68VFUE/s400/flickr-bookmark-400.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5467448857153292338" /></a><br /><br /><span style="font-weight:bold;">(07/22/2010 updated)</span><br />Flickr's new interface supported.<br /><br /><span style="font-weight:bold;">(09/26/2010 updated)</span><br /><a href="http://kawanet.blogspot.com/2010/09/img2html-bookmarklet-for-blog-posting.html">New version released</a> which supports Picasa and any other photo sharing service.<br /><br />*<i><a href="http://kawa.at.webry.info/201005/article_4.html">Original post written in Japanese</a>.</i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html">
+<title>
+Cantonese Alphabet - iPhone app for traveling in Hong Kong
+</title>
+<link>
+http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-09-23T23:50:27.235-07:00</dc:date>
+<dc:subject>iPhone</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJxIOGQhyEI/AAAAAAAAAyY/V_AATgQShgk/s72-c/hongkong-logo-72.png" width="72" height="72"/>
+<description>
+<a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363512177%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30" imageanchor="1" style="float: right; margin: 0 0 1em 1em;"><img border="0" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJxIOGQhyEI/AAAAAAAAAyY/V_AATgQShgk/s1600/hongkong-logo-72.png" style="cursor: move;" /></a>The <a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363512177%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30">Canotonese Alphabet</a> mobile application is now available on iTunes App Store. This helps you to read <a href="http://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, spoken in Southern China including Hong Kong. It's just US$1.99. <a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363512177%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30">But this now!</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJxDITY7CyI/AAAAAAAAAyA/OV8XH0MxLes/s1600/iphone-hongkong-caaufaan.jpg" imageanchor="1"><img border="0" height="400" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJxDITY7CyI/AAAAAAAAAyA/OV8XH0MxLes/s400/iphone-hongkong-caaufaan.jpg" width="207" /></a><a href="http://1.bp.blogspot.com/_cgZUdkW7lzE/TJxDJFsOYNI/AAAAAAAAAyE/Qj6DKx0o8rA/s1600/iphone-hongkong-neihou.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TJxDJFsOYNI/AAAAAAAAAyE/Qj6DKx0o8rA/s400/iphone-hongkong-neihou.jpg" width="207" /></a></div><br />To enter Cantonese phrases, use iOS's built-in Traditional Chinese hand-writing keyboard. The app also have online translation feature. This means you can translate English to Cantonese to read them in Cantonese.<br /><br /><h3>The Last Piece</h3><br />This was the latest member of the series of my Asian Alphabet applications.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJxDh7Yu9lI/AAAAAAAAAyU/LMCi5BjQ-yM/s1600/korean-logo-v3-57.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJxDh7Yu9lI/AAAAAAAAAyU/LMCi5BjQ-yM/s1600/korean-logo-v3-57.png" style="cursor: move;" /></a><a href="http://4.bp.blogspot.com/_cgZUdkW7lzE/TJxDXUTgPwI/AAAAAAAAAyI/3kXrFOgnqcA/s1600/beijing-logo-57.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/TJxDXUTgPwI/AAAAAAAAAyI/3kXrFOgnqcA/s1600/beijing-logo-57.png" /></a><a href="http://1.bp.blogspot.com/_cgZUdkW7lzE/TJxDan5DedI/AAAAAAAAAyM/JqtX5NCEQxY/s1600/taipei-logo-57.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TJxDan5DedI/AAAAAAAAAyM/JqtX5NCEQxY/s1600/taipei-logo-57.png" /></a><a href="http://4.bp.blogspot.com/_cgZUdkW7lzE/TJxDdruwbVI/AAAAAAAAAyQ/nG_svreBy_Q/s1600/tokyo-icon-57.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/TJxDdruwbVI/AAAAAAAAAyQ/nG_svreBy_Q/s1600/tokyo-icon-57.png" /></a><a href="http://1.bp.blogspot.com/_cgZUdkW7lzE/TJxC7N6l4dI/AAAAAAAAAx8/jjZwJvGYsyE/s1600/canton-logo-57.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TJxC7N6l4dI/AAAAAAAAAx8/jjZwJvGYsyE/s1600/canton-logo-57.png" style="cursor: move;" /></a></div><br />Complete all five apps for Korean (Hangul), Chinese (Simplified and Traditional), Japanese and Cantonese!<br /><br /><h3>Related Posts</h3><ul><li><a href="http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html">Cantonese Alphabet - iPhone app for traveling in Hong Kong</a> 2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html">Japanese Alphabet - iPhone App for Kanji and Kana</a>&nbsp;2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html">Simplified and Traditional Chinese Alphabet iPhone Application Shipped!</a>&nbsp;2010.02.27</li><li><a href="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html">The Korean Alphabet, iPhone app built by Flash</a>&nbsp;2010.02.17</li></ul>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html">
+<title>The Korean Alphabet, iPhone app built by Flash</title>
+<link>
+http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-09-23T23:49:35.170-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://4.bp.blogspot.com/_cgZUdkW7lzE/S3rfIlitQuI/AAAAAAAAAqg/njAuryrLBag/s72-c/iphone-annyeong.png" width="72" height="72"/>
+<description>
+I've shipped <a href="http://kuru2.st/llp/iphone/korean.html">the Korean Alphabet</a> which is a paid iPhone application to study Hangul. It's now <a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&offerid=94348&type=3&subid=0&tmpid=2192&RD_PARM1=http://itunes.apple.com/us/app/korean-alphabet/id355690031%253Fmt=8%2526uo=6%2526partnerId=30" target="itunes_store">available on the iTunes Store</a>. This was build by ActionScript with the Packagers for iPhone® under Adobe's Flash CS5 pre-release beta program. <br /><br /><script type="text/javascript" charset="UTF-8" src="http://cmizer.com/javascripts/version02/swfobject.js"></script><script type="text/javascript" charset="UTF-8" src="http://cmizer.com/javascripts/version02/cmizer_1_0_1.js"></script><div id="cmizer-movie-88535" style="margin-bottom:3px;width:420px;height:390px;"><a href="http://www.adobe.com/shockwave/download/index.cgi?Lang=Japanese&P1_Prod_Version=ShockwaveFlash"><img alt="Get Adobe Flash Player" src="http://cmizer.com/images/version02/160x41_Get_Flash_Player.jpg" style="border:0" /></a></div><script type="text/javascript">var cm_option = new Object();cm_option["auto_play"]="false";cm_option["repeat_play"]=(location.href.charAt(location.href.length-1)=='/')?"false":"true";cm_option["mute"]="false";cm_option["volume"]="50";cm_option["jump_action"]="nomal";SetPlayer("cmizer.com/swfs/cmizer_player.swf",420,390,"cmizer.com/cm/movie/s/ck/42/q4epy.xml","88535", cm_option);</script><br />This app represents Hangul with the Roman (Latin) alphabet to help you to read (say) Korean phrases. Enjoy this when you're traveling in Korea, studying Korean, watching Korean TV dramas, etc.<br /><br /><center><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&offerid=94348&type=3&subid=0&tmpid=2192&RD_PARM1=http://itunes.apple.com/us/app/korean-alphabet/id355690031%253Fmt=8%2526uo=6%2526partnerId=30"><img src="http://4.bp.blogspot.com/_cgZUdkW7lzE/S3rfIlitQuI/AAAAAAAAAqg/njAuryrLBag/s400/iphone-annyeong.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5438904838612927202" /><img src="http://2.bp.blogspot.com/_cgZUdkW7lzE/S3rfiC_BiFI/AAAAAAAAAqo/7pi2ESxxeO4/s400/iphone-seoul.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5438905276013054034" /></a></center><br /><center><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&offerid=94348&type=3&subid=0&tmpid=2192&RD_PARM1=http://itunes.apple.com/us/app/korean-alphabet/id355690031%253Fmt=8%2526uo=6%2526partnerId=30" target="itunes_store"><img height="39" width="111" alt="Korean Alphabet" src="http://kuru2.st/iphone/korean/img/marketing_badge.png" /></a></center><br />Hangul is the native phonemic character of Korean language. The system is also called as Korean romanization or latinization. In 2006, I've also released <a href="http://www.kawa.net/works/ajax/romanize/hangul-e.html">the web service version of this</a> for PC web browsers. Note that I'm a native of Japanese language however.<br /><br /><br /><h3>Related Posts</h3><ul><li><a href="http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html">Cantonese Alphabet - iPhone app for traveling in Hong Kong</a> 2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html">Japanese Alphabet - iPhone App for Kanji and Kana</a>&nbsp;2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html">Simplified and Traditional Chinese Alphabet iPhone Application Shipped!</a>&nbsp;2010.02.27</li><li><a href="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html">The Korean Alphabet, iPhone app built by Flash</a>&nbsp;2010.02.17</li></ul>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html">
+<title>
+Simplified and Traditional Chinese Alphabet iPhone Application Shipped!
+</title>
+<link>
+http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-09-23T23:49:18.683-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://3.bp.blogspot.com/_cgZUdkW7lzE/S4ktvmIZqpI/AAAAAAAAAq4/v3R9iPBCgaQ/s72-c/iphone-beijing-nihao.png" width="72" height="72"/>
+<description>
+I'm happy to announce to releasing a couple of the Chinese Alphabet iPhone application. These are Chinese version of the <a href="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html">Korean Alphabet</a> I've released last week.<br /><br /><span style="font-weight:bold;"><a href="http://kuru2.st/llp/iphone/s-chinese.html">Simplified Chinese Alphabet</a></span><br /><br />This tells how to read/pronounce Chinese characters used in the mainland China. You could read Chinese characters by Latin (Roman) alphabet notated.<br /><br /><a href="http://kuru2.st/llp/iphone/s-chinese.html"><img style="margin-right: 1px; width: 208px; height: 400px;" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/S4ktvmIZqpI/AAAAAAAAAq4/v3R9iPBCgaQ/s400/iphone-beijing-nihao.png" border="0" id="BLOGGER_PHOTO_ID_5442931920366840466" /><img style="width: 208px; height: 400px;" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/S4ktwaYH7RI/AAAAAAAAArA/gmPkdGPW95M/s400/iphone-beijing-xialong.png" border="0" id="BLOGGER_PHOTO_ID_5442931934391430418" /></a><br /><br /><span style="font-weight:bold;"><a href="http://kuru2.st/llp/iphone/t-chinese.html">Traditional Chinese Alphabet</a></span><br /><br />This is the traditional, complex and old-styled, Chinese characters version which are used in Taiwan and Hong Kong.<br /><br /><a href="http://kuru2.st/llp/iphone/t-chinese.html"><img style="margin-right: 1px;width: 208px; height: 400px;" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/S4ktykYLxmI/AAAAAAAAArI/AdnKs1__wfU/s400/iphone-taipei-nihao.png" border="0" id="BLOGGER_PHOTO_ID_5442931971435775586" /><img style="width: 208px; height: 400px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/S4ktzc_NT9I/AAAAAAAAArQ/qP3kbape-rY/s400/iphone-taipei-xiaolong.png" border="0" id="BLOGGER_PHOTO_ID_5442931986631839698" /></a><br /><br />Once I've got a taxi at Beijing, the driver could not understand the Great Wall I said. I hope the app would help such scenes.<br /><br /><br /><h3>Related Posts</h3><ul><li><a href="http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html">Cantonese Alphabet - iPhone app for traveling in Hong Kong</a> 2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html">Japanese Alphabet - iPhone App for Kanji and Kana</a>&nbsp;2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html">Simplified and Traditional Chinese Alphabet iPhone Application Shipped!</a>&nbsp;2010.02.27</li><li><a href="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html">The Korean Alphabet, iPhone app built by Flash</a>&nbsp;2010.02.17</li></ul>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html">
+<title>Japanese Alphabet - iPhone App for Kanji and Kana</title>
+<link>
+http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-09-23T23:48:37.294-07:00</dc:date>
+<dc:subject>iPhone</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJw8-SpuxqI/AAAAAAAAAx4/lkC-8QU5nCs/s72-c/tokyo-icon-72.png" width="72" height="72"/>
+<description>
+<div class="separator" style="clear: both; float: right; margin: 0 0 1em 1em;"><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978" imageanchor="1"><img border="0" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJw8-SpuxqI/AAAAAAAAAx4/lkC-8QU5nCs/s1600/tokyo-icon-72.png" /></a></div>The <a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978">Japanese Alphabet</a> mobile application for iPhone / iPod Touch is now on sale at App Store. This helps you to read Japanese phrases when you come to Japan, study Japanese, order something at Japanese restaurants, etc. It's just USD $1.99. <a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978">Buy this now</a>!<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/TJw8sTdeaNI/AAAAAAAAAxk/fwNGE43I6KE/s400/iphone-tokyo-hello.jpg" width="207" /></a><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJw8tkdm-gI/AAAAAAAAAxo/kmkNKBYMHKU/s400/iphone-tokyo-tokyo.jpg" width="207" /></a></div><br />This allows you to enter Japanese in serveral ways. First, <a href="http://en.wikipedia.org/wiki/Hiragana">Hiaragana</a> software keyboard. Originally iOS doesn't have the feature but the app has.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/TJw8zQcm6AI/AAAAAAAAAxw/fFqnxcBPSMo/s1600/ja-kana1.png" /></a></div><br />Second, <a href="http://en.wikipedia.org/wiki/Katakana">Katakana</a> software keyboard. Again, you can easily select a Kana character you want to enter by clicking it from the list.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/TJw8z9yhkrI/AAAAAAAAAx0/ZnA-PZX-cX0/s1600/ja-kana3.png" /></a></div><br />You can also use iOS's built-in Traditional Chinese character hand-writing keyboard. Note that most of Kanjis used in Japan are same to Kanjis used in Taiwan. Differences are&nbsp;intelligently&nbsp;corrected by the app.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&amp;offerid=94348&amp;type=3&amp;subid=0&amp;tmpid=2192&amp;RD_PARM1=http%253A//itunes.apple.com/app/id363521978" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TJw8y4ch_ZI/AAAAAAAAAxs/vNIerqYcfgQ/s1600/ja-keyboard-hand.png" /></a></div><br />At last, you can call Google Translate from the app. Entering English phrases, you will get Japanese phrases translated and see how to read them.<br /><br /><h3>Related Posts</h3><ul><li><a href="http://kawanet.blogspot.com/2010/09/cantonese-alphabet-iphone-app-for.html">Cantonese Alphabet - iPhone app for traveling in Hong Kong</a> 2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/09/japanese-alphabet-iphone-app-for-kanji.html">Japanese Alphabet - iPhone App for Kanji and Kana</a>&nbsp;2010.09.24</li><li><a href="http://kawanet.blogspot.com/2010/02/simplified-and-traditional-chinese.html">Simplified and Traditional Chinese Alphabet iPhone Application Shipped!</a>&nbsp;2010.02.27</li><li><a href="http://kawanet.blogspot.com/2010/02/korean-alphabet-iphone-app-built-by.html">The Korean Alphabet, iPhone app built by Flash</a>&nbsp;2010.02.17</li></ul>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/08/yapcasia-en-group-opened-cfp-until.html">
+<title>
+Yapcasia-en Group Opened! CFP Until August 31! #yapcasia
+</title>
+<link>
+http://kawanet.blogspot.com/2010/08/yapcasia-en-group-opened-cfp-until.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-08-31T18:47:51.742-07:00</dc:date>
+<dc:subject>perl</dc:subject>
+<dc:subject>yapc</dc:subject>
+<dc:subject>yapcasia</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://2.bp.blogspot.com/_cgZUdkW7lzE/THgQsvQN_fI/AAAAAAAAAw0/M4VKWnRY8cE/s72-c/yapcasia.png" width="72" height="72"/>
+<description>
+I've opened the <b><a href="http://groups.google.com/group/yapcasia-en">yapcasia-en group</a></b> which is a mailing list for YAPC::Asia's speakers, guests and all YAPC lovers. Feel free to join the group when you have an interest in the largest Perl conference on the globe!<br /><br /><a href="http://yapcasia.org/2010/"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/THgQsvQN_fI/AAAAAAAAAw0/M4VKWnRY8cE/s400/yapcasia.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5510172504872582642" /></a><br /><h3>About YAPC::Asia Tokyo 2010</h3>Dates: October 15-16, 2010<br />Venue: Tokyo Institute Of Technology, Oo-okayama, Tokyo, Japan<br />Map: <a href="http://maps.google.com/?cid=974026751406604607">http://maps.google.com/?cid=974026751406604607</a><br />Twitter: <a href="http://twitter.com/yapcasia">http://twitter.com/yapcasia</a><br />Website: <a href="http://yapcasia.org/2010/">http://yapcasia.org/2010/</a><br /><br />Note that Call For Paper is open until the next Tuesday, August 31. Go to <a href="http://bit.ly/bwd9SX">the form</a> to submit your proposal.<br /><br /><h3>Related Posts</h3>* <a href="http://kawanet.blogspot.com/2010/05/meet-again-at-yapcasia-2010-tokyo-in.html">Meet again at YAPC::Asia 2010 Tokyo in October</a><br />* <a href="http://www.slideshare.net/kawa0117/corporate-perl-in-recruit-opensocial-and-emoji-yapcasia-2009-tokyo">Corporate Perl in Recruit, OpenSocial and Emoji‎ - YAPC::Asia 2009 Tokyo</a><br />* <a href="http://mtl.recruit.co.jp/blog/2009/08/yapceurope_2009_3.html">YAPC::Europe 2009 Reports</a> (ja)<br />* <a href="http://mtl.recruit.co.jp/blog/2008/08/yapceurope_2008_3.html">YAPC::Europe 2008 Summary</a> (ja)<br />* <a href="http://kawanet.blogspot.com/2008/06/yapcna-2008-in-chicago.html">YAPC::NA 2008 in Chicago</a><br />* <a href="http://kawanet.blogspot.com/2008/05/yapcasia-2008-tokyo-dom-manipulation-by.html">YAPC::Asia 2008 Tokyo - DOM manipulation by Wiimote/Gainer over HTTP</a><br />* <a href="http://kawanet.blogspot.com/2007/04/yapcasia-2007-tokyo-party-hackathon.html">YAPC::Asia 2007 Tokyo + Party + Hackathon</a><br />* <a href="http://kawa.at.webry.info/200603/article_13.html">[YAPC] YAPC::Asia 2006 Sessions</a> (ja)<br /><br /><h3>@yapcasia's Official Tweet</h3><!-- http://twitter.com/yapcasia/status/22291267293 --> <style type='text/css'>.bbpBox22291267293 {background:url(http://s.twimg.com/a/1281738360/images/themes/theme1/bg.png) #9ae4e8;padding:20px;} p.bbpTweet{background:#fff;padding:10px 12px 10px 12px;margin:0;min-height:48px;color:#000;font-size:18px !important;line-height:22px;-moz-border-radius:5px;-webkit-border-radius:5px} p.bbpTweet span.metadata{display:block;width:100%;clear:both;margin-top:8px;padding-top:12px;height:40px;border-top:1px solid #fff;border-top:1px solid #e6e6e6} p.bbpTweet span.metadata span.author{line-height:19px} p.bbpTweet span.metadata span.author img{float:left;margin:0 7px 0 0px;width:38px;height:38px} p.bbpTweet a:hover{text-decoration:underline}p.bbpTweet span.timestamp{font-size:12px;display:block}</style> <div class='bbpBox22291267293'><p class='bbpTweet'>For the visitors from abroad @<a class="tweet-url username" href="http://twitter.com/kawanet" rel="nofollow">kawanet</a> has kindly taken to organize a mailing list <a href="http://bit.ly/cnEqFf" rel="nofollow">http://bit.ly/cnEqFf</a> <a href="http://twitter.com/search?q=%23yapc" title="#yapc" class="tweet-url hashtag" rel="nofollow">#yapc</a> <a href="http://twitter.com/search?q=%23yapcasia" title="#yapcasia" class="tweet-url hashtag" rel="nofollow">#yapcasia</a><span class='timestamp'><a title='Fri Aug 27 19:12:31 +0000 2010' href='http://twitter.com/yapcasia/status/22291267293'>less than a minute ago</a> via <a href="http://www.echofon.com/" rel="nofollow">Echofon</a></span><span class='metadata'><span class='author'><a href='http://twitter.com/yapcasia'><img src='http://a0.twimg.com/profile_images/51949044/yapc2008_normal.jpg' /></a><strong><a href='http://twitter.com/yapcasia'>yapcasia</a></strong><br/>yapcasia</span></span></p></div> <!-- end of tweet -->
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/08/memorial-service-for-google-wave-at.html">
+<title>
+Memorial Service for Google Wave at Google's Tokyo Office
+</title>
+<link>
+http://kawanet.blogspot.com/2010/08/memorial-service-for-google-wave-at.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-08-23T20:39:36.221-07:00</dc:date>
+<dc:subject>google</dc:subject>
+<dc:subject>googlewave</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://farm5.static.flickr.com/4093/4915480450_7401dd47d0_t.jpg" width="72" height="72"/>
+<description>
+Tokyo, Japan - Japanese developers have held the <a href="http://atnd.org/events/6995">memorial service for Google Wave</a> somberly at Google's Tokyo office. Grieving attendees held <a href="http://dmail.ntt-east.co.jp/p/a02_0140.do?cd=5381">a condolence telegram</a> and the deceased's deadee.<br /><br /><a href="http://www.flickr.com/photos/u-suke/4915480450/"><img src="http://farm5.static.flickr.com/4093/4915480450_7401dd47d0_z.jpg" title="Grieving Attendees of Google Wave Memorial Service in Tokyo" width="400" height="300" border="0"/></a><br /><br />Google Japan respectfully provided their new <a href="http://maps.google.com/?cid=14754714318877864787">Roppongi office</a> as a venue for the memorial service and made an arrangement to style the wallpapers in monotone.<br /><br /><a href="http://www.flickr.com/photos/u-suke/4915480696/"><img src="http://farm5.static.flickr.com/4122/4915480696_f481258291_z.jpg" title="Google Japan styles their wallpaper coloring for the memorial service." width="400" height="300" border="0"/></a><br /><br />The chief mourner, <a href="http://twitter.com/technohippy">Yasushi Ando (@technohippy)</a>, pensively signed his new <a href="http://amzn.to/9vdQRm">Google Wave introductory book</a> which is just published this week.<br /><br /><a href="http://amzn.to/9vdQRm"><img style="float:right; margin:0 0 10px 10px;cursor:pointer; cursor:hand;width: 150px; height: 150px;" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/THDtMh8u1eI/AAAAAAAAAv0/UoQioIspW2A/s320/google-wave-top.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5508163143801427426" /></a><a href="http://www.flickr.com/photos/u-suke/4912819704/"><img src="http://farm5.static.flickr.com/4136/4912819704_6f976ec3fe_z.jpg" title="@technohippy signing his Google Wave book" width="240" height="320" border="0"/></a><br /><br />A Googler behaved just positively in her video message which filled our eyes with waves of tears.<br /><br /><a href="http://www.flickr.com/photos/u-suke/4914843043/"><img src="http://farm5.static.flickr.com/4123/4914843043_35c30bd716_z.jpg" title="@pamelafox giving us a video message" width="400" height="300" border="0"/></a><br /><br />Sorry, but too many jokes covered around whole of the memorial service, in fact! :)<br /><br />We all attendees enjoyed the convivial event with beers, wines and laughs.<br /><br /><a href="http://www.flickr.com/photos/u-suke/4915447814/"><img src="http://farm5.static.flickr.com/4115/4915447814_11c5bb74af_z.jpg" title="@technohippy, @MaripoGoda and @tmatsuo san miss #googlewave" width="400" height="300" border="0"/></a><br /><br />The three types of Wave T-shirts above are now rarely acquirable though.<br /><br /><a href="http://www.flickr.com/photos/u-suke/4915447894/"><img src="http://farm5.static.flickr.com/4139/4915447894_df0621145a_z.jpg" title="Google Wave Memorial Service in Tokyo" width="400" height="300" border="0"/></a><br /><br />Thank you, Google Wave, we will never forget you on the cloud.<br /><br />What is the coming next service listed on <a href="http://www.wordstream.com/articles/google-failures-google-flops">Google Graveyard</a>?<br /><br /><i>* <a href="http://kawa.at.webry.info/201008/article_6.html">Japanese version of this post is here</a></i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/08/shibuyajs-won-prize-at-lt-championship.html">
+<title>
+Shibuya.js won the prize at LT championship, LLTiger
+</title>
+<link>
+http://kawanet.blogspot.com/2010/08/shibuyajs-won-prize-at-lt-championship.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-08-22T07:36:20.465-07:00</dc:date>
+<dc:subject>#lltiger</dc:subject>
+<dc:subject>javascript</dc:subject>
+<dc:subject>shibuyajs</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://farm5.static.flickr.com/4110/4844204334_f0396c665c_t.jpg" width="72" height="72"/>
+<description>
+July 31st, the <a href="http://www.jus.or.jp/">Japan UNIX Society</a> hosted the <a href="http://ll.jus.or.jp/2010/">LL Tiger</a> conference as a series of their annual Lightweight Language developer events. Eight teams competed at the <a href="http://ll.jus.or.jp/2010/program/lt">lightening talks tournament championship</a> held in the conference. Our team of Shibuya.js, Tokyo-based JavaScript developers group, did it to win the first prize at the hard knockout competition!<br /><br /><h3>Preliminary Round</h3>Just a day before the championship, we Shibuya.js members had an tech meetup event titled <a href="http://atnd.org/events/6730">Shibuya.js beyond HTML5</a> as the preliminary round to pick up the presenters. <br /><br /><a href="http://www.flickr.com/photos/takesako/4844204334/in/set-72157624491917827/"><img src="http://farm5.static.flickr.com/4110/4844204334_f0396c665c.jpg" title="P1030341.JPG" width="400" height="300" border="0"/></a><br />(photo by @takesako)<br /><br />At the pre-round, three speakers, @gyuque, @yukoba and me was selected. <br /><br /><h2>The First Round - @gyuque</h2>On the following day, our presenter for the first round was <a href="http://twitter.com/gyuque">@gyuque</a>. He gave a talk about a <a href="http://en.wikipedia.org/wiki/Softmodem">software modem</a> implemented by JavaScript. His <a href="http://www.slideshare.net/gyuque/ll-tiger-2010-lt-1">JavaScript FSK modulator</a> generates sound waves for data payloads. Then it plays generated <tt>.wav</tt> data encoded in base64 via <tt>data:</tt> scheme through HTML5's <tt>&lt;audio&gt;</tt> element.<br /><br /><a href="http://www.slideshare.net/gyuque/ll-tiger-2010-lt-1"><img style="width: 400px; height: 308px;" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/THEuQduY8lI/AAAAAAAAAv8/22Yff9d5640/s400/gyuque-lltiger-p10.jpg" border="0" id="BLOGGER_PHOTO_ID_5508234679642813010" /></a><br /><br />See also <a href="http://www.slideshare.net/gyuque/ll-tiger-2010-lt-1">@gyuque's slides</a> on Slideshare.<br /><br /><h2>The Second Round - @kawanet</h2>At the semi-final match, I <a href="http://twitter.com/kawanet">@kawanet</a> gave a talk about <a href="http://www.kawa.net/text/shibuyajs/lltiger/lltiger.html">3D JavaScript</a>. The talk was enhanced since I gave the former talk at <a href="http://kawanet.blogspot.com/2010/04/css3-powered-3d-presentation-osdctw.html">OSDC.TW 2010</a> in Taipei.<br /><br /><a href="http://4.bp.blogspot.com/_cgZUdkW7lzE/THEuQjTK6SI/AAAAAAAAAwE/d9kcOtc0Sug/s1600/3d-javascript-title.jpg"><img style="width: 400px; height: 300px;" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/THEuQjTK6SI/AAAAAAAAAwE/d9kcOtc0Sug/s400/3d-javascript-title.jpg" border="0" id="BLOGGER_PHOTO_ID_5508234681139259682" /></a><br /><br />See also <a href="http://www.kawa.net/text/shibuyajs/lltiger/lltiger.html">my slides</a>.<br /><tt>*</tt> Right cursor or mouse click - Proceed to the next<br /><tt>*</tt> Left cursor - Back to the previous<br /><tt>*</tt> 0 key - Return to the first slide<br /><tt>*</tt> 3 key - Toggle 3D mode and 2D mode<br /><tt>*</tt> Use red-blue glasses to see anaglyph 3D.<br /><br />At the intermission after the first round, we decided to add an additional demo for the second round. Our JavaScript guru @gyuque wrote the <a href="http://gyu.que.jp/jscloth/glass/">real-time 3D demo</a> below within just 30 minutes.<br /><br /><a href="http://gyu.que.jp/jscloth/glass/"><img style="width: 400px; height: 300px;" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/THEuQyORDZI/AAAAAAAAAwM/dUY2h7qBUz0/s400/3d-wireframe.gif" border="0" id="BLOGGER_PHOTO_ID_5508234685145222546" /></a><br /><br /><h3>The Final Round - @yukoba vs. @takesako</h3>At the final, our last speaker <a href="http://twitter.com/yukoba">@yukoba</a> fighted against <a href="http://twitter.com/takesako">@takesako</a> from the <a href="http://ll.jus.or.jp/2010/slide/06-LT-Tiger/Project-D/">Project-D Team</a>. He is a tough rival as he is also a member of our Shibuya.js group. This means the last match is blue-on-blue.<br /><br />Takesako gave a talk about <a href="http://utf-8.jp/public/sas/">an 8086 assembler</a> implemented by JavaScript. The assembler is not normal but generates bytes covered with many ASCII arts of smileys like <tt>[^_^]</tt>.<br /><br /><a href="http://utf-8.jp/public/sas/"><img style="width: 400px; height: 323px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/THEuRcS56lI/AAAAAAAAAwc/0PDBxFCj2_M/s400/takesako-aa86.gif" border="0" id="BLOGGER_PHOTO_ID_5508234696438966866" /></a><br /><br />At Yukoba's turn, he gave a talk about <a href="http://www.ustream.tv/recorded/8606236">a JVM including MIDP</a> implemented by JavaScript. He compiles <tt>.class</tt> binary files of Java to <tt>.js</tt> source code files of JavaScript. The compiled code runs on his JS-based JVM which works on HTML5 web browsers including Google Chrome and WebKit. It means mobile phone applications for <a href="http://en.wikipedia.org/wiki/MIDP">MIDP</a> devices would run on iPhone and Android phones without any codes changed. I'm sure that his system has incredible potential for mobile game market.<br /><br /><a href="http://www.ustream.tv/recorded/8606236"><img style="width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/THEuRCh2rrI/AAAAAAAAAwU/whUQqYQT3b4/s400/yukoba-iphone.jpg" border="0" id="BLOGGER_PHOTO_ID_5508234689522347698" /></a><br /><br />See also <a herf="http://ll.jus.or.jp/2010/slide/06-LT-Tiger/Project-D/">@takesako's slides</a> and <a href="http://www.ustream.tv/recorded/8606236">@yukoba's video</a> from 07:40 on Ustream.<br /><br /><h3>I won an iPad!</h3>Our team Shibuya.js won the championship at last. As the bonus prize, I got an iPad. Thanks!<br /><br /><a href="http://www.flickr.com/photos/u-suke/4861858070/"><img src="http://farm5.static.flickr.com/4101/4861858070_c3faaf3755.jpg" title="won the iPad!" width="400" height="266" border="0"/></a><br /><br />Invitations for other tournaments are welcomed. ; )<br /><br /><h3>Related Posts</h3><a href="http://kawanet.blogspot.com/2009/03/2nd-jui-conference-in-adobe-max-japan.html">The 2nd JUI Conference in Adobe MAX Japan 2009</a> - Feb 2009<br /><a href="http://kawanet.blogspot.com/2008/06/jui-2008-tokyo-was-over.html">The JUI 2008 Tokyo was over</a> - Jun 2008<br /><a href="http://kawanet.blogspot.com/2007/11/event-john-resig-and-future-of.html">John Resig and The Future of JavaScript</a> - Oct 2007<br /><a href="http://kawanet.blogspot.com/2007/09/event-shuccho-shibuyajs-24-in-mozilla.html">"Shuccho Shibuya.JS 24" in Mozilla 24</a> - Sep 2007<br /><br />About Shibuya.js, see also <a href="http://ejohn.org/blog/ecmascript-4-speaking-tour/">John Resig's post</a>.<br /><br />* <i><a href="http://kawa.at.webry.info/201008/article_1.html">Original post written in Japanese is here</a></i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/08/flickr-is-still-bombing-on-organizr.html">
+<title>
+#Flickr is still a-bombing on Organizr. (Workaround patch added!)
+</title>
+<link>
+http://kawanet.blogspot.com/2010/08/flickr-is-still-bombing-on-organizr.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-08-07T23:58:49.010-07:00</dc:date>
+<dc:subject>flickr</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://1.bp.blogspot.com/_cgZUdkW7lzE/TFwvOi_cl5I/AAAAAAAAAuo/9WzszDw8i-8/s72-c/nuke.jpg" width="72" height="72"/>
+<description>
+I'm sorry but this post is not in a political campaign. I just want to tell that, today, I feel really sad with the great photo sharing service of <a href="http://www.flickr.com/">flickr</a>.<br /><br />I'm an individual flickr lover and have an Pro account of it. You can also find <a href="http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html">my bookmarklet</a> for flickr.<br /><br />Two weeks ago, I've posted <a href="http://www.flickr.com/groups/flickrideas/discuss/72157600299198503/#comment72157624555651768">a comment</a> on the Flickr Ideas discussion group. The thread titled <a href="http://www.flickr.com/groups/flickrideas/discuss/72157600299198503/">"Drop a A-bomb on flickr!?!"</a> has existed since 2007.<br /><br />In the <a href="http://www.flickr.com/photos/organize/">Flickr Organizr</a>, at removing operations of photos, it shows <a href="http://l.yimg.com/g/images/nuke.gif">a bombing animation</a> as below:<center><a href="http://l.yimg.com/g/images/nuke.gif" target="_blank"><img onClick="this.src='http://l.yimg.com/g/images/nuke.gif'; return false;" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TFwvOi_cl5I/AAAAAAAAAuo/9WzszDw8i-8/s1600/nuke.jpg" width="300" height="300" border="0" /></a></center><br />I feel uncomfortable whenever I see it. It just evokes the days in Hiroshima and Nagasaki. I thought, however, it would be an imagining thing as I am a Japanese.<br /><br />Last month, I found I was not wrong. The bomb was not just a conventional bomb but was designed as an atomic bomb. The animation GIF file has name of <tt><a href="http://l.yimg.com/g/images/nuke.gif">nuke.gif</a></tt>. This unacceptable discovery makes me posting the comment.<br /><br />Two weeks have passed. Today, August 6, is the 65th anniversary of the bombing on Hiroshima. Flickr is still a-bombing on Organizr. I never do the operation of removing photos on Organizr in order not to see the nuke.<br /><br />I won't think the bombing is a part of spirits of Yahoo.<br /><br /><div style="border-bottom: 1px solid gray;">&nbsp;</div>See also:<br /><a href="http://www.nytimes.com/2010/08/07/world/asia/07japan.html">U.S. Envoy Attends Hiroshima Event</a> - New York Times<br /><a href="http://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki">Atomic bombings of Hiroshima and Nagasaki</a> - Wikipedia<br />I don't know U.S. schools teach the terrible horror side of the a-bomb underneath the mushroom-shaped cloud.<br /><br />Note that <a href="http://www.reuters.com/finance/stocks/overview?symbol=4689.T">Yahoo Japan Corporation</a> does NOT provide the flickr service here in Japan market.<br /><br /><a name="organizrpatch"></a><div style="border-bottom: 1px solid gray;">&nbsp;</div><span style="font-weight:bold;">(Updated / August 8)</span><br />I wrote a bookmarklet to patch the Flickr's Organizr.<br /><br />When a photo is removed from batch area, the patched Organizr will just fade it out instead of showing the unwelcome a-bomb animation of <a href="http://l.yimg.com/g/images/nuke.gif">nuke.gif</a>.<br /><br />[<a href="javascript:reorder_drag.prototype.frame_explode=function(){ var e=this.getDragEl(); var a=new YAHOO.util.Anim(e,{opacity:{from:1,to:0}},0.5,YAHOO.util.Easing.easeOut); a.animate();var f=function(){ e.style.opacity=''; e.style.display='none';};reorder_drag.explode_tim=setTimeout(f,1800);}">Organizr Patch</a>]<br /><br />Save above link (bookmarklet) to your bookmark toolbar. And click it just once after you open the <a href="http://www.flickr.com/photos/organize/">Organizr</a>.<br /><br />The source code is below.<br /><blockquote style="font-family: monospace; background: #f0f0f0;">reorder_drag.prototype.frame_explode=function(){<br />&nbsp; var e=this.getDragEl();<br />&nbsp; var a=new YAHOO.util.Anim(e,{opacity:{from:1,to:0}},0.5,YAHOO.util.Easing.easeOut);<br />&nbsp; a.animate();<br />&nbsp; var f=function(){<br />&nbsp;&nbsp; e.style.opacity='';<br />&nbsp;&nbsp; e.style.display='none';<br />&nbsp; };<br />&nbsp; reorder_drag.explode_tim=setTimeout(f,1800);<br />}</blockquote><br /><a href="http://developer.yahoo.com/yui/">YUI library</a> helps this. Yahoo rocks. :)
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/08/bookmarklet-viewer-bookmarklet-for.html">
+<title>
+Bookmarklet Viewer Bookmarklet for #iPhone and #iPad
+</title>
+<link>
+http://kawanet.blogspot.com/2010/08/bookmarklet-viewer-bookmarklet-for.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-08-06T10:47:19.651-07:00</dc:date>
+<dc:subject>bookmarklet</dc:subject>
+<dc:subject>iPad</dc:subject>
+<dc:subject>iPhone</dc:subject>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://3.bp.blogspot.com/_cgZUdkW7lzE/TFxIHOWIm1I/AAAAAAAAAvI/rcGC4tnzHvo/s72-c/iphone-select-all.png" width="72" height="72"/>
+<description>
+The bookmarklet helps you get JavaScript source code of bookmarklets on your iPhone and iPad. Mobile Safari for iPhone/iPad cannot save bookmarklets which have a link to javascript: scheme. Don't give up. Use the bookmarklet below.<br /> <br /><a href="javascript:(function(){var a=document.getElementsByTagName('a');var f;for(var i=0; i<a.length; i++) {var b=a[i];if (! b.href.match(/^javascript:/)) continue;if (b.href.match(/^javascript:void/)) continue;var t=document.createElement('textarea');t.innerHTML=b.href.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/%2520/g,' ');var s=t.style;s.display='block';s.width='100%';s.height='2em';s.color='#006600';s.background='#EEFFEE';s.border='2px solid #66CC66';s.padding='2px';s.lineHeight='1em';s.wordBreak='break-all';s.fontFamily='monospace';s.fontSize='16px';b.parentNode.replaceChild(t,b);var h=Math.floor(t.scrollHeight+2);s.height=(h>160)?'10em':h+'px';if (f) continue;f=t;t.select();t.focus();}})();">Bookmarklet Viewer</a> Bookmarklet<br /><br /><h3>How to save the Bookmarklet Viewer itself</h3>1. Click above to get the source of Bookmarklet Viewer<br /><br />2. Long-press on the textarea and push [Select All] button<center><img src="http://3.bp.blogspot.com/_cgZUdkW7lzE/TFxIHOWIm1I/AAAAAAAAAvI/rcGC4tnzHvo/s400/iphone-select-all.png" width="320" height="200" /></center> <br />3. Push [Copy] button to copy the source<center><img src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TFxIG_5XFzI/AAAAAAAAAvA/BTB98gKIYs4/s400/iphone-copy.png" width="320" height="200" /></center> <br />4. Push Safari's [+] button then [Add Bookmark] button<br /><br />5. Enter the name of the bookmarklet<br /><br />6. URL cannot be modified at the first time<br /><br />7. Push [Save] button to save the bookmark<br /><br />8. Push Safari's book button then [Edit] button<br /><br />9. Open the bookmark saved, long-press on Address area then push [Paste] button<center><img src="http://1.bp.blogspot.com/_cgZUdkW7lzE/TFxIGmLcmDI/AAAAAAAAAu4/kS6vKky9bvg/s400/iphone-paste.png" width="320" height="244" /></center> <br />10. Close the bookmark<br /><br /><h3>Save other bookmarklets using the Bookmarklet Viewer</h3>Now you're ready to get the bookmarklet with the Bookmarklet Viewer bookmarklet :)<br /> <br />delicious (Extra bookmarklets is recommended)<br /><a href="http://delicious.com/help/bookmarklets">http://delicious.com/help/bookmarklets</a> <br /> <br />bit.ly <br /><a href="http://bit.ly/pages/tools">http://bit.ly/pages/tools</a> <br /> <br />fr - a bookmarklet to get a link to flickr<br /><a href="http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html">http://kawanet.blogspot.com/2010/05/fr-bookmarklet-to-get-link-to-flickr.html</a> <br /> <br />3D Bookmarklet (why don't you use the Web in 3D?)<br /><a href="http://svn.coderepos.org/share/lang/javascript/3D/3d-bookmarklet.html">http://svn.coderepos.org/share/lang/javascript/3D/3d-bookmarklet.html</a> <br /> <br /><i>* Japanese version of this post is <a href="http://kawa.at.webry.info/201008/article_2.html">here</a>.</i>
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/jkl/parsexml-e.html">
+<title>
+[ajax] JKL.ParseXML - XML Parsing Library for JavaScript
+</title>
+<link>http://www.kawa.net/works/js/jkl/parsexml-e.html</link>
+<dc:date>2010-05-29T22:57:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>
+JKL.ParseXML is a JavaScript library that let you convert an XML into a JavaScript object (JSON). DOM manipulation is not needed any more for you to write Ajax powered dynamic web applications. The first version of this was shipped at May 18th, 2005. For the several years, this has been used on many websites in Japan and other countries in the World. See also SoftXML's nice article about JavaScript libraries including the JKL.ParseXML, thanks. This is free under the BSD license.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/geo/html5geomap-e.html">
+<title>HTML5 GeoLocation API + Maps Demo</title>
+<link>http://www.kawa.net/works/geo/html5geomap-e.html</link>
+<dc:date>2010-05-09T13:09:00+09:00</dc:date>
+<description>Source code: html5geoform.js JavaScript</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/05/meet-again-at-yapcasia-2010-tokyo-in.html">
+<title>Meet again at YAPC::Asia 2010 Tokyo in October</title>
+<link>
+http://kawanet.blogspot.com/2010/05/meet-again-at-yapcasia-2010-tokyo-in.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-05-03T00:48:55.441-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://3.bp.blogspot.com/_cgZUdkW7lzE/S959SaiVvzI/AAAAAAAAAtQ/DiGg95EL3Zw/s72-c/yapc-asia-2009.jpg" width="72" height="72"/>
+<description>
+I was back to Japan from Taiwan. It's my third time to attend the OSDC.TW. I must say thank you for the Taiwanese hackers to warmly welcome us, <a href="http://kawanet.blogspot.com/2010/04/shibuya-perl-mongers-comes-into-taipei.html">Shibuya.pm</a>, to have our first tech talk session abroad. More than a few of us, including me, must attend the OSDC.TW again next year.<br /><br />By the way, some people there asked me when the YAPC::Asia Tokyo would be held. It's not officially announced in English.<br /><br /><a href="http://www.flickr.com/photos/u-suke/3911913810/"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 266px;" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/S959SaiVvzI/AAAAAAAAAtQ/DiGg95EL3Zw/s400/yapc-asia-2009.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5466944752988831538" /></a><br /><a href="http://twitter.com/941">@941</a>-san who is the events organizing lead in the JPA, Japan Perl Association, <a href="http://blog.perlassociation.org/2010/04/yapcasia-tokyo-2010.html">has announced</a> the brief schedule for the YAPC::Asia 2010 Tokyo as following:<br /><br /><ul><li>May - the first splash website opened</li><li>July - CFP started</li><li>August - registration started</li><li>October - curtain-up!</li></ul><br />Details about the venue and exact date don't seem fixed yet. They are planning to hold it at somewhere in/near Tokyo at October 14th-16th as their current plan noted only in Japanese. After fixed by the JPA, the details would be announced also in English as in the past years.<br /><br />I hope you all friends could meet here again at Japan's beautiful season of Autumn.
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/05/3d-bookmarklet-enjoy-3d-world-on-web-by.html">
+<title>3D Bookmarklet - Enjoy 3D world on the Web by CSS3</title>
+<link>
+http://kawanet.blogspot.com/2010/05/3d-bookmarklet-enjoy-3d-world-on-web-by.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-05-02T23:42:54.678-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://2.bp.blogspot.com/_cgZUdkW7lzE/S95o8PNx6ZI/AAAAAAAAAsw/pBS4C1dXnZE/s72-c/nytimes-3d-400.jpg" width="72" height="72"/>
+<description>
+The <a href="http://svn.coderepos.org/share/lang/javascript/3D/3d-bookmarklet.html">3D Bookmarklet</a> is a bookmarklet which allows you to dive into the 3D-world on the Web. CSS3 capable browser is needed. Firefox 3.5 and Chrome 5 is tested.<br /><br /><a href="hhttp://svn.coderepos.org/share/lang/javascript/3D/3d-bookmarklet.html"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/S95o8PNx6ZI/AAAAAAAAAsw/pBS4C1dXnZE/s400/nytimes-3d-400.jpg" border="0" id="BLOGGER_PHOTO_ID_5466922381760129426" /></a><br />* <a href="http://svn.coderepos.org/share/lang/javascript/3D/3d-bookmarklet.html">Get the 3D bookmarklet</a><br /><br />Drag the link <strong>[3D]</strong> onto your browser's bookmark toolbar, etc.<br /><br />* <a href="javascript:(function(){ var webkit=/webkit/i.test(navigator.userAgent); var imp=webkit?' !important':''; var l=document.getElementsByTagName('*'); var m={a:1.3,em:1.3,strong:1.3}; for(var i=0; i != l.length; i++){ var e=l[i]; var t=e.tagName.toLowerCase(); if(e.text=='')continue; if(t=='select')continue; var s=parseInt(getComputedStyle(e,'').fontSize); var d=s/4; if (d&lt;10) d=10; d *= m[t] || 1; e.style.color='rgba(255,0,0,0.5)'+imp; e.style.textShadow=d+'px 0 0 rgba(0,255,191,0.5)'+imp; };})();">Try now on this page</a><br /><br />Every 2D websites will come into 3D with this. You need to have a red/blue (anaglyph) 3D glasses by yourself. The CSS3 standard allows iPhone and <a href="http://www.flickr.com/photos/u-suke/4554223887/">iPad to run this</a>. Enjoy 3D everywhere!<br /><br /><a href="http://svn.coderepos.org/share/lang/javascript/3D/3d-bookmarklet.html"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 266px;" src="http://4.bp.blogspot.com/_cgZUdkW7lzE/S95o8Q_K8DI/AAAAAAAAAs4/WQ_NP73SgAA/s400/3d-glass.jpg" border="0" id="BLOGGER_PHOTO_ID_5466922382235725874" /></a><br />Gugod and I have corroborated to the code snippet as a result from the <a href="http://mtl.recruit.co.jp/blog/2010/04/osdctw_2010.html">OSDC.TW Hackathon</a>.<br /><br /><h3>How this works</h3>This sets all text's CSS <tt>color</tt> property to red, and also sets <tt>text-shadow</tt> property to blue on right. Gugod gave me an idea to hack to draw with alpha channel using <tt>rgba()</tt>. Each 3D layer, depth, is depend on sort of its element and font size. Firefox seems not to allow <strong>!important</strong> within element's <tt>style</tt> attribute. Chrome however does. Only texts are made into 3D. Images are not yet at this version.<br /><br />* <i><a href="kawa.at.webry.info/201004/article_5.html">See also the original post in Japanese. (日本語)</a></i><br /><br /><h3>PS.</h3>Hualien is a city located at East Coast of Taiwan. You may know everybody in town there wears 3D glasses to enjoy 3D world. :)<br /><a href="http://www.flickr.com/photos/u-suke/4565018187/"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 267px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/S95tYmwXNeI/AAAAAAAAAtA/zX8O1OhpXdI/s400/3d-hualien.jpg" border="0" id="BLOGGER_PHOTO_ID_5466927267162043874" /></a>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/04/css3-powered-3d-presentation-osdctw.html">
+<title>CSS3 Powered 3D Presentation - OSDC.TW 2010</title>
+<link>
+http://kawanet.blogspot.com/2010/04/css3-powered-3d-presentation-osdctw.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-04-28T02:39:49.731-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://2.bp.blogspot.com/_cgZUdkW7lzE/S9f_M5gNE4I/AAAAAAAAAsg/Ml0oNlRQfVg/s72-c/ss-01.jpg" width="72" height="72"/>
+<description>
+You're still running the classical 2D-era presentation tools, e.g. PowerPoint or Keynote? The 3D-era has just come since <a href="http://kawanet.blogspot.com/2010/04/shibuya-perl-mongers-comes-into-taipei.html">OSDC.TW 2010</a>.<br />&nbsp;<br />I gave <a href="http://www.kawa.net/text/osdc.tw/2010/osdctw2010.html?3d">Something Xiaolongbao</a> talk at the most major open source developers conference in Taiwan.<br /><br /><a href="http://www.kawa.net/text/osdc.tw/2010/osdctw2010.html?3d"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_cgZUdkW7lzE/S9f_M5gNE4I/AAAAAAAAAsg/Ml0oNlRQfVg/s400/ss-01.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5465117269896795010" /></a><br />This year's main theme in my talk is the 3D presentation using CSS3 techs. I wrote an HTML5/JavaScript-based presentation tool for the talk.<br /><br /><a href="http://www.kawa.net/text/osdc.tw/2010/osdctw2010.html?3d"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/S9f_NWYoKnI/AAAAAAAAAso/2kGX0O-MX4U/s400/ss-02.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5465117277649644146" /></a><br />Usage:<br />Next Slide - Mouse Click, Space Key or Right Arrow Key<br />Prev Slide - Left Arrow key<br />First Slide - [0] Key<br />3D Mode Toggle - [3] Key<br /><br />For 3D newbie, try [3] key to turn off 3D and <a href="http://www.kawa.net/text/osdc.tw/2010/osdctw2010.html">fall back to 2D</a>. :)<br /><br />The slides are based on HTML5 / JavaScript / CSS3 and the cutting-edge 3D tech of "<a href="http://en.wikipedia.org/wiki/Anaglyph_image">anaglyph</a>." I've brought some red-blue 3D glasses for the conference from Japan.<br /><br />At the OSDC.TW day 1 early morning, I wrote <strong>pptx2html53d.pl</strong>, a Perl script to convert from PowerPoint .pptx file to 3D HTML5 .html. I'll make it open later. Basically .pptx file is a ZIP file. It's pretty easy to parse .pptx using Archive::Zip and XML::TreePP Perl modules. <strong>pptx2html53d.pl</strong> generates a HTML5 source code.<br /><br />At first, I also used SVG's <tt>feColorMatrix</tt> feature for 3D. It's however cancelled at this moment as not working well. And also Chrome 5 for Mac seems it could not run <a href="http://www.yomotsu.net/wp/wp-content/uploads/2009/090510_demo/demo3.xhtml">SVG's <tt>filter</tt> element</a>. The slides above are updated as Gugod gave me nice advices around CSS3 usage of <tt>text-shadow</tt>.<br /><br />Buy 3D glasses in town and enjoy 3D presentation now.<br /><br />* <i><a href="http://kawa.at.webry.info/201004/article_4.html">Original post written in Japanese（日本語はコチラ）</a></i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/04/shibuya-perl-mongers-comes-into-taipei.html">
+<title>
+Shibuya Perl Mongers comes into Taipei! - OSDC.TW 2010
+</title>
+<link>
+http://kawanet.blogspot.com/2010/04/shibuya-perl-mongers-comes-into-taipei.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-04-22T09:44:13.223-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://1.bp.blogspot.com/_cgZUdkW7lzE/S9Bv0FkCO5I/AAAAAAAAAsY/Ok_WAwkxIlI/s72-c/osdc_logo-2010.png" width="72" height="72"/>
+<description>
+The Shibuya.pm comes in Taipei!<br /><a href="http://shibuya.pm.org/">The Shibuya Perl Mongers</a> is a community of Perl hackers based in Tokyo. The super hackers give technical talks away in the special sub-conference of the <a href="http://osdc.tw/2010/">OSDC.TW 2010</a>. You'll see the highest level in techniques and the lowest level in depth of Perl with us.<br />Don't miss this and enjoy.<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://osdc.tw/2010/"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 200px; height: 200px;" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/S9Bv0FkCO5I/AAAAAAAAAsY/Ok_WAwkxIlI/s400/osdc_logo-2010.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5462989288637610898" /></a><h3>Speakers</h3><ul><li>竹迫 良範 (Yoshinori Takesako) <a href="http://twitter.com/takesako">@takesako</a> - Polyglot Programming<br /><li>石垣 憲一 (Kenichi Ishigaki) <a href="http://twitter.com/charsbar">@charsbar</a> - Perl for a translator<br /><li>藤 吾郎 (Goro Fuji) <a href="http://twitter.com/__gfx__">@__gfx__</a> - Xslate - A high performance template engine<br /><li>川崎 有亮 (Yusuke Kawasaki) <a href="http://twitter.com/kawanet">@kawanet</a> - Something Xiaolongbao<br /><li>檀上 伸郎 (Nobuo Danjou) <a href="http://twitter.com/lopnor">@lopnor</a> - Net::Google::Spreadsheet<br /><li>宮川 達彦 (Tatsuhiko Miyagawa) <a href="http://twitter.com/miyagawa">@miyagawa</a> - cpanminus<br /><li>松野 徳大 (Tokuhiro Matsuno) <a href="http://twitter.com/tokuhirom">@tokuhirom</a> - Perl5.12's new feature - PL_keyword_plugin *hack*<br /><li>大沢 和宏 (Kazuhiro Osawa) <a href="http://twitter.com/yappo">@yappo</a> - Ajax application testing</ul><br />This is <a href="http://shibuya.pm.org/blosxom/techtalks/201004.html">the 13th tech talk conference</a> by Shibuya.pm and the first time abroad.<br />At the day of the hackathon soon after the last <a href="http://conferences.yapcasia.org/ya2009/">YAPC::Asia 2009 conference</a> was over, we had a lot to talk about foreign conferences to attend. I'm really happy that it's come true.<br /><br /><h3>What's Shibuya</h3><br /><a href="http://en.wikipedia.org/wiki/Shibuya,_Tokyo">Shibuya</a> is a culture heart district of Tokyo. The word Shibuya (渋谷) literally means "Bitter Valley." Like Silicon Valley, many Web/IT companies have started up from Shibuya.<br /><br />That is, Shibuya is just a symbol for us. There is a fact that we've never had a tech talk conference in Shibuya district though.<br /><br /><h3 name="rubyconf">RubyConf Taiwan 2010</h3><br />The next day of Shibuya.pm in Taipei, three Ruby hackers from Japan will also give talks in the same venue. <a href="http://rubyconf.tw/2010/">RubyConf Taiwan 2010</a> is the first regional Ruby Conference in Taiwan. Arai-san, <a href="http://twitter.com/kakutani">Kakutani-san</a> and <a href="http://twitter.com/takahashim">Takahashi-san</a> will come to speak there.<br /><br />At the Spring, eight Perl guys and three Ruby guys, from Japan, will attend the conferences in Taiwan. I'm sure that we could boost the stream of the kind of international exchanges between East Asian developer communities.<br /><br /><h3 name="omake">Last year</h3><br />This is my third time to attend the OSDC.TW.<br /><br />- <a href="http://kawanet.blogspot.com/2009/04/jsar-javascript-argumented-reality-at.html">JSAR (JavaScript Augmented Reality) at OSDC.TW 2009 Taipei</a><br />- <a href="http://kawanet.blogspot.com/2008/05/osdctw-2008-dom-manipulation-by.html">OSDC.TW 2008 - DOM manipulation by Wiimote/Gainer over HTTP</a><br /><br />I've given talks about JavaScript and Flash in addition to Perl.<br />For this year, I had a plan of a new topic, however, it's forced to be canceled due to a sudden change of a SDK license agreement this month. orz.<br />I need to write new slides until the time of my slot at Saturday.<br /><br /><hr>* <i><a href="http://kawa.at.webry.info/201004/article_3.html">See also Japanese version of this post</a></i>
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/04/ktween-101-released-more-faster-tween.html">
+<title>
+KTween 1.0.1 Released - Simple & Fast Tween Engine for AS3
+</title>
+<link>
+http://kawanet.blogspot.com/2010/04/ktween-101-released-more-faster-tween.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-04-13T18:16:19.523-07:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://1.bp.blogspot.com/_cgZUdkW7lzE/S8SVEj5oQuI/AAAAAAAAArY/r8LBcRnEZIQ/s72-c/ktween-bench-0413-graph.png" width="72" height="72"/>
+<description>
+KTween is now as fast as the cool tween engine of the Eaze Tween. The Eaze has jQuery-like method chain interface. Philippe Elsass has pointed that <a href="http://twitpic.com/13f7b9">his Eaze Tween is faster</a> than KTween, soon after <a href="http://kawanet.blogspot.com/2010/02/ktween-worlds-fastest-simple-tween.html">my last post</a>.<br />Now, here comes KTween's turn:<br /><br /><a href="http://code.google.com/p/kawanet/"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand; width: 400px; height: 240px;" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/S8SVEj5oQuI/AAAAAAAAArY/r8LBcRnEZIQ/s400/ktween-bench-0413-graph.png" border="0" /></a><br />Running on my MacBook Pro, Mac OS X 10.6.3, Core 2 Duo 2.26GHz, <a href="http://labs.adobe.com/downloads/flashplayer10.html">Flash Player 10.1 Release Candidate</a>, Firefox plug-in, the bench shows the KTween is a teeny bit faster than the Eaze. However, I could say it's still in the range of error.<br /><br /><a href="http://kawanet.googlecode.com/svn/lang/as3/KTween/trunk/site/benchmark.html"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand; width: 267px; height: 400px;" src="http://3.bp.blogspot.com/_cgZUdkW7lzE/S8SVFE0UkHI/AAAAAAAAArg/fxM2IdpWTF0/s400/ktween-bench-0413-result.png" border="0" /></a><br /><a href="http://kawanet.googlecode.com/svn/lang/as3/KTween/trunk/tests/Benchmark.as">The bench</a> runs with the engines below:<br /><a href="http://kawanet.googlecode.com/svn/lang/as3/KTween/trunk/src/">KTween</a> - Version 1.0.1 Revision 79<br /><a href="http://www.libspark.org/svn/as3/BetweenAS3/trunk/">BetweenAS3</a> - Revision 3765.<br /><a href="http://www.gskinner.com/libraries/gtween/">GTween</a> - Version 2.01 (2009/12/11)<br /><a href="http://tweener.googlecode.com/svn/trunk/as3/">tweener</a> - Revision 424<br /><a href="http://www.greensock.com/tweennano/">TweenNano</a> – Version 1.03 (2010/04/03)<br /><a href="http://eaze-tween.googlecode.com/svn/trunk/as3/src/">eaze-tween</a> - Revision 74<br /><br />I guess it'd be rare that a case tweens 4,000 particles though. :-)<br />KTween is an open source distributed under the MIT license.<br /><br />Try KTween.<br /><br />Download: <a href="http://code.google.com/p/kawanet/">KTween 1.0.1</a> (20100413)<br /><br />* <i>The original post written in Japanese is <a href="http://kawa.at.webry.info/201004/article_1.html">here</a></i><br /><br /><span style="font-size: 80%;">* Note that the benchmark result is depend on machine, OS, flash player version and revision etc. The BetweenAS3 becomes the fastest engine in the six above in a case for instance.</span>
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/romanize/japanese-e.html">
+<title>
+Japanese Alphabet - Romanization of Japanese characters (Kanji/Kana)
+</title>
+<link>
+http://www.kawa.net/works/ajax/romanize/japanese-e.html
+</link>
+<dc:date>2010-03-01T00:33:00+09:00</dc:date>
+<description>
+Japanese language is written with a mix of Kanji and Kana characters. Most of Kanji characters used in Japan were imported from China. Two types of Kana characters, called Katakana and Hiragana, were created in Japan. Kana characters are general terms for the syllabic Japanese scripts. Enter some Japanese phrases and push the button below.
+</description>
+</item>
+<item rdf:about="http://kawanet.blogspot.com/2010/02/iswf-iphone-appearance-simulator-for.html">
+<title>iSWF - iPhone Appearance Simulator for Flash</title>
+<link>
+http://kawanet.blogspot.com/2010/02/iswf-iphone-appearance-simulator-for.html
+</link>
+<dc:creator>Yusuke Kawasaki</dc:creator>
+<dc:date>2010-02-27T06:21:33.649-08:00</dc:date>
+<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://1.bp.blogspot.com/_cgZUdkW7lzE/S4kib5kSoHI/AAAAAAAAAqw/c0shGAbpOo4/s72-c/iSWF-sample.jpg" width="72" height="72"/>
+<description>
+The iSWF is an appearance simulator for iPhone applications developed by Flash. This helps you to develop iPhone app and take its screen capture on your Mac.<br /><br />Get iSWF from Google Code:<br /><a href="http://code.google.com/p/kawanet/downloads/detail?name=iSWF-20100227.zip">http://code.google.com/p/kawanet/downloads/detail?name=iSWF-20100227.zip</a><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://click.linksynergy.com/fs-bin/stat?id=p2dVV*6ZlI0&offerid=94348&type=3&subid=0&tmpid=2192&RD_PARM1=http://itunes.apple.com/us/app/id358471897%253Fmt%253D8%2526uo%253D6%2526partnerId%253D30"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 300px; height: 400px;" src="http://1.bp.blogspot.com/_cgZUdkW7lzE/S4kib5kSoHI/AAAAAAAAAqw/c0shGAbpOo4/s400/iSWF-sample.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5442919487358804082" /></a><br /><br /><span style="font-weight:bold;">1. Install iPhone SDK</span><br /><br />At first, get and install the iPhone SDK from Apple:<br /><a href="http://developer.apple.com/iphone/">http://developer.apple.com/iphone/</a><br /><br />"iPhone SDK 3.1.3 with Xcode 3.1.4" for 10.5 (Leopard) users,<br />"iPhone SDK 3.1.3 with Xcode 3.2.1" for 10.6 (Snow Leopard) users.<br /><br />After installing it, try to run iPhone Simulator located at:<br />/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications<br /><br />Important note, as you know, iPhone's Safari could not run Flash.<br /><br /><span style="font-weight:bold;">2. Install AIR 2.0 Beta SDK</span><br /><br />Install AIR 2.0 Beta SDK as the next.<br />Note skip this step when you're already using CS5.<br /><br /><a href="http://labs.adobe.com/downloads/air2.html">http://labs.adobe.com/downloads/air2.html</a><br />Click "Download for Macintosh (TBZ2, 17.9 MB)".<br /><br />Unzip air2_b2_sdk_mac_020210.tbz2 and change the folder name as "AIK2.0" and move the folder to "/Applications/Adobe Flash CS4" . Check black "adl" icon at<br />/Applications/Adobe Flash CS4/AIK2.0/bin<br /><br /><span style="font-weight:bold;">3. Publish .swf </span><br /><br />Publish your MyApp.swf using your CS4.<br />Flash Player 10, 320px width, 480px height and any frame rate.<br /><br /><span style="font-weight:bold;">4. Get iSWF package</span><br /><br />Get the iSWF package from Google Code:<br /><a href="http://code.google.com/p/kawanet/downloads/detail?name=iSWF-20100227.zip">http://code.google.com/p/kawanet/downloads/detail?name=iSWF-20100227.zip</a><br /><br />Unzip the archive and move its contents to the folder of MyApp.swf. Then double click iSWF.command to run MyApp.swf. You would see the appearance simulator running as the first picture of the post.<br /><br />Copy each three files of iSWF to any other your .swf project.<br /><br /><span style="font-weight:bold;">5. How it works?</span><br /><br />The iSWF runs the most recent changed .swf file in the same folder. It's quite simple. See the iSWF.html. The iSWF uses the same appearance of Apple's iPhone Simulator. This means iSWF could not run on Windows which Apple doesn't care for.<br /><br /><span style="font-weight:bold;">6. ActionScript for iPhone</span><br /><br />Flash application for iPhone is based on AIR technology. The iSWF, however, runs the app in the localTrusted sandbox. And also multi-touch, GPS, File class and iPhone's native keyboard are not avaible with iSWF. Wait CS5 released for you to start such developments.<br /><br />(<a href="http://kawa.at.webry.info/201002/article_7.html">※日本語版の解説はコチラを参照ください</a>)<br /><br />AIR 2.0 Document:<br /><a href="http://help.adobe.com/en_US/FlashPlatform/beta/reference/actionscript/3/">http://help.adobe.com/en_US/FlashPlatform/beta/reference/actionscript/3/</a><br /><br />Flash Player 10.1 ActionScript 3.0 Document:<br /><a href="http://help.adobe.com/en_US/air/reference/html/">http://help.adobe.com/en_US/air/reference/html/</a>
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/perl/romanize/romanize-e.html">
+<title>
+[Perl] Lingua::*::Romanize::* - Romanization of CJK characters
+</title>
+<link>
+http://www.kawa.net/works/perl/romanize/romanize-e.html
+</link>
+<dc:date>2008-01-20T19:30:00+09:00</dc:date>
+<dc:subject>Perl</dc:subject>
+<description>
+Lingua::*::Romanize::* modules generate roman letteres from CJK characters. Lingua::ZH::Romanize::Pinyin module parses Chinese characters, both of Mandarin and Cantonese. Lingua::JA::Romanize::Japanese module parses Japanese characters, both of Kanji and Kana. Lingua::KO::Romanize::Hangul module parses Korean characters, Hangul.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/perl/overhttp/overhttp-e.html">
+<title>
+[Perl] XML::OverHTTP - A base class for XML over HTTP-styled web service interface
+</title>
+<link>
+http://www.kawa.net/works/perl/overhttp/overhttp-e.html
+</link>
+<dc:date>2007-08-12T22:15:00+09:00</dc:date>
+<dc:subject>Perl</dc:subject>
+<description>
+XML::OverHTTP is a base class for XML over HTTP-styled web service interface. This is not used directly from end-users. As a child class of this, module authors can easily write own interface module for XML over HTTP-styled web service. Current version: XML-OverHTTP-0.07.tar.gz TARGZ CPAN
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/animation/cube-e.html">
+<title>
+[JavaScript] Animation.Cube - Rotating Cube Animation Effect
+</title>
+<link>http://www.kawa.net/works/js/animation/cube-e.html</link>
+<dc:date>2007-01-08T17:19:00+09:00</dc:date>
+<dc:subject>JavaScript</dc:subject>
+<description>
+Animation.Cube class is a JavaScript library for a rotating cube animation effect. This effect needs CPU speed faster than Animation.Raster class.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/cantonese/canton.html">
+<title>Ruby on Chinese Pinyin</title>
+<link>http://www.kawa.net/works/cantonese/canton.html</link>
+<dc:date>2006-11-10T10:33:00+09:00</dc:date>
+<description>
+Ajax-ized web service version of this is also available. Try it! NEW Type (or copy&paste) some chinese characters and push the button.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/ajaxtb/ajaxtb-e.html">
+<title>
+[ajax] AjaxTB - a pluggable trackback feature in static HTML page
+</title>
+<link>
+http://www.kawa.net/works/ajax/ajaxtb/ajaxtb-e.html
+</link>
+<dc:date>2006-09-19T00:38:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>
+AjaxTB provides your static pages with trackback feature. AjaxTB' CGI part works to receive a trackback which is sent by visiters. AjaxTB' JavaScript part works to display trackbacks received. CMS is not needed. PHP is not required. AjaxTB is really pluggable and easy to use. Indexed RSS and JSON files are also generated when a trackback is posted.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/ajaxcom/ajaxcom-e.html">
+<title>
+[ajax] AjaxCom - one line comment box in static HTML page
+</title>
+<link>
+http://www.kawa.net/works/ajax/ajaxcom/ajaxcom-e.html
+</link>
+<dc:date>2006-09-19T00:34:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>
+AjaxCom provides your pages with one line comment box. You and your visiters can write comments in your static page! You know, ajax is used here. CMS is not required. PHP is not required. Ajaxcom is pluggable and easy to use. Perl/CGI works only when comments are entered. A plain text file is loaded when comments are displayed.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/xml/objtree-e.html">
+<title>
+[JavaScript] XML.ObjTree - XML source code from/to JavaScript object like E4X
+</title>
+<link>http://www.kawa.net/works/js/xml/objtree-e.html</link>
+<dc:date>2006-08-18T03:14:00+09:00</dc:date>
+<dc:subject>JavaScript</dc:subject>
+<description>
+XML.ObjTree class is a parser/generater for XML source code and JavaScript object. This is a JavaScript version of XML::TreePP for Perl. This also works as a wrapper for XMLHTTPRequest and successor to JKL.ParseXML class when using with prototype.js or JSAN's HTTP.Request class. Attributes' prefix '@' like E4X (ECMAScript for XML) is also available. Safari for Intel Mac is supported. XML.ObjTree Group is now opened on Yahoo! Groups.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/tips/yui-tooltips-e.html">
+<title>
+[YUI] Link tooltip with website's thumbnail screenshot
+</title>
+<link>
+http://www.kawa.net/works/js/tips/yui-tooltips-e.html
+</link>
+<dc:date>2006-06-27T00:06:00+09:00</dc:date>
+<dc:subject>YUI</dc:subject>
+<description>
+This is a mash-up demonstration using Yahoo! UI Library's YAHOO.widget.Tooltip object with Simple API's thumbnail generating service. Try to move your mouse cursor onto the links below:
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/tips/crash-safari/intelmac-e.html">
+<title>[Mac] One click to crash Safari for Intel Mac</title>
+<link>
+http://www.kawa.net/works/ajax/tips/crash-safari/intelmac-e.html
+</link>
+<dc:date>2006-05-14T00:40:00+09:00</dc:date>
+<dc:subject>Mac</dc:subject>
+<description>
+Do you know any differences between Safari for Intel Mac and for PowerPC? Just two lines of JavaScript code below crashes Safari for Intel Mac. But Safari for PowerPC and other browsers are never crased.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/service/jsan/search/index.html">
+<title>JSAN Search - JavaScript Libraries Database</title>
+<link>http://www.kawa.net/service/jsan/search/index.html</link>
+<dc:date>2006-05-03T20:53:00+09:00</dc:date>
+<description>
+A yet another search engine for JavaScript libraries registered on JSAN.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/animation/raster-e.html">
+<title>
+[JavaScript] Animation.Raster - Virtual Raster Scrolling Effect
+</title>
+<link>
+http://www.kawa.net/works/js/animation/raster-e.html
+</link>
+<dc:date>2006-04-30T08:25:00+09:00</dc:date>
+<dc:subject>JavaScript</dc:subject>
+<description>
+This library provides a virtual raster scrolling's effect for images and block elements. Tested on Internet Explorer 7.0, Firefox 1.5, Opera 8.5, Safari 2.0.3 and OmniWeb 5.1.3.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/game/ncross-e.html">
+<title>[Sudoku] Quick Sudoku Solving by JavaScript</title>
+<link>http://www.kawa.net/works/js/game/ncross-e.html</link>
+<dc:date>2006-04-18T21:54:00+09:00</dc:date>
+<dc:subject>Sudoku</dc:subject>
+<description>
+I think the most important thing of Sudoku is not getting its answer but is solving it. However, ...
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/date/w3cdtf-e.html">
+<title>
+[JSAN] Date.W3CDTF - JavaScript Date object's W3CDTF extension
+</title>
+<link>http://www.kawa.net/works/js/date/w3cdtf-e.html</link>
+<dc:date>2006-04-05T22:49:00+09:00</dc:date>
+<dc:subject>JSAN</dc:subject>
+<description>
+Date.W3CDTF class understands the W3CDTF date/time format, an ISO 8601 profile, defined by W3C. This date/time format is the native date format of RSS 1.0. It can be used to parse these formats in order to create the appropriate objects. This is my first library to be contributed to JSAN. Date.W3CDTF class supports two types of formats below: 2005-04-23T17:20:00+09:00 (with timezone) 2005-04-23T17:20:00Z (without timezone)
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/tips/dump/dom-tree.html">
+<title>
+[ajax] Expanding DOM tree (cross browser DOM inspector)
+</title>
+<link>
+http://www.kawa.net/works/ajax/tips/dump/dom-tree.html
+</link>
+<dc:date>2006-03-21T02:41:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>XML URL:</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/tips/dump/icab-omniweb-bug.html">
+<title>[ajax] XML parser bug on iCab and OmniWeb</title>
+<link>
+http://www.kawa.net/works/ajax/tips/dump/icab-omniweb-bug.html
+</link>
+<dc:date>2006-03-21T02:40:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>
+Source XML file: Flickr's RSS 2.0 file (as example) Demonstration: Expanding DOM tree (cross browser DOM inspector)
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/cantonese/ccdict.html">
+<title>CCDICT - Chinese Dictionary Search</title>
+<link>http://www.kawa.net/works/cantonese/ccdict.html</link>
+<dc:date>2006-03-08T16:20:00+09:00</dc:date>
+<description>
+Enter (or copy&paste) some chinese characters and push the button.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/data-scheme/base64-e.html">
+<title>
+[JavaScript] data: scheme URI generator / base64-encoded image file
+</title>
+<link>
+http://www.kawa.net/works/js/data-scheme/base64-e.html
+</link>
+<dc:date>2006-03-05T08:56:00+09:00</dc:date>
+<dc:subject>JavaScript</dc:subject>
+<description>
+The data: scheme can contain binary data such as image. Firefox and Opera supports the data: scheme, but IE doesn't yet.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/greasemonkey/myscripts-e.html">
+<title>[Greasemonkey] User Scripts by kawa.net</title>
+<link>
+http://www.kawa.net/works/greasemonkey/myscripts-e.html
+</link>
+<dc:date>2006-02-13T21:14:00+09:00</dc:date>
+<dc:subject>Greasemonkey</dc:subject>
+<description>Here are my User Scripts for Greasemonkey.</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/tips/mimetype/content-type-e.html">
+<title>[ajax] Content-Type: availablity on XMLHttpRequest</title>
+<link>
+http://www.kawa.net/works/ajax/tips/mimetype/content-type-e.html
+</link>
+<dc:date>2006-02-09T01:05:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>
+Some of content-types are only available on many browsers' XMLHttpRequest.
+</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/ajax/rss/rss-box-e.html">
+<title>[ajax] RSS BOX in your website</title>
+<link>http://www.kawa.net/works/ajax/rss/rss-box-e.html</link>
+<dc:date>2006-02-09T01:04:00+09:00</dc:date>
+<dc:subject>ajax</dc:subject>
+<description>How to put a RSS BOX in your website.</description>
+</item>
+<item rdf:about="http://www.kawa.net/works/js/passwd/gen-passwds-e.html">
+<title>JavaScript: Generating Random Passwords</title>
+<link>
+http://www.kawa.net/works/js/passwd/gen-passwds-e.html
+</link>
+<dc:date>2005-10-27T01:10:00+09:00</dc:date>
+</item>
+<item rdf:about="http://www.kawa.net/works/perl/catch/KCatch.pm.html">
+<title>
+KCatch.pm - Catch warn and die to avoid "Internal Server Error"
+</title>
+<link>
+http://www.kawa.net/works/perl/catch/KCatch.pm.html
+</link>
+<dc:date>2004-11-24T00:47:00+09:00</dc:date>
+<description>NAME</description>
+</item>
+</rdf:RDF>
