@@ -5,6 +5,8 @@
             src = "http://d3js.org/d3.v3.min.js"> </script>
     <script type = "text/javascript"
             src = "jquery.js"> </script>
+    <script type = "text/javascript"
+            src = "expandCollapse.js"> </script>
     <meta charset = "utf-8">
     <style type = "text/css">
 
@@ -32,6 +34,8 @@
             stroke: lightgrey;
             stroke-width: 1.5px;
         }
+
+        
     
         </style>
     </head>
@@ -39,23 +43,26 @@
   <body>
 
         <h1 id="title"> Collapsible radial tree </h1>
-        <h4 id="usage"> Usage: </h4>
-        <ul>
-            <li> The tree data was converted to json file from phyloxml.
-            <li> Collapsing or expaning all nodes can be done in one time by pressing the each button. </li>
-            <li> Expand/Collapse button is incomplete that works as expanding or collaping. </li>
-            <li> Clicking each node or name expands or collapses the tree. </li>
-            <li> Blue text color or light blue nodes indicates that the node still contains not collapsed node(s). </li>
-            <li> Mouse event functions:
-                <ul> 
-                    <li> Green node indicates that it is a leaf node or all child nodes are collapsed. </li> 
-                    <li> Red node indicates that the node stil contains not collapsed node(s). </li>
-                    <li> Each node name will be shown in bigger size at right side of mouse cursor and in yellowgreen box when the cursor places on the node name. </li>
-                </ul>
-            </li>
-
-
-        </ul>
+        <div id="usage" style="display:none">
+            <h4 > Usage: </h4>
+            <ul>
+                <li> The tree data was converted to json file from phyloxml.
+                <li> Collapsing or expaning all nodes can be done in one time by pressing the each button. </li>
+                <li> Expand/Collapse button is incomplete that works as expanding or collaping. </li>
+                <li> Clicking each node or name expands or collapses the tree. </li>
+                <li> Blue text color or light blue nodes indicates that the node still contains not collapsed node(s). </li>
+                <li> Mouse event functions:
+                    <ul> 
+                        <li> Green node indicates that it is a leaf node or all child nodes are collapsed. </li> 
+                        <li> Red node indicates that the node stil contains not collapsed node(s). </li>
+                        <li> Each node name will be shown in bigger size at right side of mouse cursor and in yellowgreen box when the cursor places on the node name. </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+        <input type="button" onclick="return toggleMe('usage')" value="Show Usage">
+        </div>
         <div id="option">
             <div id="buttons">
             <button id="collapseAll">Collapse All</button>
@@ -67,6 +74,8 @@
 
         <div id="infoBox" style="width:500px; height:100px; background-color:beige; border:4px double green;"> </div>
 
+        <div id="treeContainer"> </div>
+
         <script>
             //old data
             //<button id="expandAll">Expand All</button>
@@ -74,29 +83,77 @@
         </script>
 
         <script>
-            
-        d3.json("testTree.json", function(error, jsonData) {    
+        
+        // Todo: get number and add number
+        // fix expand collapse button
+        // find another type tree 
+        // to be prepare to run this on server.
+
+        d3.json("testTree2.json", function(error, jsonData) 
+        {    
             var diameter = 1100;
             var width = $(window).width();
-            var height = $(window).height() - 200;
+            var height = $(window).height();
             var root;
-            var node_regSize = 7;
-            var node_expSize = 9;
+            var getFirstSize = false;
+            var NodeSize = { min:null, max:null };
+            var nsDivider = nodeSizeDivider();
             var i = 0;
-            var duration = 400;
+            var totalNodes = 0;
+            var maxLabelLength = 0;
+            var duration = 600;
+
+            var setNodeSize_max = 30;       // set node size scale
+            var setNodeSize_min = 5;
+            var setLinkLength = 2.2;         // multiplier#, bigger# : longer link length 
             
             var tree = d3.layout.tree()
-            .size([360, diameter / 2 - 80 ])
-            .separation(function(a, b) { return ((a.parent == root) && (b.parent == root)) ? 4: 1; })
-            
+                .size([360, diameter / 2 - 80 ])
+                .separation(function(a, b) { 
+                    //return ((a.parent == root) && (b.parent == root)) ? 4: 1; })
+                    return (a.parent == b.parent == root ? 1 : 10) })
+
             var diagonal = d3.svg.diagonal.radial()
-            .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+                .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
             
-            var svg = d3.select("body").append("svg")
-            .attr("width", width )
-            .attr("height", height )
-            .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");                    
+            function visit(parent, visitFn, childrenFn) {
+                if (!parent) return;
+                visitFn(parent);
+                var children = childrenFn(parent);
+                if (children) {
+                    var count = children.length;
+                    for (var i = 0; i < count; i++) {
+                        visit(children[i], visitFn, childrenFn);
+                    }
+                }
+            }
+         
+            // Call visit function to establish maxLabelLength
+            // visit(jsonData, function(d), function(d)) 
+            visit(jsonData, function(d) {
+                totalNodes++;
+                maxLabelLength = Math.max(d.name.length, maxLabelLength);
+                }, function(d) {
+                return d.children && d.children.length > 0 ? d.children : null;
+                });
+
+            // Define the zoom function for the zoomable tree
+            function zoom() {
+                svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+            }
+
+            // define the zoomListener which calls the zoom function on the "zoom" event constrained within the scaleExtents
+            var zoomListener = d3.behavior.zoom()
+                .scaleExtent([0.3, 3])
+                .on("zoom", zoom);
+
+
+            var canvas = d3.select("#treeContainer").append("svg")
+                .attr("width", width )
+                .attr("height", height )
+                .call(zoomListener)
+                //.append("g")
+                //.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");                    
                     
             d3.select(self.frameElement).style("height", height );
             
@@ -105,50 +162,64 @@
                 var nodes = tree.nodes(root);
                 
                 // Normalize for fixed-depth.
-                nodes.forEach(function(d) { d.y = d.depth * 80; });
-                
+                nodes.forEach(function(d) { 
+                    //d.y = d.depth * 80; });
+                    d.y = (d.depth * (maxLabelLength * setLinkLength));
+                    console.log("maxLabelLength :" + maxLabelLength);
+                    console.log("totalNodes:" + totalNodes);
+
+                });
+
                 // Update the nodes…
                 var node = svg.selectAll("g.node")
-                .data(nodes, function(d) { return d.id || (d.id = ++i); });
+                    .data(nodes, function(d) { return d.id || (d.id = ++i); });
                 
                 // Enter any new nodes at the parent's previous position.
                 var nodeEnter = node.enter().append("g")
-                .attr("class", "node")
+                    .attr("class", "node")
                 //.on("click", click);
                 
 				
                 var nodeCircle = nodeEnter.append("circle")
-                .attr("r", node_regSize)
-                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+                    //.attr("r", node_regSize)
+                    .attr("r", function(d) {
+                        if (d.property.text < nsDivider * setNodeSize_min) { return setNodeSize_min;}
+                        else { return d.property.text / nsDivider}
+                    })
+                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
 
-               			// Node: mouse event
-                .on("mouseover", function(d) {
-                	//tooltip.style("visibility", "visible");
-                    d3.select(this).style("fill", function(d) { 
-                    	return d._children ? "red" : "green"; })
-                    .transition()
-                    .attr("r", node_expSize)})
+                   			// Node: mouse event
+                    .on("mouseover", function(d) {
+                    	//tooltip.style("visibility", "visible");
+                        d3.select(this).style("fill", function(d) { 
+                        	return d._children ? "red" : "green"; })
+                        .transition()
+                        .attr("r", (d.property.text / nsDivider) + 4)})
 
-                .on("mousemove", function(d) {
-                		return tooltip.style("top", (event.pageY-10)+"px")
-                						.style("left",(event.pageX+10)+"px");})
-                
-                .on("mouseout", function(d) {
-                    tooltip.style("visibility", "hidden");
-                    d3.select(this).style("fill", function(d) {
-                    	return d._children ? "lightsteelblue" : "white"; })
-                    .transition()
-                    .attr("r", node_regSize)
-                    nodeText.style("fill", function(d) {
-                    	return d._children ? "blue" : "black"; })
-                })
-                
-                .on("click", click);
+                    .on("mousemove", function(d) {
+                    		return tooltip.style("top", (event.pageY-10)+"px")
+                    						.style("left",(event.pageX+10)+"px");})
+                    
+                    .on("mouseout", function(d) {
+                        tooltip.style("visibility", "hidden");
+                        d3.select(this).style("fill", function(d) {
+                        	return d._children ? "lightsteelblue" : "white"; })
+                        .transition()
+                        .attr("r", function(d) {
+                            // set minimum node size
+                            if (d.property.text < nsDivider * setNodeSize_min) { return setNodeSize_min;}
+                            else { return d.property.text / nsDivider}
+                            })
+                        // change font color
+                        nodeText.style("fill", function(d) {
+                            return d._children ? "blue" : "black"; })
+                    })
+                    .on("click", click);
                
                 var nodeText = nodeEnter.append("text")
-               	.attr("dy", ".35em")
+               	//.attr("dy", ".35em")
                 .text(function(d) { return d.name; })
-                .attr("text-anchor", "start")
+                //.attr("text-anchor", "start")
                 //.attr("dx", function(d) {
                 //      if (d.x <= 180) { return 9; }
                 //      else
@@ -168,12 +239,13 @@
 				.on("mouseover", function(d) {
 					tooltip.style("visibility", "visible");
                     tooltip_box.style("visibility", "visible");
+                    
                     d3.select(this).style("fill", function(d) {
                     	// print name using tooltip
                     	tooltip.text(d.name)
                         
                         tooltip_box_name.text("\tName: " + d.name);
-                        tooltip_box_property.text("\tBranch_length: " + d.branch_length);
+                        tooltip_box_property.text("\tClade marker size: " + d.property.text);
                     	return d._children ? "red" : "green"; })
                 })
                 .on("mousemove", function(d) {
@@ -219,21 +291,27 @@
                 .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
                 
                 nodeUpdate.select("circle")
-                .attr("r", node_regSize)
+                //.attr("r", node_regSize)
+                .attr("r", function(d) {
+                    if (d.property.text < nsDivider * setNodeSize_min) { return setNodeSize_min;}
+                    else { return d.property.text / nsDivider}
+                    })
                 .style("fill", function(d) { 
                     return d._children ? "lightsteelblue" : "#fff"; });
                 
                 var nodeUpdate_text = nodeUpdate.select("text")
                 .style("fill-opacity", 1)
                 .attr("dx", function(d) {
-                      if (d.x <= 180) { return 9; }
+                      if (d.x < 180) { return 9; }
                       else
                       {
-                        if (d.name.length < 8) { return 18; }
-                        else if (d.name.length > 7 && d.name.length < 12) { return 8; }
-                        else if (d.name.length > 11 && d.name.length < 16) { return 0; }
-                        else if (d.name.length > 13) { return -10; }
+                        if (d.name.length < 8) { return 0; }
+                        else if (d.name.length > 7 && d.name.length < 12) { return -5; }
+                        else if (d.name.length > 11 && d.name.length < 18) { return -13; }
+                        else if (d.name.length > 17 && d.name.length < 25) { return -23; }
+                        else {return -35}
                       }})
+                .attr("dy", ".35em")
                 .attr("transform", function(d) {
                       return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + ( (d.name.length +25) * 2) + ")"; })
 
@@ -254,6 +332,8 @@
                 nodeExit.select("text")
                 .style("fill-opacity", 0.1);
                 
+
+
                 var links = tree.links(nodes);
                 
                 var link = svg.selectAll("path.link")
@@ -347,6 +427,7 @@
                     d._children = null;
                 }
                 
+                centerNode(d);
                 update(d);
             }
             
@@ -418,15 +499,71 @@
                 update(d);
 
             }
-
-            jsonData.x0 = height / 2;
-            jsonData.y0 = 0;
             
+            function centerNode(source) {
+                scale = zoomListener.scale();
+                x = -source.y0;
+                y = -source.x0;
+                x = x * scale + width / 2;
+                y = y * scale + height / 1.25;
+                d3.select('g').transition()
+                    .duration(duration)
+                    .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
+                zoomListener.scale(scale);
+                zoomListener.translate([x, y]);
+            }
+
+            function setNodeSize(obj) {
+                if(obj.hasOwnProperty("property")) 
+                {
+                    var temp = parseInt(obj.property.text);
+                    var target_min = parseInt(NodeSize.min);
+                    var target_max = parseInt(NodeSize.max);
+
+                    if (!getFirstSize) {
+                        NodeSize.min = temp;
+                        NodeSize.max = temp;
+                        getFirstSize = true;
+                    } 
+                    if (temp < NodeSize.min) {
+                            NodeSize.min = obj.property.text;
+                    }
+                    if (temp > NodeSize.max) {
+                            NodeSize.max = obj.property.text;
+                    }                           
+                } 
+                if ("children" in obj) {
+                    obj.children.forEach(function(child){
+                        setNodeSize(child);
+                    });
+                }
+            }
+
+            function nodeSizeDivider() {
+                //var targetExpNodeSize = 15;
+                var divideBy = NodeSize.max / setNodeSize_max;
+                var divideBy = 30;
+                return parseInt(divideBy);
+            }
+
+            var svg = canvas.append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+            var chk_NodeSize = false;
+            if(!chk_NodeSize) {
+                setNodeSize(jsonData);
+                chk_NodeSize = true;
+            }
+
+            console.log("Min: " + NodeSize.min +" | "+ "Max: " + NodeSize.max);
                 // start with all children collapsed
             jsonData.children.forEach(collapseAll);
 
             root = jsonData;
+            root.x0 = height / 2;
+            root.y0 = 0;
             update(root);
+            centerNode(root);
         });
 
         </script>
