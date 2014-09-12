@@ -46,7 +46,7 @@
         <div id="usage" style="display:none">
             <h4 > Usage: </h4>
             <ul>
-                <li> The tree data was converted to json file from phyloxml.
+                <li> The tree data was converted to json file from phyloxml. </li>
                 <li> Collapsing or expaning all nodes can be done in one time by pressing the each button. </li>
                 <li> Expand/Collapse button is incomplete that works as expanding or collaping. </li>
                 <li> Clicking each node or name expands or collapses the tree. </li>
@@ -89,11 +89,11 @@
         // find another type tree 
         // to be prepare to run this on server.
 
-        d3.json("testTree2.json", function(error, jsonData) 
+        d3.json("testTree01.json", function(error, jsonData) 
         {    
             var diameter = 1100;
-            var width = $(window).width();
-            var height = $(window).height();
+            var width = $(document).width();
+            var height = $(document).height();
             var root;
             var getFirstSize = false;
             var NodeSize = { min:null, max:null };
@@ -449,12 +449,14 @@
                     //console.log("-------------------");
                     //console.log(root.children.length);
                     //console.log(d._children.depth);
+                    
                     d.children = d._children; 
                     d.children.forEach(expandAll);
                     d._children = null;
                 }
                 chk_root = false;
-                
+                //root.children.forEach(expandAll);
+
                 //update(d);
             
             }
@@ -505,7 +507,7 @@
                 x = -source.y0;
                 y = -source.x0;
                 x = x * scale + width / 2;
-                y = y * scale + height / 1.25;
+                y = y * scale + height / 2;
                 d3.select('g').transition()
                     .duration(duration)
                     .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
