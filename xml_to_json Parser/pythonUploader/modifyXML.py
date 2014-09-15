@@ -1,5 +1,6 @@
 from sys import argv
 import re
+import os
 #Todo
 # rebuild xml structure  
 # delete phyloxml, remain phylogeny -> convert -> erase
@@ -10,6 +11,7 @@ script, infile_argv = argv;
 infile = infile_argv[9:];
 uploadFolderName = "uploaded/";
 
+numOutfile = 4;
 outfile1 = uploadFolderName + "1_" + infile;
 outfile2 = uploadFolderName + "2_" + infile;	
 outfile3 = uploadFolderName + "3_" + infile;
@@ -44,6 +46,26 @@ with open (outfile3, 'r') as fin:
 	inXml = fin.read();
 with open (outfile4, 'w') as fout:				# delete </clade> that related delete <clade>
 	fout.write(re.sub("</clade>\n(.*)<property", "<property", inXml));
+
+
+####### Deleting tmp files
+i=1;
+for i in range(1, numOutfile):
+	str_i = i;
+	target = uploadFolderName + str(str_i) + "_" + infile;
+	i = i+1;
+	#print "Target: " + target;
+	if os.path.isfile(target):
+		os.remove(target);
+
+finalOutfile = "outfile" + str(numOutfile);
+
+
+#print finalOutfile + " /// i value is [" + str(i) + "]";
+
+renameTarget = uploadFolderName + str(i) + "_" + infile;
+resultFilename = uploadFolderName + "modified_" + infile;
+os.rename(renameTarget, resultFilename);
 
 print "True";
 

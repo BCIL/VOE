@@ -5,7 +5,8 @@
     <script type="text/javascript" src="js/jkl-dumper.js" charset="Shift_JIS"></script>
     <script type="text/javascript" src="js/jkl-parsexml.js"></script>
     <script type="text/javascript" src="js/loadxmldoc.js"></script> 
-    <script type="text/javascript" src="js/expandCollapse.js"></script> 
+    <script type="text/javascript" src="js/expandCollapse.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>  
 
     
     <meta charset = "utf-8">
@@ -24,16 +25,16 @@
             </ul>
         </div>
         <div>
-        <input type="button" onclick="return toggleMe('usage')" value="Show Usage">
+        <input type="button" onclick="return toggleMe('usage')" value="+Show Usage">
         </div>
 
-        <form action="runPython.php" method="post" enctype="multipart/form-data">
-        <input type="file" id="file" name="file"  />
-        <output id="list"></output>
-        <input type="submit" name="submit" value="1.Modifying XML">
+        <form action="run_modifyXML.php" method="post" enctype="multipart/form-data">
+            <input type="file" id="file" name="file"  />
+            <output id="list"></output>
+            <input type="submit" name="submit" value="1.Modifying XML">
         <form>
 
-        <INPUT TYPE="button" Value="2.Parsing XML" onClick="start();">
+        <INPUT TYPE="button" Value="2.Parsing XML" onClick="parser()">
         <p id="parsed" style="padding: 4px; background: teal;">
         </p>  
     
@@ -42,6 +43,8 @@
     <script type="text/javascript">
 
         var filename;
+        var newText; // stores parsed JSON data
+
         function handleFileSelect(evt) {
             var files = evt.target.files; // FileList object
 
@@ -57,17 +60,15 @@
             document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
         }
 
+        // select user file from the user local drive
         document.getElementById('file').addEventListener('change', handleFileSelect, false);
 
 
-        function start() { 
-            console.log('call start');
-            var url = "uploaded/" + filename;            
-            parser(url); 
-        }
-
-        function parser(url) {
+        function parser() {
             
+            /////// Set the modified file name.
+            //////  This must be changed if the modifyXML.py has been changed.
+            var url = "uploaded/modified_" + filename;
             var xml = new JKL.ParseXML( url, null );
             xml.setOutputArrayElements( ["clade"] );
             var data = xml.parse();
@@ -83,12 +84,27 @@
             function output(text) {
                 if ( typeof(text) == "undefined" ) return "";
                 text = text.replace( /&/g, "&amp;" ).replace( /</g, "&lt;" ).replace( />/g, "&gt;" ).replace( /\n/g, "<br>\n" ).replace( / /g, "&nbsp;" ).replace(new RegExp('(.*)phylogeny(.*)', 'g'), '').replace(/"clade"/g, '"children"').replace(/"#text"/g, '"text"').replace(/"rooted"/g, '"name"').replace(/"true"/g, '"ROOT"');
-                var newText = text.substr(text.indexOf("{"), text.lastIndexOf("}")-1); 
+
+                // newText contains parsed valid JSON data
+                newText = text.substr(text.indexOf("{"), text.lastIndexOf("}")-1); 
                 
                 return newText;
             }
 
         }
+
+        function saveJSON() {
+            $.ajax({
+                type: "POST",
+                url: "saveJSON.php",
+                data: { jsonData: newText },
+                success: function(data)
+                {
+                    console.log("success AJAX!");
+                }
+            })
+        }
+
 
 
             

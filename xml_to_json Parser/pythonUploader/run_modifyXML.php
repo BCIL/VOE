@@ -5,6 +5,8 @@ $extension = end($temp);
 
 $Filename = $_FILES["file"]["name"];
 
+#/////////////// Filtering the input file ////////////////////////
+
 if (($_FILES["file"]["type"] == "text/xml")
 && ($_FILES["file"]["size"] < 100000)	// file size limit: 100 kb
 && in_array($extension, $allowedExts)) {
@@ -34,7 +36,19 @@ echo "The uploaded file name is " . "<strong>" . $Filename . "</strong><br>";
 $var1 = "uploaded/".$Filename;
 echo "Variable check: " . $var1 . "<br>";
 
+#/////////////////////////////////////////////////////////////////////
+
+#//////// To excute the python script
 $result = exec('python modifyXML.py ' . $var1);
+
+
 #$result = exec('/xml_to_json_Parser/pythonUploader/modifyXML.py '.$var1);
-echo "Excuted python?: " . $result . "<br>";
+echo "Excuted python?: " . $result . "<br><br>";
+
+
+##### move to previous page
+#header('Location: ' . $_SERVER['HTTP_REFERER']);
+#$prev = $_SERVER['HTTP_REFERER'];
+#echo "Previous page: ". $prev. "<br>";
+echo "<strong>Press "."<a href=\"javascript:history.go(-1)\"> GO BACK </a>"."then 'Parsing XML' to get your converted JSON data.</strong>";
 ?>
