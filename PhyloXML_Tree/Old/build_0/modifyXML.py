@@ -11,12 +11,12 @@ script, infile_argv = argv;
 infile = infile_argv[9:];
 uploadFolderName = "uploaded/";
 
-numOutfile = 5;
+numOutfile = 4;
 outfile1 = uploadFolderName + "1_" + infile;
 outfile2 = uploadFolderName + "2_" + infile;	
 outfile3 = uploadFolderName + "3_" + infile;
-outfile4 = uploadFolderName + "4_" + infile;	
-outfile5 = uploadFolderName + "5_" + infile;	# output
+outfile4 = uploadFolderName + "4_" + infile;	# output
+
 
 findClade = 0;
 
@@ -47,10 +47,6 @@ with open (outfile3, 'r') as fin:
 with open (outfile4, 'w') as fout:				# delete </clade> that related delete <clade>
 	fout.write(re.sub("</clade>\n(.*)<property", "<property", inXml));
 
-with open (outfile4, 'r') as fin:
-	inXml = fin.read();
-with open (outfile5, 'w') as fout:
-	fout.write(re.sub("(.*)<?xml(.*)", "", inXml));
 
 ####### Deleting tmp files
 i=1;
