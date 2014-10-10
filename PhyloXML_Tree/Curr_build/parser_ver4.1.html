@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <title> PhyloXML tree gernerator </title>
+    
+    <script type="text/javascript" src="js/jkl-dumper.js" charset="Shift_JIS"></script>
+    <script type="text/javascript" src="js/jkl-parsexml.js"></script>
+    <script type="text/javascript" src="js/loadxmldoc.js"></script> 
+    <script type="text/javascript" src="js/expandCollapse.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/upclick.js"></script>
+
+    <meta charset = "utf-8">
+
+    <link href="css/style_menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    </head>
+  
+  <body>
+        <h1 id="title" align="center"> PhyloXML tree gernerator </h1>
+
+        <ul id="menu-bar">
+            <li><a href="main_ver1.0.html">Home</a></li>
+            <li><a href="#">PhyloXML</a>
+            <ul>
+                <li><a href="#">Blah 1</a></li>
+                <li><a href="#">Blah 2</a></li>
+                <li><a href="#">Blah 3</a></li>
+                <li><a href="#">Blah 4</a></li>
+            </ul>
+            </li>
+            <li><a href="parser_ver4.1.html">Build Tree</a></li>
+            <li><a href="menu_about.html">About</a></li>
+            <li><a href="menu_contact.html">Contact Us</a></li>
+        </ul>
+
+        <h2 id="title" align="left"> XML to JSON parser - ver. 4.1 </h2>
+        <h4 > Usage: </h4>
+        <div id="usage" style="display:none">
+            <ul>
+                <li> Firstly, You need to upload your phyloXML file from the local drive. Click the upload button then select the file. </li>
+                <li> After uploading, you can generate two types (Radial and Indented Tree) of tree of the uploaded file.</li>
+                <li> You don't need to re-upload the same file for generating different type of tree. </li>
+            </ul>
+        </div>
+        <div>
+
+        <input id ="usageButton" type="button" value="+Show Usage" onclick="return toggleMe('usage');document.getElementById('usageButton').style.color='blue';">
+        </div> <br />
+
+        <h3 style="text-align: left" align="center"> - Upload phyloxml file - </h3>
+        <input type="button" id="uploader" value="Upload your phyloXML file">
+
+        <h3 style="text-align: left" align="center"> - Generate phyloxml tree - </h3>
+        <input type="submit" id="gen_Radial" value="Generate Radial Tree">
+        <input type="submit" id="gen_Indented" value="Generate Indented Tree" >
+        <input type="submit" id="gen_Sunburst" value="Generate Sunburst" >
+        <output id="upFileDetail" style="padding: 4px;"> </output><br />
+    
+    
+    <script type="text/javascript">
+
+        var chk_modify = false;
+        var chk_parsing = false;
+        var fin;
+        var fin_pass;
+        var newText; // stores parsed JSON data
+
+        /*
+        function handleFileSelect(evt) {
+            var files = evt.target.files; // FileList object
+            var output = [];            
+            for (var i = 0, f; f = files[i]; i++) {
+                output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a', '</li>');
+
+                filename = f.name;  // get filename
+            }
+            document.getElementById('listName').innerHTML = filename;
+            document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+        }
+        
+        // select user file from the user local drive
+        document.getElementById('file').addEventListener('change', handleFileSelect, false);
+        */
+
+        // Uploader works with upclick.js
+        var uploader = document.getElementById('uploader');
+        upclick 
+        ({
+            element: uploader,
+            action: 'uploadFile.php', 
+            onstart:
+                function(filename) {
+                    console.log('Start upload: '+ filename);
+                },
+            oncomplete:
+                function(response_data) {
+                    console.log("PHP returned : " + response_data);
+                    fin = response_data;
+                    parser(fin);
+                    chk_upFile();
+                    /*
+                    fin = response_data;
+                    var output = [];
+                    output = fin;
+                    document.getElementById(#warnMSG).innerHTML = output.join('');
+                    */
+                }
+        });
+
+        function parser(filename) {
+                /////// Set the modified file name.
+                //////  This must be changed if the modifyXML.py has been changed.
+            var url = "uploaded/modified_" + filename;
+            var xml = new JKL.ParseXML( url, null );
+            xml.setOutputArrayElements( ["clade"], ["name"] );
+            var data = xml.parse();
+            
+            var dumper = new JKL.Dumper();
+            var text = dumper.dump( data );
+            
+            var outData = output(text);
+            var Datalength = outData.length;
+
+            saveJSON(outData, filename);
+            
+            function output(text) {
+                if ( typeof(text) == "undefined" ) return "";
+                text = text.replace(new RegExp('(.*)phylogeny(.*)', 'g'), '').replace(/"clade"/g, '"children"').replace(/"#text"/g, '"text"').replace(/"rooted"/g, '"name"').replace(/"true"/g, '"ROOT"').replace(/"confidence"/g, '"property"').replace(/""name"":/g,"").replace(/""ROOT","/g, "");
+
+                // newText contains parsed valid JSON data
+                // To remove last '}' for valid JSON data (removed parent 'phylogeny')
+                newText = text.substr(text.indexOf("{"), text.lastIndexOf("}")-1); 
+                return newText;
+            }
+
+        }
+
+        function saveJSON(outData, filename) {
+            //var outData = "HELLO WORLD!";
+            var name = filename;
+            $.ajax({
+                type: "POST",
+                url: "saveJSON.php",
+                data: { jsonData: outData, XMLname: name },
+                success: function(data)
+                {
+                    fin_pass = "uploaded/" + name + ".json";
+                    console.log("success AJAX!");
+                }
+            })
+
+            //gen_Tree(name);
+        }
+
+        function chk_upFile() {
+            console.log("chk_upFile");
+            //document.getElementById('uploader').addEventListener('change', handleFileSelect, false);
+            document.getElementById('upFileDetail').innerHTML = "<br><br><strong> '" + fin + "' has been successfully uploaded!"+ "</strong>";
+        }
+
+        $(function () {
+            $("#gen_Radial").bind("click", function () {
+                console.log("CALLED - click()")
+                window.fin = fin_pass;
+                window.open('Radial_Tree_Collapsible_ver3.1.php', '');
+            });
+        });
+        
+        $(function () {
+            $("#gen_Indented").bind("click", function () {
+                console.log("CALLED - click()")
+                window.fin = fin_pass;
+                window.open('Collapsible_Indented_Tree_ver2.0.php', '');
+            });
+        });
+
+         $(function () {
+            $("#gen_Sunburst").bind("click", function () {
+                console.log("CALLED - click()")
+                window.fin = fin_pass;
+                window.open('Sunburst_ver2.0.php', '');
+            });
+        });
+
+
+            
+    </script>
+
+</html>
