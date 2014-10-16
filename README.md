@@ -5,11 +5,12 @@ Visualization of PhyloXML using D3.js
 
 * Main file: main_ver1.0.html
 
-Build 2 :
+Build 2 : <br>
+  -Updated: Added file filter to the uploader. It only allows to upload <strong>XML</strong> extention file. <br>
   Optimized code for being simplified running process to generate tree.
   Decorated to real website-like...
 
-Build 1 :
+Build 1 : <br>
   Implemented 3 types of tree. (Radial, Indented, SequencesBurst)
 
 Build 0
