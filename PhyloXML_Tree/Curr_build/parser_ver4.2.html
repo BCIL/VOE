@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/upclick.js"></script>
 
-    <meta charset = "utf-8">
+    <meta charset = "utf-8"> 
 
     <link href="css/style_menu.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -34,13 +34,13 @@
             <li><a href="menu_contact.html">Contact Us</a></li>
         </ul>
 
-        <h2 id="title" align="left"> XML to JSON parser - ver. 4.1 </h2>
+        <h2 id="title" align="left"> XML to JSON parser - ver. 4.2 </h2>
         <h4 > Usage: </h4>
         <div id="usage" style="display:none">
             <ul>
                 <li> Firstly, You need to upload your phyloXML file from the local drive. Click the upload button then select the file. </li>
-                <li> After uploading, you can generate two types (Radial and Indented Tree) of tree of the uploaded file.</li>
-                <li> You don't need to re-upload the same file for generating different type of tree. </li>
+                <li> After uploading, you can generate three types (Radial, Indented Tree, and Sequences Burst) of tree of the uploaded file.</li>
+                <li> You don't need to reupload for generating different type of tree. </li>
             </ul>
         </div>
         <div>
@@ -56,6 +56,7 @@
         <input type="submit" id="gen_Indented" value="Generate Indented Tree" >
         <input type="submit" id="gen_Sunburst" value="Generate Sunburst" >
         <output id="upFileDetail" style="padding: 4px;"> </output><br />
+
     
     
     <script type="text/javascript">
@@ -65,23 +66,6 @@
         var fin;
         var fin_pass;
         var newText; // stores parsed JSON data
-
-        /*
-        function handleFileSelect(evt) {
-            var files = evt.target.files; // FileList object
-            var output = [];            
-            for (var i = 0, f; f = files[i]; i++) {
-                output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a', '</li>');
-
-                filename = f.name;  // get filename
-            }
-            document.getElementById('listName').innerHTML = filename;
-            document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-        }
-        
-        // select user file from the user local drive
-        document.getElementById('file').addEventListener('change', handleFileSelect, false);
-        */
 
         // Uploader works with upclick.js
         var uploader = document.getElementById('uploader');
@@ -95,16 +79,19 @@
                 },
             oncomplete:
                 function(response_data) {
-                    console.log("PHP returned : " + response_data);
-                    fin = response_data;
-                    parser(fin);
-                    chk_upFile();
-                    /*
-                    fin = response_data;
-                    var output = [];
-                    output = fin;
-                    document.getElementById(#warnMSG).innerHTML = output.join('');
-                    */
+                    if (response_data == "error") {
+                        //console.log("ERROR msg : " + response_data);
+                        var chk = 0;    // false - error
+                        chk_upFile(chk);    // show status
+                    }
+                    else {
+                        // show uploaded filename on console
+                        console.log("PHP returned : " + response_data); 
+                        fin = response_data;
+                        parser(fin);    // parsing and generating JSON file
+                        var chk = 1;    // true - successfully done.
+                        chk_upFile(chk);    // show status
+                    }
                 }
         });
 
@@ -122,7 +109,7 @@
             var outData = output(text);
             var Datalength = outData.length;
 
-            saveJSON(outData, filename);
+            saveJSON(outData, filename);        // generating JSON file
             
             function output(text) {
                 if ( typeof(text) == "undefined" ) return "";
@@ -137,7 +124,6 @@
         }
 
         function saveJSON(outData, filename) {
-            //var outData = "HELLO WORLD!";
             var name = filename;
             $.ajax({
                 type: "POST",
@@ -145,23 +131,26 @@
                 data: { jsonData: outData, XMLname: name },
                 success: function(data)
                 {
+                    // make uploaded file path for passing tree page.
                     fin_pass = "uploaded/" + name + ".json";
-                    console.log("success AJAX!");
                 }
             })
-
-            //gen_Tree(name);
         }
 
-        function chk_upFile() {
-            console.log("chk_upFile");
-            //document.getElementById('uploader').addEventListener('change', handleFileSelect, false);
-            document.getElementById('upFileDetail').innerHTML = "<br><br><strong> '" + fin + "' has been successfully uploaded!"+ "</strong>";
+        function chk_upFile(chk_upload) {            
+            // chk_upload value will be 0 or 1.
+            // 0 : false,  1 : true
+            if(chk_upload != 1) {
+                document.getElementById('upFileDetail').innerHTML = "<br><br><img src='img/failed.jpeg' style='width:14px; height:14px'><strong> " + " Error - File format is not supported!" + "</strong>";
+            }
+            else {
+                document.getElementById('upFileDetail').innerHTML = "<br><br><img src='img/success.jpeg' style='width:14px; height:14px'><strong> '" + fin + "' has been successfully uploaded!"+ "</strong>";
+                
+            }
         }
 
         $(function () {
             $("#gen_Radial").bind("click", function () {
-                console.log("CALLED - click()")
                 window.fin = fin_pass;
                 window.open('Radial_Tree_Collapsible_ver3.1.php', '');
             });
@@ -169,7 +158,6 @@
         
         $(function () {
             $("#gen_Indented").bind("click", function () {
-                console.log("CALLED - click()")
                 window.fin = fin_pass;
                 window.open('Collapsible_Indented_Tree_ver2.0.php', '');
             });
@@ -177,7 +165,6 @@
 
          $(function () {
             $("#gen_Sunburst").bind("click", function () {
-                console.log("CALLED - click()")
                 window.fin = fin_pass;
                 window.open('Sunburst_ver2.0.php', '');
             });
