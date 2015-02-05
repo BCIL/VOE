@@ -1,0 +1,327 @@
+<html lang="en">
+<head>
+  <title> Using Google API - test ver. </title>
+  <script src="/js/jquery.js" charset="utf-8"></script>
+  <script src="/js/bootstrap.js"></script>
+  <!-- The googlegenomics plugin can be sourced directly from rawgit.com -->
+  <script src="/js/googlegenomics.jquery.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  
+  <style type="css/text">
+    
+    form {
+      text-align: center;
+      width: 400px;
+      padding: 1em;
+      border: 1px solid #CCC;
+      border-radius: 1em;
+    }
+    form div + div {
+      margin-top: 1em;
+    }
+    label {
+      display: inline-block;
+      width: 90px;
+      text-align: right;
+    }
+    input {
+      font: 1em sans-serif;
+      width: 300px;
+      --moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #999;
+    }
+  </style>
+</head>
+
+<script>
+// <input type="text" class="form-control" id="callSetId" value="10473108253681171589-0"/>
+</script>
+<body>
+<h1 id="DEMO" style="text-align: center"> Google Genomic API - References </h1>
+
+<form id="dataInput" action = "" methos="post" >
+  <div class="form-group">
+    <label for="callSetId">ReferenceSet ID</label>
+    <select class="id-control" id="refSetIdSelector" onchange="getRefSetId(this)">
+    <option type="text" class="form-control" id="callSetId" value="NuLL"> Selet ID </option>
+    <option type="text" class="form-control" id="callSetId" value="EMud_c37lKPXTQ"> GRCh38 </option> 
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="callSetId">References</label>
+    <select class="id-control" id="refIdSelector" onchange="getRefName(this)">
+    <option type="text" class="form-control" id="callSetId" value="NuLL"> Selet ref. </option>
+    </select>
+    <ouput id="refCount" name="refCount">  </ouput>
+  </div>
+  
+  <div class="startPosition">
+    <label for="startPosition"> Start position: </label> 
+    <input id="startPosition" value="13000000">  
+  </div>
+  <div class="endPosition">
+    <label for="endPosition"> End position: </label> 
+    <input id="endPosition" value="13000200">  
+  </div>
+  <br>
+  <div class="submit_button">
+    <input type="button" name="getValid_button" value="Get valid references" onclick="getValidReferences()"> </input>
+    <input type="button" name="button" value="Submit" onclick="getUserInput()"> </input>
+  </div>
+</form>
+
+<br>
+
+<p id="outContainer_title" style="margin-left: 50px"><b>================== OUTPUT CONTAINER ==================</b></p>
+<div class="output_container" id="output_container" style="width: 600px; margin-top: 20px; margin-left: 50px;"> 
+</div>
+
+<br>
+
+<div class="col-md-10">
+    <div id="chooseSetMessage">
+      <h3><small>Add a read group set or call set to get started.</small></h3>
+    </div>
+    <div id="sequences"></div>
+    <svg id="graph"></svg>
+</div>
+
+
+<script type="text/javascript">
+
+// My ID
+var clientId = "639017132977-tnhsbqtbrb5tjmrbb6q0clojthsank45.apps.googleusercontent.com";
+var refSetId = "NULL";
+var jobType = "NULL";
+var jobType_chk = 0;
+var JSONdata;             // store return data
+var JSONdata_getRefId;
+var JSONdata_getRefName;
+var refIdList;
+var refNameList = [];
+var refNameLIst_valid = [];
+
+// clientId chk
+if (!clientId) {
+  alert('A client ID is required. Please push one to the url: ' +
+      'http://localhost:8000/traitviewer#my-client-id');
+} else {
+  console.log("clientId: " + clientId);
+  $.initGenomics({clientId: clientId});
+}
+
+function getRefSetId(option) {
+  refSetId = option[option.selectedIndex].value;
+  console.log("Reference Set ID: " + refSetId);
+  updateReference(refSetId);            // send refSetId to Google and receive refId list 
+}                                       // then update the list that user can see.
+
+function getRefName(option) {
+  var refId = option[option.selectedIndex].value;
+  console.log("Reference: " + refId);
+  var params = '';                      // no request body to get refId using refSetId
+  var url = '/references/' + refId;
+  var method = 'GET';
+  var job = 'getRefName'
+  sendData_no_body (refId, params, url, method, job);   
+}
+
+function updateReference(refSetId) {    // send refSetId to Google
+  var params = '';                      // no request body to get refId using refSetId
+  var url = '/referencesets/' + refSetId;
+  var method = 'GET';
+  var job = 'getRefId'
+  //console.log(" ## REQUEST : " + JSON.stringify(params) );
+  sendData_no_body (refSetId, params, url, method, job);  
+}
+
+
+function getValidReferences() {
+  var dfrd = $.Deferred();
+  console.log("Get valid references")
+  var params = '';                      
+  var method = 'GET';
+  var job = 'getRefNameList'
+  //var refIdOnly = refIdList.referenceIds;
+  //console.log(" ## REQUEST : " + JSON.stringify(params) );
+  for (var i=0; i<refIdList.referenceIds.length; i++) {
+    var url = '/references/' + refIdList.referenceIds[i];
+    sendData_no_body (refIdList.referenceIds[i], params, url, method, job);  
+  }
+
+  setTimeout (function() {
+    validChkReferences();                 // delay for AJAX processing time.
+  }, 2000);
+ 
+}
+
+function validChkReferences() {
+  console.log("==== VALID CHECK ====");
+  //var count = 0;
+  console.log("refNameList count = " + refNameList.length);
+  for (var i=0; i<refNameList.length; i++) {
+    //console.log(refNameList[i].name);
+    var check_int = parseInt(refNameList[i].name);
+    if (check_int > 0 && check_int < 23) { 
+      refNameLIst_valid.push(refNameList[i]);
+    }
+    else if (refNameList[i].name == 'X' || refNameList[i].name == 'x' || refNameList[i].name == 'Y' || refNameList[i].name == 'y') { 
+      refNameLIst_valid.push(refNameList[i]); 
+    }
+  }
+
+  updateReferenceMenu_validList(refNameLIst_valid);           // update dropdown menu
+}
+
+
+function getUserInput() {
+  
+    document.getElementById("output_container").innerHTML = "";
+    var inForm = document.forms[0];
+    
+    var start = inForm.startPosition.value;
+    var end = inForm.endPosition.value;
+    var doc = document.getElementById("refIdSelector");
+    var ref_Id = doc.options[doc.selectedIndex].text;
+
+    console.log("\t=============== USER INPUT ==============="
+                +"\n\tReferenceSet_ID: " + ref_Id
+                +"\n\tStart: " + start
+                +"\n\tEnd: " + end
+                );  
+    
+    if (start > end) {
+      alert("Err - Start position should be lower than End position");
+      return;
+    }
+  //var params = 'start='+start+'&end='+end;          // no request body to get refId using refSetId
+  var params = {start : start, end : end};                      
+
+  var url = '/references/' + ref_Id + '/bases';
+  var method = 'GET';
+  var job = 'getBases'
+  //console.log(" ## REQUEST : " + JSON.stringify(params) );
+  sendData_no_body (refSetId, params, url, method, job);  
+  //prepSendData(ref_Id, start, end);
+}
+
+function prepSendData_allRefs(ref_Id, start, end) {
+  var params = {
+    projectNumber: ref_Id,
+    pageSize: start,
+    pageToken: end 
+  };
+  var url = '/datasets';
+  var method = 'GET';
+  console.log(" ## REQUEST : " + JSON.stringify(params) );
+  sendData(list[0], params, url, method);   // list[0] == callSetId
+}
+
+/*
+function ShowCallsetId() {
+ //document.getElementById('output_container').innerHTML += '<br />' + '<b>Client ID: </b>' + clientId;
+  //document.getElementById('output_container').innerHTML += '<br />' + '<b>CallSet ID: </b>' + callSetId;
+}
+function ShowJobType() {
+  //document.getElementById('output_container').innerHTML += '<br />' + '<b>jobType: </b>' + jobType;
+}
+
+function Abort_execution() {
+  throw new Error("Error - Undefined Call set ID")
+}
+*/
+
+function sendData_with_body (callSetId, params, url, method) {
+  $.genomicsAjax ( url, {
+    version: 'v1beta2',
+    method: method,
+    data: JSON.stringify(params),
+    success: function(json) {
+      console.log("#### Success to return JSON! ####");
+      document.getElementById('output_container').innerHTML += "<p><b> Sucess! </b></p>";
+
+      JSONdata = json;
+      //document.getElementById('output_container').innerHTML += '<br />' + '<b>CallSet ID: </b>' + JSONdata;
+      
+      }
+    });
+}
+
+var basesData;
+function sendData_no_body (callSetId, params, url, method, jobType) {
+  $.genomicsAjax ( url, {
+    version: 'v1beta2',
+    method: method,
+    data: params,
+    success: function(json) {
+      console.log("#### Success to return JSON! ####");
+      //document.getElementById('output_container').innerHTML += "<p><b> Sucess! </b></p>";
+
+      if (jobType == 'getRefId') {
+        JSONdata_getRefId = json;
+        refIdList = json;
+        updateReferenceMenu(refIdList);
+      }
+      else if (jobType == 'getRefName') {
+        $('#output_container').empty();
+        $('#output_container').append ('<b> '+'<br> id: '+ json.id + 
+                                              '<br> name: ' +json.name + 
+                                      '</b>');
+      }
+      else if (jobType == 'getRefNameList') {
+        refNameList.push(json);
+      }
+      else if (jobType == 'getBases') {
+        basesData = json;
+        var seqData = [];
+        var idx = 0;
+        for (var i=0; i<json.sequence.length; i++) {
+          seqData.push(json.sequence[i]);
+          //if (i % 99 == 1) { 
+          //  idx = idx + 1;
+          //  seqData[idx] = new Array();
+          //}
+        }
+
+        $('#output_container').empty();
+        $('#output_container').append ('<br> offset: <b>'+ json.offset + 
+                                              '</b><br> sequence (each line - 100 bases): ' + '<br>');
+        console.log("Sequence size: " +seqData.length);
+        var count = 0;;
+        for (var i=0; i<seqData.length; i++) {
+          count = count + 1;
+          $('#output_container').append ('<b>' + seqData[i] + '</b>');
+          if (count == 100) {
+            $('#output_container').append ('<br>');
+            count = 0;
+          }
+        }
+      }
+      //document.getElementById('output_container').innerHTML += '<br />' + '<b>CallSet ID: </b>' + JSONdata;
+      
+      }
+    });
+}
+
+
+function updateReferenceMenu (list) {
+  $('#refIdSelector').empty();
+  for (var i=0; i<list.referenceIds.length; i++) {
+    $('#refIdSelector').append('<option>'+list.referenceIds[i]+'</option>');
+  }
+  $('#refCount').append('ref.ID count: ' + list.referenceIds.length);
+}
+
+function updateReferenceMenu_validList (list) {
+  $('#refIdSelector').empty();
+  $('#refCount').empty();
+  for (var i=0; i<list.length; i++) {
+    $('#refIdSelector').append('<option>'+list[i].id+'</option>');
+  }
+  $('#refCount').append('Valid ref.ID count: ' + list.length);
+}
+
+</script>
+</body>

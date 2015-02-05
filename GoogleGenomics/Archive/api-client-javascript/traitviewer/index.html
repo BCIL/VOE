@@ -1,0 +1,310 @@
+<!--
+Copyright 2014 Google Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/js/jquery.js" charset="utf-8"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- The googlegenomics plugin can be sourced directly from rawgit.com -->
+  <script src="/js/googlegenomics.jquery.js"></script>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <style>
+    #scoreTable tr th:nth-child(4), #scoreTable tr td:nth-child(4) {
+      border-right: 2px solid #999;
+    }
+  </style>
+</head>
+<script>
+// <input type="text" class="form-control" id="callSetId" value="10473108253681171589-0"/>
+</script>
+<body>
+<h1 id="DEMO" style="text-align: center"> TEST version - port 8000 </h1>
+
+<div class="container panel panel-default" style="width: 600px; margin-top: 20px;">
+  <div class="panel-body">
+    <form class="form">
+      <div class="form-group">
+        <label for="callSetId">Enter your call set ID</label>
+        <select class="id-control" id="idSelector" onchange="getCallId(this)">
+        <option type="text" class="form-control" id="callSetId" value="NuLL"> Selet ID </option>
+        <option type="text" class="form-control" id="callSetId" value="10473108253681171589-0"> 1000 genomes </option> <!-- HG00096 in 1000 genomes -->
+        <option type="text" class="form-control" id="callSetId" value="4252737135923902652-0"> 1000 genomes - Phase 3 </option>
+        <option type="text" class="form-control" id="callSetId" value="3049512673186936334-0"> Illumina Platinum Genomes </option>
+
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="traitSelector">Choose a trait</label>
+        <select class="form-control" id="traitSelector"></select>
+      </div>
+    </form>
+
+    <div>
+      <table class="table table-hover" id="scoreTable">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Contig</th>
+          <th>Position</th>
+          <th>Allele</th>
+          <th>Call set genotype</th>
+          <th>Call set score</th>
+        </tr>
+        </thead>
+        <tbody id="alleleScores"></tbody>
+        <tfoot>
+        <tr>
+          <td colspan="5"></td>
+          <td id="totalScore" class="callSetClear" style="font-weight: bold;"></td>
+        </tr>
+        </tfoot>
+      </table>
+      <button class="btn btn-primary" id="scoreButton" data-loading-text="Loading data"
+              onclick="calculateScore(true)">Score</button>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+// Setup the genomics plugin
+//var clientId = window.location.hash.substring(1);
+
+// set clientId in code instead of putting on url
+// lab ID
+//var clientId = "1078575200415-pnqo0aqc4bp7n5nasgnl0cd67i8p24r9.apps.googleusercontent.com";
+
+// My ID
+var clientId = "639017132977-tnhsbqtbrb5tjmrbb6q0clojthsank45.apps.googleusercontent.com";
+
+if (!clientId) {
+  alert('A client ID is required. Please append one to the url: ' +
+      'http://localhost:8000/traitviewer#my-client-id');
+} else {
+  console.log("clientId: " + clientId);
+  $.initGenomics({clientId: clientId});
+}
+
+//var JSONdata = [];
+var JSONdata;
+var JSONdata2;
+var name_chk;   // check the sample gene name is provided or not.
+                // if not, the name will be filled from the returned JSON data
+
+// Load the trait data into the UI
+var currentPanel = null;
+$(document).ready(function() {
+  $.getJSON("traits.json", function(json) {
+    var traits = json.traits;
+
+    var selector = $("#traitSelector");
+    var alleleScores = $("#alleleScores");
+    var totalScore = $("#totalScore");
+
+    for (var i = 0; i < traits.length; i++) {
+      $("<option/>", {"value": i}).text(traits[i].name).appendTo(selector);
+    }
+
+    selector.change(function() {
+      currentPanel = traits[selector.val()];
+      alleleScores.empty().append(createAlleleRows(currentPanel));
+      totalScore.empty();
+    }).change();
+  });
+});
+
+function createAlleleRows(panel) {
+  console.log("-= createAlleleRows call");
+
+  var rows = [];
+  for (var i = 0; i < panel.alleles.length; i++) {
+    var allele = panel.alleles[i];
+    var row = $("<tr/>");
+    if (!allele.name) {
+      console.log("NO NAME provided! The name will be filled from returned JSON data");
+      name_chk = false;
+    }
+    else { 
+      name_chk = true; 
+    };
+    
+    $("<td/>").text(allele.name).appendTo(row);
+    $("<td/>").text(allele.contig).appendTo(row);
+    $("<td/>").text(allele.position).appendTo(row);
+    $("<td/>").text(allele.allele).appendTo(row);
+    $("<td/>", {id: "callSetAllele" + i, 'class': 'callSetClear'}).appendTo(row);
+    $("<td/>", {id: "callSetScore" + i, 'class': 'callSetClear'}).appendTo(row);
+
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+
+var callSetId = "NULL";
+function getCallId(option) {
+  callSetId = option[option.selectedIndex].value;
+  console.log("CALL_ID: " + callSetId);
+}
+
+function Abort_execution() {
+  throw new Error("Error - Undefined Call set ID")
+}
+// Scoring handlers
+
+function calculateScore() {
+  console.log("-= calculateScore call");
+
+  if (callSetId == 'NULL') {
+    alert("Error - Call set ID must be selected!");
+    Abort_execution();
+  }
+
+  $("#scoreButton").button('loading');
+  $(".callSetClear").empty();
+  $("#alleleScores tr").removeClass();
+  
+  $.authGenomics( scorePanel );       // original
+  //$.authGenomics( scorePanel() );
+  console.log("== After .authGenomics")
+}
+
+
+
+function scorePanel() {
+  console.log("== scorePanel call");
+
+  //var callSetInput = $("#callSetId");
+  //var callSetId = callSetInput.val();
+  console.log("callSetId: " + callSetId);
+  var totals = {finished: 0, score: 0, count: currentPanel.alleles.length};
+  console.log("currentPanel count: " + totals.count);       // Resd hair: count == 7
+  //JSONdata = [totals.count];
+  for (var i = 0; i < currentPanel.alleles.length; i++) {
+    var allele = currentPanel.alleles[i];
+    scoreAllele(callSetId, allele, i, totals);
+  }
+}
+
+function scoreAllele(callSetId, allele, number, totals) {
+  console.log("scoreAllele call");
+
+  var params = {
+    referenceName: allele.contig,
+    // Note: the variants API uses 0-based coordinates
+    start: allele.position,
+    end: allele.position + 1,
+    callSetIds: [callSetId]
+  };
+
+  //console.log( "params DATA: " + params.referenceName + " // " + params.start + " // " + params.end + " // " + params.callSetIds );
+  // Search over the variants at each contig position to see what
+  // genotype the call set has.
+  var index = 0;
+  var JSON_index=0;
+  console.log(" ## REQUEST : " + JSON.stringify(params) );
+  $.genomicsAjax('/variants/search', {
+    version: 'v1beta2',
+    method: 'POST',
+    data: JSON.stringify(params),
+    success: function(json) {
+      console.log("#### Success to return JSON! ####");
+      JSONdata = json;
+      //for (var i=0; i<json.variants.length; i++) {
+      //  JSONdata[JSON_index].push(json.variants[i]);
+      //}
+
+      // Access: JSONdata.variants[index].blah
+      console.log("-- referenceBases: " + JSONdata.variants[index].referenceBases);
+      index = index + 1;
+      JSONdata2 = getGenotype(json.variants || [], allele.position, callSetId);
+      //console.log("Json return data : \n" + json);
+      var callSetGenotype = getGenotype(json.variants || [],
+          allele.position, callSetId);
+
+      var matchesAllele = callSetGenotype.indexOf(allele.allele) != -1;
+      var callSetScore = matchesAllele ? allele.score : 0;
+
+
+      $("#callSetAllele" + number).text(callSetGenotype.join(";"));
+      $("#callSetScore" + number).text(callSetScore).parent()
+          .addClass(matchesAllele ? "success" : "");
+
+      totals.score += callSetScore;
+      totals.finished++;
+
+
+      // Once all the alleles have been loaded, display the total score
+      if (totals.finished == totals.count) {
+        var description = "";
+        for (var i = 0; i < currentPanel.scoreBands.length; i++) {
+          var band = currentPanel.scoreBands[i];
+          if (totals.score >= band.score) {
+            description = band.description;
+            break;
+          }
+        }
+
+        $("#scoreButton").button('reset');
+
+        var scoreDiv = $("#totalScore");
+        $("<div>").text(totals.score).appendTo(scoreDiv);
+        $("<div>").text(description).appendTo(scoreDiv);
+      }
+    }
+  });
+}
+
+function getGenotype(variants, position, callSetId) {
+  // Excessively complicated logic to figure out the actual genotype for
+  // a call set at a given spot
+  console.log("getGenotype call // Variants size: " + variants.length);
+  for (var i = 0; i < variants.length; i++) {
+    var variant = variants[i];                // usually returned length: 1
+    if (variant.start != position) {          // check & match position
+      continue;                   
+    }
+
+    for (var c = 0; c < variant.calls.length; c++) {
+      var call = variant.calls[c];
+      if (call.callSetId != callSetId) {      // check & match callSetId
+        continue;
+      }
+
+      var genotype = [];
+      for (var g = 0; g < call.genotype.length; g++) {
+        var allele = call.genotype[g];
+        if (allele == 0) {
+          genotype.push(variant.referenceBases);
+        } else {
+          genotype.push(variant.alternateBases[allele - 1]);
+        }
+      }
+
+      console.log ("Returned Genotype: " + genotype);
+      return genotype;
+    }
+  }
+
+  return ["unknown"];
+}
+</script>
+</body>
+</html>
