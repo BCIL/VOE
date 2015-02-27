@@ -26,22 +26,25 @@ footer {
     bottom: 0px;
 }
 
+
 text.sequence {
     text-anchor: middle;
     font-family: monospace;
 }
+
 line.sequence-bg{
-    stroke-width:3px;
-    stroke:#aaa;
+    stroke-width:4px;
+    stroke:#CC9900;
 }
 
 g.axis-bubble text {
+    font-size: 20px;
     text-anchor: middle;
     alignment-baseline: middle;
     font-family: monospace;
 }
 g.axis-bubble rect {
-    stroke: #777;
+    stroke: #996633;
     fill: white;
 }
 svg.pviz rect.background {
@@ -59,18 +62,22 @@ rect.layer-background {
 g.layer:hover rect.layer-background {
     opacity: 1.0;
 }
+g.layer1:hover rect.layer-background {
+    opacity: 1.0;
+}
 
 /**
  *     color brewer 7 class paired #a6cee3 #1f78b4 #b2df8a #33a02c #fb9a99 #e31a1c #fdbf6f
  */
 g.feature rect.feature {
     fill: #a6cee3;
-    fill-opacity: 0.9;
+    fill-opacity: 0.6;
     stroke: #555;
-    stroke-opacity: 0.6;
+    stroke-opacity: 0.3;
 }
 
 g.feature text {
+    font-family: monospace;
     alignment-baseline: middle;
     opacity: 0.75;
 }
@@ -139,6 +146,14 @@ rect.brush {
     fill: black;
     fill-opacity: 0.3;
 }
+
+rect.feature.data {
+    font-size: 50px;
+    fill: red;
+    fill-opacity: 0.5;
+}
+
+
 /*
  *
  g.icon:hover path{
