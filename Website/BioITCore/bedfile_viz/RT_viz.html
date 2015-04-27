@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>D3LineChart</title>
+ 	<meta name="description" content="Demo example of D3LineChart">
+	<meta name="author" content="Matous Havlena (@matoushavlena)">
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	
+	<link rel="stylesheet" href="./css/d3.linechart.css">
+	<script src="./js/d3.core.js" charset="utf-8"></script>
+	<script src="./js/d3.linechart.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<div id="linechart"></div>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		
+		window.RT_data = new Array();
+		d3.csv("RT_sample2.csv", function(error, data) {
+			window.data_csv = data;
+			var lastKey = data[data.length-1].Pos[0];
+			var lastKey_chk = false;
+			for (var i=0; i<data.length; i++) {
+				window.category = {};
+				category.values = new Array();
+				category.key = data[i].Pos[0];
+				if (category.key == lastKey) {
+					lastKey_chk = true;
+				}
+				//console.log("i index: " + i + " // key: " + category.key);
+				var j;
+				if (i==0){
+					j=i
+				}
+				else{
+					j=i-1;
+				}
+				for (j; j<data.length; j++) {
+					if(category.key == data[j].Pos[0]) {
+						//console.debug(category.key + " // " + data[j].Pos[0]);
+						category.values.push({x:data[j].Pos[1], y:data[j].Ct, pos:data[j].Pos, ct:data[j].Ct, sample:data[j].Sample, probe:data[j].Probe})
+						// x: Pos, y: Count
+					}
+					else {
+						//console.log("i : j: " + i + " : " + j);
+						i = j;
+						break;
+					}
+				}
+				RT_data.push(category);
+				if (lastKey_chk) { break; }
+
+			}
+
+			
+/*
+			for (var i=0; i<data.length; i++) {
+				var hasKey = false;
+				var key_idx;				
+				window.category = {};
+				category.values = new Array();
+				if (i==0) {
+					console.debug("first!")
+					category.key = data[i].Pos[0];
+				}
+				else {
+					for (var j=0; j<RT_data.length; j++) {
+						if(RT_data[j].key == data[i].Pos[0]) {
+							hasKey = true;
+							key_idx = j;
+						}
+						else {
+							category.key = data[i].Pos[0];
+						}
+					}
+				}
+				category.values.push({pos:data[i].Pos, ct:data[i].Ct, sample:data[i].Sample, prob:data[i].Probe})
+				if(hasKey) {
+					console.debug("has key! // index: " + key_idx)
+					RT_data[key_idx].values.push(category.values);
+				}
+				else{
+					console.debug("no key!")
+					RT_data.push(category);
+				}
+			}
+*/
+			//console.log(RT_data)
+			window.linechart = new D3LineChart({ 
+	        container: "#linechart",
+	        data: RT_data,
+	        //displayTable: false
+	        yTicks: 10,
+	        //yTickFormat: function(d) {return -1},
+	        tooltipText: function(d, element) { return "<p>Pos: "+d.pos+"<br />Ct: "+d.ct+"<br />sample: "+d.sample+"<br />probe: "+d.probe+"<p>"; }
+	        });
+	        
+	        linechart.show();
+		})
+
+		
+	});
+	</script>
+	
+</body>
+</html>
