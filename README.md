@@ -1,4 +1,4 @@
-BioIT core website
+BioIT Core website
 =======
 The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
 
