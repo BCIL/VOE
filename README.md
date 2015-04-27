@@ -1,3 +1,8 @@
+BioITcore website
+=======
+The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
+
+
 Google Genomics
 =======
 Using Google Genomics API and visualized the date by BioJS-pviz
