@@ -18599,7 +18599,7 @@ define(
                         }
                         else {
                     //  reference text position
-                            return viewport.scales.x(i -0.9);
+                            return viewport.scales.x(i + 0.1);
                         }                    
                     }
 

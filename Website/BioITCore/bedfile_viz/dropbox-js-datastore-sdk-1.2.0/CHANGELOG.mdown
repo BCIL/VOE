@@ -1,0 +1,59 @@
+Changes to the Datastore API for JavaScript
+===========================================
+
+
+Changes in 1.2.0
+----------------
+- support for datastore sharing
+- fixed a bug in record size when repeatedly replacing a field with 0
+- fixed a bug where a deleted datastore would show up in the list of datastores
+
+Changes in 1.1.0
+----------------
+- merged from dropbox.js master 8b42831698edb1692211aa51004e95098d06ea83;
+  in particular, fixed access to localStorage in Safari Private Browsing
+  and integrated the new Chrome auth drivers (incompatible change)
+- made tasklist example warn about unsaved changes
+- added size accessors to allow you to check the size of your data and avoid
+  the syncing limits
+- datastore IDs, table IDs, record IDs and field names may be 64 characters
+  (increased from 32 characters)
+
+Changes in 1.0.1
+----------------
+- fixed a bug in base64 decoding
+
+Changes in 1.0.0
+----------------
+- none; this is a relabeling of beta6
+
+Changes in 0.1.0-b6
+-------------------
+- added README to tasklist example
+- internal improvements
+
+Changes in 0.1.0-b5
+-------------------
+- bug fixes and internal improvements
+
+Changes in 0.1.0-b4
+-------------------
+- renamed Datastore.Record#hasField to #has
+- replaced DatastoreManager#listDatastoreIds with #listDatastores and
+  DatastoreListChanged#listDatastoreIds with #getDatastoreInfos to make room for
+  future extension
+- added Datastore.Record#getOrCreateList
+- added checks for datastore and record size limits
+- tweaked format of valid ids
+- merged various updates from dropbox.js (not datastore-related)
+- bug fixes
+
+Changes in 0.1.0-b3
+-------------------
+- added Dropbox.Datastore.isValidId
+- added Dropbox.Client#getAccountInfo
+- bug fixes
+
+Changes in 0.1.0-b2
+-------------------
+- initial public release of the Datastore API

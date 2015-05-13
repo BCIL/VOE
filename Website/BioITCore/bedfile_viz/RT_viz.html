@@ -4,9 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>D3LineChart</title>
- 	<meta name="description" content="Demo example of D3LineChart">
-	<meta name="author" content="Matous Havlena (@matoushavlena)">
+	<title>RT-Analyzer sample data</title>
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -23,7 +21,7 @@
 	$(document).ready(function() {
 		
 		window.RT_data = new Array();
-		d3.csv("RT_sample2.csv", function(error, data) {
+		d3.csv("RT_sample.csv", function(error, data) {
 			window.data_csv = data;
 			var lastKey = data[data.length-1].Pos[0];
 			var lastKey_chk = false;

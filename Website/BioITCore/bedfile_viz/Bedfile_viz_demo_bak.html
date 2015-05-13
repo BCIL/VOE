@@ -3,12 +3,10 @@
   
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="css/d3.linechart.css">
-  
-  <script src="js/d3.core.js" charset="utf-8"></script>
-  
-  <script src="js/d3.linechart.js" charset="utf-8"></script>
-  <script src="js/filepicker.js"></script>
+  <link rel="stylesheet" href="./css/d3.linechart.css">
+  <script src="./js/d3.core.js" charset="utf-8"></script>
+  <script src="./js/d3.linechart.js" charset="utf-8"></script>
+  <script src="./js/filepicker.js"></script>
   <link rel="stylesheet" href="googledrive_btn.css">
 
   <meta charset="utf-8">
@@ -37,7 +35,7 @@
   input {
     width: 50px;
   }
-  
+
   </style>
 </head>
 <body>
@@ -54,14 +52,13 @@
 </span>
 <span id="dropbox_chooser"></span>
 </div>
-
+<pre id="upload_detail"></pre>
 
 <span> Number of Bins:&emsp;</span>
 <input type="text" id="pos_num" name="peakNumber" value='10' disabled="true" />&emsp;&emsp;
 <button id="update_btn" disabled="true"> update </button>
 
 <div id="linechart"></div>
-<div id="UCSClink"></div>
 
 <script>
   function initPicker() {
@@ -80,8 +77,8 @@
         //document.getElementById('upload_detail').innerHTML = file.title + '\n' + file.alternateLink;
       }
     });
-    //var origin = window.location.protocol + '//' + window.location.host;
-    //picker.setOrigin(origin);
+    var origin = window.location.protocol + '//' + window.location.host;
+    picker.setOrigin(origin);
   }
 
   function downloadFile(file, callback) {
@@ -191,7 +188,6 @@
       getAllchrChart();
    
       $("#all_chr").on("click", function() {
-        $('#UCSClink').empty();
         main_graph_chk = 1;
         getAllchrChart();
         document.getElementById("update_btn").disabled = true;
@@ -274,7 +270,7 @@
           tooltipText: function(d, element) { 
             window.test_d = d;
             window.test_e = element;
-            window.curr_pos = d.x;
+            var curr_pos = d.x;
             window.prev_pos;
             for (var i=0; i<item_list.length; i++) {
               if (item_list[i] == curr_pos) {

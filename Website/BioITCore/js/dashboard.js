@@ -53,13 +53,14 @@
                 var min = dt.getMinutes();
                 var sec = dt.getSeconds();
                 
-                $('#clock_date').append(month + ' ' + date);
-                $('#clock_day').append(year +', '+ day);
+                //$('#clock_date').append(month + ' ' + date);
+                //$('#clock_day').append(year +', '+ day);
 
-                var clockId = setInterval(update, 1000);
-                update();
+                //var clockId = setInterval(update, 1000);
+                //update();
         });
         
+        /*
         $.simpleWeather({
             location: 'New York, NY',
             woeid: '',
@@ -114,10 +115,11 @@
               $("#weather").html('<p>'+error+'</p>');
             }
         });
-
+        */
     });
 })(jQuery);
 
+/*
 function update() {
     var date = new Date()
 
@@ -137,5 +139,5 @@ function update() {
     if (seconds < 10) seconds = '0'+seconds
     document.getElementById('clock_sec').innerHTML = seconds  + ' ' + Am_Pm;
 }
-
+*/
 

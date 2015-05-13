@@ -410,10 +410,8 @@ D3Core.prototype = {
 	
 	tooltipRender: function() {
 		var base = this;
-		//base.item.on("click", function(d) { base.options.tooltipOnMouseClick(d, this, base); });
 		base.item.on("mouseover", function(d) { base.options.tooltipOnMouseOver(d, this, base); });
 		base.item.on("mouseout", function(d) { base.options.tooltipOnMouseOut(d, this, base); });
-
 	},
 	
 	tableRender: function() {

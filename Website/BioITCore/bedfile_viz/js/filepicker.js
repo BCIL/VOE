@@ -1,24 +1,13 @@
-/**!
- * Google Drive File Picker Example
- * By Daniel Lo Nigro (http://dan.cx/)
- */
 (function() {
-	/**
-	 * Initialise a Google Driver file picker
-	 */
 	var FilePicker = window.FilePicker = function(options) {
-		// Config
 		this.apiKey = options.apiKey;
 		this.clientId = options.clientId;
 
-		// Elements
 		this.buttonEl = options.buttonEl;
 
-		// Events
 		this.onSelect = options.onSelect;
 		this.buttonEl.addEventListener('click', this.open.bind(this));
 
-		// Disable the button until the API loads, as it won't work properly until then.
 		this.buttonEl.disabled = true;
 
 		// Load the drive API
@@ -28,9 +17,6 @@
 	}
 
 	FilePicker.prototype = {
-		/**
-		 * Open the file picker.
-		 */
 		open: function() {
 			// Check if the user has already authenticated
 			var token = gapi.auth.getToken();
@@ -43,17 +29,13 @@
 			}
 		},
 
-		/**
-		 * Show the file picker once authentication has been done.
-		 * @private
-		 */
 		_showPicker: function() {
 			var accessToken = gapi.auth.getToken().access_token;
 			var view = new google.picker.DocsView();
 			view.setIncludeFolders(true);
 			this.picker = new google.picker.PickerBuilder()
-				.enableFeature(google.picker.Feature.NAV_HIDDEN)
-				.enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+				//.enableFeature(google.picker.Feature.NAV_HIDDEN)
+				//.enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
 				.setAppId(this.clientId)
 				.setDeveloperKey(this.apiKey)
 				.setOAuthToken(accessToken)

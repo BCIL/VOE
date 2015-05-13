@@ -5,7 +5,11 @@ function D3LineChart(options) {
 		spacing: 0.5,
 		verticalText: null,
 		interpolate: "linear",
-		tooltipOnMouseOver:	function(d, element, base) { 	
+		
+		tooltipOnMouseOver:	function(d, element, base) {
+			window.tooltip_d = d;
+			window.tooltip_ele = element;
+			window.tooltip_base = base;
 			var xPosition = parseInt($(element).attr('cx'))-base.tooltipWidth/2+base.options.margin.left+3;
 			var yPosition = base.y.range()[0]-parseInt($(element).attr('cy'))+base.options.margin.bottom+15;
 			d3.select(base.options.container+" .tooltip")
@@ -14,6 +18,41 @@ function D3LineChart(options) {
 				.html(base.options.tooltipText(d, element));
 			$(base.options.container+" .tooltip").show();
 			$(element).parent().find("path").css("opacity", 1);
+
+// http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr21%3A33031597-33041570
+			var a = document.getElementById("chr_selector");
+			var chr_chk = a.options[a.selectedIndex].value;
+			if(chr_chk != 'null') {
+				var chr_doc = document.getElementById("chr_selector")
+				var chr = chr_doc.options[chr_doc.selectedIndex].text;
+				
+				var begin = prev_pos;		// caculated at ToolTipText section.
+				var end = curr_pos;
+				$('#UCSClink').empty();
+				var w=$(document).width(), h=20;
+
+			/*
+				var svg = d3.select("#UCSClink");
+				var svg_form = svg.append("form").attr("action", "http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end);
+				var svg_f_input = svg_form.append("input")
+										.attr("type","submit")
+										.attr("value","UCSC LINK")
+			*/
+
+				//d3.select("#UCSClink").html("<span style='margin-left:5%'><a href='http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"' target='_blank'>Browse USCS for "+chr+" information ("+begin+"-"+end+")</a><span>")
+				$('#UCSClink').append("<span id='ucsc' style='margin-left:5%'><a href='http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"' target='_blank'>Browse USCS for "+chr+" information ("+begin+"-"+end+")</a><span>");
+				
+				
+				var e = document.getElementById('ucsc');
+				var t = 12;
+				var n = 0;
+				var c = ['red', "green"];
+				var i = window.setInterval(function() {
+					e.style.color = e.style.color != c[0] ? c[1] : b++;
+					//if (n == t) { window.clearInterval(i) };
+				},500);
+
+			}
 		},
 		tooltipOnMouseOut: function(d, element, base) {
 			$(base.options.container+" .tooltip").hide();

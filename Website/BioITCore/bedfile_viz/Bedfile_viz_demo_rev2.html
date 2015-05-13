@@ -5,7 +5,7 @@
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="css/d3.linechart.css">
   
-  <script src="js/d3.core.js" charset="utf-8"></script>
+  <script src="js/d3.core_rev2.js" charset="utf-8"></script>
   
   <script src="js/d3.linechart.js" charset="utf-8"></script>
   <script src="js/filepicker.js"></script>
@@ -37,7 +37,7 @@
   input {
     width: 50px;
   }
-  
+
   </style>
 </head>
 <body>
@@ -191,7 +191,6 @@
       getAllchrChart();
    
       $("#all_chr").on("click", function() {
-        $('#UCSClink').empty();
         main_graph_chk = 1;
         getAllchrChart();
         document.getElementById("update_btn").disabled = true;
