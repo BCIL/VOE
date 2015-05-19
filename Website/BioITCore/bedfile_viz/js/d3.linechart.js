@@ -19,7 +19,6 @@ function D3LineChart(options) {
 			$(base.options.container+" .tooltip").show();
 			$(element).parent().find("path").css("opacity", 1);
 
-// http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr21%3A33031597-33041570
 			var a = document.getElementById("chr_selector");
 			var chr_chk = a.options[a.selectedIndex].value;
 			if(chr_chk != 'null') {
@@ -31,27 +30,31 @@ function D3LineChart(options) {
 				$('#UCSClink').empty();
 				var w=$(document).width(), h=20;
 
-			/*
-				var svg = d3.select("#UCSClink");
-				var svg_form = svg.append("form").attr("action", "http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end);
-				var svg_f_input = svg_form.append("input")
-										.attr("type","submit")
-										.attr("value","UCSC LINK")
-			*/
+				$('#UCSClink').append("<button id=ucsc style='width:40%;margin-left:5%'>Browse UCSC ("+chr+":"+begin+"-"+end+")</button>");
 
-				//d3.select("#UCSClink").html("<span style='margin-left:5%'><a href='http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"' target='_blank'>Browse USCS for "+chr+" information ("+begin+"-"+end+")</a><span>")
-				$('#UCSClink').append("<span id='ucsc' style='margin-left:5%'><a href='http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"' target='_blank'>Browse USCS for "+chr+" information ("+begin+"-"+end+")</a><span>");
-				
+					//http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"
+				//$('#UCSClink').append("<span style='margin-left:5%'><a href='http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"' target='_blank'><font id='ucsc'>Browse UCSC for "+chr+" information ("+begin+"-"+end+")</font></a><span>");
+			
 				
 				var e = document.getElementById('ucsc');
-				var t = 12;
+				var t = 6;
 				var n = 0;
-				var c = ['red', "green"];
+				var c = ['red', "blue"];
 				var i = window.setInterval(function() {
-					e.style.color = e.style.color != c[0] ? c[1] : b++;
-					//if (n == t) { window.clearInterval(i) };
-				},500);
-
+					if (e.style.color != c[0]) {
+						e.style.color = c[0] 
+						n++;
+					}
+					else {
+						e.style.color = c[1]
+						n++;
+					}
+					if (n == t) { window.clearInterval(i) };
+				},800);
+			
+				document.getElementById("ucsc").onclick = function() {
+					window.open("http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end,'_target');
+				}
 			}
 		},
 		tooltipOnMouseOut: function(d, element, base) {

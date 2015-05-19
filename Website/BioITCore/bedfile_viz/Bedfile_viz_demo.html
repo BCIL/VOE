@@ -37,7 +37,7 @@
   input {
     width: 50px;
   }
-  
+
   </style>
 </head>
 <body>
@@ -72,22 +72,14 @@
       onSelect: function(file) {
         window.upFile = file;
         downloadFile(file)
-        //$.get(file.webContentLink, function(data) {
-        //window.d=data;
-        //window.d2 = eval(data);
-        //})  
-        //console.log(file);
-        //document.getElementById('upload_detail').innerHTML = file.title + '\n' + file.alternateLink;
       }
     });
-    //var origin = window.location.protocol + '//' + window.location.host;
-    //picker.setOrigin(origin);
   }
 
   function downloadFile(file, callback) {
     if (file.downloadUrl) {
       var accessToken = gapi.auth.getToken().access_token;
-      var xhr = new XMLHttpRequest();
+      window.xhr = new XMLHttpRequest();
       xhr.open('GET', file.downloadUrl);
       xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
       xhr.onload = function() {        
@@ -124,9 +116,13 @@
         extensions: ['.bed'],
     };
   
+  $("#pos_num").keyup(function(event) {
+    if (event.keyCode == 13){
+      $("#update_btn").click();
+    }
+  })
 
   $(document).ready(function() {
-
     var button = Dropbox.createChooseButton(options);
     document.getElementById("dropbox_chooser").appendChild(button)
 
@@ -308,11 +304,8 @@
         xTickFormat: function(d) { return 'chr' + d },
         tooltipText: function(d, element) { return "<p>name: "+d.name+"<br />count: "+d.y+"<p>"; }
         });
-        
         linechart.show();
       }
-
-
     });
   });
 
@@ -446,32 +439,31 @@
         for (var n=0; n<item_list.length; n++) {
           dr.values.push({x:item_list[n], y:item_count[n]});
         }
-     
         data_list_range.push(dr);
 
-        
         if (main_graph_chk == 1) {
           main_graph_chk = 0;
           $("#linechart").empty();
           window.linechart = new D3LineChart({ 
-          container: "#linechart",
-          data: data_list_range,
-          displayTable: false,
-          yTicks: 30,
-          xAxisName: "Position",
-          yAxisName: "Count",
-          tooltipText: function(d, element) { 
-            window.test_d = d;
-            window.test_e = element;
-            var curr_pos = d.x;
-            window.prev_pos;
-            for (var i=0; i<item_list.length; i++) {
-              if (item_list[i] == curr_pos) {
-                if (i==0) { prev_pos = 0; }
-                else { prev_pos = item_list[i-1]; }
+            container: "#linechart",
+            data: data_list_range,
+            displayTable: false,
+            yTicks: 30,
+            xAxisName: "Position",
+            yAxisName: "Count",
+            tooltipText: function(d, element) { 
+              window.test_d = d;
+              window.test_e = element;
+              var curr_pos = d.x;
+              window.prev_pos;
+              for (var i=0; i<item_list.length; i++) {
+                if (item_list[i] == curr_pos) {
+                  if (i==0) { prev_pos = 0; }
+                  else { prev_pos = item_list[i-1]; }
+                }
               }
+              return "<p>count: "+d.y+"<br/>position: "+prev_pos+" - "+ curr_pos + "<p>";
             }
-            return "<p>count: "+d.y+"<br/>position: "+prev_pos+" - "+ curr_pos + "<p>"; }
           });
           linechart.show();
         }

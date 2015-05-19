@@ -18,7 +18,7 @@ body {
     text-rendering:optimizeLegibility;
 }
 ul, .list-unstyled {
-    padding-left: 5px;
+    padding-left: 30px;
 }
 ul li {
     /*list-style:none;*/
@@ -307,82 +307,6 @@ ul.sidebar-menu li a.active i {
     -o-transition:all .3s ease-in-out;
     transition:all .3s ease-in-out;
 }
-
-#phyloXML_body.panel-body {
-    width: 800px;
-    height: 600px;
-}
-
-#GoogleGenomics_body {
-    width: 800px;
-    height: 600px;
-}
-
-
-.iframe_phyloXML iframe, .iframe_Google iframe {
-    position: absolute;
-    top:10;
-    left:10;
-    right:10;
-    width:100%;
-    height:100%;
-    border: none
-}
-
-.iframe_Google iframe {
-    position: absolute;
-    top:10;
-    left:10;
-    width:100%;
-    height:100%;
-    border: none
-}
-
-.radialTree_demo iframe {
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border: none
-}
-
-.sunburst_demo iframe {
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border: none
-}
-
-.pviz_demo iframe {
-    top:0;
-    left:0;
-    width:100%;
-    height: 30%;
-    border: none
-}
-
-.bedfile_demo iframe {
-    margin-top:1%;
-    left:0;
-    width:100%;
-    border: none;
-    position:relative;
-}
-
-.viz_your_data {
-    border-radius:15px;
-    font-weight:600;
-    background-color: #CCCCCC;
-}
-
-.viz_your_data:hover {
-    border-radius:15px;
-    font-weight:600;
-    background-color: #B2B2B2;
-    color: #CC145E;
-}
-
 .footer {
     min-height:60px;
     padding:0 15px;
@@ -2813,10 +2737,6 @@ ul.amounts li {
 .corporate-id {
     margin-bottom: 30px;
 }
-.panel-heading {
-    font-size: 20px;
-    text-align: center;
-}
 /*panel heading color*/
 .panel-primary>.panel-heading.navyblue {
     background-color:#2A3542;
@@ -3525,65 +3445,54 @@ ul.clock-category li a:hover i,ul.clock-category li a.active i {
     right:10px;
 }
 .weather-full-info {
-    /*color:#cbcbcb;*/
+    color:#cbcbcb;
 }
 .weather-full-info h1 {
-    font-size:13px;
-    font-weight:900;
-    margin:0 0 0px 0;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px 0;
     text-transform:uppercase;
 }
 .weather-full-info h2 {
     font-size:14px;
     font-weight:300;
-    margin:0 0 0px 0;
+    margin:0 0 5px 0;
 }
 .weather-full-info .today-status i {
     font-size:40px;
     color:#1fb5ad;
 }
-/*
-.weather-full-info .today-status img {
-    width: 70%;
-    height: 70%;
-}
-*/
-.weather-full-info #weather_info .degree {
-    font-size:20px;
+.weather-full-info .degree {
+    font-size:30px;
     font-weight:600;
+    display:inline-block;
+    padding-left:20px;
 }
-
-.weather-full-info .weather_detail {
-    font-size:12px;
-    
-}
-/*
 .weather-full-info .degree:after {
-    content:"F";
+    content:"o";
     position:relative;
-    top:0px;
+    top:-12px;
     font-size:16px;
 }
-*/
-.weather-full-info #forecast ul {
+.weather-full-info ul {
     margin-bottom:0;
 }
-.weather-full-info #forecast ul li {
+.weather-full-info ul li {
     display:inline-block;
-    width:18%;
+    width:16%;
     text-align:center;
     border-left:1px solid #f1f2f7;
 }
-.weather-full-info #forecast ul li i {
+.weather-full-info ul li i {
     font-size:25px;
 }
 .weather-full-info .statistics {
     padding-top:5px;
 }
 .weather-full-info .statistics:after {
-    content:"F";
+    content:"o";
     position:relative;
-    top:1px;
+    top:-5px;
     font-size:10px;
 }
 .prd-row {
@@ -4783,6 +4692,7 @@ div.tagsinput span.tag {
 }
 .monthly-stats.pink {
     background-color:#9972b5 !important;
+;
 }
 .sparkline {
     text-align:center;
@@ -5128,13 +5038,6 @@ div.tagsinput span.tag {
     -moz-border-radius:3px;
     border-radius:3px;
 }
-.iframe_evtList {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    margin-left: 0 0 0 0;
-    border: none
-}
 .event-list {
     padding-left: 0;
 }
@@ -5253,11 +5156,11 @@ div.tagsinput span.tag {
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
     border-radius:3px;
-    margin-bottom:5px;
+    margin-bottom:20px;
     padding:12px 15px;
 }
 .weather-info {
-    margin:0px 0px 0px 20px;
+    margin:0px;
 }
 .weather-info li {
     font-size:14px;
@@ -5839,12 +5742,12 @@ right: -1px;
 /*draggable portlet*/
 
 .sortable-box-placeholder {
-    height:200px !important;
+    height:200px !important;;
     border: 2px dashed #828295;
     margin-bottom: 20px;
     background: #e5e6eb;
 }
 
 .sortable{
-    min-height: 400px;
+    min-height: 400px;;
 }
