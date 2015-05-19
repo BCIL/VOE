@@ -13036,27 +13036,47 @@ define(
                  */
 
                  // THIS IS IN USE!
+                 // This function is loaded at the first time. 
                  // Add feature and att.
                 addFeatures: function (feats, options) {
+                    console.log("addFeature");
                     test_posFeature.push(feats);
 
                     var self = this;
                     options = options || {};
                     test_posFeature_option = options;
+                    window.self_addFeatures = self;
+                    window.feats_addFeatures = feats;
 
                     var triggerChange = options.triggerChange || (options.triggerChange === undefined);
 
+                    // this If statment is not in use....  (maybe?)
                     if (_.isArray(feats)) {
                         _.each(feats, function (ft) {
                             ft.start = parseInt(ft.start);
                             ft.end = parseInt(ft.end);
+                            //console.log("***** Adding Feature position : " + ft.start + " // " + ft.end);
                             self.get('features').push(ft);
                         })
                         if (triggerChange)
                             self.trigger('change');
                         return self;
                     }
+
+////////////////////////////////////////////////////////////
+                    ////// add text and alignment
+                    window.o = self.get('features');
                     self.get('features').push(feats);
+
+                    /*
+                    for (var i=0; i<o.length; i++) {
+                        //console.log(" ** self category " + o[i].category);
+                        if (o[i].category == feats.category) {
+                            //console.log(" ** feats category " + feats.category);
+                            o[i].text = feats.text;
+                        }   
+                    }
+                    */
                     if (triggerChange)
                         self.trigger('change');
                     return self;
@@ -13193,6 +13213,7 @@ define(
          //     NOT IN USE
         DASReader.prototype.xml2features = function (seqEntry, xmlStr, options) {
             
+            console.log("xml2features");
             var self = this;
             options = options || {};
 
@@ -13473,6 +13494,7 @@ define(/**
                 });
                 featureDisplayer.setCustomHandler('circle', {
                     appender: function (viewport, svgGroup, features, type) {
+                        console.log("setCustonHandler");
                         var sel = svgGroup.selectAll("g.feature.data." + type).data(features).enter().append("g").attr("class", "feature data " + type);
                         var g = sel.append("g");
                         g.append('circle');
@@ -14011,11 +14033,11 @@ define(
             var self = this;
 
             //add hirizontal line if needed for thecategory
-            //console.log('Features append')
+            console.log('Features append')
             var curCat = _.chain(features).pluck('category').uniq().value()[0];
 
             if (self.strikeoutCategory[curCat]) {
-                //console.log("** Feature append - strikeoutCategory");
+                console.log("** Feature append - strikeoutCategory");
                 var maxTrack = _.chain(features).pluck('displayTrack').max().value();
                 var g = svgGroup.append('g').attr('class', 'strikeout');
                 var hFactor = self.heightFactor(curCat);
@@ -14027,7 +14049,7 @@ define(
 
             //append the feature (beta_strand, helix, turn)
             _.chain(features).groupBy(function (ft) {
-                //console.log("ft type: " + ft.type);
+                console.log("ft type: " + ft.type);
                 return ft.type;
             }).each(function (ftGroup, type) {
                 var sel = (self.appenders[type] || defaultAppender)(viewport, svgGroup, ftGroup, type)
@@ -14102,12 +14124,38 @@ define(
             var self = this;
             window.init_prog = 1;
             window.test_ft = features;
-            //console.log("** defaultAppender // ft-data: " + features);
+            console.log("** defaultAppender // ft-data: " + features);
             // ftData == sequence array. each index contains single base
             window.ftData = features[0].text.split('');
             window.test_svgGroup = svgGroup;
             window.ft_viewport = viewport;
 
+/*          
+            var layer = new FeatureLayer({
+                name: 'sequence',
+                nbTracks: 2
+            })
+
+            self.layers.push(layer)
+
+            var view = new FeatureLayerView({
+                model: layer,
+                //container: self.layerContainer,
+                viewport: self.viewport,
+                cssClass: 'TEST',
+                noMenu: true,
+                //margins: self.margins,
+                //clipper: '#' + self.clipperId
+            })
+            window.test_v = view;
+            self.layerViews.push(view)
+*/
+        /*  // sequence layer source
+            view.gFeatures.append('line').attr('x1', -100).attr('x2', 2000).attr('class', 'sequence-bg').attr('y1', 7).attr('y2', 7);
+                var sel = view.gFeatures.selectAll("text").data(self.model.get('sequence').split('')).enter().append("text").attr('class', 'sequence data').text(function (d) {
+                    return d;
+                });
+        */
             // orig
             var sel = svgGroup.selectAll("rect.feature.data." + type).data(features).enter().append("g").attr("class", "feature data " + type);
             
@@ -14122,46 +14170,40 @@ define(
 /////////////
             //var ftSeq = sel.append("text")
 
-            /*
-            if(typeof base_list === 'undefined') {
-                window.base_list = []    
-            }
-            */
-
-
-    //////////////////////////////////////////////////////////////////////
-    ////    Define each nucleotide color...
-
-            var base_A_color = "green";
-            var base_C_color = "blue";
-            var base_G_color = "black";
-            var base_T_color = "red";
-
-            var ftSeq = svgGroup.selectAll("rect.feature.data." + type + ".text").data(ftData).enter().append("text").attr('class',"feature data")
-                .text(function(d) { 
-                    //base_list.push(d);
-                    return d;
-                    });
-
+            ///////// working - zoom & refresh broken
+            var ftSeq = svgGroup.selectAll("rect.feature.data." + type + ".text").data(ftData).enter().append("text").attr('class',"feature data").text(function(d) { return d; });
             /////////
             //var ftSeq = selectAll("rect.feature.data." + type);
             //ftSeq.selectAll("text").data(ftData).enter().append("text").attr('class',"feature data").text(function(d) { return d; });
             
-
             ftSeq.attr('x', function (d, i) {
                     //console.log("x: " + global_viewport.scales.x(i + features[0].start));
-
-        //  feature rectangle position at the beginning
-                    return viewport.scales.x(i + features[0].start );
+                    return viewport.scales.x(i + features[0].start);
                 })
-                .attr('y', viewport.scales.y(0.45)).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px').style('fill', function(d) {
-                    if (d == 'A') { return base_A_color; }
-                    else if (d == 'T') { return base_T_color; }
-                    else if (d == 'G') { return base_G_color; }
-                    else if (d == 'C') { return base_C_color; }
-                    }).style('font-weight',700);
-            return sel;
+                .attr('y', viewport.scales.y(0.45)).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px')
+
+
+            return sel
         }
+
+/*
+        ft_positionText: function (viewport, sel) {
+            var self = this;
+            test_sel = sel;
+            global_viewport = viewport;
+            viewport_global = viewport.scales;
+            // console.log("p_positionText");
+
+            sel.attr('x', function (d, i) {
+                return viewport.scales.x(i);
+
+            }).attr('y', viewport.scales.y(1) - 7).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px');
+
+            //console.debug("viewport: " + global_viewport);
+            //console.debug("sel: " + test_sel);
+            return sel
+        }
+*/
 
         FeatureDisplayer.prototype.position = function (viewport, sel) {
             //console.log("ft position function")
@@ -14173,13 +14215,13 @@ define(
 
             // category of feature  (regions, secondary structure...)
             var ftIsNotPloted = _.filter(sel.data(), function (e) {
-                //console.log("e.category: " + e.category)
+                console.log("e.category: " + e.category)
                 return self.categoryPlots[e.category] === undefined;
             });
 
             // type of feature (topological domain, beta_strand, helix...)
             _.chain(ftIsNotPloted).map(function (s) {
-                //console.log("s.type: " + s.type)
+                console.log("s.type: " + s.type)
                 return s.type;
             }).unique().each(function (type) {
                 (self.positioners[type] || defaultPositioner)(viewport, sel.filter(function (ft) {
@@ -14227,19 +14269,19 @@ define(
          */
         // FeatureDisplayer.prototype.position = function(viewport, d3selection) {
         var defaultPositioner = function (viewport, d3selection) {
-            //console.log("** default positioner")
+            console.log("** default positioner")
             var hFactor = singleton.heightFactor(d3selection[0][0].__data__.category);
             // var yscale=singleton.trackHeightFactorPerCategory[]
 
             d3selection.attr('transform', function (ft) {
-                // feature rectangle x-axis position adjustment
-                return 'translate(' + viewport.scales.x(ft.start ) + ',' + hFactor * viewport.scales.y(ft.displayTrack - 0.1) + ')';
+                // x Axis position adjustment
+                return 'translate(' + viewport.scales.x(ft.start - 0.8) + ',' + hFactor * viewport.scales.y(0.12 + ft.displayTrack) + ')';
             });
             var ftWidth = function (ft) {
                 window.test_ftWidth = ft;
-                return viewport.scales.x(ft.end + 0.05) - viewport.scales.x(ft.start + 1) 
+                return viewport.scales.x(ft.end + 0.9) - viewport.scales.x(ft.start + 0.1)
             }
-            d3selection.selectAll("rect.feature").attr('width', ftWidth).attr('height', hFactor * viewport.scales.y(0.76));
+            d3selection.selectAll("rect.feature").attr('width', ftWidth).attr('height', hFactor * viewport.scales.y(0.5));
             d3selection.selectAll("rect.feature-block-end").attr('width', 10).attr('x', function (ft) {
                 return ftWidth(ft) - 10;
             }).style('display', function (ft) {
@@ -14247,11 +14289,11 @@ define(
             }).attr('height', viewport.scales.y(hFactor * 0.76));
 
             ////  Feature FONT!!
-            var fontSize = parseInt(viewport.scales.font); //9 * hFactor;
+            var fontSize = viewport.scales.font //9 * hFactor;
 
             // self.fontSizeLine();
             var selText = d3selection.selectAll("text");
-            //console.log("segText: "+ selText);
+            console.log("segText: "+ selText);
             selText.text(function (ft) {
                 window.defaultPos_ft = ft;
                 /*
@@ -14263,7 +14305,7 @@ define(
 
                 var text = (ft.text !== undefined) ? ft.text : ft.type;
                 
-                var w = viewport.scales.x(ft.end + 0.9) - viewport.scales.x(ft.start );
+                var w = viewport.scales.x(ft.end + 0.9) - viewport.scales.x(ft.start);
                 if (w <= 5 || text.length == 0) {
                     return '';
                 }
@@ -14275,7 +14317,7 @@ define(
                 return text.substr(0, nchar);
             }).style('font-size', fontSize).style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px');
 
-            //console.log("updated x scales : " + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font))
+            console.log("updated x scales : " + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font))
             return d3selection
         }
 
@@ -14425,9 +14467,7 @@ define(
          * @constructor
          */
 
-         /// This function is loaded at the first time only.
         var SeqEntryViewport = function (options) {
-            //console.debug("** SeqeEntry Viewport")
             var self = this;
             self.options = options;
 
@@ -15042,9 +15082,7 @@ define(
                 if (isMinimizable) {
                     rect = self.gMenu.append('rect').attr('height', 25).attr('class', 'layer-background layer-menu-background').attr('rx', 5).attr('ry', 5);
                 }
-
-                // each feature layer name
-                var t = self.gMenu.append('text').attr('class', 'layer-category').text(self.model.get('name')).attr('y', 2).attr('x', 7);//.style('color','blue');
+                var t = self.gMenu.append('text').attr('class', 'layer-category').text(self.model.get('name')).attr('y', 2).attr('x', 7);
                 var w = t.node().getComputedTextLength();
 
                 if (isMinimizable)
@@ -18151,11 +18189,8 @@ define(
 
                         }
                         gbubbles.style('display', null);
-
-                // position number setting..   default is start from 0
-                // it shows start position as the real reference start position. 
                         if (self.gPosBubble) {
-                            self.gPosBubble.selectAll('text').text(Math.round(imid + 1 + parseInt(startPosition)) );
+                            self.gPosBubble.selectAll('text').text(Math.round(imid + 1));
                         }
 
                         if (self.gAABubble) {
@@ -18163,7 +18198,6 @@ define(
                             var ic1 = Math.round(imid) + self.bubbleSequenceNb;
                             var subseq = self.model.get('sequence').substring(ic0, ic1 + 1);
 
-                // reference sequence bubble font size setting..
                             var ts = self.gAABubble.selectAll('text.subseq').data(subseq.split(''));
                             ts.exit().remove();
                             ts.enter().append("text").attr('class', 'subseq');
@@ -18174,11 +18208,11 @@ define(
                                 return (i - self.bubbleSequenceNb) * 10 / (1 + d * 0.1)
                             }).style('font-size', function (t, i) {
                                 var d = Math.abs(i - 4);
-                                return '' + (130 * (0.2 + 0.2 * (4 - d))) + '%';
+                                return '' + (120 * (0.2 + 0.2 * (4 - d))) + '%';
                             }).attr('y', -3);
                         }
 
-                        //gbubble.selectAll('text.subseq').data(subseq.split(''));
+                        //                  gbubble.selectAll('text.subseq').data(subseq.split(''));
                         gbubbles.attr('transform', 'translate(' + xscales(imid) + ',10)');
                     });
 
@@ -18189,8 +18223,10 @@ define(
                     length: self.model.length(),
                     margins: self.margins,
                     changeCallback: function (vp) {
-                        //console.log("------ changeCallback")
+                        console.log("------ changeCallback")
                         self.p_positionText(vp, self.svg.selectAll('text.data'));
+              //debugger;        
+                        //console.log("------ after debugger;")  
                         featureDisplayer.position(vp, self.svg.selectAll('g.data'));
 
                         if (!options.hideAxis)
@@ -18222,36 +18258,17 @@ define(
             /**
              * @private
              */
-
-            // bottom axis setting
             updateAxis: function () {
                 var self = this;
+
                 var vpXScale = self.viewport.scales.x;
-                
-                window.updateAxis_self = self;
-                window.viewport_Xscale = vpXScale;
-
-                var scale = d3.scale.linear().domain([vpXScale.domain()[0] , vpXScale.domain()[1] ]).range(vpXScale.range());
-                var xAxis = d3.svg.axis().scale(scale).tickSize(9, 5, 5).tickFormat(function (p) {
-                    //console.log("** p-value: " + p + " // type: " + typeof(p));
-                    
-            //// get start and end position of reference sequence from 'draw_pviz'
-                    window.startPos_html = document.getElementById('startPosition');
-                    window.endPos_html = document.getElementById('endPosition');
-
-                    window.ref_startPosition = startPos_html.children[0].innerHTML.replace( /^\D+/g, '');
-                    window.ref_endPosition = endPos_html.children[0].innerHTML.replace( /^\D+/g, '');
-
-                    var p_mod = parseInt(p) + parseInt(ref_startPosition); 
-                    return (p == 0) ? '' : p_mod
+                var scale = d3.scale.linear().domain([vpXScale.domain()[0] + 1, vpXScale.domain()[1] + 1]).range(vpXScale.range());
+                var xAxis = d3.svg.axis().scale(scale).tickSize(6, 5, 5).tickFormat(function (p) {
+                    return (p == 0) ? '' : p
                 }).ticks(4);
-
-                //console.log("** xAxis: " + xAxis);
                 self.axisContainer.call(xAxis);
-
-                // location number indicator
                 self.gPosBubble = self.axisContainer.append('g').attr('class', 'axis-bubble').style('display', 'none');
-                self.gPosBubble.append('rect').attr('x', -50).attr('y', -4).attr('width', 100).attr('height', 17)
+                self.gPosBubble.append('rect').attr('x', -30).attr('y', -4).attr('width', 60).attr('height', 17)
                 self.gPosBubble.append('text').attr('class', 'pos').attr('y', 6);
 
             },
@@ -18370,28 +18387,11 @@ define(
                 })
                 self.layerViews.push(view)
                 window.view = view;
-                //debugger;
-                view.gFeatures.append('line').attr('x1', -50).attr('x2', 2000).attr('class', 'sequence-bg').attr('y1', 7).attr('y2', 7);
-                
-                var base_A_color = "green";
-                var base_C_color = "blue";
-                var base_G_color = "black";
-                var base_T_color = "red";
-
-          
+                view.gFeatures.append('line').attr('x1', -100).attr('x2', 2000).attr('class', 'sequence-bg').attr('y1', 7).attr('y2', 7);
                 var sel = view.gFeatures.selectAll("text").data(self.model.get('sequence').split('')).enter().append("text").attr('class', 'sequence data').text(function (d) {
                     return d;
                 });
 
-                sel.style('fill', function(d) {
-                    if (d == 'A') { return base_A_color; }
-                    else if (d == 'T') { return base_T_color; }
-                    else if (d == 'G') { return base_G_color; }
-                    else if (d == 'C') { return base_C_color; }
-                }).style('font-weight', 'bold')
-
-                window.sel_ref_str = sel;
-                //debugger;
                 self.p_positionText(self.viewport, sel);
                 self.gAABubble = view.g.append('g').attr('class', 'axis-bubble').style('display', 'none');
                 self.gAABubble.append('rect').attr('x', -30).attr('y', -12).attr('width', 61).attr('height', 16)
@@ -18411,10 +18411,15 @@ define(
 
                 });
 
+                // contains aligned seq info.  Correct order that is from Gen_Pviz.
+                window.groupedFeatures = groupedFeatures;    
+
+
                 //it is possible to pass the category Order, thus sort on it at first
-                var buildOrder=function(orderName){
+                var buildOrder = function(orderName){
                     var order;
                     if (self.options[orderName] !== undefined) {
+                        //console.log("undefined order")
                         order = {};
                         _.each(self.options[orderName], function (n, i) {
                             order[n] = i + 1;
@@ -18426,10 +18431,10 @@ define(
                 var categoryOrder = buildOrder('categoryOrder');
                 var groupSetOrder = buildOrder('groupSetOrder');
 
-
+                window.categoryOrder = categoryOrder;
+                window.groupSetOrder = groupSetOrder;
+                window.layer_group = [];
                 _.chain(groupedFeatures)
-
-        // disable sorting because it disorganized the alignment seq. entry..
                 /*
                     .sortBy(function (group) {
                         if (categoryOrder !== undefined) {
@@ -18446,9 +18451,11 @@ define(
 
                         return group[0].groupSet;
                     })
-                */
+*/
                     .each(function (group, groupConcatName) {
                         var nbTracks, isPlot;
+                        
+                        layer_group.push(group);
                         if (featureDisplayer.isCategoryPlot(group[0].category)) {
                             nbTracks = 1;
                             isPlot = true;
@@ -18541,7 +18548,7 @@ define(
              * @private
              */
 
-        //// setup reference layer... 
+        //// setup SEQUENCE layer... 
         //// 
             p_positionText: function (viewport, sel) {
                 /*
@@ -18557,19 +18564,44 @@ define(
                 test_sel = sel;
                 global_viewport = viewport;
                 viewport_global = viewport.scales;
-                
+                //console.log("** p_positionText");
+
                 var count = 0;
                 var count_loop = -1;
                 var ft_idx = 0;
                 var ftSize = test_posFeature.length;        // number of added feature
                 var ft_pos_by_idx = 0;
                 sel.attr('x', function (d, i) {
-                    
+                    //console.log("sel.attr loop - "+ count);
+                    //count +=1;
+                    /* // Set text sepecific position
+                    if (i < 250) { return; }         // shows text from 250th position 
+                    else {
+                        return viewport.scales.x(i);
+                    }
+                    //
+                    */
+        //-----------------------------------------------------------------
+                    /// THIS IS THE PROBLEM
+                    /// fixed -  Feature sequence start with index 267 after update the sequence (zoom).
+                    /// It works for ONLY one feature.. it need to be fixed for multiple features 
+
+
+                    //console.log("*** seq POS: " + viewport.scales.x(i))
+
+
+
+                    /// TODO
+                    /// pviz graph alignment -> the order is not correct after updating.
+
                     count_i += 1;
                     if (typeof firstLoad === 'undefined') {
                         return viewport.scales.x(i);
                     }
-                    else {  
+                    else {
+                          
+                        // test_posFeature[ (function (d,i) { return i } )].start)
+                        //var ftEndPos = test_posFeature[0].end;
                         if (i > refSeq_length - 1) {
                             count_loop += 1;                // start from 0 
                             count += 1; 
@@ -18581,43 +18613,48 @@ define(
                                 ft_pos_by_idx = count_loop;
                             }
 
-            // set reference and feature start position
+                        // set feature start position
                             
                             var fixedPos = ft_pos_by_idx + test_posFeature[ft_idx].start ;
+                            //console.log("i: " + ft_pos_by_idx + " // fixedPos: " + fixedPos + " // ft_idx: " + ft_idx + " // count: " + count );  
 
-                    //  counting bases of feature
-                            if(count == test_posFeature[ft_idx].text.length) {
+                                                    // counting bases of feature
+                            if(count > 0 && count % 101 == 0) {
                                 next_idx = parseInt(ft_idx) + 1;
+                                //console.log("**** ft_idx change from " + ft_idx +" to " + next_idx);
+                                //debugger;
                                 ft_idx += 1;
-                                count_loop = -1;                    // reset counter
-                                count = 0;
+                                count_loop = -1;                    // reset
+                                //console.log("---- " + ft_idx);
                             }  
+                            //console.log("fixedPos: " + fixedPos);
                             
-                    //  feature text position
-                            return viewport.scales.x(fixedPos );   
+                            return viewport.scales.x(fixedPos);   
                         }
-                        else {
-                    //  reference text position
-                            return viewport.scales.x(i -0.9);
-                        }                    
+                        
+                        //else {
+                        //    return viewport.scales.x(i);
+                        //}                    
                     }
 
-                }).attr('y', viewport.scales.y(1) - 7).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px');
+                }).attr('y', viewport.scales.y(1) - 7).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px')
 
-            //  Collect reference sequence length. it wont be changed
+
+                    /// Collect reference sequence length. it wont be changed
                 if (typeof firstLoad === 'undefined') {         
                         window.firstLoad = 0;
                         window.refSeq_length = count_i; 
                     }
-                //console.log("------ count_i: " + count_i + " // refSeq_length: " + refSeq_length);
-                return sel;
-
-        //  end 'p_positionText' function        
-            }   
+                
+                console.log("------ count_i: " + count_i + " // refSeq_length: " + refSeq_length);
+                //console.debug("viewport: " + global_viewport);
+                //console.debug("sel: " + test_sel);
+                return sel
+            }
         });
+
         return SeqEntryAnnotInteractiveView;
     });
-
 define(
     /**
      @exports SeqEntryTableView

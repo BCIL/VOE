@@ -1,15 +1,12 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // shim for using process in browser
 
-//////////////////////////////////////////
-
-var global_viewport;
-var test_sel;
-var viewport_global;
-var test_textPosCount;
-//var test_posFeature = [];
-var test_posFeature_option;
-//////////////////////////////////////////
+var test_options;
+var test_self;
+var test_self_bubble;
+var test_addFeatures;
+var test_imid;
+///////////////////////////////////////////
 var process = module.exports = {};
 
 process.nextTick = (function () {
@@ -27,7 +24,7 @@ process.nextTick = (function () {
 
     var queue = [];
 
-    if (canMutationObserver) { 
+    if (canMutationObserver) {
         var hiddenDiv = document.createElement("div");
         var observer = new MutationObserver(function () {
             var queueList = queue.slice();
@@ -13016,7 +13013,6 @@ define(
 
                 },
                 initialize: function () {
-                    window.test_posFeature = [];
                     this.set('features', []);
                 },
                 /**
@@ -13034,15 +13030,11 @@ define(
                  * @param {boolean} options.triggerChange defines is a 'change' event is to be fired (default is true)
                  * @return {SeqEntry}
                  */
-
-                 // THIS IS IN USE!
-                 // Add feature and att.
                 addFeatures: function (feats, options) {
-                    test_posFeature.push(feats);
-
+                    //console.log("Call - addFeatures!!");
                     var self = this;
+                    test_addFeatures = self;
                     options = options || {};
-                    test_posFeature_option = options;
 
                     var triggerChange = options.triggerChange || (options.triggerChange === undefined);
 
@@ -13138,10 +13130,7 @@ define(
          * @param {boolean} options.getFeatures once the sequence is loaded, we load the features
          * @param {function} options.success: a function to be executed upon success of loading seq, with the newly created seqEntry as argument
          */
-
-         //     NOT IN USE
         DASReader.prototype.buildSeqEntry = function (id, options) {
-            //console.log("DASReader")
             var self = this;
             var url = self.urlRoot + '/sequence?segment=' + id;
 
@@ -13189,10 +13178,7 @@ define(
          * @param {String} options.groupSet to group the feature in the meta category
          * @param {Map} options.skipCategory a map string -> boolean to indicate whether a given category is to be skipped
          */
-
-         //     NOT IN USE
         DASReader.prototype.xml2features = function (seqEntry, xmlStr, options) {
-            
             var self = this;
             options = options || {};
 
@@ -14005,29 +13991,25 @@ define(
          * @param features
          * @return {*}
          */
-
-         // IN USE FOR ADDING FEATURES
         FeatureDisplayer.prototype.append = function (viewport, svgGroup, features) {
             var self = this;
 
             //add hirizontal line if needed for thecategory
-            //console.log('Features append')
-            var curCat = _.chain(features).pluck('category').uniq().value()[0];
 
+            var curCat = _.chain(features).pluck('category').uniq().value()[0];
             if (self.strikeoutCategory[curCat]) {
-                //console.log("** Feature append - strikeoutCategory");
                 var maxTrack = _.chain(features).pluck('displayTrack').max().value();
                 var g = svgGroup.append('g').attr('class', 'strikeout');
                 var hFactor = self.heightFactor(curCat);
+
                 for (var i = 0; i <= maxTrack; i++) {
-                    var y = viewport.scales.y((i + 0.1)) * hFactor;
+                    var y = viewport.scales.y((i + 0.5)) * hFactor;
                     g.append('line').attr('x1', -100).attr('x2', 10000).attr('y1', y).attr('y2', y);
                 }
             }
 
-            //append the feature (beta_strand, helix, turn)
+            //append the feature
             _.chain(features).groupBy(function (ft) {
-                //console.log("ft type: " + ft.type);
                 return ft.type;
             }).each(function (ftGroup, type) {
                 var sel = (self.appenders[type] || defaultAppender)(viewport, svgGroup, ftGroup, type)
@@ -14094,92 +14076,24 @@ define(
          * @param type
          * @return {*}
          */
-
-         //// Add feature box and text
-         //// Test will be a aligned sequence, so it needed to be aligned correct position.
-         //// This loaded once.
         var defaultAppender = function (viewport, svgGroup, features, type) {
-            var self = this;
-            window.init_prog = 1;
-            window.test_ft = features;
-            //console.log("** defaultAppender // ft-data: " + features);
-            // ftData == sequence array. each index contains single base
-            window.ftData = features[0].text.split('');
-            window.test_svgGroup = svgGroup;
-            window.ft_viewport = viewport;
-
-            // orig
             var sel = svgGroup.selectAll("rect.feature.data." + type).data(features).enter().append("g").attr("class", "feature data " + type);
-            
-            //var sel = svgGroup.selectAll("text").data(ftData).enter().append("text").attr("class", "feature data ").text(function(d) { return d; });
-            
-            ///////////  orig
             sel.append("rect").attr('class', 'feature');
             sel.append("rect").attr('class', 'feature-block-end').attr('fill', 'url(#grad_endFTBlock)');
-            
-            //sel.append("text").attr('y', viewport.scales.y(0.45)).attr('x', 2).style('font-size', '' + global_viewport.scales.font + 'px').style('letter-spacing', '' + (global_viewport.scales.x(2) - global_viewport.scales.x(1) - global_viewport.scales.font) + 'px')
-            /////////////////////////////
-/////////////
-            //var ftSeq = sel.append("text")
 
-            /*
-            if(typeof base_list === 'undefined') {
-                window.base_list = []    
-            }
-            */
+            sel.append("text").attr('y', viewport.scales.y(0.5)).attr('x', 2);
 
-
-    //////////////////////////////////////////////////////////////////////
-    ////    Define each nucleotide color...
-
-            var base_A_color = "green";
-            var base_C_color = "blue";
-            var base_G_color = "black";
-            var base_T_color = "red";
-
-            var ftSeq = svgGroup.selectAll("rect.feature.data." + type + ".text").data(ftData).enter().append("text").attr('class',"feature data")
-                .text(function(d) { 
-                    //base_list.push(d);
-                    return d;
-                    });
-
-            /////////
-            //var ftSeq = selectAll("rect.feature.data." + type);
-            //ftSeq.selectAll("text").data(ftData).enter().append("text").attr('class',"feature data").text(function(d) { return d; });
-            
-
-            ftSeq.attr('x', function (d, i) {
-                    //console.log("x: " + global_viewport.scales.x(i + features[0].start));
-
-        //  feature rectangle position at the beginning
-                    return viewport.scales.x(i + features[0].start );
-                })
-                .attr('y', viewport.scales.y(0.45)).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px').style('fill', function(d) {
-                    if (d == 'A') { return base_A_color; }
-                    else if (d == 'T') { return base_T_color; }
-                    else if (d == 'G') { return base_G_color; }
-                    else if (d == 'C') { return base_C_color; }
-                    }).style('font-weight',700);
-            return sel;
+            return sel
         }
 
         FeatureDisplayer.prototype.position = function (viewport, sel) {
-            //console.log("ft position function")
-            window.test_ftViewport = viewport;
-            window.test_ftSel = sel;
-
             var self = this;
 
-
-            // category of feature  (regions, secondary structure...)
             var ftIsNotPloted = _.filter(sel.data(), function (e) {
-                //console.log("e.category: " + e.category)
                 return self.categoryPlots[e.category] === undefined;
             });
 
-            // type of feature (topological domain, beta_strand, helix...)
             _.chain(ftIsNotPloted).map(function (s) {
-                //console.log("s.type: " + s.type)
                 return s.type;
             }).unique().each(function (type) {
                 (self.positioners[type] || defaultPositioner)(viewport, sel.filter(function (ft) {
@@ -14190,8 +14104,6 @@ define(
             var selPlot = sel.filter(function (ft) {
                 return self.categoryPlots[ft.category] !== undefined
             });//
-            //console.log("selPlot: " + selPlot);
-
             self.categoryPlotPosition(viewport, selPlot)
             return sel;
         }
@@ -14227,17 +14139,14 @@ define(
          */
         // FeatureDisplayer.prototype.position = function(viewport, d3selection) {
         var defaultPositioner = function (viewport, d3selection) {
-            //console.log("** default positioner")
             var hFactor = singleton.heightFactor(d3selection[0][0].__data__.category);
             // var yscale=singleton.trackHeightFactorPerCategory[]
 
             d3selection.attr('transform', function (ft) {
-                // feature rectangle x-axis position adjustment
-                return 'translate(' + viewport.scales.x(ft.start ) + ',' + hFactor * viewport.scales.y(ft.displayTrack - 0.1) + ')';
+                return 'translate(' + viewport.scales.x(ft.start - 0.45) + ',' + hFactor * viewport.scales.y(0.12 + ft.displayTrack) + ')';
             });
             var ftWidth = function (ft) {
-                window.test_ftWidth = ft;
-                return viewport.scales.x(ft.end + 0.05) - viewport.scales.x(ft.start + 1) 
+                return viewport.scales.x(ft.end + 0.9) - viewport.scales.x(ft.start + 0.1)
             }
             d3selection.selectAll("rect.feature").attr('width', ftWidth).attr('height', hFactor * viewport.scales.y(0.76));
             d3selection.selectAll("rect.feature-block-end").attr('width', 10).attr('x', function (ft) {
@@ -14246,36 +14155,22 @@ define(
                 return (ftWidth(ft) > 20) ? null : 'none';
             }).attr('height', viewport.scales.y(hFactor * 0.76));
 
-            ////  Feature FONT!!
-            var fontSize = parseInt(viewport.scales.font); //9 * hFactor;
-
+            var fontSize = 9 * hFactor;
             // self.fontSizeLine();
             var selText = d3selection.selectAll("text");
-            //console.log("segText: "+ selText);
             selText.text(function (ft) {
-                window.defaultPos_ft = ft;
-                /*
-                sel.attr('x', function (d, i) {
-                    return viewport.scales.x(i);
-
-                }).attr('y', viewport.scales.y(1) - 7).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px')
-                */
-
                 var text = (ft.text !== undefined) ? ft.text : ft.type;
-                
-                var w = viewport.scales.x(ft.end + 0.9) - viewport.scales.x(ft.start );
+                var w = viewport.scales.x(ft.end + 0.9) - viewport.scales.x(ft.start);
                 if (w <= 5 || text.length == 0) {
                     return '';
                 }
-                var nchar = Math.floor(w / fontSize );
+                var nchar = Math.floor(w / fontSize * 1.6);
                 if (nchar >= text.length)
                     return text;
                 if (nchar <= 2)
                     return '';
                 return text.substr(0, nchar);
-            }).style('font-size', fontSize).style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px');
-
-            //console.log("updated x scales : " + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font))
+            }).style('font-size', fontSize);
             return d3selection
         }
 
@@ -14424,10 +14319,8 @@ define(
          * @class SeqEntryViewport map the sequence scale domain to the dom element
          * @constructor
          */
-
-         /// This function is loaded at the first time only.
+        //// using D3js
         var SeqEntryViewport = function (options) {
-            //console.debug("** SeqeEntry Viewport")
             var self = this;
             self.options = options;
 
@@ -15042,9 +14935,7 @@ define(
                 if (isMinimizable) {
                     rect = self.gMenu.append('rect').attr('height', 25).attr('class', 'layer-background layer-menu-background').attr('rx', 5).attr('ry', 5);
                 }
-
-                // each feature layer name
-                var t = self.gMenu.append('text').attr('class', 'layer-category').text(self.model.get('name')).attr('y', 2).attr('x', 7);//.style('color','blue');
+                var t = self.gMenu.append('text').attr('class', 'layer-category').text(self.model.get('name')).attr('y', 2).attr('x', 7);
                 var w = t.node().getComputedTextLength();
 
                 if (isMinimizable)
@@ -18090,15 +17981,18 @@ define(
          * @param {String} options.layerMenu specify what type of menu is to be set on each category FeatureLayerView (default=sticky)
          * @augments Backbone.View
          */
+
+        // text bubble setting
         var SeqEntryAnnotInteractiveView = Backbone.View.extend(/** @lends module:SeqEntryAnnotInteractiveView~SeqEntryAnnotInteractiveView.prototype */{
 
             initialize: function (options) {
+                test_options = options;
+                test_self = this;
                 var self = this;
-                window.test_InteractiveView_self = self;
                 self.options = options;
 
                 self.margins = {
-                    left: options.marginLeft || 20,
+                    left: options.marginLeft || 25,
                     right: options.marginRight || 20,
                     top: options.marginTop || 25
                 };
@@ -18136,34 +18030,36 @@ define(
                 if (!options.noPositionBubble) {
                     xChangeCallbacks.push(function (i0, i1) {
                         var gbubbles = self.svg.selectAll('g.axis-bubble');
+                        var gbubbles1 = self.svg.selectAll('g.axis-bubble1');
+
                         if (self.viewport.scales.font > 10) {
                             gbubbles.style('display', 'none');
+                            gbubbles1.style('display', 'none');
                             self.svg.select('line.sequence-bg').style('display', 'none');
                             return
                         }
                         self.svg.select('line.sequence-bg').style('display', null);
 
                         var imid = (i0 + i1) / 2;
+                        test_imid = imid;
                         var xscales = self.viewport.scales.x;
                         if (imid < xscales.domain()[0] || imid > xscales.domain()[1]) {
                             gbubbles.style('display', 'none');
+                            gbubbles1.style('display', 'none');
                             return;
 
                         }
                         gbubbles.style('display', null);
-
-                // position number setting..   default is start from 0
-                // it shows start position as the real reference start position. 
+                        gbubbles1.style('display', null);
                         if (self.gPosBubble) {
-                            self.gPosBubble.selectAll('text').text(Math.round(imid + 1 + parseInt(startPosition)) );
+                            self.gPosBubble.selectAll('text').text(Math.round(imid + 1));
                         }
 
                         if (self.gAABubble) {
                             var ic0 = Math.round(imid) - self.bubbleSequenceNb;
                             var ic1 = Math.round(imid) + self.bubbleSequenceNb;
-                            var subseq = self.model.get('sequence').substring(ic0, ic1 + 1);
+                            var subseq = self.model.get('sequence').substring(ic0, ic1 +1);
 
-                // reference sequence bubble font size setting..
                             var ts = self.gAABubble.selectAll('text.subseq').data(subseq.split(''));
                             ts.exit().remove();
                             ts.enter().append("text").attr('class', 'subseq');
@@ -18174,12 +18070,35 @@ define(
                                 return (i - self.bubbleSequenceNb) * 10 / (1 + d * 0.1)
                             }).style('font-size', function (t, i) {
                                 var d = Math.abs(i - 4);
-                                return '' + (130 * (0.2 + 0.2 * (4 - d))) + '%';
+                                return '' + (120 * (0.2 + 0.2 * (4 - d))) + '%';
                             }).attr('y', -3);
                         }
 
-                        //gbubble.selectAll('text.subseq').data(subseq.split(''));
+                        //// for 2nd seqeunce layer
+                        if (self.gAABubble1) {
+                            var ic0 = Math.round(imid) - self.bubbleSequenceNb;
+                            var ic1 = Math.round(imid) + self.bubbleSequenceNb;
+                            var subseq = self.model.get('sequence1').substring(ic0, ic1 +1);
+
+                            var ts = self.gAABubble1.selectAll('text.subseq').data(subseq.split(''));
+                            ts.exit().remove();
+                            ts.enter().append("text").attr('class', 'subseq');
+                            ts.text(function (d) {
+                                return d;
+                            }).attr('x', function (t, i) {
+                                var d = Math.abs(i - 4);
+                                return (i - self.bubbleSequenceNb) * 10 / (1 + d * 0.1)
+                            }).style('font-size', function (t, i) {
+                                var d = Math.abs(i - 4);
+                                return '' + (120 * (0.2 + 0.2 * (4 - d))) + '%';
+                            }).attr('y', -3);
+                        }
+
+                        //                  gbubble.selectAll('text.subseq').data(subseq.split(''));
                         gbubbles.attr('transform', 'translate(' + xscales(imid) + ',10)');
+                        gbubbles1.attr('transform', 'translate(' + xscales(imid) + ',10)');
+                        //gbubbles.attr('transform', 'translate(' + xscales(imid) + ',50)');
+
                     });
 
                 }
@@ -18189,14 +18108,13 @@ define(
                     length: self.model.length(),
                     margins: self.margins,
                     changeCallback: function (vp) {
-                        //console.log("------ changeCallback")
                         self.p_positionText(vp, self.svg.selectAll('text.data'));
                         featureDisplayer.position(vp, self.svg.selectAll('g.data'));
 
                         if (!options.hideAxis)
                             self.updateAxis();
-                         //self.p_positionText(vp, self.svg.selectAll('text.data').transition()).duration(1);
-                         //featureDisplayer.position(vp, self.svg.selectAll('g.data').transition()).duration(1);
+                        // self.p_positionText(vp, self.svg.selectAll('text.data').transition()).duration(1);
+                        // featureDisplayer.position(vp, self.svg.selectAll('g.data').transition()).duration(1);
                     },
                     xChangeCallback: xChangeCallbacks
                 });
@@ -18222,36 +18140,17 @@ define(
             /**
              * @private
              */
-
-            // bottom axis setting
             updateAxis: function () {
                 var self = this;
+
                 var vpXScale = self.viewport.scales.x;
-                
-                window.updateAxis_self = self;
-                window.viewport_Xscale = vpXScale;
-
-                var scale = d3.scale.linear().domain([vpXScale.domain()[0] , vpXScale.domain()[1] ]).range(vpXScale.range());
-                var xAxis = d3.svg.axis().scale(scale).tickSize(9, 5, 5).tickFormat(function (p) {
-                    //console.log("** p-value: " + p + " // type: " + typeof(p));
-                    
-            //// get start and end position of reference sequence from 'draw_pviz'
-                    window.startPos_html = document.getElementById('startPosition');
-                    window.endPos_html = document.getElementById('endPosition');
-
-                    window.ref_startPosition = startPos_html.children[0].innerHTML.replace( /^\D+/g, '');
-                    window.ref_endPosition = endPos_html.children[0].innerHTML.replace( /^\D+/g, '');
-
-                    var p_mod = parseInt(p) + parseInt(ref_startPosition); 
-                    return (p == 0) ? '' : p_mod
+                var scale = d3.scale.linear().domain([vpXScale.domain()[0] + 1, vpXScale.domain()[1] + 1]).range(vpXScale.range());
+                var xAxis = d3.svg.axis().scale(scale).tickSize(6, 5, 5).tickFormat(function (p) {
+                    return (p == 0) ? '' : p
                 }).ticks(4);
-
-                //console.log("** xAxis: " + xAxis);
                 self.axisContainer.call(xAxis);
-
-                // location number indicator
                 self.gPosBubble = self.axisContainer.append('g').attr('class', 'axis-bubble').style('display', 'none');
-                self.gPosBubble.append('rect').attr('x', -50).attr('y', -4).attr('width', 100).attr('height', 17)
+                self.gPosBubble.append('rect').attr('x', -30).attr('y', -4).attr('width', 60).attr('height', 17)
                 self.gPosBubble.append('text').attr('class', 'pos').attr('y', 6);
 
             },
@@ -18260,14 +18159,15 @@ define(
              */
             update: function () {
                 var self = this;
-                self.layerContainer.selectAll('g').remove()                
-                //self.layerContainer.selectAll('text').remove()
+                self.layerContainer.selectAll('g').remove()
                 self.svg.select('g.groupset-title').remove()
 
                 self.layers = [];
                 self.layerViews = [];
                 if (!self.options.hideSequence) {
                     self.p_setup_layer_sequence();
+                    //// for 2nd sequence layer
+                    self.p_setup_layer_sequence1();
                 }
 
                 self.p_setup_layer_features();
@@ -18351,13 +18251,14 @@ define(
              * build the Sequence layer
              * @private
              */
-             //// Sequnece string 
             p_setup_layer_sequence: function () {
                 var self = this;
+                test_self_bubble = self;
                 var layer = new FeatureLayer({
                     name: 'sequence',
                     nbTracks: 2
                 })
+
                 self.layers.push(layer)
                 var view = new FeatureLayerView({
                     model: layer,
@@ -18369,33 +18270,52 @@ define(
                     clipper: '#' + self.clipperId
                 })
                 self.layerViews.push(view)
-                window.view = view;
-                //debugger;
-                view.gFeatures.append('line').attr('x1', -50).attr('x2', 2000).attr('class', 'sequence-bg').attr('y1', 7).attr('y2', 7);
-                
-                var base_A_color = "green";
-                var base_C_color = "blue";
-                var base_G_color = "black";
-                var base_T_color = "red";
 
-          
+                view.gFeatures.append('line').attr('x1', -100).attr('x2', 2000).attr('class', 'sequence-bg').attr('y1', 7).attr('y2', 7);
                 var sel = view.gFeatures.selectAll("text").data(self.model.get('sequence').split('')).enter().append("text").attr('class', 'sequence data').text(function (d) {
                     return d;
                 });
 
-                sel.style('fill', function(d) {
-                    if (d == 'A') { return base_A_color; }
-                    else if (d == 'T') { return base_T_color; }
-                    else if (d == 'G') { return base_G_color; }
-                    else if (d == 'C') { return base_C_color; }
-                }).style('font-weight', 'bold')
-
-                window.sel_ref_str = sel;
-                //debugger;
                 self.p_positionText(self.viewport, sel);
                 self.gAABubble = view.g.append('g').attr('class', 'axis-bubble').style('display', 'none');
                 self.gAABubble.append('rect').attr('x', -30).attr('y', -12).attr('width', 61).attr('height', 16)
                 self.gAABubble.append('text').attr('class', 'subseq').attr('y', 2);
+            },
+
+  // added 2nd sequence layer
+///////////////////////////////////////////////////////////////////////
+            p_setup_layer_sequence1: function () {
+                var self1 = this;
+                //test_self_bubble = self;
+                var layer1 = new FeatureLayer({
+                    name: 'sequence1',
+                    nbTracks: 3
+                })
+                self1.layers.push(layer1)
+
+                var view1 = new FeatureLayerView({
+                    model: layer1,
+                    container: self1.layerContainer,
+                    viewport: self1.viewport,
+                    cssClass: 'sequence1',
+                    noMenu: true,
+                    margins: self1.margins,
+                    clipper: '#' + self1.clipperId
+                })
+                self1.layerViews.push(view1)
+
+                view1.gFeatures.append('line').attr('x1', -100).attr('x2', 2000).attr('class', 'sequence-bg1').attr('y1', 7).attr('y2', 7);
+
+                // self.model.get('sequence1')  -> loads 'sequence1' data
+                var sel = view1.gFeatures.selectAll("text").data(self1.model.get('sequence1').split('')).enter().append("text").attr('class', 'sequence data').text(function (d) {
+                    return d;
+                });
+
+                self1.p_positionText(self1.viewport, sel);
+                self1.gAABubble1 = view1.g.append('g').attr('class', 'axis-bubble').style('display', 'none');
+                self1.gAABubble1.append('rect').attr('x', -30).attr('y', -12).attr('width', 61).attr('height', 16)
+                self1.gAABubble1.append('text').attr('class', 'subseq').attr('y', 2);
+///////////////////////////////////////////////////////////////////////
             },
             /**
              * group features by category, and build a layer for each of them
@@ -18413,6 +18333,7 @@ define(
 
                 //it is possible to pass the category Order, thus sort on it at first
                 var buildOrder=function(orderName){
+                    //console.debug("orderName: " + orderName)
                     var order;
                     if (self.options[orderName] !== undefined) {
                         order = {};
@@ -18426,11 +18347,11 @@ define(
                 var categoryOrder = buildOrder('categoryOrder');
                 var groupSetOrder = buildOrder('groupSetOrder');
 
+                //console.debug("categoryOrder: " + categoryOrder);
+                //console.debug("groupSetOrder: " + groupSetOrder);
+
 
                 _.chain(groupedFeatures)
-
-        // disable sorting because it disorganized the alignment seq. entry..
-                /*
                     .sortBy(function (group) {
                         if (categoryOrder !== undefined) {
                             return 1000000 * (categoryOrder[group[0].category] || 100);
@@ -18446,7 +18367,6 @@ define(
 
                         return group[0].groupSet;
                     })
-                */
                     .each(function (group, groupConcatName) {
                         var nbTracks, isPlot;
                         if (featureDisplayer.isCategoryPlot(group[0].category)) {
@@ -18490,11 +18410,9 @@ define(
 
                         }
                         //add tolltip based on description field
-
-                        //// default - enabled
-                        //sel.append('title').text(function (ft) {
-                        //    return ft.description;
-                        //});
+                        sel.append('title').text(function (ft) {
+                            return ft.description;
+                        });
                     });
 
             },
@@ -18508,9 +18426,9 @@ define(
 
                     container: self.svg,
                     layers: self.layers,
-                    nbTracks: 1
+                    nbTracks: 3
                 });
-                // /self.layers.push(layer)
+                // self.layers.push(layer)
 
             },
             /**
@@ -18540,84 +18458,17 @@ define(
              * @param {Object} sel
              * @private
              */
-
-        //// setup reference layer... 
-        //// 
             p_positionText: function (viewport, sel) {
-                /*
-                if (typeof chk_posText === "undefined") {
-                    console.log("undefined")
-                    window.chk_posText = 0;
-                }
-                else { chk_posText += 1; }
-                */
-                var count_i = 0;
-
                 var self = this;
-                test_sel = sel;
-                global_viewport = viewport;
-                viewport_global = viewport.scales;
-                
-                var count = 0;
-                var count_loop = -1;
-                var ft_idx = 0;
-                var ftSize = test_posFeature.length;        // number of added feature
-                var ft_pos_by_idx = 0;
                 sel.attr('x', function (d, i) {
-                    
-                    count_i += 1;
-                    if (typeof firstLoad === 'undefined') {
-                        return viewport.scales.x(i);
-                    }
-                    else {  
-                        if (i > refSeq_length - 1) {
-                            count_loop += 1;                // start from 0 
-                            count += 1; 
-
-                            if (ft_idx == 0) {
-                                ft_pos_by_idx = i - refSeq_length;
-                            }
-                            else {
-                                ft_pos_by_idx = count_loop;
-                            }
-
-            // set reference and feature start position
-                            
-                            var fixedPos = ft_pos_by_idx + test_posFeature[ft_idx].start ;
-
-                    //  counting bases of feature
-                            if(count == test_posFeature[ft_idx].text.length) {
-                                next_idx = parseInt(ft_idx) + 1;
-                                ft_idx += 1;
-                                count_loop = -1;                    // reset counter
-                                count = 0;
-                            }  
-                            
-                    //  feature text position
-                            return viewport.scales.x(fixedPos );   
-                        }
-                        else {
-                    //  reference text position
-                            return viewport.scales.x(i -0.9);
-                        }                    
-                    }
-
-                }).attr('y', viewport.scales.y(1) - 7).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px');
-
-            //  Collect reference sequence length. it wont be changed
-                if (typeof firstLoad === 'undefined') {         
-                        window.firstLoad = 0;
-                        window.refSeq_length = count_i; 
-                    }
-                //console.log("------ count_i: " + count_i + " // refSeq_length: " + refSeq_length);
-                return sel;
-
-        //  end 'p_positionText' function        
-            }   
+                    return viewport.scales.x(i);
+                }).attr('y', viewport.scales.y(1) - 7).style('font-size', '' + viewport.scales.font + 'px').style('letter-spacing', '' + (viewport.scales.x(2) - viewport.scales.x(1) - viewport.scales.font) + 'px')
+                return sel
+            }
         });
+
         return SeqEntryAnnotInteractiveView;
     });
-
 define(
     /**
      @exports SeqEntryTableView
@@ -18781,11 +18632,7 @@ define(
          * @param seqEntry
          * @param feats
          */
-
-         // NOT IN USE
         FastaReader.prototype.parseFeatures = function (seqEntry, feats) {
-
-            //console.log("FastaReader seqEntry");
             var self = this;
             if (feats == undefined) {
                 return;
@@ -18815,7 +18662,7 @@ define(
                         name: arr[2],
                         text: arr[2]
                     })
-                })                          //   NOT IN USE..
+                })
                 seqEntry.addFeatures(posFeatures);
             })
         }
