@@ -1,0 +1,720 @@
+{
+
+    "name": "ROOT",
+    "children": [
+      {
+        "name": "Bacillaceae",
+        "branch_length": "1.0",
+        "property": {
+          "applies_to": "children",
+          "datatype": "xsd:string",
+          "id_ref": "clade_marker_size",
+          "ref": "A:1",
+          "text": "130"
+        },
+        "children": [
+          {
+            "name": "Geobacillus",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Gkaustophilus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.0242900869783"
+                }
+              },
+              {
+                "name": "Gthermoglucosidasius",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "3.46510209264"
+                }
+              },
+              {
+                "name": "Gthermodenitrificans",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "3.07841560635"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Caldalkalibacillus",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Cthermarum",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "15"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Bacillus",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "120"
+            },
+            "children": [
+              {
+                "name": "Batrophaeus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "12"
+                }
+              },
+              {
+                "name": "Bpumilus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "50"
+                }
+              },
+              {
+                "name": "Bcoahuilensis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "3.17186920433"
+                }
+              },
+              {
+                "name": "Banthracis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "80"
+                }
+              },
+              {
+                "name": "Bweihenstephanensis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.70028276238"
+                }
+              },
+              {
+                "name": "Bselenitireducens",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.77859614711"
+                }
+              },
+              {
+                "name": "Bpseudomycoides",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "1.11687288226"
+                }
+              },
+              {
+                "name": "Bcellulosilyticus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "8"
+                }
+              },
+              {
+                "name": "Bcoagulans",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "3.11304018594"
+                }
+              },
+              {
+                "name": "Bhalodurans",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "1.03261323231"
+                }
+              },
+              {
+                "name": "Bpseudofirmus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "1.43290815777"
+                }
+              },
+              {
+                "name": "Bthuringiensis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "10"
+                }
+              },
+              {
+                "name": "Blicheniformis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.84479580061"
+                }
+              },
+              {
+                "name": "Bsubtilis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "65"
+                }
+              },
+              {
+                "name": "Bcereus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "3"
+                }
+              },
+              {
+                "name": "Bamyloliquefaciens",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.5569451352"
+                }
+              },
+              {
+                "name": "Bmycoides",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.66122684072"
+                }
+              },
+              {
+                "name": "Bclausii",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.36682224696"
+                }
+              },
+              {
+                "name": "Bmegaterium",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "12"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Oceanobacillus",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Oiheyensis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "95"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Anoxybacillus",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Aflavithermus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.48900854747"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Lysinibacillus",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Lfusiformis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "174"
+                }
+              },
+              {
+                "name": "Lsphaericus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "3.92974800987"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Staphylococcaceae",
+        "branch_length": "1.0",
+        "property": {
+          "applies_to": "children",
+          "datatype": "xsd:string",
+          "id_ref": "clade_marker_size",
+          "ref": "A:1",
+          "text": "130"
+        },
+        "children": [
+          {
+            "name": "Staphylococcus",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "annotation",
+              "ref": "A:1",
+              "text": "Staphylococcus"
+            },
+            "children": [
+              {
+                "name": "Slugdunensis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.02393979902"
+                }
+              },
+              {
+                "name": "Sepidermidis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.365700208191"
+                }
+              },
+              {
+                "name": "Scaprae",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "3.22193378354"
+                }
+              },
+              {
+                "name": "Swarneri",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "33"
+                }
+              },
+              {
+                "name": "Scarnosus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "75"
+                }
+              },
+              {
+                "name": "Scapitis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "36"
+                }
+              },
+              {
+                "name": "Saureus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "125"
+                }
+              },
+              {
+                "name": "Shaemolyticus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "64"
+                }
+              },
+              {
+                "name": "Shominis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.0961524114391"
+                }
+              },
+              {
+                "name": "Ssaprophyticus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.75289926136"
+                }
+              },
+              {
+                "name": "Spseudintermedius",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "19"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Macrococcus",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Mcaseolyticus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.6642090736"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Paenibacillaceae",
+        "branch_length": "1.0",
+        "property": {
+          "applies_to": "children",
+          "datatype": "xsd:string",
+          "id_ref": "clade_marker_size",
+          "ref": "A:1",
+          "text": "130"
+        },
+        "children": [
+          {
+            "name": "Brevibacillus",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "annotation",
+              "ref": "A:1",
+              "text": "Brevibacillus"
+            },
+            "children": [
+              {
+                "name": "Blaterosporus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "annotation",
+                  "ref": "A:1",
+                  "text": "b:Brevibacillus laterosporus"
+                }
+              },
+              {
+                "name": "Bbrevis",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "annotation",
+                  "ref": "A:1",
+                  "text": "a:Brevibacillus brevis"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Paenibacillus",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "annotation",
+              "ref": "A:1",
+              "text": "Paenibacillus"
+            },
+            "children": [
+              {
+                "name": "Ppolymyxa",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "20"
+                }
+              },
+              {
+                "name": "Pmucilaginosus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_color",
+                  "ref": "A:1",
+                  "text": "#057005"
+                }
+              },
+              {
+                "name": "Plarvae",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "89"
+                }
+              },
+              {
+                "name": "Pcurdlanolyticus",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_color",
+                  "ref": "A:1",
+                  "text": "#20DD20"
+                }
+              },
+              {
+                "name": "Pvortex",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "19"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Listeriaceae",
+        "branch_length": "1.0",
+        "property": {
+          "applies_to": "children",
+          "datatype": "xsd:string",
+          "id_ref": "clade_marker_size",
+          "ref": "A:1",
+          "text": "130"
+        },
+        "children": [
+          {
+            "name": "Listeria",
+            "branch_length": "1.0",
+            "children": [
+              {
+                "name": "Lwelshimeri",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "2.52510303764"
+                }
+              },
+              {
+                "name": "Lgrayi",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.818507572602"
+                }
+              },
+              {
+                "name": "Linnocua",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.800083345466"
+                }
+              },
+              {
+                "name": "Lmonocytogenes",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.978937868742"
+                }
+              },
+              {
+                "name": "Lseeligeri",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "ext__5__ring_height",
+                  "ref": "A:1",
+                  "text": "0.892990893608"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "property": {
+
+      "datatype": "xsd:string",
+      "id_ref": "ignore_branch_len",
+      "ref": "A:1",
+      "text": "1"
+    }
+  }

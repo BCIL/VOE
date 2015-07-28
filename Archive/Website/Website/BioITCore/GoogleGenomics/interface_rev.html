@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+  <title> Google Genomics Browser </title>
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script src="js/googlegenomics.jquery.js"></script>
+  
+  <script src="proj.js"></script>
+
+  <script src="http://wzrd.in/bundle/jquery-browser-plugin@0.0.6"></script>
+
+  
+  <link rel="stylesheet" href="js/bootstrap.min.css">
+  
+  
+  <style>
+    ul.workflow {
+      list-style-type: square;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+    
+
+    form {
+      margin-top: 2%;
+      text-align: left;
+      width: 700px;
+      padding: 1em;
+      border: 1px solid #CCC;
+      border-radius: 1em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form div + div {
+      margin-top: 1em;
+    }
+    label {
+      display: inline-block;
+      width: 200px;
+      text-align: right;
+      padding: 0.2em;
+    }
+    
+    input {
+      font: 1em sans-serif;
+      width: 30%;
+      --moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #999;
+    }
+    .datasetId_control {
+      width: 30%;
+    }
+
+    .RGsetsId_control {
+      width: 30%;
+    }
+
+    .RefsetId_control {
+      width: 30%;
+    }
+
+    button[name="button"] { 
+      margin-left: 20px;
+      font-size: 16px;
+      text-align: center;
+      width: 110px;
+      background-color: none;
+      border-radius: 1em;
+      /*
+      background: #40b3ff;
+      background-image: -webkit-linear-gradient(top, #40b3ff, #175f8c);
+      background-image: -moz-linear-gradient(top, #40b3ff, #175f8c);
+      background-image: -ms-linear-gradient(top, #40b3ff, #175f8c);
+      background-image: -o-linear-gradient(top, #40b3ff, #175f8c);
+      background-image: linear-gradient(to bottom, #40b3ff, #175f8c);
+      -webkit-border-radius: 22;
+      -moz-border-radius: 22;
+      border-radius: 22px;
+      color: #ffffff;
+      font-size: 20px;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+      */
+    }
+    button:hover {
+      background: #3bd8ff;
+      background-image: -webkit-linear-gradient(top, #3bd8ff, #265670);
+      background-image: -moz-linear-gradient(top, #3bd8ff, #265670);
+      background-image: -ms-linear-gradient(top, #3bd8ff, #265670);
+      background-image: -o-linear-gradient(top, #3bd8ff, #265670);
+      background-image: linear-gradient(to bottom, #3bd8ff, #265670);
+      text-decoration: none;
+    }
+    button.loading {
+      background-color: red;
+    }
+    button.standby{
+      margin-left: 20px;
+      font-size: 16px;
+      text-align: center;
+      width: 110px;
+      background-color: none;
+      border-radius: 1em;    }  
+  </style>
+</head>
+
+
+<!-- <input type="text" class="form-control" id="callSetId" value="10473108253681171589-0"/>
+-->
+<body>
+<form id="dataInput" class="user_queries" action = "" methos="post" >
+  
+  <div class="form-group">
+    <label for="datasetId"> Project Name: </label>&nbsp;
+    <select class="datasetId_control" id="datasetIdSelector" onchange="updateReadGroupsetsIdMenu(this)">
+    <option type="text" class="form-control" id="datasetId" value="NuLL"> Select.. </option>
+    <option type="text" id="projName_1000" value="10473108253681171589"> 1000 Genomes Project </option>
+    <option type="text" id="projName_1000_p3" value="4252737135923902652"> 1000 Genomes Project - Phase 3 </option>
+    <option type="text" id="projName_1000_illumnia" value="3049512673186936334"> Illumina Platinum Genomes </option>
+</select>
+   
+  
+
+  
+  <div class="queries_reads">
+    <label for="reads_chromosome_name"> Chromosome Name: </label>&nbsp;
+    <input ng-model="ref_name" class="refName_control" id="reads_chromosome_name" value=1>
+    <br>
+    <label for="reads_start"> Start position: </label>&nbsp;
+    <input class="startPosition_control" id="reads_start" value=13000000>  
+    <br>
+    <label for="reads_length"> Length: </label>&nbsp; 
+    <input class="endPosition_control" id="reads_length" value=300> 
+    <br>
+    <label for="reads_pageSize"> Coverage: </label>&nbsp;
+    <input class="PageSize_control" id="reads_pageSize" value=7>  
+  
+    <div class="form-group">
+      <label for="reads_groupsetId"> Genome in Project: </label>&nbsp;
+      <select class="RGsetsId_control" id="reads_groupsetIdSelector" onchange="get_ReadsInfo(this)">
+        <option type="text" class="form-control" id="reads_groupsetId" value="NuLL"> NULL </option>
+      </select> 
+      <button type="button" id="reads_submit" class="btn-primary" name="button"  onclick="search_Reads(this)" > Submit </button>
+    </div>
+  </div>
+  <!--///////////////////////////////
+  /////////// REFERENCES ////////////
+  /////////////////////////////////// -->
+  
+  <div class="form-group">
+    <label for="callSetId"> Reference Genome: </label>&nbsp;
+    <select class="RefsetId_control" id="refSetIdSelector" onchange="getRefSetId(this)">
+    <option type="text" id="refSetId_init" value="NuLL"> Select ID </option>
+    <!--<option type="text" id="refSetId" value="EJjur6DxjIa6KQ"> GRCh37lite </option>-->
+    <!--<option type="text" id="refSetId" value="EMud_c37lKPXTQ"> GRCh38 </option>-->
+    <option type="text" id="refSetId" value="EOSsjdnTicvzwAE"> GRCh37 </option>
+    <option type="text" id="refSetId" value="EOSt9JOVhp3jkwE"> hs37d5 </option>
+    <option type="text" id="refSetId" value="EMWV_ZfLxrDY-wE"> hg19 </option>
+
+    </select>
+    <button type="button" name="button" id="Visualization_button" class="btn-primary" onclick="getUserInput_ref(this)"> Visualization </button>
+  </div>
+  <div hidden>
+    <label for="callSetId">All References</label>
+    <select class="id-control" id="refIdSelector" onchange="getRefName(this)">
+    <option type="text" class="form-control" id="refID_init" value="NuLL"> Select ref. </option>
+    </select>
+    <ouput id="refCount" name="refCount">  </ouput>
+    <label for="callSetId">Valid References</label>
+    <select class="id-control" id="refIdSelector_valid" onchange="getRefName(this)">
+    <option type="text" class="form-control" id="valid_refId_init" value="NuLL"> Select.. </option>
+    </select>
+    <ouput class="button valid_ref" id="valid_refCount" name="valid_refCount">  </ouput>
+  </div>
+  <div>
+    <input type="button" name="getValid_button" value="refresh_valid_ref." onclick="getValidReferences()" hidden> </input>
+  </div>
+  
+  
+   <div class="query_seq" hidden>
+    <label for="query_seq"> Query sequence: </label> 
+    <input id="query_seq">  
+  </div>
+
+</form>
+
+<br>
+
+<div id="output_wrapper" hidden>
+<p id="outContainer_title" style="margin-left: 50px"><b>================== OUTPUT  ==================</b></p>
+
+<div id="pviz_canvas"> </div>
+<div id="seq_holder"> </div>
+<div id="chk_match"> </div>
+<div class="output_container" id="output_container" style="width:100%; margin-top: 20px; margin-left:auto;"> 
+</div>
+</div>
+</body>
+</html>

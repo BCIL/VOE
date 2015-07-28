@@ -1,27 +1,29 @@
 BioIT Core website
-=======
-The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
+==================
+- The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
+- All visualizations are used D3.js.
 
+Google Genomics browser
+---------------
+- Powered by Google Genomics API and pViz.js visualization.
+- The data is pulled from public database that hosted by Google.
 
-Google Genomics
-=======
-Using Google Genomics API and visualized the date by BioJS-pviz
+PhyloXML trees
+----------------
+- The dedicate python server allows the user to upload own phyloXML file.
+- Three different visualizations, Radial tree, Indented tree, Sunburst
 
+ChIP-Seq data visualization
+---------------------------
+- The tool uses *.bed file to generate visualization.
 
+Variant Call Format data visualization
+--------------------------------------
+- The tool allows *.vcf file as input.
 
-PhyloD3
-=======
+RNA-Seq data visualizations
+--------------------------
+- Two different visualization accept *.tsv, *.diff, *.tabular files.
 
-Visualization of PhyloXML using D3.js
-
-* Main file: main_ver1.0.html
-
-Build 2 : <br>
-  -Updated: Added file filter to the uploader. It only allows to upload <strong>XML</strong> extention file. <br>
-  Optimized code for being simplified running process to generate tree.
-  Decorated to real website-like...
-
-Build 1 : <br>
-  Implemented 3 types of tree. (Radial, Indented, SequencesBurst)
-
-Build 0
+BioIT Core website [link](http://tinyurl/bioitcore).
+Last updated on 07/28/2015

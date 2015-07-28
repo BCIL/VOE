@@ -1,0 +1,2831 @@
+{
+
+    "name": "ROOT",
+    "children": [
+      {
+        "name": "k__Bacteria",
+        "branch_length": "1.0",
+        "property": {
+          "applies_to": "children",
+          "datatype": "xsd:string",
+          "id_ref": "clade_marker_size",
+          "ref": "A:1",
+          "text": "471.512051684"
+        },
+        "children": [
+          {
+            "name": "p__Actinobacteria",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "304.023013439"
+            },
+            "children": [
+              {
+                "name": "c__Actinobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "304.023013439"
+                },
+                "children": [
+                  {
+                    "name": "o__Actinomycetales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "302.110301171"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Corynebacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "49.292683141"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Corynebacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "49.292683141"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Corynebacterium_matruchotii",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "49.292683141"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Propionibacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "11.021762186"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Propionibacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "11.021762186"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Propionibacterium_acnes",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.021762186"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Micrococcaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "277.019879003"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Arthrobacter",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.0969529854"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Arthrobacter_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.0969529854"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Rothia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "277.013162647"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Rothia_dentocariosa",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "24.9918881242"
+                                }
+                              },
+                              {
+                                "name": "s__Rothia_mucilaginosa",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "247.149996144"
+                                }
+                              },
+                              {
+                                "name": "s__Rothia_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "161.878646387"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Mycobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "13.791216507"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Mycobacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "13.791216507"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Mycobacterium_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "13.791216507"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Actinomycetaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "162.359458029"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Actinomyces",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "162.359458029"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Actinomyces_viscosus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.3375531468"
+                                }
+                              },
+                              {
+                                "name": "s__Actinomyces_odontolyticus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "160.415739358"
+                                }
+                              },
+                              {
+                                "name": "s__Actinomyces_oris",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.305948946"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "o__Bifidobacteriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "10.6588249744"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Bifidobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.6588249744"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Bifidobacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.6588249744"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Bifidobacterium_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.6588249744"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "o__Coriobacteriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "40.147402472"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Coriobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "40.147402472"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Atopobium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "40.147402472"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Atopobium_rimae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.7978090235"
+                                }
+                              },
+                              {
+                                "name": "s__Atopobium_parvulum",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "39.5531187395"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p__Firmicutes",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "341.77603364"
+            },
+            "children": [
+              {
+                "name": "c__Clostridia",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "88.5876760752"
+                },
+                "children": [
+                  {
+                    "name": "o__Clostridiales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "88.5876760752"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Peptostreptococcaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "12.1702781643"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Peptostreptococcus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "12.1702781643"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Peptostreptococcus_stomatis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.1702781643"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Lachnospiraceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "81.1860980004"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Catonella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.7997931111"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Catonella_morbi",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.7997931111"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Oribacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "80.5426480426"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Oribacterium_sinus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "80.5426480426"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Shuttleworthia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.5027341714"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Shuttleworthia_satelles",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.5027341714"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Eubacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "19.533745216"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Eubacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "19.533745216"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Eubacterium_saburreum",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "19.2807049586"
+                                }
+                              },
+                              {
+                                "name": "s__Eubacterium_saphenum",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.0789688114"
+                                }
+                              },
+                              {
+                                "name": "s__Eubacterium_rectale",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1988022573"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Clostridiales_uncl",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.0499875042"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Blautia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.0499875042"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Blautia_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.0499875042"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Clostridiales_Family_XI_Incertae_Sedis",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "13.3512142532"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Parvimonas",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.9356094924"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Parvimonas_micros",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.9356094924"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Peptoniphilus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "12.3218355676"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Peptoniphilus_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.3218355676"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Anaerococcus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.1189292511"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Anaerococcus_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1189292511"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Negativicutes",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "231.056629066"
+                },
+                "children": [
+                  {
+                    "name": "o__Selenomonadales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "231.056629066"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Veillonellaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "231.056629066"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Veillonella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "227.223833831"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Veillonella_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "135.94746802"
+                                }
+                              },
+                              {
+                                "name": "s__Veillonella_atypica",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "130.02990644"
+                                }
+                              },
+                              {
+                                "name": "s__Veillonella_dispar",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "121.21239273"
+                                }
+                              },
+                              {
+                                "name": "s__Veillonella_parvula",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "73.7861717534"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Dialister",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.4061739955"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Dialister_invisus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.4061739955"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Selenomonas",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "14.4667391495"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Selenomonas_flueggei",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.35138193"
+                                }
+                              },
+                              {
+                                "name": "s__Selenomonas_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.037109314"
+                                }
+                              },
+                              {
+                                "name": "s__Selenomonas_sputigena",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.8999383797"
+                                }
+                              },
+                              {
+                                "name": "s__Selenomonas_noxia",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.0296805477"
+                                }
+                              },
+                              {
+                                "name": "s__Selenomonas_artemidis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.2187605445"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Megasphaera",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "35.7142964868"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Megasphaera_micronuciformis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "35.7142964868"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Erysipelotrichi",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "25.1656142483"
+                },
+                "children": [
+                  {
+                    "name": "o__Erysipelotrichales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "25.1656142483"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Erysipelotrichaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "25.1656142483"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Solobacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "24.6798000725"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Solobacterium_moorei",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "24.6798000725"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Bulleidia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.562415475"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Bulleidia_extructa",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.562415475"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Bacilli",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "299.698925831"
+                },
+                "children": [
+                  {
+                    "name": "o__Bacillales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "28.6778277511"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Bacillales_uncl",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "28.6778277511"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Gemella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "28.6778277511"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Gemella_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.5422595508"
+                                }
+                              },
+                              {
+                                "name": "s__Gemella_haemolysans",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "20.8926151217"
+                                }
+                              },
+                              {
+                                "name": "s__Gemella_moribillum",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.2877480561"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "o__Lactobacillales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "298.559090336"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Enterococcaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.359353551"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Enterococcus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.359353551"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Enterococcus_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.359353551"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Carnobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "146.640282987"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Granulicatella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "146.640282987"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Granulicatella_adiacens",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "109.729543822"
+                                }
+                              },
+                              {
+                                "name": "s__Granulicatella_elegans",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1918159156"
+                                }
+                              },
+                              {
+                                "name": "s__Granulicatella_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "89.2245630346"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Aerococcaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.6747186457"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Abiotrophia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.6747186457"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Abiotrophia_defectiva",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.6747186457"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Streptococcaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "280.688685801"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Lactococcus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.1488891051"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Lactococcus_lactis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1488891051"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Streptococcus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "280.678740411"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Streptococcus_salivarius",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "104.126428061"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_mutans",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1219256405"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_cristatus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "23.0133125048"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_australis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.4829951918"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_pneumoniae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.3463993441"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_infantis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "146.0196762"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_anginosus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.3950874156"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_oralis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "32.3055547442"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_gordonii",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.0469071839"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_peroris",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "44.5141690925"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_thermophilus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.9818206981"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_parasanguinis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "223.117142825"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_vestibularis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "16.9404786638"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_sanguinis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "40.3735031462"
+                                }
+                              },
+                              {
+                                "name": "s__Streptococcus_mitis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "64.3358639423"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p__Spirochaetes",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "11.0930048793"
+            },
+            "children": [
+              {
+                "name": "c__Spirochaetes",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "11.0930048793"
+                },
+                "children": [
+                  {
+                    "name": "o__Spirochaetales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "11.0930048793"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Treponemaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "11.0930048793"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Treponema",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "11.0930048793"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Treponema_vincentii",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.493778903"
+                                }
+                              },
+                              {
+                                "name": "s__Treponema_denticola",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.6031772232"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p__Bacteroidetes",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "175.585955959"
+            },
+            "children": [
+              {
+                "name": "c__Flavobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "19.2943745643"
+                },
+                "children": [
+                  {
+                    "name": "o__Flavobacteriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "19.2943745643"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Flavobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "19.2943745643"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Capnocytophaga",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "19.2943745643"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Capnocytophaga_sputigena",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "13.2776919514"
+                                }
+                              },
+                              {
+                                "name": "s__Capnocytophaga_ochracea",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.735103388"
+                                }
+                              },
+                              {
+                                "name": "s__Capnocytophaga_gingivalis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.5459877862"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Bacteroidia",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "173.688185858"
+                },
+                "children": [
+                  {
+                    "name": "o__Bacteroidales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "173.688185858"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Porphyromonadaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "13.0984969248"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Porphyromonas",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "12.9811197572"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Porphyromonas_endodontalis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.9811197572"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Parabacteroides",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.1199280575"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Parabacteroides_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.00799968"
+                                }
+                              },
+                              {
+                                "name": "s__Parabacteroides_merdae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1119373268"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Bacteroidaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.906875426"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Bacteroides",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.906875426"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Bacteroides_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.906875426"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Prevotellaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "172.893853335"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Prevotella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "172.893853335"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Prevotella_disiens",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.0349938764"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_multiformis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "13.5936479804"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_veroralis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "16.1950800876"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_melaninogenica",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "159.263439689"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_oralis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.0769703702"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_tannerae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "12.3863000265"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_oris",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.1045969436"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_salivae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "49.144055554"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_marshii",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1009490293"
+                                }
+                              },
+                              {
+                                "name": "s__Prevotella_buccae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.1888216197"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Rikenellaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.00799968"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Alistipes",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.00799968"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Alistipes_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.00399992"
+                                }
+                              },
+                              {
+                                "name": "s__Alistipes_putredinis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.00399992"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Sphingobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "10.1059438597"
+                },
+                "children": [
+                  {
+                    "name": "o__Sphingobacteriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "10.1059438597"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Sphingobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.1059438597"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Sphingobacteriaceae_unclassified",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.1059438597"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p__Chlamydiae",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "10.0569837612"
+            },
+            "children": [
+              {
+                "name": "c__Chlamydiae",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "10.0569837612"
+                },
+                "children": [
+                  {
+                    "name": "o__Chlamydiales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "10.0569837612"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Chlamydiaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "10.0569837612"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Chlamydiaceae_unclassified",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.0569837612"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p__Fusobacteria",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "68.0224812695"
+            },
+            "children": [
+              {
+                "name": "c__Fusobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "68.0224812695"
+                },
+                "children": [
+                  {
+                    "name": "o__Leptotrichales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "52.4169092902"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Leptotrichiaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "28.8932986382"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Leptotrichia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "28.8932986382"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Leptotrichia_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "17.3492068238"
+                                }
+                              },
+                              {
+                                "name": "s__Leptotrichia_buccalis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "17.7201752903"
+                                }
+                              },
+                              {
+                                "name": "s__Leptotrichia_goodfellowii",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.2297359049"
+                                }
+                              },
+                              {
+                                "name": "s__Leptotrichia_hofstadii",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.7970780948"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "f__Leptotrichales_unclassified",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "37.7912000351"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "o__Fusobacteriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "32.9610594837"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Fusobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "32.9610594837"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Fusobacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "32.9610594837"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Fusobacterium_periodonticum",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "25.7234491417"
+                                }
+                              },
+                              {
+                                "name": "s__Fusobacterium_nucleatum",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "18.4194078796"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p__Proteobacteria",
+            "branch_length": "1.0",
+            "property": {
+              "applies_to": "children",
+              "datatype": "xsd:string",
+              "id_ref": "clade_marker_size",
+              "ref": "A:1",
+              "text": "404.05278544"
+            },
+            "children": [
+              {
+                "name": "c__Gammaproteobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "286.916599639"
+                },
+                "children": [
+                  {
+                    "name": "o__Cardiobacteriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "11.0504632645"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Cardiobacteriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "11.0504632645"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Cardiobacterium",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "11.0504632645"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Cardiobacterium_hominis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.0504632645"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "o__Pasteurellales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "286.850351413"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Pasteurellaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "286.850351413"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Haemophilus",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "286.246893953"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Haemophilus_influenzae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "18.345840599"
+                                }
+                              },
+                              {
+                                "name": "s__Haemophilus_parainfluenzae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "285.695845354"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Aggregatibacter",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "19.1548568352"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Aggregatibacter_segnis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.9960907154"
+                                }
+                              },
+                              {
+                                "name": "s__Aggregatibacter_aphrophilus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.0999285458"
+                                }
+                              },
+                              {
+                                "name": "s__Aggregatibacter_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "13.3018828857"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Betaproteobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "360.698970408"
+                },
+                "children": [
+                  {
+                    "name": "o__Burkholderiales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "23.3367629216"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Burkholderiaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "23.3367629216"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Lautropia",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "23.3367629216"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Lautropia_mirabilis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "23.3367629216"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "o__Neisseriales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "360.270227395"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Neisseriaceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "360.270227395"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Kingella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "14.4351757571"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Kingella_oralis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "14.4351757571"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Neisseria",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "360.117000868"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Neisseria_mucosa",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "101.046177647"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_flavescens",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "282.128753308"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_elongata",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "15.2260326661"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_sicca",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.3389953119"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_gonorrhoeae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.0589826018"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_unclassified",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "289.153313824"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_meningitidis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.2796087302"
+                                }
+                              },
+                              {
+                                "name": "s__Neisseria_subflava",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "83.8292615528"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "g__Eikenella",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "10.547498488"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Eikenella_corrodens",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.547498488"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "c__Epsilonproteobacteria",
+                "branch_length": "1.0",
+                "property": {
+                  "applies_to": "children",
+                  "datatype": "xsd:string",
+                  "id_ref": "clade_marker_size",
+                  "ref": "A:1",
+                  "text": "152.375390895"
+                },
+                "children": [
+                  {
+                    "name": "o__Campylobacterales",
+                    "branch_length": "1.0",
+                    "property": {
+                      "applies_to": "children",
+                      "datatype": "xsd:string",
+                      "id_ref": "clade_marker_size",
+                      "ref": "A:1",
+                      "text": "152.375390895"
+                    },
+                    "children": [
+                      {
+                        "name": "f__Campylobacteraceae",
+                        "branch_length": "1.0",
+                        "property": {
+                          "applies_to": "children",
+                          "datatype": "xsd:string",
+                          "id_ref": "clade_marker_size",
+                          "ref": "A:1",
+                          "text": "152.375390895"
+                        },
+                        "children": [
+                          {
+                            "name": "g__Campylobacter",
+                            "branch_length": "1.0",
+                            "property": {
+                              "applies_to": "children",
+                              "datatype": "xsd:string",
+                              "id_ref": "clade_marker_size",
+                              "ref": "A:1",
+                              "text": "152.375390895"
+                            },
+                            "children": [
+                              {
+                                "name": "s__Campylobacter_concisus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "151.587743491"
+                                }
+                              },
+                              {
+                                "name": "s__Campylobacter_gracilis",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.0286907868"
+                                }
+                              },
+                              {
+                                "name": "s__Campylobacter_showae",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "10.9455158771"
+                                }
+                              },
+                              {
+                                "name": "s__Campylobacter_rectus",
+                                "branch_length": "1.0",
+                                "property": {
+                                  "applies_to": "children",
+                                  "datatype": "xsd:string",
+                                  "id_ref": "clade_marker_size",
+                                  "ref": "A:1",
+                                  "text": "11.2659528947"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "property": {
+
+      "datatype": "xsd:string",
+      "id_ref": "ignore_branch_len",
+      "ref": "A:1",
+      "text": "1"
+    }
+  }

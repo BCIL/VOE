@@ -1,0 +1,108 @@
+<html>
+<head>
+<title> Visualization by Pviz </title>
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/biojs/pviz_mod3.js"></script>
+	<link type="text/css" rel="stylesheet" href="js/biojs/pviz-core.css">
+
+</script></head>
+  <style type="text/css">
+  #pviz_canvas {
+    font-family: monospace;
+  }
+  .output > ul {
+    list-style: table;
+    margin: 10px;
+    padding: 0;
+  }
+  .output li {
+    padding: 10px, 5px;
+  }
+  .data_info {
+    font-size: 20px;
+    display: table;
+    margin: auto;
+  }
+  
+  div[id="info"]{
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+
+  </style>
+<body>
+<div id="info"> <div>
+<br>
+<div id="pviz_canvas"></div>
+<br>
+
+<script type="text/javascript">
+
+var pviz_canvas = document.getElementById('pviz_canvas');
+var pviz = require("pviz");
+//var pviz = this.pviz;
+var seqEntry;
+//define the model, a sequence entry with an explicit sequence
+var startPosition = localStorage.startPosition;
+var endPosition = localStorage.end;
+var seq = localStorage.sequence;
+var alignedSeq = localStorage.alignedSeq.split(",");          // get aligned sequences 
+var alignedPos = localStorage.alignedPos.split(",");
+var fragName = localStorage.fragName.split(",");
+console.log("** Reference sequence:\n" + seq + "\n ** length: " + seq.length);
+
+GenPviz(seq);
+
+function GenPviz(seq)
+{
+  var TAB1 = "&nbsp";
+  var TAB2 = "&nbsp&nbsp";
+  $("#info").append("<div class='output data_info'><ul style='list-style-type:none'>" +
+                      "<li>Chromosome:<b>" +TAB1+ localStorage.ref_Name + "</b><br></li>" +
+                      "<li>Reference Id:<b>" +TAB2+localStorage.ref_Id + "</b><br></li>" +
+                      "<li id='startPosition'>Start position:<b>" +TAB2+ localStorage.start + "</b><br></li>" +
+                      "<li id='endPosition'>End position: <b>" +TAB2+ localStorage.end + "</b><br></li></ul></div>" );
+  for(var i=0; i<alignedSeq.length; i++) {
+    $("#info").append("<div class='output data_detail'><ul style='list-style-type:disc'>" + 
+                      "<li>Read: <b>&nbsp&nbsp<u>" + fragName[i] + "</u></b><br></li>" +
+                      "<li>Length: <b>" +TAB1+ alignedSeq[i].length + "</b><br></li>" +
+                      "<li>Position: <b>" +TAB1+ alignedPos[i] + "</b><br></li>" +
+                      "<li>Sequence: <b>" +TAB1+ alignedSeq[i] + "</b><br></li></div>"  );
+
+  }
+  seqEntry = new pviz.SeqEntry ({
+    sequence : seq
+  });
+
+  new pviz.SeqEntryAnnotInteractiveView ({
+    model : seqEntry,
+    el : pviz_canvas
+  }).render();
+
+  setTimeout (function() {
+    AddFeatures();
+  }, 10);
+  //AddFeatures();
+}
+
+function AddFeatures() {
+  for (var i=0; i<alignedSeq.length; i++) {
+    var pos_start = parseInt(alignedPos[i]) - startPosition;
+    var pos_end = (parseInt(alignedPos[i]) - startPosition) + (alignedSeq[i].length);
+    console.log("** Feature position - start: " + pos_start + " // end: " + pos_end);
+    seqEntry.addFeatures ({
+      category : fragName[i],
+      //category : 'regions',
+      type : 'topological domain',
+      //type : 'beta_strand',
+      text : alignedSeq[i],
+      start : pos_start,
+      end : pos_end,
+      //count : 10,
+      //text : fragName[i]
+    })
+  }
+}
+
+</script>
+</body></html>

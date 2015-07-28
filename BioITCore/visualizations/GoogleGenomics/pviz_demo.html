@@ -1,0 +1,305 @@
+<html>
+<head>
+<title> Visualization by Pviz </title>
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/biojs/pviz_mod3.js"></script>
+
+</script></head>
+  <style type="text/css">
+  #pviz_canvas {
+    font-family: monospace;
+  }
+  .output > ul {
+    list-style: table;
+    margin: 10px;
+    padding: 0;
+  }
+  .output li {
+    padding: 10px, 5px;
+  }
+  .data_info {
+    font-size: 20px;
+    display: table;
+    margin: auto;
+  }
+  
+  div[id="info"]{
+    font-family: sans-serif;
+    font-size: 10px;
+  }
+  @media print {
+    svg.pviz rect.background {
+        fill: white;
+    }
+    line.x-bar {
+        display: none;
+    }
+}
+
+div.header {
+    height: 2em;
+    width: 100%;
+    background: #eee;
+    position: static;
+    top: 0px;
+}
+
+div#main {
+}
+footer {
+    height: 2em;
+    width: 100%;
+    background: #eee;
+    opacity: .7;
+    position: fixed;
+    bottom: 0px;
+}
+
+
+text.sequence {
+    text-anchor: middle;
+    font-family: monospace;
+}
+
+line.sequence-bg{
+    stroke-width:4px;
+    stroke:#CC9900;
+}
+
+g.axis-bubble text {
+    font-size: 20px;
+    text-anchor: middle;
+    alignment-baseline: middle;
+    font-family: monospace;
+}
+g.axis-bubble rect {
+    stroke: #996633;
+    fill: white;
+}
+svg.pviz rect.background {
+    fill: #f5f5f5;
+}
+
+rect.layer-background {
+    fill: white;
+    opacity: 0;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+g.layer:hover rect.layer-background {
+    opacity: 1.0;
+}
+g.layer1:hover rect.layer-background {
+    opacity: 1.0;
+}
+
+/**
+ *     color brewer 7 class paired #a6cee3 #1f78b4 #b2df8a #33a02c #fb9a99 #e31a1c #fdbf6f
+ */
+g.feature rect.feature {
+    fill: #a6cee3;
+    fill-opacity: 0.6;
+    stroke: #555;
+    stroke-opacity: 0.3;
+}
+
+g.feature text {
+    font-family: monospace;
+    alignment-baseline: middle;
+    opacity: 0.75;
+}
+
+g.feature.Region rect.feature {
+    fill: #1f78b4;
+}
+g.feature.Molecule_processing rect.feature {
+    fill: #b2df8a;
+}
+
+g.layer g.strikeout line {
+    stroke: #bbb;
+    stroke-width: 2px;
+}
+
+/*menu*/
+
+g.layer-menu text.layer-category {
+    alignment-baseline: hanging;
+    font-weight: bold;
+    font-size: 75%;
+    fill: #777;
+}
+
+g.one-hidden-layer {
+    cursor: pointer;
+}
+
+g.one-hidden-layer rect {
+    stroke: #555;
+    fill: none;
+}
+
+g.one-hidden-layer:hover rect {
+    stroke: #222;
+    fill: #eee;
+}
+
+g.one-hidden-layer text {
+    alignment-baseline: middle;
+}
+
+/*
+ * axis
+ */
+g.axis g.tick line {
+    stroke: black;
+}
+g.axis path.domain {
+    stroke: black;
+    fill: none;
+}
+
+/* icons sections!! */
+g.icon path {
+    fill: #d00;
+    cursor: pointer;
+}
+
+line.x-bar {
+    stroke: #555;
+}
+
+rect.brush {
+    fill: black;
+    fill-opacity: 0.3;
+}
+
+rect.feature.data {
+    font-size: 50px;
+    fill: red;
+    fill-opacity: 0.5;
+}
+
+
+/*
+ *
+ g.icon:hover path{
+ opacity: 1;
+ stroke-width:1px;
+ stroke:#f00;
+ }
+ */
+
+/*custom features
+ *
+ */
+
+g.feature.secondary_structure line.beta_strand {
+    stroke: green;
+    stroke-width: 3
+}
+g.feature.secondary_structure path.beta_strand {
+    stroke: green;
+    fill: green
+}
+g.feature.secondary_structure path.turn {
+    stroke: green;
+    fill: none;
+    stroke-width: 2;
+}
+
+g.feature.secondary_structure path.helix {
+    stroke: green;
+    stroke-width: 3;
+    fill: none;
+}
+
+/** OneLiner
+ *
+ */
+svg.one-liner line {
+    stroke: black;
+    stroke-width: 1px;
+}
+svg.one-liner rect {
+    fill: blue;
+    fill-opacity: 0.7;
+}
+svg.one-liner rect.subline-0 {
+    fill: blue;
+}
+svg.one-liner rect.subline-1 {
+    fill: red;
+}
+svg.one-liner rect.subline-2 {
+    fill: green;
+}
+  </style>
+<body>
+
+<div id="pviz_canvas"></div>
+<div id="info" style="display: none"> <div>
+<script type="text/javascript">
+
+var pviz_canvas = document.getElementById('pviz_canvas');
+var pviz = require("pviz");
+var seqEntry;
+//define the model, a sequence entry with an explicit sequence
+var startPosition = "12999921";
+var endPosition = "13000100";
+var ref_Id = "EJnI4c_SmKOxmwE";
+var ref_Name = "9";
+
+
+var seq = "TGAGACTCTGTCTCAAAAAAAAAAAAAAAAGCTATTTTGGTATTTTGGTGGACTTTTTATAATCACAGACTTTTATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGAT";
+var alignedSeq = ["AAAAAAAAAAAAAAAGTTATTTTGGTATTTTGGGGGACTTTTTATAATCACAGACTTTTATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACT", "AAAAAGCTATTTTGGTATTTTGGTGGACTTTTTATAATCACAGACTTTTATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACTAGTTTTCAGA", "TTGGTATTTTGGTGGACTTTTTATAATCACAGACTTTTATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACTAGTTTTCAGATGTTTGCTTTC", "TAATCACAGACTTTTATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACTAGTTTTCAGATGTTTGCTTTCTGCCCAGAGTGGGGGGCTTGCAT", "TTTATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACTAGTTTTCAGATGTTTGCTTTCTGCCCAGAGTGGGGGGCTTGCATGCTCCAAGTCTA", "ATCAGGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACTAGTTTTCAGATGTTTGCTTTCTGCCCAGAGTGGGGGGCTTGCATGCTCCAAGTCTAGAT", "GGCAATCCCATGTGCAAGTTCCTGAAGCTGATGCACTAGTTTTCAGATGTTTGCTTTCTGCCCAGAGTGGGGGGCTTGCATGCTCCAAGTCTAGATAATC"];
+var alignedPos = ["12999936", "12999946", "12999957", "12999980", "12999992", "12999995", "12999999"];
+var fragName = ["ERR184580.5919115", "ERR184580.20421226", "ERR184580.111110", "ERR184576.5161003", "ERR184576.17250410", "ERR185122.11868446", "ERR185122.14157647"];
+
+GenPviz(seq);
+
+function GenPviz(seq)
+{
+  
+  var TAB1 = "&nbsp";
+  var TAB2 = "&nbsp&nbsp";
+  $("#info").append("<div class='output data_info'><ul style='list-style-type:none'>" +
+                      "<li>Chromosome:<b>" +TAB1+ ref_Name + "</b><br></li>" +
+                      "<li>Reference Id:<b>" +TAB2+ref_Id + "</b><br></li>" +
+                      "<li id='startPosition'>Start position:<b>" +TAB2+ startPosition + "</b><br></li>" +
+                      "<li id='endPosition'>End position: <b>" +TAB2+ endPosition + "</b><br></li></ul></div>" );
+  
+
+  
+  seqEntry = new pviz.SeqEntry ({
+    sequence : seq
+  });
+
+  new pviz.SeqEntryAnnotInteractiveView ({
+    model : seqEntry,
+    el : pviz_canvas
+  }).render();
+
+  setTimeout (function() {
+    AddFeatures();
+  }, 10);
+}
+
+function AddFeatures() {
+  for (var i=0; i<alignedSeq.length; i++) {
+    var pos_start = parseInt(alignedPos[i]) - startPosition;
+    var pos_end = (parseInt(alignedPos[i]) - startPosition) + (alignedSeq[i].length);
+    seqEntry.addFeatures ({
+      category : fragName[i],
+      type : 'topological domain',
+      text : alignedSeq[i],
+      start : pos_start,
+      end : pos_end,
+    })
+  }
+}
+
+</script>
+</body></html>

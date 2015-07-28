@@ -1,0 +1,79 @@
+.localdrive-dropin-btn, .localdrive-dropin-btn:link, .localdrive-dropin-btn:hover {
+  background:linear-gradient(#FCFCFC 0%, #F5F5F5 100%);
+  border-color:#EBEBEB #EBEBEB #D4D4D4;
+  border-radius:2px;
+  border-style:solid;
+  border-width:1px;
+  color:#636363;
+  display:inline-block;
+  font-family:'Lucida Grande', 'Segoe UI', Tahoma, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:600;
+  height:14px;
+  padding:1px 7px 5px 3px;
+  text-decoration:none;
+}
+.localdrive-dropin-default:hover, .localdrive-dropin-error:hover {
+  background:linear-gradient(#FDFDFD 0%, #F5F5F5 100%);
+  border-color:#DEDEDE #DEDEDE #CACACA;
+}
+.localdrive-dropin-default:active, .localdrive-dropin-error:active {
+  border-color:#D1D1D1;
+  box-shadow:rgba(0, 0, 0, 0.0980392) 0 1px 1px inset;
+}
+.localdrive-dropin-btn .LD-dropin-btn-status {
+  background:url(localdrive_icon.png) no-repeat transparent;
+  display:inline-block;
+  height:14px;
+  margin:0 5px 0 2px;
+  position:relative;
+  top:2px;
+  vertical-align:bottom;
+  width:15px;
+}
+.localdrive-dropin-default .LD-dropin-btn-status {
+  background-position:0 0;
+}
+.localdrive-dropin-progress .LD-dropin-btn-status {
+  -webkit-animation-duration:1.7s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-name:rotate;
+  -webkit-animation-timing-function:linear;
+  background:url(localdrive_icon.png) 50% 50% no-repeat;
+  margin:0 4px 0 0;
+  width:18px;
+}
+.localdrive-dropin-success .LD-dropin-btn-status {
+  background-position:-15px 0;
+}
+.localdrive-dropin-disabled {
+  background:#E0E0E0;
+  border-color:#DADADA #DADADA #CCCCCC;
+  border-style:solid;
+  border-width:1px;
+  box-shadow:none;
+}
+.localdrive-dropin-disabled .LD-dropin-btn-status {
+  background-position:-30px 0;
+}
+.localdrive-dropin-error .LD-dropin-btn-status {
+  background-position:-45px 0;
+}
+.localdrive-dropin-btn .LD-dropin-btn-status {
+  -webkit-background-size:60px 14px;
+  background-image:url(localdrive_icon.png);
+  background-size:15px 15px;
+}
+.localdrive-dropin-progress .LD-dropin-btn-status {
+  -webkit-background-size:20px;
+  background:url(https://www.dropbox.com/static/images/widgets/dbx-progress-2x.png) 50% 50% / 20px 20px no-repeat;
+}
+.localdrive-saver:hover, .localdrive-chooser:hover {
+  cursor:pointer;
+  text-decoration:none;
+}
+.localdrive-chooser, .localdrive-dropin-btn {
+  box-sizing:content-box !important;
+  line-height:11px !important;
+  text-decoration:none !important;
+}

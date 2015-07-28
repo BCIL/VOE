@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CuffDiff - d3js</title>
+    <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://code.angularjs.org/angular-0.9.19.min.js" ng:autobind></script>
+    <script src="js/nv.d3.mod.js"></script>
+
+    <script src="js/filepicker.js"></script>
+    <script src="js/cuffdiff_demo.js"></script>
+    <link rel="stylesheet" href="css/googledrive_btn.css">
+    <link rel="stylesheet" href="css/localdrive_btn.css">
+    <link href="css/nv.d3.css" rel="stylesheet" type="text/css">
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html,body {
+          margin: 0px;
+          padding: 0px;
+          height: 100%;
+          width: 100%;
+        }
+        .section_1 {
+          margin-left: 5%;
+        }
+        #pieChart{
+          display: block;
+          float: left;
+          height: 95% !important;
+          width: 60% !important;
+        }
+       
+        #controller {
+          margin-top: 2%;    
+        }
+    </style>
+  </head>
+  <body>
+  <section class="section_1">
+    <span id="googledrive_chooser">
+      <a href="#" class=" googledrive-dropin-btn googledrive-dropin-default">
+      <span class="GD-dropin-btn-status"></span>Choose from Google Drive</a>
+    </span>
+    <span id="dropbox_chooser"></span>
+    </div>
+    
+    <span id="localdrive_chooser">
+      <a id="localdrive_btn_wrapper" class="localdrive-dropin-btn localdrive-dropin-default">
+      <span class="LD-dropin-btn-status"></span>Choose from Local Drive
+      </a>
+      <input id="selectfile_local" type="file" accept=".tsv, .tabular, .diff" style="display:none;" />
+    </span> 
+  </section>
+    <div id="pieChart"> <svg id="pieChart_svg"></svg> </div>
+    
+    <div id="controller"> </div>
+    <span id="chr_label"></span> 
+    
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="57wb652kzjrc8d7"></script>
+    <script src="https://www.google.com/jsapi?key=AIzaSyAc6hbd-Sq_YQ6CkviWXtQslAw4yC-PIB4"></script>
+    <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+  </body>
+</html>
