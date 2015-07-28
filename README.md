@@ -25,5 +25,5 @@ RNA-Seq data visualizations
 --------------------------
 - Two different visualization accept *.tsv, *.diff, *.tabular files.
 
-[BioIT Core website](http://tinyurl/bioitcore).
+[BioIT Core website](http://tinyurl.com/bioitcore). <br>
 Last updated on 07/28/2015
