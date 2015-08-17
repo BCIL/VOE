@@ -1,4 +1,4 @@
-<div style="text-align:center width:250px height:250px"><img src ="https://raw.githubusercontent.com/BCIL/PhyloD3/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?token=AHxiz-lPis7XSKtgi2i_pV0xoRJqHbhIks5V23AWwA%3D%3D"/></div>
+<div style="text-align:center"><img src ="https://raw.githubusercontent.com/BCIL/PhyloD3/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?token=AHxiz-lPis7XSKtgi2i_pV0xoRJqHbhIks5V23AWwA%3D%3D" style="width:250px height:250px"/></div>
 
 BioIT Core website
 ==================
