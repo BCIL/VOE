@@ -11,7 +11,7 @@ Google Genomics browser
 PhyloXML trees
 ----------------
 - The dedicate python server allows the user to upload own phyloXML file.
-- Three different visualizations, Radial tree, Indented tree, Sunburst
+- Three different visualizations, Radial tree, Indented tree, and Sunburst
 
 ChIP-Seq data visualization
 ---------------------------
@@ -23,7 +23,8 @@ Variant Call Format data visualization
 
 RNA-Seq data visualizations
 --------------------------
-- Two different visualization accept *.tsv, *.diff, *.tabular files.
+- Two different visualizations (line chart, donut + fucus chart).
+- *.tsv, *.diff, and *.tabular file types are accepted.
 
 [BioIT Core website](http://tinyurl.com/bioitcore). <br>
 Last updated on 07/28/2015
