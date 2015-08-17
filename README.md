@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/BCIL/PhyloD3/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png =250x250)
+![](https://raw.githubusercontent.com/BCIL/PhyloD3/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?token=AHxiz-lPis7XSKtgi2i_pV0xoRJqHbhIks5V23AWwA%3D%3D =250x250)
 BioIT Core website
 ==================
 - The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
