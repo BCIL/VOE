@@ -29,4 +29,4 @@ RNA-Seq data visualizations
 - *.tsv, *.diff, and *.tabular file types are accepted.
 
 [BioIT Core website](http://tinyurl.com/bioitcore). <br>
-Last updated on 07/28/2015
+Last updated on 08/31/2015
