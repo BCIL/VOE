@@ -1,5 +1,5 @@
-<div style="text-align:center"><img src ="https://raw.githubusercontent.com/BCIL/PhyloD3/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?token=AHxiz-lPis7XSKtgi2i_pV0xoRJqHbhIks5V23AWwA%3D%3D" width=200 height=200/></div>
-
+<div style="text-align:center"><img src ="https://github.com/BCIL/PhyloD3/blob/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div>
+https://github.com/BCIL/PhyloD3/blob/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?raw=true
 BioIT Core website
 ==================
 - The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
