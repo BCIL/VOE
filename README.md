@@ -28,5 +28,5 @@ RNA-Seq data visualizations
 - Two different visualizations (line chart, donut + fucus chart).
 - *.tsv, *.diff, and *.tabular file types are accepted.
 
-[BioIT Core website](http://tinyurl.com/bioitcore). <br>
+[Visual Omics Explorer (VOE)](http://tinyurl.com/bioitcore). <br>
 Last updated on 08/31/2015
