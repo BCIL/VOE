@@ -1,6 +1,6 @@
 <div style="text-align:center"><img src ="https://github.com/BCIL/PhyloD3/blob/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div>
 
-BioIT Core website
+Visual Omics Explorer (VOE)
 ==================
 - The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
 - All visualizations are used D3.js.
