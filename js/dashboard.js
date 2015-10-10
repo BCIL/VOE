@@ -21,6 +21,30 @@
         $('.iframe_demo_vcf').attr('src', 'visualizations/vcf_file_viz/vcf_file_viz.html');
         $('.iframe_demo_cuffdiff').attr('src', 'visualizations/RNA-Seq/CuffDiff_viz/cuffdiff_demo.html');
 
+        $("#ytplayer").hide();
+        $('#ytplayer').css('width', '0 px');
+        $('#ytplayer').css('height', '0 px');
+        
+        $("#ytplayer_btn").click(function() {
+          var a = $("#ytplayer");
+          if(a.attr("status") === "hide") {
+            $("#ytplayer").show();
+            a.attr("status","show");
+            $('#ytplayer').css('width', ($(window).height() * 0.8) +'px');
+            $('#ytplayer').css('height', ($(window).height() * 0.5) +'px');
+            $('#ytplayer_btn').attr("class", "btn btn-warning btn-sm");
+            $("#ytplayer_btn").text("Hide video");  
+          }
+          else if(a.attr("status") === "show") {
+            $("#ytplayer").hide();
+            a.attr("status","hide");
+            $('#ytplayer').css('width', '0 px');
+            $('#ytplayer').css('height', '0 px');
+            $('#ytplayer_btn').attr("class", "btn btn-success btn-sm");
+            $("#ytplayer_btn").text("Show video");  
+          }
+        })
+
         $(document).on('click', '.event-close', function () {
             $(this).closest("li").remove();
             return false;

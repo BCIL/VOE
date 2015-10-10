@@ -63,7 +63,8 @@ D3Core.prototype = {
 	    }
 	    
 	    this.svg = d3.select(this.options.container)
-			.append("svg:svg")
+			//.append("svg:svg")
+			.attr("class", "canvas")
 			.attr("width", this.width+this.margin.left+this.margin.right)
 			.attr("height", this.height+this.margin.top+this.margin.bottom)
 			.append("svg:g").attr("transform", "translate("+this.margin.left+","+this.margin.top+")");

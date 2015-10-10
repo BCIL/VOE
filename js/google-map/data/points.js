@@ -14,8 +14,8 @@ var BioITCore = [
     {
         lat: 40.765589,
         lon: -73.956174,
-        title: 'BioITCore infrastructure lab',
-        html: 'BioITCore infrastructure lab',
+        title: 'BioIT Core Infrastructure Lab',
+        html: 'BioIT Core Infrastructure Lab',
         zoom: 15,
         animation: google.maps.Animation.DROP
     }

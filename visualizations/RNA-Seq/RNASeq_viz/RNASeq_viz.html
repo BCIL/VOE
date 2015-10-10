@@ -1,6 +1,7 @@
 <html>
 <head>
-  <Title>RNA-Seq visualization</Title>
+  <Title> VOE - RNA-Seq visualization</Title>
+  <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="css/d3.linechart.css">
@@ -117,7 +118,7 @@
         <a id="localdrive_btn_wrapper" class="localdrive-dropin-btn localdrive-dropin-default">
         <span class="LD-dropin-btn-status"></span>Choose from Local Drive
         </a>
-        <input id="selectfile_local" type="file" accept=".tsv" style="display:none;" />
+        <input id="selectfile_local" type="file" accept=".tsv, .diff, .tabular" style="display:none;" />
     </span>
   </section>
 </section>
@@ -139,10 +140,11 @@
     <input type="button" id="submit_btn" value="submit">
     <input type="button" id="update_btn" value="update">
     <input type="button" id="reset_btn" value="reset">
+    <button class="ui-btn" id="download_btn" style='color: #0066FF'>Download SVG</button>
   </section>
 </section>
 <section id="section_3">
-  <div id="linechart"></div>
+  <svg id="linechart"></svg>
 </section>
 <script>
   
@@ -277,9 +279,17 @@
       /////////////////////////////////////
     })
 
+    $("#download_btn").on("click", function() {
+      var e = document.createElement('script'); 
+      e.setAttribute('src', 'js/svg-crowbar-1.js'); 
+      e.setAttribute('class', 'svg-crowbar'); 
+      document.body.appendChild(e);
+    })
+
     $("#localdrive_btn_wrapper").click(function() {
       $("#selectfile_local").trigger('click');
     })
+
     $("#selectfile_local").change(function(e) {
       var file = document.getElementById("selectfile_local").files[0];
       window.reader = new FileReader();
@@ -293,7 +303,7 @@
     })
   })    // end ready
 
-  function parse_uploaded_data(fin) {
+  function parse_uploaded_data(userdata) {
     document.getElementById("submit_btn").disabled = false;
     document.getElementById("update_btn").disabled = true;
     document.getElementById("submitChoice_btn").disabled = true;
@@ -307,7 +317,24 @@
     data_list_valid = [];
     choice_list = [];
     main_graph_chk = 1;
-    var dataset = d3.tsv.parse(fin);
+
+    /////////////////////////////////////////////////////////
+    // 1. Inputdata format checking
+    // 2. Add standard header if the header is not standard
+    /////////////////////////////////////////////////////////
+    var h = userdata.substr(0,userdata.indexOf('\n'));
+    var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
+    var header = h.split('\t');
+    if (h[0] !== 'test_id' || h[1] !== 'gene_id' || h[2] !== 'gene') {
+      var chk_chr = '';
+      userdata = userdata.replace(h,'');
+      userdata = userdata.trim();
+      userdata = header_str + userdata;
+    }
+    /////////////////////////////////////////////////
+    //// parse the data
+
+    var dataset = d3.tsv.parse(userdata);
     console.log("before filtering: " + dataset.length);
     for (var i=0; i<dataset.length; i++) { 
       if(dataset[i].status==="OK" && dataset[i].significant==="yes" && !isNaN(dataset[i]["log2(fold_change)"])){

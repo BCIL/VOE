@@ -7,9 +7,18 @@ function D3LineChart(options) {
 		interpolate: "linear",
 		
 		tooltipOnMouseOver:	function(d, element, base) {
+			////// d3 tooltip
+			tooltip_div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            tooltip_div.html(base.options.tooltipText(d, element))  
+                .style("left", (d3.event.pageX) - 80 + "px")     
+                .style("top", (d3.event.pageY) - 40 + "px");    
+            //////                  
 			begin=0;
 			end=0;
 			chr="";
+			/*
 			window.tooltip_d = d;
 			window.tooltip_ele = element;
 			window.tooltip_base = base;
@@ -21,7 +30,7 @@ function D3LineChart(options) {
 				.html(base.options.tooltipText(d, element));
 			$(base.options.container+" .tooltip").show();
 			$(element).parent().find("path").css("opacity", 1);
-
+*/
 			var a = document.getElementById("chr_selector");
 			if (a != null){
 				var chr_chk = a.options[a.selectedIndex].value;
@@ -73,6 +82,9 @@ function D3LineChart(options) {
 			}
 		},
 		tooltipOnMouseOut: function(d, element, base) {
+			tooltip_div.transition()        
+                .duration(400)      
+                .style("opacity", 0);
 			$(base.options.container+" .tooltip").hide();
 			$(element).parent().find("path").css("opacity", 0.5);
 		},

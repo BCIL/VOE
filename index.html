@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="ThemeBucket">
-
     <meta http-equiv=”X-UA-Compatible” content=”IE=EmulateIE9”>
     <meta http-equiv=”X-UA-Compatible” content=”IE=9”>
 
@@ -15,7 +14,7 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
     <link href="js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
     <link href="css/clndr.css" rel="stylesheet">
     <!--clock css-->
@@ -46,14 +45,16 @@
 <div class="top-nav clearfix">
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
+        <!--
         <li>
             <input type="text" class="form-control search" placeholder=" Search">
         </li>
-        <!-- user login dropdown start-->
+        -->
+        
         <li class="dropdown">
-            <a  class="dropdown-toggle icon-user" href="#">
+            <a  class="" >
                 <!--<img alt="" src="images/avatar1_small.jpg">-->
-                <i class="fa fa-user"></i>
+                <i class="fa fa-line-chart fa-lg"></i>
                 <span class="username"></span>
             </a>
         </li>
@@ -115,14 +116,21 @@
 <!--main content start-->
 <section id="main-content">
 <section class="wrapper">
-
+<div id="video_section" class="row">
+    <div class="col-lg-2">
+        <button id="ytplayer_btn" class="btn btn-success btn-sm"> Show video </button>
+    </div>
+    <div class="col-lg-10">
+        <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/c-QemLVBTKU" frameborder="1" status="hide" allowfullscreen></iframe>
+    </div>
+</div>
 <div class="row">
     <div class="col-lg-12">
         <header class="panel-heading">
             <a href="GoogleGenomics.html">Google Genomics Data Browser</a>
         </header>
         <form action="GoogleGenomics.html" style="margin-left:80%;color:blue;display:inline">
-            <input type="submit" class="viz_your_data" value="Visualize your data">
+            <input type="submit" class="viz_your_data" value="Visualize from Google Cloud">
         </form>
         <div class="pviz_demo clearfix">
             <iframe id="GoogleGenomics" class="iframe_demo_pviz"></iframe>

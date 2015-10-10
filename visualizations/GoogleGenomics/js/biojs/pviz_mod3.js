@@ -14461,6 +14461,7 @@ define(
                 });
             });
             self.svg.on('mouseout', function () {
+                self.svg.selectAll('g.axis-bubble').style('display', 'none');
                 self.xBar.style('display', 'none');
             }).on('mouseover', function () {
                 self.xBar.style('display', null);
