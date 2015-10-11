@@ -29,4 +29,4 @@ RNA-Seq data visualizations
 - *.tsv, *.diff, and *.tabular file types are accepted.
 
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br>
-Last updated on 08/31/2015
+Last updated on 10/10/2015
