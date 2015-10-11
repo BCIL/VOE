@@ -83,12 +83,12 @@ svg.nvd3-svg {
 
 .nvtooltip.x-nvtooltip,
 .nvtooltip.y-nvtooltip {
-  padding: 8px;
+  padding: 4px;
 }
 
-.nvtooltip h3 {
+.nvtooltip h3, h4 {
   margin: 0;
-  padding: 4px 14px;
+  padding: 1px 14px;
   line-height: 18px;
   font-weight: normal;
   background-color: rgba(247,247,247,0.75);
@@ -103,6 +103,7 @@ svg.nvd3-svg {
 
 .nvtooltip p {
   margin: 0;
+  padding-top: 0px;
   padding-left: 5px;
   padding-right: 5px;
   text-align: center;
@@ -156,10 +157,11 @@ svg.nvd3-svg {
   pointer-events: none;
 }
 
+/*
 .nvd3 text {
   font: normal 12px Arial;
 }
-
+*/
 .nvd3 .title {
  font: bold 14px Arial;
 }

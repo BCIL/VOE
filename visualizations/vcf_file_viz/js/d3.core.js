@@ -8,7 +8,7 @@ function D3Core(options) {
 	if (!(this instanceof D3Core)) throw new TypeError("D3Core constructor cannot be called as a function.");
     var defaultOptions = {
 		container: "#chart",
-		margin: {top: 20, left: 60, bottom: 70, right: 10},
+		margin: {top: 20, left: 50, bottom: 70, right: 20},
 		spacing: 0.5,
 		dataUrl: null,
 		data: [ 
@@ -56,8 +56,6 @@ D3Core.prototype = {
 	    if (this.options.showTooltip) {
 	    	$(this.options.container).append("<div class='tooltip' style='display: none;' />");
 	    	this.tooltipWidth = $(this.options.container+" .tooltip").outerWidth();
-	    	$(this.options.container).append("<div class='tooltip_table' style='display: none;' />");
-	    	this.tooltip_tableWidth = $(this.options.container+" .tooltip_table").outerWidth();
 	    }
 	    
 	    if (this.options.showLegend) {
@@ -65,7 +63,8 @@ D3Core.prototype = {
 	    }
 	    
 	    this.svg = d3.select(this.options.container)
-			.append("svg:svg")
+			//.append("svg:svg")
+			.attr("class", "canvas")
 			.attr("width", this.width+this.margin.left+this.margin.right)
 			.attr("height", this.height+this.margin.top+this.margin.bottom)
 			.append("svg:g").attr("transform", "translate("+this.margin.left+","+this.margin.top+")");
@@ -92,15 +91,10 @@ D3Core.prototype = {
 	    			$(this).removeClass("selected");
 	    			$(this).text("Display in Table");
 	    			base.table.parent().fadeOut("slow");
-	    			$('#UCSClink').fadeIn("slow");
-      				$('#position_table').fadeIn("slow");
-
 	    		} else {
 	    			$(this).addClass("selected");
 	    			$(this).text("Display in Graph");
 	    			base.table.parent().fadeIn("slow");
-	    			$('#UCSClink').fadeOut("slow");
-      				$('#position_table').fadeOut("slow");
 	    		}
 	    	});
 	    	
@@ -418,10 +412,10 @@ D3Core.prototype = {
 	
 	tooltipRender: function() {
 		var base = this;
-		//base.item.on("click", function(d) { base.options.tooltipOnMouseClick(d, this, base); });
+		base.item.on("click", function(d) { base.options.renderTableMouseClick(d, this, base); });
 		base.item.on("mouseover", function(d) { base.options.tooltipOnMouseOver(d, this, base); });
 		base.item.on("mouseout", function(d) { base.options.tooltipOnMouseOut(d, this, base); });
-		base.item.on("click", function(d) { base.options.renderTableMouseClick(d, this, base); });
+
 	},
 	
 	
@@ -429,7 +423,7 @@ D3Core.prototype = {
 		var base = this;
 		window.base = this;
 		base.table.empty();
-		base.table.attr("align","center").attr("id", "datatable");
+		base.table.attr("id", "datatable");
 		var $firstRow = $("<tr />");
 
 		$firstRow.append("<th />");

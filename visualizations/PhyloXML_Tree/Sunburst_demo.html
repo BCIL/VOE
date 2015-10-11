@@ -5,6 +5,7 @@
     <title> Sunburst </title>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type ="text/javascript" src ="js/jquery.js"> </script>
+    <link rel="shortcut icon" href="favicon.ico">
 
     <style type="text/css">
       
@@ -17,12 +18,13 @@
       
       #sequence {
         font-family: sans-serif;
-        margin-top: 5%;
+        font-size: 1vw;
+        margin-top: 1%;
       }
       #sequence text {
         font-weight: 400;
         fill: white;
-        font-size: 2vw;
+        font-size: 1.3vw;
       }
       #chart {
         position: absolute;
@@ -41,13 +43,17 @@
         width: 50%;
         height: 50%;
         text-align: center;
-        font-size: 4vw;
+        font-size: 3.0vw;
         color: #666;
         z-index: -1;
       }
       #percentage {
-        font-size: 4.2vw;
+        font-size: 1.8em;
         font-weight: 800;
+      }
+      #trail g text{
+        font-size: 2.2em;
+        font-weight: 400;
       }
     </style>
   </head>
@@ -55,6 +61,7 @@
   <body>
   
     <div id="main">
+    <span id="lock_status" style="display: none"> Disabled mouseleave</span>
       <div id="sequence"></div>
       <div id="chart">
         <div id="explanation" style="visibility: hidden; background-color: transparent">
@@ -75,7 +82,7 @@
     gen_Tree(filename);
 
     function gen_Tree(data) {
-        
+        window.mouseClick_chk = false;
         var filePath = data;
         // Dimensions of sunburst.
         var width = $(document).width() - 50;
@@ -84,7 +91,7 @@
         //var width = 1000;
         //var height = 800;
         var radius = Math.min(width, height) / 2;
-        var color_map = {};
+        var color_map = [];
         var num_node = 0;
 
         // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
@@ -151,8 +158,8 @@
               .text(function(d) { return d.name })
               .style("fill", function(d) {
                   var get_color = gen_RandomColor();
-                  color_map[num_node] = { name: d.name, color: get_color };
-                  num_node++;
+                  var obj = { name: d.name, color: get_color };
+                  color_map.push(obj);
                   return get_color;
               })
               .style("opacity", 0.5)
@@ -160,7 +167,26 @@
 
           // Add the mouseleave handler to the bounding circle.
           d3.select("#container").on("mouseleave", mouseleave);
-          
+          d3.select("#container").on("click", function() {
+            if(mouseClick_chk === false) {
+              mouseClick_chk = true;
+              var ls = d3.select("#lock_status");
+              ls.style("opacity",0).style("display", null);
+              ls.transition().duration(500).style("opacity",1)
+              
+            }
+            else {
+              mouseClick_chk = false;
+              var ls = d3.select("#lock_status");
+              ls.transition().duration(500).style("opacity",0);
+              setTimeout(function(){
+                ls.transition().style("display", "none");
+              },500)
+              //ls.transition().style("display", "none");
+
+            }
+          });
+
           // Get total size of the tree = value of root node from partition.
           totalSize = path.node().__data__.value;
          };
@@ -202,25 +228,26 @@
 
         // Restore everything to full opacity when moving off the visualization.
         function mouseleave(d) {
+          if(mouseClick_chk === false) {
+            // Hide the breadcrumb trail
+            d3.select("#trail")
+                .style("visibility", "hidden");
 
-          // Hide the breadcrumb trail
-          d3.select("#trail")
-              .style("visibility", "hidden");
+            // Deactivate all segments during transition.
+            d3.selectAll("path").on("mouseover", null);
 
-          // Deactivate all segments during transition.
-          d3.selectAll("path").on("mouseover", null);
+            // Transition each segment to full opacity and then reactivate it.
+            d3.selectAll("path")
+                .transition()
+                .duration(500)
+                .style("opacity", 0.6)
+                .each("end", function() {
+                        d3.select(this).on("mouseover", mouseover);
+                      });
 
-          // Transition each segment to full opacity and then reactivate it.
-          d3.selectAll("path")
-              .transition()
-              .duration(500)
-              .style("opacity", 0.6)
-              .each("end", function() {
-                      d3.select(this).on("mouseover", mouseover);
-                    });
-
-          d3.select("#explanation")
-              .style("visibility", "hidden");
+            d3.select("#explanation")
+                .style("visibility", "hidden");
+          }
         }
 
         // Given a node in a partition layout, return an array of all of its ancestor
@@ -284,9 +311,9 @@
           entering.append("svg:polygon")
               .attr("points", breadcrumbPoints)
               .style("fill", function(d) { 
-                for (var i=0; i<num_node; i++)
+                for (var i=0; i<color_map.length; i++)
                 {
-                  if (curr_name === color_map[i].name)
+                  if (d.name === color_map[i].name)
                   {
                     return color_map[i].color; 
                   }

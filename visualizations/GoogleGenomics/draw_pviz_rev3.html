@@ -1,6 +1,7 @@
 <html>
 <head>
-<title> Visualization by Pviz </title>
+<title> VOE - Google Genomics Browser </title>
+  <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="js/jquery.js" charset="utf-8"></script>
   <script src="js/biojs/pviz_mod3.js"></script>
 	<link type="text/css" rel="stylesheet" href="js/biojs/pviz-core.css">
@@ -32,10 +33,9 @@
   </style>
 <body>
 <div id="info"> <div>
-<br>
 <div id="pviz_canvas"></div>
 <br>
-
+<svg style="display:none"></svg>
 <script type="text/javascript">
 
 var pviz_canvas = document.getElementById('pviz_canvas');
@@ -51,17 +51,21 @@ var alignedPos = localStorage.alignedPos.split(",");
 var fragName = localStorage.fragName.split(",");
 console.log("** Reference sequence:\n" + seq + "\n ** length: " + seq.length);
 
-GenPviz(seq);
+$(document).ready(function() {
+  GenPviz(seq);
+})
+
 
 function GenPviz(seq)
 {
   var TAB1 = "&nbsp";
   var TAB2 = "&nbsp&nbsp";
-  $("#info").append("<div class='output data_info'><ul style='list-style-type:none'>" +
-                      "<li>Chromosome:<b>" +TAB1+ localStorage.ref_Name + "</b><br></li>" +
-                      "<li>Reference Id:<b>" +TAB2+localStorage.ref_Id + "</b><br></li>" +
-                      "<li id='startPosition'>Start position:<b>" +TAB2+ localStorage.start + "</b><br></li>" +
-                      "<li id='endPosition'>End position: <b>" +TAB2+ localStorage.end + "</b><br></li></ul></div>" );
+  $("#info").append("<div style='aligned:left'>"+TAB2+"<button class='ui-btn' id='download_btn' style='background-color: #A3D1FF'>Download SVG</button></div>"
+                  +"<div class='output data_info'><ul style='list-style-type:none'>" +
+                      "<li>Chromosome:<b>" +TAB1+ localStorage.ref_Name + "</b></li>" +
+                      "<li>Reference Id:<b>" +TAB2+localStorage.ref_Id + "</b></li>" +
+                      "<li id='startPosition'>Start position:<b>" +TAB2+ localStorage.start + "</b></li>" +
+                      "<li id='endPosition'>End position: <b>" +TAB2+ localStorage.end + "</b></li></ul></div>" );
   for(var i=0; i<alignedSeq.length; i++) {
     $("#info").append("<div class='output data_detail'><ul style='list-style-type:disc'>" + 
                       "<li>Read: <b>&nbsp&nbsp<u>" + fragName[i] + "</u></b><br></li>" +
@@ -83,6 +87,12 @@ function GenPviz(seq)
     AddFeatures();
   }, 10);
   //AddFeatures();
+   $("#download_btn").on("click", function() {
+      var e = document.createElement('script'); 
+      e.setAttribute('src', 'js/svg-crowbar-1.js'); 
+      e.setAttribute('class', 'svg-crowbar'); 
+      document.body.appendChild(e);
+  })
 }
 
 function AddFeatures() {

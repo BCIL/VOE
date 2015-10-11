@@ -2,10 +2,9 @@
     "use strict";
     $(document).ready(function () {
 
-        $('.search').hide();
-        $('.username').append("BioIT Core");
+        $('.username').append(" Visual Omics Explorer").css("font-weight","bold");
         $('#logoImage').attr('src','images/logo_main.png');
-        
+        $('#author_section').append("<p style='margin-left:5%'> Author: Baekdoo Kim (baegi7942@gmail.com) </p>")
         /*==Left Navigation Accordion ==*/
         if ($.fn.dcAccordion) {
             $('#nav-accordion').dcAccordion({

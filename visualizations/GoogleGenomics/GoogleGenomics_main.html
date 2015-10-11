@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
-  <title> Google Genomics Browser </title>
+  <title> VOE - Google Genomics Browser </title>
+  <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="js/jquery.js" charset="utf-8"></script>
   <script src="js/bootstrap.js"></script>
 
@@ -24,7 +25,7 @@
     form {
       margin-top: 2%;
       text-align: left;
-      width: 700px;
+      width: 80%;
       padding: 1em;
       border: 1px solid #CCC;
       border-radius: 1em;
@@ -93,12 +94,20 @@
     }
     .chr_data {
       display: none;
+    }
+    #ytplayer {
+      width: 100%;
+      height: 50%;
+      display: block;
+    }
+    #ytplayer_btn {
+      text-align:right;
     }  
   </style>
 </head>
 
 <body>
-
+<button id="ytplayer_btn" class="btn-warning"> Show video </button>
   <form id="dataInput" class="user_queries" action = "" methos="post" >
     <div class="form-group">
       <label for="callSetId"> Reference Genome: </label>&nbsp;
@@ -140,6 +149,7 @@
       <label for="reads_length"> Length: </label>&nbsp; 
       <input class="endPosition_control" id="reads_length" value=300>
       <span>
+      
       <button type="button" name="button" id="Visualization_button" class="btn-danger" onclick="getUserInput_ref(this)"> Visualize it! </button>
       <span id="timer"></span>
       </span>
@@ -172,6 +182,8 @@
       </div>
     </section>
   </form>
+
+  <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/EqUGqU2ERWM" frameborder="1" status="hide" allowfullscreen></iframe>
 
 <script type="text/javascript">
 
@@ -231,15 +243,14 @@ var ref_name_userInput  // get refname from user input
 var reads_chromosome_name // (1-22 ,X,Y)
 ///////////////////////////////////////////////////////////////////
 
-init();                       // Initialize app.
-
-function init() {
+$(document).ready(function() {
   // clientId chk
   if (!clientId) {
     alert('A client ID is required.');
   } else {
     $.initGenomics({clientId: clientId});
   }
+  $("#ytplayer").hide();
   $(".RGsetsId_control").hide();
   $(".refName_control").hide();
   $(".startPosition_control").hide();
@@ -248,8 +259,22 @@ function init() {
   //$(".RefsetId_control").hide();
   $("#Visualization_button").hide();
   //$("#reads_submit").css("display","none");
+  
+  $("#ytplayer_btn").click(function() {
+    var a = $("#ytplayer");
+    if(a.attr("status") === "hide") {
+      $("#ytplayer").show();
+      a.attr("status","show");
+      $("#ytplayer_btn").text("Hide video");  
+    }
+    else if(a.attr("status") === "show") {
+      $("#ytplayer").hide();
+      a.attr("status","hide");
+      $("#ytplayer_btn").text("Show video");  
+    }
+  })
+})
 
-}
 
 function get_ReadsInfo(option) {
   var inForm = document.forms[0];

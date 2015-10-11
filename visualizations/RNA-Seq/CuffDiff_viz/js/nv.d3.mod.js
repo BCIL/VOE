@@ -5808,7 +5808,7 @@ nv.models.lineWithFocusChart = function() {
         , tooltip = function(key, x, y, e, graph) {
             //window.tool_e = e;
             var chr_name = e.point.chr.toUpperCase();
-            return '<h3>' + e.point.gene + '</h3>' +
+            return '<h4>' + e.point.gene + '</h4>' +
                 '<p><b>' + chr_name + '</b></p>' +
                 '<p> FPKM: ' +  e.point.val + '</p>' +
                 '<p> p-val: ' +  e.point.p_val + '</p>'
