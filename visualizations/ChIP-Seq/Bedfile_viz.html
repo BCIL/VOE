@@ -111,15 +111,6 @@
   <button class="btn btn-success btn-sm" id="download_btn">Download SVG</button>
   <button id="ytplayer_btn" class="btn btn-warning btn-sm"> Show video </button>
 </div>
-<!--
-<form>
-<span> Start:&emsp;</span>
-<input type="text" id="pos_start" class="pos_input" value='' disabled="true" />&emsp;&emsp;
-<span> End:&emsp;</span>
-<input type="text" id="pos_end" class="pos_input" value='' disabled="true" />&emsp;&emsp;
-<button type="submit" id="pos_submit" class="pos_input" disabled="true">submit</button>
-</form>
--->
 
 <div id="chart_container"> <svg id="linechart"></svg></div>
 <div class="col-md-5">
@@ -133,9 +124,7 @@
 <svg id="empty" style="display:none"></svg>
 
 <script>
-  // set start and end position gap limit of user input
   window.pos_gap = 1000;
-  ////
   window.xAxisNameMoved = false;
   window.firstUpdate = false;
   window.updateCount = 0;
@@ -212,12 +201,6 @@
     })
 
   $(document).ready(function() {
-
-/*
-    window.tooltip_div = d3.select("body").append("div")   
-    .attr("class", "tooltip2")               
-    .style("opacity", 0);
-*/  
     window.tooltip_div = d3.select("body").append("div")   
     .attr("class", "tooltip2")               
     .style("opacity", 0);
@@ -249,15 +232,13 @@
       }
     })
     
-    d3.tsv("data2.bed", function(error, data) {
-      //window.data_tsv = data;
-      
+    d3.tsv("data2.bed", function(error, data) {      
       gen_dataset(data);
       getAllchrChart();
       rotate_xAxis();
       moveup_xAxisName();
       transpose_table();
-    });   // end d3.tsv
+    }); 
 
     $("#all_chr").on("click", function() {
       $('#position_table').empty();
@@ -274,7 +255,11 @@
     $("#update_btn").on("click", function() {
       $('#UCSClink').empty();
       $('#position_table').empty();
+      var s = new Date().getTime();
       update_chart();
+      var e = new Date().getTime();
+      var time = e - s 
+      console.log("Execution time: " + time) 
     })
 
     $("#localdrive_btn_wrapper").click(function() {
@@ -291,21 +276,6 @@
       }
       reader.readAsText(file);
     })
-////////////////////////////////////////////////////
-/////// working ...... ////////////////////////////
-/*
-      $("#pos_submit").on("click", function() {
-        console.log("pos_submit")
-        
-        var s = $("#pos_start").val();
-        var e = $("#pos_end").val();
-        var size = parseInt(e) - parseInt(s);
-        
-        if (size < 0) {alert("Start must be less number than End")}
-        else if (size < pos_gap) {alert("The gap of two position is too close. Please set the gap larger than " + pos_gap)}
-        else {alert("Passed all filters!\nTODO: make this function to work with user input positions!")}
-      })
-*/
 
   });       // end ready
 
@@ -323,12 +293,7 @@
     $("#chr_selector").empty();
     $('#position_table').empty();
     $('#UCSClink').empty();
-    //window.userdata = userdata;
 
-    /////////////////////////////////////////////////////////
-    // 1. Inputdata format checking
-    // 2. Add standard header if the header is not standard
-    /////////////////////////////////////////////////////////
     var h = userdata.substr(0,userdata.indexOf('\n'));
     var header_str = "chrom\tchromStart\tchromEnd\tname\tscore\tstrand\n";
     var header = h.split('\t');
@@ -346,33 +311,15 @@
         userdata = header_str + userdata;
       }
     }
-    /////////////////////////////////////////////////
-    //// parse the data
+  
     var data = d3.tsv.parse(userdata);
-    //window.d_user = data;
-    //window.data_tsv = userdata;
-    
+   
     gen_dataset(data);
     getAllchrChart();
     rotate_xAxis();
     moveup_xAxisName();
     transpose_table();
  
- /*
-    $("#all_chr").on("click", function() {
-      main_graph_chk = 1;
-      getAllchrChart();
-      document.getElementById("update_btn").disabled = true;
-      document.getElementById("bin_num").disabled = true;
-      $(".pos_input").attr("disabled", true);
-      var cs = document.getElementById("chr_selector");
-      cs.selectedIndex = 0;
-    });
-    
-    $("#update_btn").on("click", function() {
-      update_chart();
-    })
-*/
   } // end user chart
 
   function gen_dataset(data) {
@@ -438,16 +385,21 @@
       else {
         $('#UCSClink').empty();
         $('#position_table').empty();
+  
+        var s = new Date().getTime();
         update_chart();
+        var e = new Date().getTime();
+        var time = e - s
+        console.log("Execution time: " + time)
       }
     });
   }
 
   function update_chart(option) {
+
     document.getElementById("update_btn").disabled = false;
     document.getElementById("bin_num").disabled = false;
     data_list_prep_chr = [];
-    //$(".pos_input").attr("disabled", false);
     updateCount+=1;
     if(updateCount == 1) {firstUpdate=true; xAxisNameMoved=false;}
     else{firstUpdate=false;}
@@ -480,6 +432,15 @@
     high = high + (high*0.1);   // 10% padding of upper limit
     var size = c_list.length;
     var item_num = parseInt($("#bin_num").val());
+    if (item_num > 1000 || item_num < 0) {
+      alert("Err - Please enter a value between 1 and 1000!")
+      return;
+    }
+    if (isNaN(item_num)) {
+      alert("Err - Please enter an integer value!")
+      return;
+    }
+
     var pos_range = parseInt(high / item_num);        
     window.item_list = new Array(item_num);
     window.item_count = new Array(item_num);
@@ -499,11 +460,8 @@
       var curr = item_list[j];
       prev = parseInt(prev);
       curr = parseInt(curr);
-      //console.log("prev: "+prev+" // curr: "+curr )
       for (var k=0; k<c_list.length; k++) {
-        //console.log("candidate: " + c_list[k]);
         if (c_list[k] > prev && c_list[k] < curr+1) {
-          //console.log("*** added item: " +c_list[k]);
           item_count[j] += 1;
         }
       }
@@ -512,6 +470,7 @@
     for (var n=0; n<item_list.length; n++) {
       dr.values.push({x:item_list[n], y:item_count[n]});
     }
+
     data_list_range.push(dr);
 
     if (main_graph_chk == 1) {
@@ -539,7 +498,7 @@
           var c = document.getElementById("chr_selector");
           var chr_name = c.options[c.selectedIndex].value;
           return "<table id='tooltip2_table'><tr><td style='align:center; border-bottom:solid thin'><b>"+chr_name.toUpperCase()+"</b></td></tr><tr><td>Count: </b>"+d.y+"<br>Position: "+prev_pos+" - "+ curr_pos +"</td></tr></table>"
-          //return "<p><b>count: </b>"+d.y+"<br/><b>position: </b>"+prev_pos+" - "+ curr_pos + "<p>";
+        
         }
       });
       linechart.show();
@@ -554,7 +513,9 @@
       moveup_xAxisName();
       transpose_table();
     }
+    //clearTimeout(timeout_chk)
   } // end update chart
+
   function getAllchrChart() {
     $("#linechart").empty();
     xAxisNameMoved = false;
@@ -628,7 +589,6 @@
   }
 
   function renderPositionTable(chr,begin,end) {
-    // data_list_prep_chr
     console.log("chr: " + chr)
     $("#genTable_indicator").empty();
     if(chr.length<3) {
@@ -685,7 +645,6 @@
     }
     mytable += "</tbody></table>";
     t.append(mytable);
-    //$("#position_table").dataTable();
   }
 
 </script>

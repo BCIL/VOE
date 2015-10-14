@@ -40,9 +40,7 @@
 
 var pviz_canvas = document.getElementById('pviz_canvas');
 var pviz = require("pviz");
-//var pviz = this.pviz;
 var seqEntry;
-//define the model, a sequence entry with an explicit sequence
 var startPosition = localStorage.startPosition;
 var endPosition = localStorage.end;
 var seq = localStorage.sequence;
@@ -54,7 +52,6 @@ console.log("** Reference sequence:\n" + seq + "\n ** length: " + seq.length);
 $(document).ready(function() {
   GenPviz(seq);
 })
-
 
 function GenPviz(seq)
 {
@@ -86,7 +83,6 @@ function GenPviz(seq)
   setTimeout (function() {
     AddFeatures();
   }, 10);
-  //AddFeatures();
    $("#download_btn").on("click", function() {
       var e = document.createElement('script'); 
       e.setAttribute('src', 'js/svg-crowbar-1.js'); 
@@ -102,14 +98,10 @@ function AddFeatures() {
     console.log("** Feature position - start: " + pos_start + " // end: " + pos_end);
     seqEntry.addFeatures ({
       category : fragName[i],
-      //category : 'regions',
       type : 'topological domain',
-      //type : 'beta_strand',
       text : alignedSeq[i],
       start : pos_start,
       end : pos_end,
-      //count : 10,
-      //text : fragName[i]
     })
   }
 }
