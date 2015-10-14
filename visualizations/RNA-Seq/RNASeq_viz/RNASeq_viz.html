@@ -72,38 +72,6 @@
       margin-left: 2%;
     }
     
-    /*
-    #axis_x_setting, #axis_y_setting {
-      display: block;
-    }
-    #axis_x_setting {
-      width: 50%;
-      float: left;
-    }
-    #axis_y_setting {
-      float: left;
-    }
-    #buttons {
-      display: block;
-      float: right;
-    }
-    */
-    /*
-    #axis_y_setting {
-      margin-left: 50%;
-    }
-    */
-
-    /*
-    .section_2 {
-      width:100%;
-      float: left;
-    }
-    .section_2 section {
-      width:50%; 
-      float: left;
-    }
-    */
   </style>
 </head>
 <body>
@@ -241,12 +209,8 @@
         if (c[i] == 'value_2') {
           $("#yAxis_info_form").append("<input type='checkbox' name='yAxis_element' id='"+c[i]+"' value='"+y2+"'>"+c[i]+"("+data[0].sample_2+")"+'&emsp;&emsp;');  
         }
-        //$("#column_selector").append("<option>"+c[i]+"</option>")
-
       }
-      //$("#file_info").append(Object.keys(data[0]));
 
-      //var geneDataList = document.getElementById("gene_datalist");
       data_list_valid = [];
       for (var i=0; i<data.length; i++) { 
         if(data[i].status==="OK" && data[i].significant==="yes" && !isNaN(data[i]["log2(fold_change)"])){
@@ -261,22 +225,10 @@
         option.value = data_list_valid[j].gene;
         option.innerHTML = data_list_valid[j].gene;
         option.setAttribute("index",j);
-        //option.setAttribute("value_1", data[j].value_1);
-        //option.setAttribute("value_2", data[j].value_2);
         geneDataList.appendChild(option);
       }
 
-      //////// init. chosen ///////////
-      /*
-      var config = {
-      '.chosen-select' : {},
-      }
-      for (var selector in config) {
-        $(selector).chosen(config[selector]);
-      } 
-      */         
       $('.chosen-select').chosen({width: "70%"});
-      /////////////////////////////////////
     })
 
     $("#download_btn").on("click", function() {
@@ -318,10 +270,6 @@
     choice_list = [];
     main_graph_chk = 1;
 
-    /////////////////////////////////////////////////////////
-    // 1. Inputdata format checking
-    // 2. Add standard header if the header is not standard
-    /////////////////////////////////////////////////////////
     var h = userdata.substr(0,userdata.indexOf('\n'));
     var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
     var header = h.split('\t');
@@ -331,8 +279,6 @@
       userdata = userdata.trim();
       userdata = header_str + userdata;
     }
-    /////////////////////////////////////////////////
-    //// parse the data
 
     var dataset = d3.tsv.parse(userdata);
     console.log("before filtering: " + dataset.length);
@@ -532,17 +478,6 @@
         index: idx
       })
     }
-    /*
-    var xForm = $("#xAxis_info_form")[0];
-    for (var j=0; j<xForm.length; j++) {
-      if (xForm[j].id == 'gene') {              // find gene index
-        xForm[j].checked = "true";              // auto selection 'gene'
-      }
-      else {
-        xForm[j].disabled="true";
-      }
-    }
-    */
   }
 
   function transpose_table() {
@@ -578,14 +513,11 @@
   }
 
   $("#submit_btn").on("click", function() {
-    //document.getElementById("submit_btn").value = "reset";
-    //document.getElementById("submit_btn").id = "reset_btn";
     document.getElementById("submit_btn").disabled = true;
     document.getElementById("update_btn").disabled = false;
     if (userChoiceInput) {
       console.log("user Choice")
       collect_choice();
-      //$("#submitChoice_btn").click();  
     }
     gen_dataSet();
   })
@@ -600,14 +532,7 @@
     }
     update();
   })
-
-/*
-  (function() {
-    if()
-    document.getElementById("submit_btn").disabled = true;
-  })
-*/
-
+  
   $("#submitChoice_btn").on("click", function() {
     collect_choice();
     userChoiceInput = true;

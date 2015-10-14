@@ -304,14 +304,6 @@
       }
       reader.readAsText(file);
     })
-    /*
-    $(".showTableIcon").on("click", function() {
-      console.log("showTableIcon clicked!")
-      $('#UCSClink').empty();
-      $('#position_table').empty();
-    })
-*/
-
   }); // end $(document).ready
 
   function gen_dataset(data_raw) {
@@ -395,6 +387,14 @@
     high = high + (high*0.1);   // 10% padding of upper limit
     var size = c_list.length;
     var item_num = parseInt($("#bin_num").val());
+    if (item_num > 1000 || item_num < 0) {
+      alert("Err - Please enter a value between 1 and 1000!")
+      return;
+    }
+    if (isNaN(item_num)) {
+      alert("Err - Please enter an integer value!")
+      return;
+    }
     var pos_range = parseInt(high / item_num);        
     window.item_list = new Array(item_num);
     window.item_count = new Array(item_num);
@@ -406,25 +406,7 @@
       item_list[k] = (pos_range*(k+1));
       item_count[k] = 0;
     }
-/*
-    for (var j=0; j<c_list.length; j++) {
-      var prev;
-      if (j==0) { prev = 0; }
-      else { prev = c_list[j-1]; }
-      var curr = c_list[j];
-      prev = parseInt(prev);
-      curr = parseInt(curr);
-      //for (var m=item_list.length-1; m>0; m--) {
-      for (var m=0; m<item_list.length; m++) {
-        //if (curr > item_list[m-1] && curr < item_list[m]) {
-        //  item_count[m]+=1;
-        //}
-        if (prev < item_list[m]) {
 
-        }
-      }
-    }
-*/
     for (var j=0; j<item_list.length; j++) {
       var prev;
       if (j==0) { prev = 0; }
@@ -537,20 +519,6 @@
     rotate_xAxis();
     moveup_xAxisName();
 
-/*
-      d3.select("#chr_selector").on("change", function() {
-        $('#UCSClink').empty();
-        $('#position_table').empty()
-        update_chart();
-      });
-      $("#update_btn").on("click", function() {
-        $("#UCSClink").empty();
-        $("#position_table").empty();
-        //xAxisNameMoved = false;
-        update_chart();
-      })
-*/
-      
   } // end user chart
 
   function getAllchrChart() {

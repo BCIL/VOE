@@ -178,8 +178,7 @@
       input_data_donut = [];    
       chr_index_list = [];        
       main_graph_chk = 1;
-      //input_data_high = [];
-      //input_data_low = [];
+     
       input_data_option = "low"  // display low value data by default 
       $("#pieChart_svg").empty();
       $("#controller").empty();
@@ -190,10 +189,6 @@
       $("#controller").append("<li id=\'datatype\'> The data is uploaded from <b>" + data_origin +"</b></li>");
       $("#controller").append("<li id=\'upfilename\'> File name: <b>" + uploaded_file +"</b></li>")
 
-      /////////////////////////////////////////////////////////
-      // 1. Inputdata format checking
-      // 2. Add standard header if the header is not standard
-      /////////////////////////////////////////////////////////
       var h = userdata.substr(0,userdata.indexOf('\n'));
       var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
       var header = h.split('\t');
@@ -203,8 +198,7 @@
         userdata = userdata.trim();
         userdata = header_str + userdata;
       }
-      /////////////////////////////////////////////////
-      //// parse the data
+    
       var data = d3.tsv.parse(userdata);
       test.data_raw = "";
       test.data_raw = data;
@@ -291,26 +285,20 @@
       }
       test.data_valid = obj.data_valid;
 
-      //if(typeof(sample_1) === 'undefined') {
         window.sample_1 = {};
         window.sample_2 = {};
         window.log2 = {};
         sample_1.key = obj.data_valid[0].sample_1;
         sample_2.key = obj.data_valid[0].sample_2;
         log2.key = "log2(fold_change)";
-        //sample_1.nonStackable = "false";
-        //sample_2.nonStackable = "false";
-        //log2.nonStackable = "false";
+    
         sample_1.area = "false";
         sample_2.area = "false";
         log2.area = "false";
         sample_1.values = new Array();
         sample_2.values = new Array();
         log2.values = new Array();
-        //log2.val = obj.data_valid[0]["log2(fold_change)"];
-        //sample_1.val = obj.data_valid[0].value_1;
-        //sample_2.val = obj.data_valid[0].value_2;
-      //}
+     
       var s1 = {}, s2 = {}, l2 = {};
       for (var j=0; j<obj.data_valid.length; j++) {
         s1 = {};
@@ -389,65 +377,12 @@
         donut_data.total += input_data_donut[i].count 
       }
       donut_data.chrNum = input_data_donut.length;
-      
       var sig = 'all';
-      
-      /*
-      split_dataset(input_data);
-      if (input_data_option === "low"){
-        gen_graph(input_data_low, sig);
-      }
-      else {
-        gen_graph(input_data_high, sig);
-      }
-      */
       gen_graph(input_data, sig);
     }
 
     function gen_graph(graph_data, mod){
 
-/*  Multibar chart
-/////////////////////////
-
-        nv.addGraph({
-            generate: function() {
-                var width = nv.utils.windowSize().width,
-                    height = nv.utils.windowSize().height;
-
-                window.chart = nv.models.multiBarChart()
-                    .width(width)
-                    .height(height)
-                    .stacked(false)
-                    ;
-
-                chart.dispatch.on('renderEnd', function(){
-                    console.log('Render Complete');
-                });
-
-                var svg = d3.select('#multiBarChart').datum(graph_data);
-                console.log('calling chart');
-                svg.transition().duration(500).call(chart);
-
-                return chart;
-            },
-            callback: function(graph) {
-              nv.utils.windowResize(function() {
-                  var width = nv.utils.windowSize().width;
-                  var height = nv.utils.windowSize().height;
-                  graph.width(width).height(height);
-
-                  d3.select('#multiBarChart')
-                      .attr('width', width)
-                      .attr('height', height)
-                      .transition().duration(0)
-                      .call(graph);
-
-              });
-            }
-        });
-////////////////////////////
-*/      
-      
       nv.addGraph(function() {
         window.fchart = nv.models.lineWithFocusChart();
         fchart.brushExtent([50,70]);
@@ -455,12 +390,8 @@
         fchart.x2Axis.tickFormat(d3.format(',f'));
         fchart.yAxis.tickFormat(d3.format(',.f'));
         fchart.y2Axis.tickFormat(d3.format(',f'));
-        //fchart.useInteractiveGuideline(true);
         fchart.isArea(false);
         fchart.height(700);
-        //fchart.yRange([-20,0,100,1000])
-        //fchart.forceY([-5,0,100])
-        //fchart.yDomain([-5,0,2000])
         fchart.color(["#29A329","#FF8080","#4775FF"])
         
         d3.select('#focusChart_svg')
@@ -478,42 +409,19 @@
             var dchart = nv.models.pieChart()
                 .x(function(d) { return d.key })
                 .y(function(d) { return d.count })
-                //.showLabels(false)
                 .donut(true)
                 .padAngle(.02)
                 .cornerRadius(3)
-                //.labelType('value')
-                //.labelType(function(d) {return d.gene})
-                //.labelThreshold(.04)
-                //.width(width)
-                //.height(height);
             dchart.title("CuffDiff")
             dchart.pie.donutLabelsOutside(true).donut(true);
 
             d3.select("#pieChart svg")
                 .datum(input_data_donut)
                 .transition().duration(1200)
-                //.attr('width', width)
-                //.attr('height', height)
                 .call(dchart);
 
             return dchart;
           }
-          /*,
-          callback: function(graph) {
-            nv.utils.windowResize(function() {
-                var width = nv.utils.windowSize().width;
-                var height = nv.utils.windowSize().height;
-                graph.width(width).height(height);
-
-                d3.select('#pieChart svg')
-                    .attr('width', width)
-                    .attr('height', height)
-                    .transition().duration(0)
-                    .call(graph);
-            })
-          }
-          */
         })
       }
     }
@@ -537,7 +445,6 @@
       console.log(e.label)
 
       for (var i=0; i<chr_index_list.length; i++) {
-        //s1 = {}; s2 = {}; l2 = {};
         if(e.label === chr_index_list[i].name) {
           for(var j=0; j<chr_index_list[i].idx.length; j++) {
             s1.values.push(input_data[0].values[chr_index_list[i].idx[j]]);
@@ -550,21 +457,6 @@
       input_data_selected.push(s1);
       input_data_selected.push(s2);
       input_data_selected.push(l2);
-      /////////////
-      //input_data = [];
-      //input_data = input_data_selected;
-      //chart.update();
-      /////////////
-      
-      /*
-      split_dataset(input_data_selected);
-      if (input_data_option === "low"){
-        gen_graph(input_data_low);
-      }
-      else {
-        gen_graph(input_data_high);
-      }
-      */
       gen_graph(input_data_selected);
     }
 
@@ -602,63 +494,6 @@
 
       gen_graph(input_data_pval_filtered);
     }
-
-  //////////////////////////////
-  //  DEPRECATED!
-  // - used variables -
-  //  input_data_high, input_data_low
-  /////////////////////////////
-  /*
-    function split_dataset(dataset) {
-      input_data_high = [];
-      input_data_low = [];
-      input_data_high = $.extend(true, [], dataset);
-      input_data_low = $.extend(true, [], dataset);
-      var count = [];
-      
-      for (var p=0; p<input_data_high.length; p++) { 
-        input_data_high[p].values.length = 0;
-        input_data_low[p].values.length = 0;
-      }
-      for(var i=0; i<dataset.length; i++) {
-        var oneCount = 0;
-        var eachObj = {};
-        var idx = [];
-        for(var j=0; j<dataset[i].values.length; j++) {
-          if (parseInt(dataset[i].values[j].y) > 100) { 
-            oneCount += 1; 
-            idx.push(j); 
-          }
-        }
-        eachObj.count = oneCount;
-        eachObj.values = idx;
-        count.push(eachObj)
-      }
-      var maxIdx;
-      for (var j=0; j<count.length-1; j++) {
-        if (count[j].values.length > count[j+1].values.length) { maxIdx = j; }
-      else { maxIdx = j+1;} 
-      }
-      //var dataset = dataset;
-      for (var p=0; p<dataset.length; p++){
-        for (var k=0; k<count[maxIdx].values.length; k++) {
-          var index = count[maxIdx].values[k];
-          dataset[p].values[index].split = "high";
-        }
-      }
-      
-      for (var q=0; q<dataset.length; q++){
-        for (var k=0; k<dataset[0].values.length; k++) {
-          if (dataset[q].values[k].split === "high") {
-            input_data_high[q].values.push(dataset[q].values[k]);
-          }          
-          else {
-            input_data_low[q].values.push(dataset[q].values[k]);
-          }
-        }
-      }
-    }
-  */
     </script>
     <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="57wb652kzjrc8d7"></script>
     <script src="https://www.google.com/jsapi?key=AIzaSyAc6hbd-Sq_YQ6CkviWXtQslAw4yC-PIB4"></script>

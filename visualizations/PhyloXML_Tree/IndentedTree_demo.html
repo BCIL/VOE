@@ -53,58 +53,9 @@
 
     	<script type="text/javascript">
 		
-		//------- get input filename from the parser
-		//var filename = window.opener.fin;
         var filename = 'demo.json';
-        
-        //console.log("FILENAME : " + filename);
        	gen_Tree(filename);
-        /*
-        function parser() {
-                /////// Set the modified file name.
-                //////  This must be changed if the modifyXML.py has been changed.
-            var url = "uploaded/modified_" + filename;
-            var xml = new JKL.ParseXML( url, null );
-            xml.setOutputArrayElements( ["clade"], ["name"] );
-            var data = xml.parse();
-            
-            var dumper = new JKL.Dumper();
-            var text = dumper.dump( data );
-            
-            var outData = output(text);
-            var Datalength = outData.length;
-
-            saveJSON(outData);
-            
-            function output(text) {
-                if ( typeof(text) == "undefined" ) return "";
-                text = text.replace(new RegExp('(.*)phylogeny(.*)', 'g'), '').replace(/"clade"/g, '"children"').replace(/"#text"/g, '"text"').replace(/"rooted"/g, '"name"').replace(/"true"/g, '"ROOT"').replace(/"confidence"/g, '"property"').replace(/""name"":/g,"").replace(/""ROOT","/g, "");
-
-                // newText contains parsed valid JSON data
-                // To remove last '}' for valid JSON data (removed parent 'phylogeny')
-                newText = text.substr(text.indexOf("{"), text.lastIndexOf("}")-1); 
-                return newText;
-            }
-
-        }
-
-        function saveJSON(outData) {
-            //var outData = "HELLO WORLD!";
-            var name = filename;
-            $.ajax({
-                type: "POST",
-                url: "saveJSON.php",
-                data: { jsonData: outData, XMLname: name },
-                success: function(data)
-                {
-                    console.log("success AJAX!");
-                }
-            })
-
-            gen_Tree(name);
-        }
-		*/
-
+        
         function gen_Tree(data)
         {
         	var filePath = data;
@@ -269,10 +220,7 @@
 	                root.children.forEach(collapseAll);
 	                update(root); 
 	                root.children.forEach(expand_2lv);
-	                //console.log(d._children.length);
-	                //console.log("-------------------");
-	                //console.log(root.children.length);
-	                //console.log(d._children.depth);
+	               
 	                update(root);
 	            })
 
@@ -317,10 +265,6 @@
 	        
 	        function expand_2lv(d) {
 	            if (d._children) { 
-	                //console.log(d._children.length);
-	                //console.log("-------------------");
-	                //console.log(root.children.length);
-	                //console.log(d._children.depth);
 	                d.children = d._children; 
 	                d.children.forEach(click);
 	                d._children = null;

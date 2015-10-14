@@ -4,17 +4,12 @@
   <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="js/jquery.js" charset="utf-8"></script>
   <script src="js/bootstrap.js"></script>
-
   <script src="js/googlegenomics.jquery.js"></script>
   <script src="js/biojs/biojs-vis-sequence.js"></script>
   <script src="proj.js"></script>
-
   <script src="http://wzrd.in/bundle/jquery-browser-plugin@0.0.6"></script>
-
-  
   <link rel="stylesheet" href="js/bootstrap.min.css">
-  
-  
+
   <style>
     ul.workflow {
       list-style-type: square;
@@ -133,9 +128,7 @@
         <select class="RGsetsId_control" id="reads_groupsetIdSelector" onchange="get_ReadsInfo(this); this.size=0;" onmousedown="if(this.options.length>10){this.size=10;}">
           <option type="text" class="form-control" id="reads_groupsetId" value="NuLL"> NULL </option>
         </select> 
-        <!--
-        <button type="button" id="reads_submit" class="btn-primary" name="button"  onclick="search_Reads(this)" hidden> Submit </button>
-        -->
+     
       </div>
       <label for="reads_pageSize"> Coverage: </label>&nbsp;
       <input class="PageSize_control" id="reads_pageSize" value=7>
@@ -155,10 +148,7 @@
       </span>
       <button type="button" id="reads_submit" class="btn-primary" name="button"  onclick="search_Reads(this)" > Submit </button>  
     </div>
-    <!--///////////////////////////////
-    /////////// REFERENCES ////////////
-    /////////////////////////////////// -->
-    
+ 
     <section class="chr_data">
       <div >
         <label for="callSetId">All References</label>
@@ -195,7 +185,6 @@ var margin_Startposition = -1;
 var margin_Endposition = -1;
 var performance_start;
 var performance_end;;
-/////////////////////// pviz /////////////////////
 var pviz;
 var seqEntry;
 
@@ -203,8 +192,8 @@ var seqEntry;
 var callSetId = "NULL";
 var jobType = "NULL";
 var jobType_chk = 0;
-var dataset_reads = [];          // the result data from reads // id, alignedSeq, position
-var test_data_params;           // used the function 'search_Reads'
+var dataset_reads = [];          
+var test_data_params;          
 var JSONdata_dataSets = [];
 var project_list = [];
 
@@ -256,9 +245,7 @@ $(document).ready(function() {
   $(".startPosition_control").hide();
   $(".endPosition_control").hide();
   $(".PageSize_control").hide();
-  //$(".RefsetId_control").hide();
   $("#Visualization_button").hide();
-  //$("#reads_submit").css("display","none");
   
   $("#ytplayer_btn").click(function() {
     var a = $("#ytplayer");
@@ -330,7 +317,6 @@ function search_Reads(option) {
   //// 5% of margin
   window.margin = parseInt( (endPosition_global - startPosition_global) * 0.05)    
  
-  ////  decalare as global variable for recursive search Reads ajax when it got chr chracter error...
   window.search_Reads_params = {
           readGroupSetIds: reads_groupsetID,
           referenceName: reads_chromosome_name,
@@ -427,13 +413,11 @@ function sendData_Reads (params, url, method) {
       $('#reads_submit').attr('class', 'standby');
       $('#reads_submit').text('Submit');
       $(".RefsetId_control").show();
-      //$("#Visualization_button").show();
       if (isChrome) { 
         performance_end = performance.now();
         console.log("Submit processing took " + ((performance_end - performance_start) / 1000) + " seconds");
       }
     },
-    ////  Error handler.. (1 -> 'chr1' converting, invalid chromosome name detection)
     error: function() {
       console.error("Warning: sendData_Reads error detected!");
       console.debug(" - Auto renaming to fix the error - ")
@@ -506,7 +490,6 @@ function updateReadGroupsetsIdMenu (option) {
   $(".startPosition_control").show();
   $(".endPosition_control").show();
   $(".PageSize_control").show();
-  //$("#reads_submit").show();
   $("#Visualization_button").show();
 
 }
@@ -551,9 +534,7 @@ function getRefSetId(option) {
     console.debug("Not selected Reference Genome.");
     return;
   }
-  //$('#Visualization_button').css('background', 'red');
-  //$('#Visualization_button').text('Loading...');
-  //$("#Visualization_button").show();
+  
   updateReference(refSetId);            // send refSetId to Google and receive refId list 
                                         // then update the list that user can see.
   setTimeout (function() {
@@ -606,14 +587,9 @@ function getValidReferences() {
 }
 
 function validChkReferences() {
-  //console.log("==== VALID CHECK ====");
-  //var count = 0;
+  
   refNameLIst_valid = [];       // init.
-  //refNameList = [];
   for (var i=0; i<refNameList.length; i++) {
-    //console.log(refNameList[i].name);
-    //var check_int = parseInt(refNameList[i].name);
-    //if (check_int > 0 && check_int < 24) { 
     if (!isNaN(refNameList[i].name)) {
       refNameLIst_valid.push(refNameList[i]);
     }
@@ -719,46 +695,13 @@ function getUserInput_ref(option) {
   
 }
 
-
-//////////////////////////////////////////////////////////////////////
-//  1. Preparation collection of variables for passing pviz drawing page
-//  2. For passing the variables, using local Storage.
-//////////////////////////////////////////////////////////////////////
 function genPviz (seq, ref_Id, params) {
   var lclchk = localStorageSupported();
   var Aseqs = [];                                 // store data_reads info
   var posList = [];                               // alignedSeq, fragName, position,
   var fragName = [];
 
-/*
-  ///////////////////////////////////////////
-  // find reverse strand and convert the sequence.
-  ///////////////////////////////////////////
-  // for better managing this, using separate loop.
-  for (var i=0; i<dataset_reads.length; i++) {
-    if (dataset_reads[i].reverseStrand === true) {
-      var str = dataset_reads[i].alignedSeq;
-      var rev_str = str.split("").reverse().join("");
-      console.debug("original: " + str + "\nconverted: " + rev_str);
-      dataset_reads[i].alignedSeq = rev_str;
-    }
-  }
-  //////////////////////////////////////////////////
-*/
-/*
-  for (var i=0; i<dataset_reads.length; i++) {
-    Aseqs.push(dataset_reads[i].alignedSeq);
-    posList.push(dataset_reads[i].position);
-    fragName.push(dataset_reads[i].fragName);
-  }
-  */
-  ////////////////////////////////////////////////////////
-  // pushing aligned sequence in 'Aseqs'
-  // pushing each sequence position data in 'posList'
-  // pushing each readName(fragName) in 'fragName'
-  //   if the same name is exist in fragName array, later duplicate name will be added
-  //    "-1" dash and number.. the number is from 1. 
-  ////////////////////////////////////////////////////////
+
   for (var i=0; i<dataset_reads.length; i++) {
     if (dataset_reads[i].cigar.length == 1) {
       Aseqs.push(dataset_reads[i].alignedSeq);
@@ -785,27 +728,22 @@ function genPviz (seq, ref_Id, params) {
     }
 
     posList.push(dataset_reads[i].position);
-
-    //fragName.push(dataset_reads[i].fragName);
     
     var dataset_reads_name = dataset_reads[i].fragName;  
     var tailName = 1;
     var isFound = false;
     for (var k=0; k<fragName.length; k++) {
-      //console.debug("fragName Length: " + fragName.length)
-
       if (fragName[k] === dataset_reads_name) {
         var newName = dataset_reads_name + '-' + tailName;
         tailName += 1;
         fragName.push(newName);
         isFound = true;
       }
-      
     }
+
     if(!isFound) {
         fragName.push(dataset_reads_name);
       }
-  
   }
 
   
@@ -839,10 +777,6 @@ function genPviz (seq, ref_Id, params) {
   }
 }
 
-///////////////////////////////////////////////////////////////////////////
-// This testing is important to propery use pviz implementation
-//    because using localStorage to pass main html variables to pviz page.
-///////////////////////////////////////////////////////////////////////////
 function localStorageSupported() {      
  try {
   return "localStorage" in window && window["localStorage"] !== null;
@@ -850,7 +784,6 @@ function localStorageSupported() {
   return false;
  }
 }
-////////////////////////////////////////////////////////////////////////////
 
 function getAlignment() {
   userCommand = "alignment";
@@ -865,8 +798,7 @@ function getAlignment() {
     start = margin_Startposition;
     end = margin_Endposition;
   }
-  //var start = inForm.startPosition.value;
-  //var end = inForm.endPosition.value;
+ 
   seq_start = start;
   seq_end = end;
   query_seq = inForm.query_seq.value;
@@ -941,14 +873,11 @@ function updateReferenceMenu (list) {
   updateReferenceMenu_validList()
 }
 
-//var test_list;
 function updateReferenceMenu_validList (list) {
-  //test_list = list;
   $('#refIdSelector_valid').empty();
   $('#valid_refCount').empty();
   for (var i=0; i<list.length; i++) {
     if (list[i].name == reads_chromosome_name ) {
-      //console.debug("Hey you are in seleted menu")
       $('#refIdSelector_valid').append("<option "+"selected='selected'>" +list[i].id+ ' ('+list[i].name+')</option>');      
     }
     else {
@@ -958,7 +887,6 @@ function updateReferenceMenu_validList (list) {
   $('#valid_refCount').append('Valid ref.ID count: ' + list.length);
   $("#Visualization_button").attr('class', 'btn-success');
   $("#Visualization_button").text('Visualize it!');
-  //$("#Visualization_button").show();
 }
 
 </script>
