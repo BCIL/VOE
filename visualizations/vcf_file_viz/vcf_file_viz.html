@@ -387,8 +387,9 @@
     high = high + (high*0.1);   // 10% padding of upper limit
     var size = c_list.length;
     var item_num = parseInt($("#bin_num").val());
-    if (item_num > 1000 || item_num < 0) {
-      alert("Err - Please enter a value between 1 and 1000!")
+    
+    if (item_num < 0) {
+      alert("Err - Please enter a positive integer value!")
       return;
     }
     if (isNaN(item_num)) {
