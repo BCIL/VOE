@@ -1,21 +1,20 @@
 <html>
 <head>
   <Title> VOE - RNA-Seq visualization</Title>
+  <meta charset="utf-8">
   <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="css/d3.linechart.css">
   
   <script src="js/d3.core.js" charset="utf-8"></script>
-  
   <script src="js/d3.linechart.js" charset="utf-8"></script>
   <script src="js/chosen.jquery.js" charset="utf-8"></script>
   <script src="js/filepicker.js"></script>
-  <link rel="stylesheet" href="googledrive_btn.css">
+  <link rel="stylesheet" href="css/d3.linechart.css">
+  <link rel="stylesheet" href="css/googledrive_btn.css">
   <link rel="stylesheet" href="css/localdrive_btn.css">
   <link rel="stylesheet" href="css/chosen.css">
 
-  <meta charset="utf-8">
   <style>
 
     body {
@@ -70,6 +69,30 @@
     .section_2,.section_3 {
       margin-top: 1%;
       margin-left: 2%;
+    }
+    
+    div.tooltip2 {   
+      position: absolute;           
+      text-align: center;       
+      padding: 0em 0.3em 0em 0.3em;    
+      width: auto;                  
+      height: auto;                 
+      background: steelblue;   
+      border: 0px;      
+      border-radius: 8px;           
+      pointer-events: none;
+      overflow-y: hidden;
+      -moz-border-radius: 0.375rem;
+      -webkit-border-radius: 0.375rem;
+      border-radius: 0.375rem;
+    }
+
+    div.tooltip2 #tooltip2_table {
+      font-size: 1em;
+      font-weight: 200;
+      font-family: sans-serif;
+      color: white;
+      text-align: center;
     }
     
   </style>
@@ -193,8 +216,12 @@
     window.data_list_valid = [];
     window.choice_list = [];
     var main_graph_chk = 1;
+    window.tooltip_div = d3.select("body").append("div")   
+        .attr("class", "tooltip2")               
+        .style("opacity", 0);
+    window.tooltip_div_title = tooltip_div.append("p").attr("class","tooltip2_title");
+    
     d3.tsv("RNASeq_diff_short.tsv", function(error, data) {
-      //window.data_tsv = data;
   
       var c = Object.keys(data[0]);
       window.y1 = data[0].sample_1;
@@ -209,6 +236,7 @@
         if (c[i] == 'value_2') {
           $("#yAxis_info_form").append("<input type='checkbox' name='yAxis_element' id='"+c[i]+"' value='"+y2+"'>"+c[i]+"("+data[0].sample_2+")"+'&emsp;&emsp;');  
         }
+
       }
 
       data_list_valid = [];
@@ -227,7 +255,6 @@
         option.setAttribute("index",j);
         geneDataList.appendChild(option);
       }
-
       $('.chosen-select').chosen({width: "70%"});
     })
 
@@ -279,7 +306,7 @@
       userdata = userdata.trim();
       userdata = header_str + userdata;
     }
-
+   
     var dataset = d3.tsv.parse(userdata);
     console.log("before filtering: " + dataset.length);
     for (var i=0; i<dataset.length; i++) { 
@@ -323,8 +350,6 @@
       option.value = data[j].gene;
       option.innerHTML = data[j].gene;
       option.setAttribute("index",j);
-      //option.setAttribute("value_1", data[j].value_1);
-      //option.setAttribute("value_2", data[j].value_2);
       geneDataList.appendChild(option);
     }
 
@@ -358,12 +383,15 @@
             var y_selected = y_form.elements[j].id;
             var yAxisName = data_list_valid[k][y_selected];
             var stat = data_list_valid[k].status;
-            //var sig = data_list_valid[k].significant;
+            var chr = (data_list_valid[k].locus).split(':')[0]
+            var position = (data_list_valid[k].locus).split(':')[1]
+            var p_value = data_list_valid[k].p_value;
             category.values.push({
               x: xAxisName,
               y: yAxisName,
-              stat: stat,
-              //significant: sig
+              chromosome: chr,
+              p_value: p_value,
+              position: position 
             });  
           }
           data_list.push(category);      
@@ -393,19 +421,27 @@
         category.key = y_form.elements[j].value;
         category.values = new Array();
         data_list_num += 1;
-        for (var k=0; k<choice_list.length; k++){
-          //var x_selected = xAxis_selected.id;
-          //var xAxisName = data_tsv[k][x_selected];
-          var idx = choice_list[k].index;
-          var xAxisName = choice_list[k].item;
-          var y_selected = y_form.elements[j].id;
-          var yAxisName = data_list_valid[idx][y_selected];
-          var stat = data_list_valid[idx].status;
-          category.values.push({
-            x: xAxisName,             // test_id, gene_id, or gene
-            y: yAxisName,             // value
-            stat: stat
-          });  
+   
+        for (var k=0; k<choice_list.length; k++) {
+          var idx = parseInt(choice_list[k].index)
+          if (choice_list[k].item === data_list_valid[idx].gene) {
+            var x_selected = xAxis_selected.id;
+            var xAxisName = data_list_valid[idx][x_selected];
+            var y_selected = y_form.elements[j].id;
+            var yAxisName = data_list_valid[idx][y_selected];
+            var stat = data_list_valid[idx].status;
+            var chr = (data_list_valid[idx].locus).split(':')[0]
+            var position = (data_list_valid[idx].locus).split(':')[1]
+            var p_value = data_list_valid[idx].p_value;
+
+            category.values.push({
+              x: xAxisName,
+              y: yAxisName,
+              chromosome: chr,
+              p_value: p_value,
+              position: position 
+            });  
+          }
         }
         data_list.push(category);      
       }
@@ -427,7 +463,12 @@
         xAxisName: x_name.toUpperCase(),
         yAxisName: "",
         xTickFormat: function(d) { return d },
-        tooltipText: function(d, element) { return "<p>Gene: "+d.x+"<br />Value: "+d.y+"<p>"; }
+        tooltipText: function(d, element) {
+          window.test_d = d;
+          window.test_element = element; 
+          //return "<p>Gene: "+d.x+"<br />Count: "+d.y+"<p>";
+          return "<table id='tooltip2_table'><tr><td style='align:center; border-bottom:solid thin'><b>"+d.x+"</b></td></tr><tr><td>"+(d.chromosome).toUpperCase()+"<br>Value: "+d.y+"<br>p-value: "+d.p_value+"<br>Position: "+d.position+"</td></tr></table>" 
+        }
       });
       linechart.show();
       rotate_xAxis();
@@ -513,6 +554,7 @@
   }
 
   $("#submit_btn").on("click", function() {
+  
     document.getElementById("submit_btn").disabled = true;
     document.getElementById("update_btn").disabled = false;
     if (userChoiceInput) {
@@ -532,7 +574,8 @@
     }
     update();
   })
-  
+
+
   $("#submitChoice_btn").on("click", function() {
     collect_choice();
     userChoiceInput = true;
