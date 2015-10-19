@@ -5806,12 +5806,13 @@ nv.models.lineWithFocusChart = function() {
         , brushExtent = null
         , tooltips = true
         , tooltip = function(key, x, y, e, graph) {
-            //window.tool_e = e;
+            ////window.tool_e = e;
             var chr_name = e.point.chr.toUpperCase();
             return '<h4>' + e.point.gene + '</h4>' +
                 '<p><b>' + chr_name + '</b></p>' +
                 '<p> FPKM: ' +  e.point.val + '</p>' +
-                '<p> p-val: ' +  e.point.p_val + '</p>'
+                '<p> p-value: ' +  e.point.p_val + '</p>' +
+                '<p> position: ' + e.point.pos + '</p>'
         }
         , noData = "No Data Available."
         , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'brush', 'stateChange', 'changeState')
@@ -6201,11 +6202,38 @@ nv.models.lineWithFocusChart = function() {
     lines.dispatch.on('elementMouseover.tooltip', function(e) {
         e.pos = [e.pos[0] +  margin.left, e.pos[1] + margin.top];
         dispatch.tooltipShow(e);
+        
+    });
+
+    lines.dispatch.on('elementClick.tooltip', function(e) {
+        if (VOE_cuffdiff) {
+            window.test_mouseover_e = e;
+            var ed = e.point;
+            $("#peak_detail").empty();
+            $("#peak_detail").append( "<div id='peak_detail_list'><ul><p style='margin-top:1%;margin-left:50%'> - Selected peak information -  </p>" + 
+                                            "<li id='li_chr'> Chromosome: <b>" + ed.chr + "</b></li>" +
+                                            "<li id='li_gene'> Gene: <b>" + ed.gene + "</b></li>" +
+                                            "<li id='li_fpkm'> FPKM: <b>" + ed.val + "</b></li>" +
+                                            "<li id='li_p_val'> p-value: <b>" + ed.p_val + "</b></li>" +
+                                            "<li id='li_pos'> Position: <b>" + ed.pos + "</b></li></ul></div>" )
+            $("#peak_detail").append("<div><ul><li>"+
+                "<span>Assembly: </span><select id='genome_assembly_selector'>"+
+                "<option> GRCh38/hg38 </option>"+
+                "<option selected> GRCh37/hg19 </option>"+
+                "<option> GRCh36/hg18 </option>"+
+                "<option> GRCh35/hg17 </option>"+
+                "<option> GRCh34/hg16 </option>"+
+                "</select>" +
+                "<button class='btn btn-success btn-xs' id='ucsc_btn' onClick='open_ucsc()' style='margin-left:1%'> Browse on UCSC </button></a></li></ul></div>")
+
+        }
     });
 
     lines.dispatch.on('elementMouseout.tooltip', function(e) {
         dispatch.tooltipHide(e);
     });
+
+
 
     dispatch.on('tooltipHide', function() {
         if (tooltips) nv.tooltip.cleanup();

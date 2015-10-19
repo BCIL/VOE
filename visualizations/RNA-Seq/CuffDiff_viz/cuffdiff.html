@@ -76,22 +76,29 @@
     </span>
     <button id="ytplayer_btn" class="btn btn-warning btn-xs"> Show video </button>
   </section>
-  <g class="download_wrapper">
-  <span> Export visualization:&emsp;&emsp;&emsp;&emsp; </span>
-  <button class="btn btn-success btn-xs" id="download_btn">Download SVG</button>
-  </g>
 
   <div id="pieChart"> <svg id="pieChart_svg"></svg> </div>
+  
+  <g class="download_wrapper">
+    <span> Export visualization:&emsp;&emsp;&emsp;&emsp; </span>
+    <button class="btn btn-success btn-xs" id="download_btn">Download SVG</button>
+  </g>
+
   <div id="p_value_wrapper" ng-app="p_value_input_app" ng-controller="p_value_ctrl">
     <span> p-value:&emsp;</span>
-    <input type="text" id="p_value_input" name="peakNumber" ng-model="binNumber" ng:validate="number" value="5e-05"/>&emsp;&emsp;
+    <input type="text" id="p_value_input" name="peakNumber" ng-model="binNumber" ng:validate="number" value="0"/>&emsp;&emsp;
     <button class="btn btn-success btn-xs" id="update_btn"> update </button>
   </div>
-  <div id="controller"></div>
-  <div id="filter_info"></div>
-  <span id="chr_label"></span>
   
+  <div id="general_info">
+    <div id="controller"></div>
+    <div id="filter_info"></div>
+    <span id="chr_label"></span>
+  </div>
 
+  <div id="peak_info_frame">
+    <div id="peak_detail"></div>
+  </div>
   <!--<svg id="multiBarChart"></svg>-->
   <div id="focusChart" class='with-3d-shadow with-transitions'>
     <svg id="focusChart_svg"></svg>
@@ -108,6 +115,7 @@
     window.input_data_donut = [];
     window.chr_index_list = [];
     window.choice_list = [];
+    window.VOE_cuffdiff = true;
 
     //window.input_data_high = [];
     //window.input_data_low = [];
@@ -173,10 +181,14 @@
       isUserData = true;
       firstUpdate = false;
       updateCount = 0;
+
       input_data = [];
       input_data_selected = [];
       input_data_donut = [];    
-      chr_index_list = [];        
+      chr_index_list = [];
+      choice_list = [];
+      test = []
+      obj = []        
       main_graph_chk = 1;
      
       input_data_option = "low"  // display low value data by default 
@@ -186,8 +198,8 @@
       $("#filter_info").empty();
       $("#multiBarChart").empty();
       $("#focusChart_svg").empty();
-      $("#controller").append("<li id=\'datatype\'> The data is uploaded from <b>" + data_origin +"</b></li>");
-      $("#controller").append("<li id=\'upfilename\'> File name: <b>" + uploaded_file +"</b></li>")
+      $("#peak_detail").empty();
+      $("#controller").append("<ul><li id=\'datatype\'> The data uploaded from <b>" + data_origin +"</b></li><li id=\'upfilename\'> File name: <b>" + uploaded_file +"</b></li></ul>")
 
       var h = userdata.substr(0,userdata.indexOf('\n'));
       var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
@@ -268,11 +280,14 @@
     $("#update_btn").on("click", function() {
       var pv = $("#p_value_input").val();
       var user_pvalue = parseFloat(pv);
+      if (user_pvalue < 0 || isNaN(user_pvalue)) {
+        alert ("Error - Please enter positive value")
+        return;
+      }
       gen_user_pval_dataset(user_pvalue);
       $("#filter_info").empty();
       $("#filter_info").append("<li>Filtered p-value by <b>"+ pv +"</b></li>");
 
-      //update_chart();
     })
 
     function gen_dataSet(raw_data) {
@@ -285,19 +300,19 @@
       }
       test.data_valid = obj.data_valid;
 
-        window.sample_1 = {};
-        window.sample_2 = {};
-        window.log2 = {};
-        sample_1.key = obj.data_valid[0].sample_1;
-        sample_2.key = obj.data_valid[0].sample_2;
-        log2.key = "log2(fold_change)";
-    
-        sample_1.area = "false";
-        sample_2.area = "false";
-        log2.area = "false";
-        sample_1.values = new Array();
-        sample_2.values = new Array();
-        log2.values = new Array();
+      window.sample_1 = {};
+      window.sample_2 = {};
+      window.log2 = {};
+      sample_1.key = obj.data_valid[0].sample_1;
+      sample_2.key = obj.data_valid[0].sample_2;
+      log2.key = "log2(fold_change)";
+     
+      sample_1.area = "false";
+      sample_2.area = "false";
+      log2.area = "false";
+      sample_1.values = new Array();
+      sample_2.values = new Array();
+      log2.values = new Array();
      
       var s1 = {}, s2 = {}, l2 = {};
       for (var j=0; j<obj.data_valid.length; j++) {
@@ -307,10 +322,12 @@
         
         var n = obj.data_valid[j].locus.split(':')
         var chrName = n[0];
+        var position = n[1];
         s1.y = parseInt(obj.data_valid[j].value_1);
         s1.x = j//chrName;
         s1.val = obj.data_valid[j].value_1;
         s1.chr = chrName;
+        s1.pos = position;
         s1.gene = obj.data_valid[j].gene;
         s1.p_val = parseFloat(obj.data_valid[j].p_value);
         //s1.split = "no";
@@ -318,6 +335,7 @@
         s2.x = j//chrName;
         s2.val = obj.data_valid[j].value_2;
         s2.chr = chrName;
+        s2.pos = position;
         s2.gene = obj.data_valid[j].gene;
         s2.p_val = parseFloat(obj.data_valid[j].p_value);
         //s2.split = "no";
@@ -330,9 +348,9 @@
         l2.x = j//chrName;
         l2.val = obj.data_valid[j]["log2(fold_change)"];
         l2.chr = chrName;
+        l2.pos = position;
         l2.gene = obj.data_valid[j].gene;
         l2.p_val = parseFloat(obj.data_valid[j].p_value);
-        //l2.split = "no";
         sample_1.values.push(s1);
         sample_2.values.push(s2);
         log2.values.push(l2);
@@ -350,7 +368,6 @@
         chr_counter[sample_1.values[k].chr] = (chr_counter[sample_1.values[k].chr] || 0) + 1;
         var chrName = sample_1.values[k].chr;
         if (chr_chk != chrName || k == sample_1.values.length-1 ) {
-          //console.log("unmatched name")
           if(k>0) { chr_index_list.push(chr_obj); }
           chr_obj = {};
           chr_obj.name = chrName;
@@ -360,7 +377,6 @@
         chr_obj.idx.push(k)
       }
 
-      //input_data_donut
       for (var key in chr_counter) {
         var tmp = {};
         tmp.key = key;
@@ -368,7 +384,6 @@
         input_data_donut.push(tmp);
       }
 
-      // calculate donut chr count data
       if (typeof(donut_count) === 'undefined') {
         window.donut_data = {};
       }
@@ -377,7 +392,9 @@
         donut_data.total += input_data_donut[i].count 
       }
       donut_data.chrNum = input_data_donut.length;
+      
       var sig = 'all';
+     
       gen_graph(input_data, sig);
     }
 
@@ -392,12 +409,12 @@
         fchart.y2Axis.tickFormat(d3.format(',f'));
         fchart.isArea(false);
         fchart.height(700);
+        
         fchart.color(["#29A329","#FF8080","#4775FF"])
         
         d3.select('#focusChart_svg')
             .datum(graph_data)
             .call(fchart);
-        //nv.utils.windowResize(fchart.update);
         return fchart;
     });
 
@@ -411,7 +428,7 @@
                 .y(function(d) { return d.count })
                 .donut(true)
                 .padAngle(.02)
-                .cornerRadius(3)
+                .cornerRadius(3) 
             dchart.title("CuffDiff")
             dchart.pie.donutLabelsOutside(true).donut(true);
 
@@ -430,7 +447,8 @@
       main_graph_chk = 0;
       $("#chr_label").empty();
       $("#filter_info").empty();
-      $("#chr_label").append('<li>Selected: <b>'+e.label+'</b></li>');
+      $("#peak_detail").empty();
+      $("#chr_label").append('<ul><li>Selected: <b>'+e.label+'</b></li></ul>');
       input_data_selected = [];
       var s1 = {}, s2 = {}, l2 = {};
       s1.key = sample_1.key;
@@ -493,6 +511,13 @@
       }
 
       gen_graph(input_data_pval_filtered);
+    }
+
+    function open_ucsc () {
+      var chrName = document.getElementById('li_chr').innerText.split(' ')[1];
+      var position = document.getElementById('li_pos').innerText.split(' ')[1]
+      var assembly = $("#genome_assembly_selector").val().split('/')[1];
+      window.open("https://genome.ucsc.edu/cgi-bin/hgTracks?db="+assembly+"&position="+chrName+"%3A"+position);
     }
     </script>
     <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="57wb652kzjrc8d7"></script>
