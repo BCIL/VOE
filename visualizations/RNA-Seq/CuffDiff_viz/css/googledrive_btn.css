@@ -39,7 +39,7 @@
   -webkit-animation-iteration-count:infinite;
   -webkit-animation-name:rotate;
   -webkit-animation-timing-function:linear;
-  background:url(drive_icon.png) 50% 50% no-repeat;
+  background:url(googledrive_icon.png) 50% 50% no-repeat;
   margin:0 4px 0 0;
   width:18px;
 }
@@ -61,7 +61,7 @@
 }
 .googledrive-dropin-btn .GD-dropin-btn-status {
   -webkit-background-size:60px 14px;
-  background-image:url(drive_icon.png);
+  background-image:url(googledrive_icon.png);
   background-size:15px 15px;
 }
 .googledrive-dropin-progress .GD-dropin-btn-status {
