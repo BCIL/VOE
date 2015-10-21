@@ -59,7 +59,7 @@ D3Core.prototype = {
 	    }
 	    
 	    if (this.options.showLegend) {
-	    	base.legendDiv = d3.select(base.options.container).append("div").attr("class", "legend").append("ul");
+	    	base.legendDiv = d3.select(base.options.container).append("div").attr("class", "legend").append("ul").attr("class","legend_element");
 	    }
 	    
 	    this.svg = d3.select(this.options.container)
@@ -76,6 +76,7 @@ D3Core.prototype = {
 			.attr("transform", "translate(0,0)");
 	    
 	    if (this.options.displayTable) {
+	    	console.log("displayTable")
 	    	$(this.options.container).append("<div class='table' style='display: none;'><table /></div>");
 	    	$(this.options.container).append("<button class='showTableIcon'>Display in Table</button>");
 	    	this.table = $(this.options.container+" .table table");
@@ -462,6 +463,7 @@ D3Core.prototype = {
 	legendEnter: function() {
 		var base = this;
     	base.legend.enter().append('li')
+    		.attr("class","legend_li")
     		.style("opacity", 0)
       	    .style('border-color', function(d) { return base.color(d); })
       	    .text(function(d) { return d; }) 		

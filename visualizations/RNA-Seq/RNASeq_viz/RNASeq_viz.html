@@ -1,20 +1,21 @@
 <html>
 <head>
   <Title> VOE - RNA-Seq visualization</Title>
-  <meta charset="utf-8">
   <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/d3.linechart.css">
   
   <script src="js/d3.core.js" charset="utf-8"></script>
+  
   <script src="js/d3.linechart.js" charset="utf-8"></script>
   <script src="js/chosen.jquery.js" charset="utf-8"></script>
   <script src="js/filepicker.js"></script>
-  <link rel="stylesheet" href="css/d3.linechart.css">
-  <link rel="stylesheet" href="css/googledrive_btn.css">
+  <link rel="stylesheet" href="googledrive_btn.css">
   <link rel="stylesheet" href="css/localdrive_btn.css">
   <link rel="stylesheet" href="css/chosen.css">
 
+  <meta charset="utf-8">
   <style>
 
     body {
@@ -95,6 +96,17 @@
       text-align: center;
     }
     
+    .color-box {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background-color: #ccc;
+      left: 5px;
+      top: 5px;
+      border: 1px solid #000;
+    }
+
+
   </style>
 </head>
 <body>
@@ -135,13 +147,14 @@
   </section>
 </section>
 <section id="section_3">
+  <div id="legend-info"></div>
   <svg id="linechart"></svg>
 </section>
 <script>
   
   window.xAxisNameMoved = false;
   window.userChoiceInput = false;
-
+  window.count_li = 1; 
 
   function initPicker() {
     window.picker = new FilePicker({
@@ -201,6 +214,7 @@
       $("#update_btn").click();
     }
   })
+
   $(".pos_input").keyup(function(event) {
     if (event.keyCode == 13){
       $("#pos_submit").click();
@@ -222,6 +236,7 @@
     window.tooltip_div_title = tooltip_div.append("p").attr("class","tooltip2_title");
     
     d3.tsv("RNASeq_diff_short.tsv", function(error, data) {
+      //window.data_tsv = data;
   
       var c = Object.keys(data[0]);
       window.y1 = data[0].sample_1;
@@ -238,7 +253,7 @@
         }
 
       }
-
+     
       data_list_valid = [];
       for (var i=0; i<data.length; i++) { 
         if(data[i].status==="OK" && data[i].significant==="yes" && !isNaN(data[i]["log2(fold_change)"])){
@@ -256,6 +271,7 @@
         geneDataList.appendChild(option);
       }
       $('.chosen-select').chosen({width: "70%"});
+      /////////////////////////////////////
     })
 
     $("#download_btn").on("click", function() {
@@ -296,7 +312,6 @@
     data_list_valid = [];
     choice_list = [];
     main_graph_chk = 1;
-
     var h = userdata.substr(0,userdata.indexOf('\n'));
     var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
     var header = h.split('\t');
@@ -306,7 +321,6 @@
       userdata = userdata.trim();
       userdata = header_str + userdata;
     }
-   
     var dataset = d3.tsv.parse(userdata);
     console.log("before filtering: " + dataset.length);
     for (var i=0; i<dataset.length; i++) { 
@@ -421,7 +435,6 @@
         category.key = y_form.elements[j].value;
         category.values = new Array();
         data_list_num += 1;
-   
         for (var k=0; k<choice_list.length; k++) {
           var idx = parseInt(choice_list[k].index)
           if (choice_list[k].item === data_list_valid[idx].gene) {
@@ -451,6 +464,7 @@
 
   function gen_graph(x_name,chk_update) {
     window.chk_update = chk_update;
+    $("#legend-info").empty();
     if(typeof chk_update === 'undefined'){
       $("#linechart").empty();
       xAxisNameMoved = false;
@@ -474,6 +488,7 @@
       rotate_xAxis();
       moveup_xAxisName();
       transpose_table();
+      gen_legend();
     }
     else {
       linechart.dataset = data_list;
@@ -481,14 +496,39 @@
       document.getElementById("xAxisName").innerHTML = x_name.toUpperCase();
       rotate_xAxis();
       transpose_table();
+      gen_legend();
     }
   }
 
   function update() {
     gen_dataSet(true);
-
   }
 
+  function gen_legend() {
+    count_li = 1;
+    $("#legend-info").empty();
+    var l = $("#legend-info");
+    var b = document.getElementsByClassName("legend_li")
+    var list = [];
+    
+    for (var i=0; i<b.length; i++) {
+      var item = {};
+      item.color = b[i].getAttribute('style').split('r: ')[1]
+      item.text = b[i].innerHTML
+      list.push(item)
+    }
+    for (var j=0; j<list.length; j++) {
+      l.append('<li id="legend_li_'+count_li+'" class="legend_item"><div class="color-box" style="background-color:'+ list[j].color +';"></div><span>'+ list[j].text +'</span></li>')
+      count_li++;  
+    }
+    var c = document.getElementsByClassName("legend_item")
+    if(c.length>1){
+      if (c[0].innerText === c[1].innerText) {
+        var elem =$("#legend_li_2")
+        elem.remove();
+      }
+    } 
+  }
   function rotate_xAxis() {
     d3.select(".x.axis").selectAll("text")
             .transition().duration(700)
@@ -554,7 +594,6 @@
   }
 
   $("#submit_btn").on("click", function() {
-  
     document.getElementById("submit_btn").disabled = true;
     document.getElementById("update_btn").disabled = false;
     if (userChoiceInput) {
@@ -574,7 +613,6 @@
     }
     update();
   })
-
 
   $("#submitChoice_btn").on("click", function() {
     collect_choice();
