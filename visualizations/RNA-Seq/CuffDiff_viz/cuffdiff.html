@@ -17,23 +17,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <style>
         text {
-            font: 12px sans-serif;
+          font: 12px sans-serif;
         }
         svg {
-            display: block;
+          display: block;
         }
         html,body {
-          margin: 0px;
+          margin-bottom: 0px;
           padding: 0px;
-          height: 100%;
-          width: 99%;
+          height: 100vh;
+          width: 100wh;
         }
         .section_1 {
           margin-left: 5%;
         }
-        #multiBarChart, #focusChart, #focusChart_svg{
-          margin: 0px;
+        #focusChart{
           padding: 0px;
+          height: 100%;
+          width: 99%;
+        }
+
+        #focusChart_svg{
+          padding-bottom: 0;
+          margin-bottom: : 0px;
           height: 100%;
           width: 99%;
         }
@@ -41,21 +47,19 @@
           margin-top: 5px;
         }
         #pieChart{
-          display: block;
+          display: relative;
           float: left;
           height: 30% !important;
           width: 45% !important;
         }
-        #multiBarChart {
-          display: none;
-        }
+       
         #controller {
           margin-top: 2%;    
         }
         #ytplayer {
-          width: 60%;
-          height: 40%;
-          display: block;
+          width: 80%;
+          height: 30vh;
+          display: relative;
         }
     </style>
   </head>
@@ -78,10 +82,10 @@
   </section>
 
   <div id="pieChart"> <svg id="pieChart_svg"></svg> </div>
-  
+
   <g class="download_wrapper">
-    <span> Export visualization:&emsp;&emsp;&emsp;&emsp; </span>
-    <button class="btn btn-success btn-xs" id="download_btn">Download SVG</button>
+    <div> Export visualization:&emsp;&emsp;&emsp;&emsp;
+    <button class="btn btn-success btn-xs" id="download_btn">Download SVG</button></div>
   </g>
 
   <div id="p_value_wrapper" ng-app="p_value_input_app" ng-controller="p_value_ctrl">
@@ -99,17 +103,16 @@
   <div id="peak_info_frame">
     <div id="peak_detail"></div>
   </div>
-  <!--<svg id="multiBarChart"></svg>-->
+  <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/EcWspilQPsk" frameborder="1" status="hide" allowfullscreen></iframe>
   <div id="focusChart" class='with-3d-shadow with-transitions'>
     <svg id="focusChart_svg"></svg>
   </div>
-  <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/EcWspilQPsk" frameborder="1" status="hide" allowfullscreen></iframe>
+ 
     <script type="text/javascript">
 
     $(document).ready(function() {
     window.test = {};
     window.obj = {};
-    //window.data_valid = [];
     window.input_data = [];
     window.input_data_selected = [];
     window.input_data_donut = [];
@@ -117,11 +120,8 @@
     window.choice_list = [];
     window.VOE_cuffdiff = true;
 
-    //window.input_data_high = [];
-    //window.input_data_low = [];
     window.input_data_option = "low"  // display low value data by default 
     
-    //var data_origin = "";
     var uploaded_file = "";
     window.main_graph_chk = 1;     // 0: one chr graph,  1: entire graph
     var button = Dropbox.createChooseButton(options);
@@ -160,18 +160,20 @@
     $("#ytplayer_btn").click(function() {
       var a = $("#ytplayer");
       if(a.attr("status") === "hide") {
-        $("#ytplayer").show();
+        //$("#ytplayer").show();
+        $("#ytplayer").slideDown('show')
         a.attr("status","show");
         $("#ytplayer_btn").text("Hide video");  
       }
       else if(a.attr("status") === "show") {
-        $("#ytplayer").hide();
+        //$("#ytplayer").hide();
+        $("#ytplayer").slideUp('hide')
         a.attr("status","hide");
         $("#ytplayer_btn").text("Show video");  
       }
     })
 
-    d3.tsv("Galaxy5_clean_demo.tabular", function(error, data) {
+    d3.tsv("sample_data/Galaxy5_clean_demo.tabular", function(error, data) {
       gen_dataSet(data);
       })
     })  // end ready
@@ -201,6 +203,10 @@
       $("#peak_detail").empty();
       $("#controller").append("<ul><li id=\'datatype\'> The data uploaded from <b>" + data_origin +"</b></li><li id=\'upfilename\'> File name: <b>" + uploaded_file +"</b></li></ul>")
 
+      /////////////////////////////////////////////////////////
+      // 1. Inputdata format checking
+      // 2. Add standard header if the header is not standard
+      /////////////////////////////////////////////////////////
       var h = userdata.substr(0,userdata.indexOf('\n'));
       var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
       var header = h.split('\t');
@@ -210,7 +216,8 @@
         userdata = userdata.trim();
         userdata = header_str + userdata;
       }
-    
+      /////////////////////////////////////////////////
+      //// parse the data
       var data = d3.tsv.parse(userdata);
       test.data_raw = "";
       test.data_raw = data;
@@ -274,7 +281,6 @@
       cancel: function() {},
       linkType: "direct",
       multiselect: false,
-      //extensions: [''],
     };
 
     $("#update_btn").on("click", function() {
@@ -288,6 +294,7 @@
       $("#filter_info").empty();
       $("#filter_info").append("<li>Filtered p-value by <b>"+ pv +"</b></li>");
 
+      //update_chart();
     })
 
     function gen_dataSet(raw_data) {
@@ -300,20 +307,18 @@
       }
       test.data_valid = obj.data_valid;
 
-      window.sample_1 = {};
-      window.sample_2 = {};
-      window.log2 = {};
-      sample_1.key = obj.data_valid[0].sample_1;
-      sample_2.key = obj.data_valid[0].sample_2;
-      log2.key = "log2(fold_change)";
-     
-      sample_1.area = "false";
-      sample_2.area = "false";
-      log2.area = "false";
-      sample_1.values = new Array();
-      sample_2.values = new Array();
-      log2.values = new Array();
-     
+        window.sample_1 = {};
+        window.sample_2 = {};
+        window.log2 = {};
+        sample_1.key = obj.data_valid[0].sample_1;
+        sample_2.key = obj.data_valid[0].sample_2;
+        log2.key = "log2(fold_change)";
+        sample_1.area = "false";
+        sample_2.area = "false";
+        log2.area = "false";
+        sample_1.values = new Array();
+        sample_2.values = new Array();
+        log2.values = new Array();
       var s1 = {}, s2 = {}, l2 = {};
       for (var j=0; j<obj.data_valid.length; j++) {
         s1 = {};
@@ -351,6 +356,7 @@
         l2.pos = position;
         l2.gene = obj.data_valid[j].gene;
         l2.p_val = parseFloat(obj.data_valid[j].p_value);
+        //l2.split = "no";
         sample_1.values.push(s1);
         sample_2.values.push(s2);
         log2.values.push(l2);
@@ -368,6 +374,7 @@
         chr_counter[sample_1.values[k].chr] = (chr_counter[sample_1.values[k].chr] || 0) + 1;
         var chrName = sample_1.values[k].chr;
         if (chr_chk != chrName || k == sample_1.values.length-1 ) {
+          //console.log("unmatched name")
           if(k>0) { chr_index_list.push(chr_obj); }
           chr_obj = {};
           chr_obj.name = chrName;
@@ -377,6 +384,7 @@
         chr_obj.idx.push(k)
       }
 
+      //input_data_donut
       for (var key in chr_counter) {
         var tmp = {};
         tmp.key = key;
@@ -384,6 +392,7 @@
         input_data_donut.push(tmp);
       }
 
+      // calculate donut chr count data
       if (typeof(donut_count) === 'undefined') {
         window.donut_data = {};
       }
@@ -394,7 +403,7 @@
       donut_data.chrNum = input_data_donut.length;
       
       var sig = 'all';
-     
+ 
       gen_graph(input_data, sig);
     }
 
@@ -409,7 +418,6 @@
         fchart.y2Axis.tickFormat(d3.format(',f'));
         fchart.isArea(false);
         fchart.height(700);
-        
         fchart.color(["#29A329","#FF8080","#4775FF"])
         
         d3.select('#focusChart_svg')
@@ -428,7 +436,8 @@
                 .y(function(d) { return d.count })
                 .donut(true)
                 .padAngle(.02)
-                .cornerRadius(3) 
+                .cornerRadius(3)
+            
             dchart.title("CuffDiff")
             dchart.pie.donutLabelsOutside(true).donut(true);
 
@@ -463,6 +472,7 @@
       console.log(e.label)
 
       for (var i=0; i<chr_index_list.length; i++) {
+        //s1 = {}; s2 = {}; l2 = {};
         if(e.label === chr_index_list[i].name) {
           for(var j=0; j<chr_index_list[i].idx.length; j++) {
             s1.values.push(input_data[0].values[chr_index_list[i].idx[j]]);
@@ -519,6 +529,7 @@
       var assembly = $("#genome_assembly_selector").val().split('/')[1];
       window.open("https://genome.ucsc.edu/cgi-bin/hgTracks?db="+assembly+"&position="+chrName+"%3A"+position);
     }
+
     </script>
     <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="57wb652kzjrc8d7"></script>
     <script src="https://www.google.com/jsapi?key=AIzaSyAc6hbd-Sq_YQ6CkviWXtQslAw4yC-PIB4"></script>

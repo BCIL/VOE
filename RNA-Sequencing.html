@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title> VOE - RNA-Seq Gene Explorer </title>
+
+    <!--Core CSS -->
+    <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<section id="container" >
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+
+    <a href="index.html" class="logo">
+        <img id="logoImage" alt="">
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+<!--logo end-->
+
+
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+    
+        <li class="dropdown">
+            <a  class="" >
+                <!--<img alt="" src="images/avatar1_small.jpg">-->
+                <i class="fa fa-line-chart fa-lg"></i>
+                <span class="username"></span>
+            </a>
+        </li>
+        <!-- user login dropdown end -->
+        
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
+<!--header end-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->            
+        <div class="leftside-navigation">
+                <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>Portal Home</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" class="active">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span>Visualize & Explore Data</span>
+                </a>
+                <ul class="sub"> 
+                    <li><a id="phyloXML_link" href="phyloXML.html">PhyloXML Data</a></li>
+                    <li><a id="googleGenomics_link" href="GoogleGenomics.html">Google Genomics Cloud</a></li>
+                    <li><a href="#" class="active">Gene Expression Data</a>
+                        <ul class="sub_lv2">
+                            <li><a id="geneExpression_link" href="DifferentialExpression.html">RNA Sequencing Data</a></li>
+                            <li><a id="RNA-Seq_link" href="#" class="active">RNA-Seq Gene Explorer</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="ChIP-Seq_link" href="#">ChIP Sequencing Data</a></li>
+                    <li><a id="vcf_link" href="GeneticVariant.html">Genetic Variant Data</a></li>
+                </ul>
+            </li>
+            
+            <li class="sub-menu">
+                <a href="http://galaxy.hunter.cuny.edu:8080/" target="_blank">
+                    <i class="fa fa-star"></i>
+                    <span>Visit Hunter College's Galaxy </span>
+                </a>
+            </li>
+
+            <li class="sub-menu">
+                <a href="feedback_compose.html">
+                    <i class="fa fa-envelope"></i>
+                    <span>Your feedback </span>
+                </a>
+            </li>
+            
+            <li class="sub-menu">
+                <a href="WhereWeAre.html">
+                    <i class=" fa fa-map-marker"></i>
+                    <span>Where we are</span>
+                </a>
+            </li>
+            
+        </ul></div> 
+<!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+        <!-- page start-->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 id="title" align="center"> RNA-Seq Gene Explorer </h2>
+                        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-cog"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                    </header>
+                    <div id="rna_seq_body" class="panel-body">
+                        <div class="iframe_rnaseq">
+                        <iframe class="rnaseq_main" id="panel-body-frame"></iframe></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- page end-->
+        </section>
+    </section>
+    <!--main content end-->
+<!--right sidebar start-->
+
+<!--right sidebar end-->
+
+</section>
+
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+<!--Core js-->
+<script src="js/jquery.js"></script>
+<script src="bs3/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+
+<!--common script init for all pages-->
+<script src="js/scripts.js"></script>
+<script src="js/ourWork.js"></script>
+
+
+</script>
+</body>
+</html>

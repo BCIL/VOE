@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <title>Your Feedback</title>
+    <title>VOE - Your Feedback</title>
 
     <!--Core CSS -->
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
@@ -80,13 +80,19 @@
             <li class="sub-menu">
                 <a href="javascript:;">
                     <i class="fa fa-bar-chart-o"></i>
-                    <span>Browse + Visualize Data</span>
+                    <span>Visualize & Explore Data</span>
                 </a>
-                <ul class="sub">
-                    
-                    <li><a href="phyloXML.html">Upload your PhyloXML</a></li>
-                    <li><a href="GoogleGenomics.html">Browse Genomics on Google</a></li>
-                    <li><a href="DifferentialExpression.html">Differential Expression Data</a></li>
+                <ul class="sub"> 
+                    <li><a id="phyloXML_link" href="phyloXML.html">PhyloXML Data</a></li>
+                    <li><a id="googleGenomics_link" href="GoogleGenomics.html">Google Genomics Cloud</a></li>
+                    <li><a href="#">Gene Expression Data</a>
+                        <ul class="sub_lv2">
+                            <li><a id="geneExpression_link" href="DifferentialExpression.html">RNA Sequencing Data</a></li>
+                            <li><a id="RNA-Seq_link" href="#">RNA-Seq Gene Explorer</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="ChIP-Seq_link" href="#">ChIP Sequencing Data</a></li>
+                    <li><a id="vcf_link" href="GeneticVariant.html">Genetic Variant Data</a></li>
                 </ul>
             </li>
             
@@ -193,6 +199,7 @@
 <script src="js/jquery.scrollTo.min.js"></script>
 <script src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
+
 
 <script src="js/iCheck/jquery.icheck.js"></script>
 

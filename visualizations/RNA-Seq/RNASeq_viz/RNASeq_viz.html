@@ -4,14 +4,13 @@
   <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="css/d3.linechart.css">
-  
   <script src="js/d3.core.js" charset="utf-8"></script>
-  
   <script src="js/d3.linechart.js" charset="utf-8"></script>
   <script src="js/chosen.jquery.js" charset="utf-8"></script>
   <script src="js/filepicker.js"></script>
-  <link rel="stylesheet" href="css/googledrive_btn.css">
+  
+  <link rel="stylesheet" href="css/d3.linechart.css">
+  <link rel="stylesheet" href="googledrive_btn.css">
   <link rel="stylesheet" href="css/localdrive_btn.css">
   <link rel="stylesheet" href="css/chosen.css">
 
@@ -235,8 +234,7 @@
         .style("opacity", 0);
     window.tooltip_div_title = tooltip_div.append("p").attr("class","tooltip2_title");
     
-    d3.tsv("RNASeq_diff_short.tsv", function(error, data) {
-      //window.data_tsv = data;
+    d3.tsv("sample_data/RNASeq_diff_short.tsv", function(error, data) {
   
       var c = Object.keys(data[0]);
       window.y1 = data[0].sample_1;
@@ -268,8 +266,11 @@
         option.value = data_list_valid[j].gene;
         option.innerHTML = data_list_valid[j].gene;
         option.setAttribute("index",j);
+        //option.setAttribute("value_1", data[j].value_1);
+        //option.setAttribute("value_2", data[j].value_2);
         geneDataList.appendChild(option);
       }
+
       $('.chosen-select').chosen({width: "70%"});
       /////////////////////////////////////
     })
@@ -312,6 +313,7 @@
     data_list_valid = [];
     choice_list = [];
     main_graph_chk = 1;
+
     var h = userdata.substr(0,userdata.indexOf('\n'));
     var header_str = "test_id\tgene_id\tgene\tlocus\tsample_1\tsample_2\tstatus\tvalue_1\tvalue_2\tlog2(fold_change)\ttest_stat\tp_value\tq_value\tsignificant\n";
     var header = h.split('\t');
@@ -321,6 +323,9 @@
       userdata = userdata.trim();
       userdata = header_str + userdata;
     }
+    /////////////////////////////////////////////////
+    //// parse the data
+
     var dataset = d3.tsv.parse(userdata);
     console.log("before filtering: " + dataset.length);
     for (var i=0; i<dataset.length; i++) { 
@@ -364,6 +369,8 @@
       option.value = data[j].gene;
       option.innerHTML = data[j].gene;
       option.setAttribute("index",j);
+      //option.setAttribute("value_1", data[j].value_1);
+      //option.setAttribute("value_2", data[j].value_2);
       geneDataList.appendChild(option);
     }
 
@@ -400,6 +407,7 @@
             var chr = (data_list_valid[k].locus).split(':')[0]
             var position = (data_list_valid[k].locus).split(':')[1]
             var p_value = data_list_valid[k].p_value;
+            //var sig = data_list_valid[k].significant;
             category.values.push({
               x: xAxisName,
               y: yAxisName,
@@ -435,6 +443,7 @@
         category.key = y_form.elements[j].value;
         category.values = new Array();
         data_list_num += 1;
+        
         for (var k=0; k<choice_list.length; k++) {
           var idx = parseInt(choice_list[k].index)
           if (choice_list[k].item === data_list_valid[idx].gene) {
@@ -559,6 +568,7 @@
         index: idx
       })
     }
+   
   }
 
   function transpose_table() {
@@ -594,11 +604,14 @@
   }
 
   $("#submit_btn").on("click", function() {
+    //document.getElementById("submit_btn").value = "reset";
+    //document.getElementById("submit_btn").id = "reset_btn";
     document.getElementById("submit_btn").disabled = true;
     document.getElementById("update_btn").disabled = false;
     if (userChoiceInput) {
       console.log("user Choice")
       collect_choice();
+      //$("#submitChoice_btn").click();  
     }
     gen_dataSet();
   })
@@ -613,6 +626,7 @@
     }
     update();
   })
+
 
   $("#submitChoice_btn").on("click", function() {
     collect_choice();

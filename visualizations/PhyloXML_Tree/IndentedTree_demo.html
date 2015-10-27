@@ -1,16 +1,10 @@
 <html>
 	<head>
-	<title> Collapsible Indented Tree </title>
-    <script type = "text/javascript" src = "http://d3js.org/d3.v3.min.js"> </script>
-    <script type = "text/javascript" src = "js/jquery.js"> </script>
-    <script type = "text/javascript" src = "js/expandCollapse.js"> </script>
-    <script type="text/javascript" src="js/jkl-dumper.js" charset="Shift_JIS"></script>
-    <script type="text/javascript" src="js/jkl-parsexml.js"></script>
-    <script type="text/javascript" src="js/loadxmldoc.js"></script> 
-    <script type="text/javascript" src="js/expandCollapse.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>  
-
-    <meta charset = "utf-8">
+	<title> VOE - Phylogenetic Indented Tree </title>
+	<meta charset = "utf-8">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"> </script>
+    <link rel="shortcut icon" href="favicon.ico">
     <style type = "text/css">
     	#title {
             text-align: center;
@@ -39,31 +33,25 @@
 	</head>
 
     <body>
-    
-        <div hidden>
-        <input type="button" onclick="return toggleMe('usage')" value="Show Usage">
-        </div>
-        <div id="option" hidden>
+        <div id="option">
             <div id="buttons">
             <button id="collapseAll">Collapse All</button>
             <button id="expandAll">Expand All</button>
-            <button id="expand_2lv">Expand two levels</button>
             <br>
         </div>
 
     	<script type="text/javascript">
 		
         var filename = 'demo.json';
-       	gen_Tree(filename);
         
-        function gen_Tree(data)
-        {
+       	gen_Tree(filename);
+      
+        function gen_Tree(data) {
         	var filePath = data;
 
 			var margin = {top: 30, right: 20, bottom: 30, left: 20};
 			var width = $(document).width();
 	        var height = $(document).height();
-			//var width = 960 - margin.left - margin.right;
 		    var barHeight = height / 45;
 		    var barWidth = width / 2;
 
@@ -101,12 +89,10 @@
 				.duration(duration)
 				.style("height", height + "px");
 
-				// Compute the "layout".
 				nodes.forEach(function(n, i) {
 				n.x = i * barHeight;
 				});
 
-				// Update the nodes…
 				var node = svg.selectAll("g.node")
 				.data(nodes, function(d) { return d.id || (d.id = ++i); });
 
@@ -115,7 +101,6 @@
 				.attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
 				.style("opacity", 1e-6);
 
-				// Enter any new nodes at the parent's previous position.
 				var nodeRect = nodeEnter.append("rect")
 				.attr("y", -barHeight / 2)
 				.attr("height", barHeight)
@@ -128,10 +113,7 @@
 				.attr("dy", 3.5)
 				.attr("dx", 15)
 				.text(function(d) { return d.name; });
-				//.style("fill", text_color)
-				
 
-				// Mouse event functions
 				nodeEnter
 					.on("mouseover", function(d) {
 						d3.select(this).select("rect").style("fill", function(d) { 
@@ -147,7 +129,6 @@
 					   
 					});
 
-				// Transition nodes to their new position.
 				nodeEnter.transition()
 				  .duration(duration)
 				  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
@@ -165,18 +146,15 @@
 				.style("opacity", 1)
 				.select("text").style("fill", text_color)
 
-				// Transition exiting nodes to the parent's new position.
 				node.exit().transition()
 				  .duration(duration)
 				  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
 				  .style("opacity", 1e-6)
 				  .remove();
 
-				// Update the links…
 				var link = svg.selectAll("path.link")
 				  .data(tree.links(nodes), function(d) { return d.target.id; });
 
-				// Enter any new links at the parent's previous position.
 				link.enter().insert("path", "g")
 				  .attr("class", "link")
 				  .attr("d", function(d) {
@@ -187,12 +165,10 @@
 				  .duration(duration)
 				  .attr("d", diagonal);
 
-				// Transition links to their new position.
 				link.transition()
 				  .duration(duration)
 				  .attr("d", diagonal);
 
-				// Transition exiting nodes to the parent's new position.
 				link.exit().transition()
 				  .duration(duration)
 				  .attr("d", function(d) {
@@ -207,20 +183,16 @@
 	            })
 
 	            d3.select("#expandAll").on("click", function() { 
-				// Collapse everything first then expand everything
 	                root.children.forEach(collapseAll);
 	                update(root);
 	                root.children.forEach(expandAll); 
 	                update(root);
-	                //console.log("Root: " + chk_root);
 	            })
 
 	            d3.select("#expand_2lv").on("click", function(d) {
-	            // Collapse everything first then expand everything
 	                root.children.forEach(collapseAll);
 	                update(root); 
 	                root.children.forEach(expand_2lv);
-	               
 	                update(root);
 	            })
 
@@ -231,7 +203,6 @@
 					});
 			}
 
-			// Toggle children on click.
 			function click(d) {
 				if (d.children) {
 				d._children = d.children;
@@ -243,7 +214,6 @@
 				update(d);
 			}
 
-			// Collapse nodes
 	        function collapseAll(d) {
 	            if (d.children) {
 	                d._children = d.children;

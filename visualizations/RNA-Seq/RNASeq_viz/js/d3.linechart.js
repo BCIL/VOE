@@ -7,16 +7,82 @@ function D3LineChart(options) {
 		interpolate: "linear",
 		
 		tooltipOnMouseOver:	function(d, element, base) {
+			////// d3 tooltip
 			tooltip_div.transition()        
                 .duration(200)      
                 .style("opacity", .9);      
             tooltip_div.html(base.options.tooltipText(d, element))  
                 .style("left", (d3.event.pageX) - 80 + "px")     
                 .style("top", (d3.event.pageY) - 40 + "px");    
+            //////                  
 			begin=0;
 			end=0;
 			chr="";
-			
+			/*
+			window.tooltip_d = d;
+			window.tooltip_ele = element;
+			window.tooltip_base = base;
+			var xPosition = parseInt($(element).attr('cx'))-base.tooltipWidth/2+base.options.margin.left+3;
+			var yPosition = base.y.range()[0]-parseInt($(element).attr('cy'))+base.options.margin.bottom+15;
+			d3.select(base.options.container+" .tooltip")
+				.style("left", xPosition + "px")
+				.style("bottom", yPosition + "px")	
+				.html(base.options.tooltipText(d, element));
+			$(base.options.container+" .tooltip").show();
+			$(element).parent().find("path").css("opacity", 1);
+*/
+/*
+			var a = document.getElementById("chr_selector");
+			if (a != null){
+				var chr_chk = a.options[a.selectedIndex].value;
+				if(chr_chk != 'null') {
+					var chr_doc = document.getElementById("chr_selector")
+					chr = chr_doc.options[chr_doc.selectedIndex].text;
+					
+					begin = prev_pos;		// caculated at ToolTipText section.
+					end = curr_pos;
+					$('#UCSClink').empty();
+					var w=$(document).width(), h=20;
+
+					if (chr.length < 3) {
+						$('#UCSClink').append("<button type='button' class='btn btn-success btn-md' id=ucsc>Browse UCSC ( chr"+chr+": "+begin+" - "+end+" )</button>");
+					}
+					else {
+						$('#UCSClink').append("<button type='button' class='btn btn-success btn-md' id=ucsc>Browse UCSC ( "+chr+": "+begin+" - "+end+" )</button>");
+					}
+
+						//http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"
+					//$('#UCSClink').append("<span style='margin-left:5%'><a href='http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end+"' target='_blank'><font id='ucsc'>Browse UCSC for "+chr+" information ("+begin+"-"+end+")</font></a><span>");
+				
+					
+					var e = document.getElementById('ucsc');
+					var t = 6;
+					var n = 0;
+					var c = ['red', "white"];
+					var i = window.setInterval(function() {
+						if (e.style.color != c[0]) {
+							e.style.color = c[0] 
+							n++;
+						}
+						else {
+							e.style.color = c[1]
+							n++;
+						}
+						if (n == t) { window.clearInterval(i) };
+					},800);
+				
+					document.getElementById("ucsc").onclick = function() {
+						if (chr.length < 3) {
+							window.open("http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr"+chr+"%3A"+begin+"-"+end,'_target');
+						}
+						else {
+							window.open("http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position="+chr+"%3A"+begin+"-"+end,'_target');
+						}
+					}
+				}
+				
+			}
+		*/
 		},
 		tooltipOnMouseOut: function(d, element, base) {
 			tooltip_div.transition()        
@@ -110,6 +176,7 @@ D3LineChart.prototype.tooltipRender = function() {
 	var base = this;
 	base.circle.on("mouseover", function(d) { base.options.tooltipOnMouseOver(d, this, base); });
 	base.circle.on("mouseout", function(d) { base.options.tooltipOnMouseOut(d, this, base); });
+	//base.circle.on("click", function(d) { base.options.renderTableMouseClick(d, this, base); });
 }
 
 D3LineChart.prototype.showVerticalText = function() {
