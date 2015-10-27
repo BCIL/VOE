@@ -1,15 +1,18 @@
 <html lang="en">
 <head>
-  <title> VOE - Google Genomics Browser </title>
+  <title> VOE - Google Genomics Cloud </title>
   <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="js/jquery.js" charset="utf-8"></script>
   <script src="js/bootstrap.js"></script>
+
   <script src="js/googlegenomics.jquery.js"></script>
   <script src="js/biojs/biojs-vis-sequence.js"></script>
   <script src="proj.js"></script>
+
   <script src="http://wzrd.in/bundle/jquery-browser-plugin@0.0.6"></script>
   <link rel="stylesheet" href="js/bootstrap.min.css">
-
+  
+  
   <style>
     ul.workflow {
       list-style-type: square;
@@ -128,7 +131,9 @@
         <select class="RGsetsId_control" id="reads_groupsetIdSelector" onchange="get_ReadsInfo(this); this.size=0;" onmousedown="if(this.options.length>10){this.size=10;}">
           <option type="text" class="form-control" id="reads_groupsetId" value="NuLL"> NULL </option>
         </select> 
-     
+        <!--
+        <button type="button" id="reads_submit" class="btn-primary" name="button"  onclick="search_Reads(this)" hidden> Submit </button>
+        -->
       </div>
       <label for="reads_pageSize"> Coverage: </label>&nbsp;
       <input class="PageSize_control" id="reads_pageSize" value=7>
@@ -148,7 +153,10 @@
       </span>
       <button type="button" id="reads_submit" class="btn-primary" name="button"  onclick="search_Reads(this)" > Submit </button>  
     </div>
- 
+    <!--///////////////////////////////
+    /////////// REFERENCES ////////////
+    /////////////////////////////////// -->
+    
     <section class="chr_data">
       <div >
         <label for="callSetId">All References</label>
@@ -185,6 +193,7 @@ var margin_Startposition = -1;
 var margin_Endposition = -1;
 var performance_start;
 var performance_end;;
+/////////////////////// pviz /////////////////////
 var pviz;
 var seqEntry;
 
@@ -192,8 +201,8 @@ var seqEntry;
 var callSetId = "NULL";
 var jobType = "NULL";
 var jobType_chk = 0;
-var dataset_reads = [];          
-var test_data_params;          
+var dataset_reads = [];          // the result data from reads // id, alignedSeq, position
+var test_data_params;           // used the function 'search_Reads'
 var JSONdata_dataSets = [];
 var project_list = [];
 
@@ -250,12 +259,12 @@ $(document).ready(function() {
   $("#ytplayer_btn").click(function() {
     var a = $("#ytplayer");
     if(a.attr("status") === "hide") {
-      $("#ytplayer").show();
+      $("#ytplayer").slideDown('show')
       a.attr("status","show");
       $("#ytplayer_btn").text("Hide video");  
     }
     else if(a.attr("status") === "show") {
-      $("#ytplayer").hide();
+      $("#ytplayer").slideUp('hide')
       a.attr("status","hide");
       $("#ytplayer_btn").text("Show video");  
     }
@@ -317,6 +326,7 @@ function search_Reads(option) {
   //// 5% of margin
   window.margin = parseInt( (endPosition_global - startPosition_global) * 0.05)    
  
+  ////  decalare as global variable for recursive search Reads ajax when it got chr chracter error...
   window.search_Reads_params = {
           readGroupSetIds: reads_groupsetID,
           referenceName: reads_chromosome_name,
@@ -413,11 +423,13 @@ function sendData_Reads (params, url, method) {
       $('#reads_submit').attr('class', 'standby');
       $('#reads_submit').text('Submit');
       $(".RefsetId_control").show();
+      //$("#Visualization_button").show();
       if (isChrome) { 
         performance_end = performance.now();
         console.log("Submit processing took " + ((performance_end - performance_start) / 1000) + " seconds");
       }
     },
+    ////  Error handler.. (1 -> 'chr1' converting, invalid chromosome name detection)
     error: function() {
       console.error("Warning: sendData_Reads error detected!");
       console.debug(" - Auto renaming to fix the error - ")
@@ -490,6 +502,7 @@ function updateReadGroupsetsIdMenu (option) {
   $(".startPosition_control").show();
   $(".endPosition_control").show();
   $(".PageSize_control").show();
+  //$("#reads_submit").show();
   $("#Visualization_button").show();
 
 }
@@ -518,14 +531,6 @@ function updateReadsMenu (json) {             // using JSONdata_RG
   }
 }
 
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////           REFERENCE             ////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 function getRefSetId(option) {
   //$("#Visualization_button").hide();
   refSetId = "";
@@ -534,9 +539,8 @@ function getRefSetId(option) {
     console.debug("Not selected Reference Genome.");
     return;
   }
-  
   updateReference(refSetId);            // send refSetId to Google and receive refId list 
-                                        // then update the list that user can see.
+                                  
   setTimeout (function() {
     getValidReferences();                 // delay for AJAX processing time.
   }, 2000);
@@ -587,7 +591,6 @@ function getValidReferences() {
 }
 
 function validChkReferences() {
-  
   refNameLIst_valid = [];       // init.
   for (var i=0; i<refNameList.length; i++) {
     if (!isNaN(refNameList[i].name)) {
@@ -653,7 +656,6 @@ function getUserInput_ref(option) {
     var refId_raw = doc.options[doc.selectedIndex].text;
     var refId_split = refId_raw.split(" ");
     var ref_Id = refId_split[0];
-    //ref_Id = document.getElementById("reads_chromosome_name").value;
     ref_name_userInput = inForm.reads_chromosome_name.value;
     ref_name = refId_split[1].split(/[()]+/).filter(function(e) { return e} );
 
@@ -701,7 +703,6 @@ function genPviz (seq, ref_Id, params) {
   var posList = [];                               // alignedSeq, fragName, position,
   var fragName = [];
 
-
   for (var i=0; i<dataset_reads.length; i++) {
     if (dataset_reads[i].cigar.length == 1) {
       Aseqs.push(dataset_reads[i].alignedSeq);
@@ -739,11 +740,12 @@ function genPviz (seq, ref_Id, params) {
         fragName.push(newName);
         isFound = true;
       }
+      
     }
-
     if(!isFound) {
         fragName.push(dataset_reads_name);
       }
+  
   }
 
   
@@ -784,6 +786,7 @@ function localStorageSupported() {
   return false;
  }
 }
+////////////////////////////////////////////////////////////////////////////
 
 function getAlignment() {
   userCommand = "alignment";
@@ -798,7 +801,6 @@ function getAlignment() {
     start = margin_Startposition;
     end = margin_Endposition;
   }
- 
   seq_start = start;
   seq_end = end;
   query_seq = inForm.query_seq.value;
@@ -860,7 +862,6 @@ function sendData_no_body (callSetId, params, url, method, jobType) {
     }
   });
 }
-
 
 function updateReferenceMenu (list) {
   $('#refIdSelector').empty();

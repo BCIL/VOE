@@ -111,7 +111,7 @@
   <button class="btn btn-success btn-sm" id="download_btn">Download SVG</button>
   <button id="ytplayer_btn" class="btn btn-warning btn-sm"> Show video </button>
 </div>
-
+<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/pO-3V8n2Ayo" frameborder="1" status="hide" hidden></iframe>
 <div id="chart_container"> <svg id="linechart"></svg></div>
 <div class="col-md-5">
   <div id="UCSClink"></div>
@@ -119,7 +119,7 @@
 <div class="col-md-6">
   <div id="genTable_indicator" style="color:red; display: none"></div>
 </div>
-<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/pO-3V8n2Ayo" frameborder="1" status="hide" allowfullscreen></iframe>
+
 <span id="position_table"></span>
 <svg id="empty" style="display:none"></svg>
 
@@ -221,24 +221,24 @@
     $("#ytplayer_btn").click(function() {
       var a = $("#ytplayer");
       if(a.attr("status") === "hide") {
-        $("#ytplayer").show();
+        $("#ytplayer").slideDown('show')
         a.attr("status","show");
         $("#ytplayer_btn").text("Hide video");  
       }
       else if(a.attr("status") === "show") {
-        $("#ytplayer").hide();
+        $("#ytplayer").slideUp('hide')
         a.attr("status","hide");
         $("#ytplayer_btn").text("Show video");  
       }
     })
     
-    d3.tsv("data2.bed", function(error, data) {      
+    d3.tsv("sample_data/data2.bed", function(error, data) {
       gen_dataset(data);
       getAllchrChart();
       rotate_xAxis();
       moveup_xAxisName();
       transpose_table();
-    }); 
+    });   // end d3.tsv
 
     $("#all_chr").on("click", function() {
       $('#position_table').empty();
@@ -276,7 +276,6 @@
       }
       reader.readAsText(file);
     })
-
   });       // end ready
 
   function userChart(userdata) {
@@ -311,9 +310,10 @@
         userdata = header_str + userdata;
       }
     }
-  
+    /////////////////////////////////////////////////
+    //// parse the data
     var data = d3.tsv.parse(userdata);
-   
+    
     gen_dataset(data);
     getAllchrChart();
     rotate_xAxis();
@@ -400,6 +400,7 @@
     document.getElementById("update_btn").disabled = false;
     document.getElementById("bin_num").disabled = false;
     data_list_prep_chr = [];
+    //$(".pos_input").attr("disabled", false);
     updateCount+=1;
     if(updateCount == 1) {firstUpdate=true; xAxisNameMoved=false;}
     else{firstUpdate=false;}
@@ -499,7 +500,6 @@
           var c = document.getElementById("chr_selector");
           var chr_name = c.options[c.selectedIndex].value;
           return "<table id='tooltip2_table'><tr><td style='align:center; border-bottom:solid thin'><b>"+chr_name.toUpperCase()+"</b></td></tr><tr><td>Count: </b>"+d.y+"<br>Position: "+prev_pos+" - "+ curr_pos +"</td></tr></table>"
-        
         }
       });
       linechart.show();
@@ -514,7 +514,6 @@
       moveup_xAxisName();
       transpose_table();
     }
-    //clearTimeout(timeout_chk)
   } // end update chart
 
   function getAllchrChart() {
@@ -534,10 +533,6 @@
     
     linechart.show();
   }
-
-  //////////////////////////////////////////////////////////////
-
-
 
   function rotate_xAxis() {
   d3.select(".x.axis").selectAll("text")

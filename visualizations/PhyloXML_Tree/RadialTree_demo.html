@@ -1,20 +1,18 @@
 <html>
   <head>
-    <title> Collapsible radial tree </title>
-    <script type = "text/javascript" src = "http://d3js.org/d3.v3.min.js"> </script>
-    <script type = "text/javascript" src = "js/jquery.js"> </script>
+    <title> VOE - Phylogenetic Radial Tree </title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="shortcut icon" href="favicon.ico">
     
-
-    <meta charset = "utf-8">
     <style type = "text/css">
-
         #title {
             text-align: center;
         }
         .node {
             cursor: pointer;
         }
-    
         .node circle {
             fill: transparent;
             stroke: steelblue;
@@ -26,7 +24,6 @@
             font-family: sans-serif;
             font-size: 11px;
         }
-        
         .link {
             fill: none;
             stroke: lightgrey;
@@ -36,33 +33,25 @@
         </style>
     </head>
 
-  <body>
-        
-        <div hidden>
-        <input type="button" onclick="return toggleMe('usage')" value="Show Usage">
-        </div>
-        <div id="option">
-            <div id="buttons">
-            <button id="collapseAll">Collapse All</button>
-            <button id="expandAll">Expand All</button>
-            <button id="expand_2lv" hidden>Expand two levels</button>
-            <br>
-        </div>
-        
-        <div id="infoBox" style="width:500px; height:100px; background-color:beige; border:4px double green;" hidden> </div>
+  <body>  
+    <div id="option">
+        <div id="buttons">
+        <button id="collapseAll">Collapse All</button>
+        <button id="expandAll">Expand All</button>
+        <br>
+    </div>
+    
+    <div id="infoBox" style="width:500px; height:100px; background-color:beige; border:4px double green;" hidden> </div>
 
-        <span id = "Filepath"></span>
-        <div id="treeContainer"> </div>
+    <span id = "Filepath"></span>
+    <div id="treeContainer"> </div>
 
-        <script>
-        var filename = 'demo.json';
-        
-        gen_Tree(filename);
+    <script>
+    var filename = 'demo.json';
+    gen_Tree(filename);
 
-        function gen_Tree(data) {
-        
+    function gen_Tree(data) {
         var filePath = data;
-
         d3.json(filePath , function(error, jsonData) 
         {    
             var diameter = $(window).height() / 2;
@@ -85,13 +74,11 @@
             var tree = d3.layout.tree()
                 .size([360, diameter / 100 - 20 ])
                 .separation(function(a, b) { 
-                    //return ((a.parent == root) && (b.parent == root)) ? 4: 1; })
                     return (a.parent == b.parent == root ? 1 : 10) })
 
             var diagonal = d3.svg.diagonal.radial()
                 .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
             
-            // Define the zoom function for the zoomable tree
             function zoom() {
                 svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
             }
@@ -105,24 +92,22 @@
                 .attr("width", width )
                 .attr("height", height )
                 .call(zoomListener)
-              
+                
             function update(source) {
 
                 var nodes = tree.nodes(root);
+                
                 nodes.forEach(function(d) { 
                     d.y = d.depth * 80; 
                 });
 
-                // Update the nodes…
                 var node = svg.selectAll("g.node")
                     .data(nodes, function(d) { return d.id || (d.id = ++i); });
                 
-                // Enter any new nodes at the parent's previous position.
                 var nodeEnter = node.enter().append("g")
-                    .attr("class", "node")                
+                    .attr("class", "node")
 				
                 var nodeCircle = nodeEnter.append("circle")
-                    //.attr("r", node_regSize)
                     .attr("r", function(d) {
                         
                         if (d.property == null) { return setNodeSize_default }
@@ -132,9 +117,7 @@
                         })
                     .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
 
-                   			// Node: mouse event
                     .on("mouseover", function(d) {
-                    	//tooltip.style("visibility", "visible");
                         d3.select(this).style("fill", function(d) { 
                         	return d._children ? "red" : "green"; })
                         .transition()
@@ -154,11 +137,9 @@
                         .transition()
                         .attr("r", function(d) {
                             if (d.property == null) { return setNodeSize_default }
-                            // set minimum node size
                             else if (d.property.text < nsDivider * setNodeSize_min) { return setNodeSize_min;}
                             else { return d.property.text / nsDivider}
                             })
-                        // change font color
                         nodeText.style("fill", function(d) {
                             return d._children ? "blue" : "black"; })
                         })
@@ -166,17 +147,14 @@
                
                 var nodeText = nodeEnter.append("text")
                 .text(function(d) { return d.name; })
-
                 .style("fill", function(d) {
                     	return d._children ? "blue" : "black"; })
 
-                	// TEXT: mouse over event  - color, tooltip
 				.on("mouseover", function(d) {
 					tooltip.style("visibility", "visible");
                     tooltip_box.style("visibility", "visible");
                     
                     d3.select(this).style("fill", function(d) {
-                    	// print name using tooltip
                     	tooltip.text(d.name)
                         
                         if (d.name == null) {
@@ -253,15 +231,11 @@
                 .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
                 
                 nodeUpdate.select("circle")
-                //.attr("r", node_regSize)
                 .attr("r", function(d) {
                     if (d.property == null) { return setNodeSize_default }
-                            // set minimum node size
-                    
                     else if (d.property.text < nsDivider * setNodeSize_min) { return setNodeSize_min;}
-                    else { return d.property.text / nsDivider}
-                     
-                    })
+                    else { return d.property.text / nsDivider}      
+                })
                 .style("fill", function(d) { 
                     return d._children ? "lightsteelblue" : "#fff"; });
                 
@@ -289,15 +263,12 @@
                       return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + ( (d.name.length +25) * 2) + ")"; 
                     }
                 })
-
                 nodeText.style("fill", function(d) {
                         return d._children ? "blue" : "black"; })
-
 
                 var nodeExit = node.exit()
                 .transition()
                 .duration(duration)
-                //.attr("transform", "translate(0,0)" )
                 .remove();
                 
                 nodeExit.select("circle")
@@ -313,7 +284,6 @@
                 var link = svg.selectAll("path.link")
                 .data(links, function(d) { return d.target.id; });
                 
-                // Enter any new links at the parent's previous position.
                 link.enter().insert("path", "g")
                 .attr("class", "link")
                 .attr("d", function(d) {
@@ -321,12 +291,10 @@
                       return diagonal({source: o, target: o});
                       });
                       
-                // Transition links to their new position.
                 link.transition()
                 .duration(duration)
                 .attr("d", diagonal);
 
-                // Transition exiting nodes to the parent's new position.
                 link.exit().transition()
                 .duration(duration)
                 .attr("d", function(d) {
@@ -341,39 +309,29 @@
                               d.y0 = d.y;
                               });
 
-                //var currDepth = 1;  // root level
                 d3.select("#collapseAll").on('click', function() {
-                    //console.log("collapse button!!");
-                    //click(root);
                     root.children.forEach(collapseAll); 
-                    //currDepth = 2;  // parent == root
-                    //console.log("Root: " + chk_root);
                     update(root);  
                 })
 
                 d3.select("#expandAll").on("click", function() { 
-                    //console.log("expand button!!");
-                    // Collapse everything first then expand everything
                     root.children.forEach(collapseAll);
                     update(root);
                     root.children.forEach(expandAll); 
                     update(root);
-                    //console.log("Root: " + chk_root);
                 })
 
                 d3.select("#expand_2lv").on("click", function(d) {
-                // Collapse everything first then expand everything
                     root.children.forEach(collapseAll);
                     update(root); 
                     root.children.forEach(expand_2lv);
-                  
                     update(root);
-                })             
+                })
+
             } // end update()
             
             var chk_root = false;
 
-            // Toggle children on click.
             function click(d) {
                 if (d.children) {
                     d._children = d.children;
@@ -382,8 +340,6 @@
                     d.children = d._children;
                     d._children = null;
                 }
-                
-                //centerNode(d);
                 update(d);
             }
             
@@ -395,7 +351,6 @@
                     d.children = null;
                 }
                 chk_root = true;
-                
             }
 
             function expandAll(d) {
@@ -406,11 +361,10 @@
                     d._children = null;
                 }
                 chk_root = false;
-               
             }
             
             function expand_2lv(d) {
-                if (d._children) {
+                if (d._children) { 
                     d.children = d._children; 
                     d.children.forEach(click);
                     d._children = null;
@@ -477,16 +431,14 @@
                 setNodeSize(jsonData);
                 chk_NodeSize = true;
             }
-
             jsonData.children.forEach(expandAll);
-
             root = jsonData;
             root.x0 = height / 2;
             root.y0 = 0;
             update(root);
             centerNode(root);
         });
-        }
+    }
         </script>
 
     </body>

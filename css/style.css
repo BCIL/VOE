@@ -222,19 +222,27 @@ ul.sidebar-menu {
 #sidebar>ul>li>ul.sub {
     display:none;
 }
+#sidebar>ul>li>ul.sub>ul.sub_lv2 {
+    display:none;
+    font-weight: 600;
+}
 #sidebar .sub-menu>.sub li a {
-    padding-left:46px;
+    padding-left:20%;
+}
+#sidebar .sub-menu>.sub li>.sub_lv2 li a {
+    padding-left:25%;
+    font-size: 11px;
 }
 #sidebar>ul>li.active>ul.sub,#sidebar>ul>li>ul.sub>li>a {
     display:block;
 }
-ul.sidebar-menu li ul.sub li {
+ul.sidebar-menu li ul.sub li ul.sub_lv2{
     background:#28282e;
     margin-bottom:0;
     margin-left:0;
     margin-right:0;
 }
-ul.sidebar-menu li ul.sub li a {
+ul.sidebar-menu li ul.sub li a ul.sub_lv2 li a {
     font-size:12px;
     padding-top:13px;
     padding-bottom:13px;
@@ -255,6 +263,16 @@ ul.sidebar-menu li ul.sub li a:hover,ul.sidebar-menu li ul.sub li.active a {
     display:block;
     background:#202025;
 }
+ul.sidebar-menu li ul.sub li ul.sub_lv2 li a:hover,ul.sidebar-menu li ul.sub li ul.sub_lv2 li.active a {
+    color:#85FF5C;
+    -webkit-transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    transition:all 0.3s ease;
+    display:block;
+    background:#202025;
+}
 ul.sidebar-menu li {
     border-bottom:1px solid rgba(255,255,255,0.05);
 }
@@ -262,6 +280,9 @@ ul.sidebar-menu li.sub-menu {
     line-height:15px;
 }
 ul.sidebar-menu ul.sub li {
+    border-bottom:none;
+}
+ul.sidebar-menu ul.sub li ul.sub_lv2 li {
     border-bottom:none;
 }
 ul.sidebar-menu li a span {
@@ -318,17 +339,15 @@ ul.sidebar-menu li a.active i {
     height: 600px;
 }
 
-#GoogleGenomics_body {
-    width: 800px;
-    height: 600px;
-}
-
 #cuffdiff_body {
-    width: 1024px;
-    height: 1024px;
+    height: 100vh;
 }
 
-.iframe_phyloXML iframe, .iframe_Google iframe, .iframe_cuffdiff iframe {
+#rna_seq_body, #chip_seq_body, #vcf_body, #GoogleGenomics_body  {
+    height: 70vh;
+}
+
+.iframe_phyloXML iframe, .iframe_Google iframe, .iframe_cuffdiff iframe, .iframe_rnaseq iframe, .iframe_chipseq iframe, .iframe_vcf iframe {
     position: absolute;
     top:10;
     left:10;
@@ -5882,4 +5901,10 @@ right: -1px;
 
 .sortable{
     min-height: 400px;
+}
+
+#ytplayer {
+    margin: 1% 5% 1% 5%;
+    width: 60vw;
+    height: 30vh;
 }

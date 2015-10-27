@@ -3,7 +3,6 @@
   <Title> VOE - VCF visualization </Title>
   <meta name="author" content="Baekdoo Kim <baegi7942@gmail.com>">
   <script src="http://d3js.org/d3.v3.min.js"></script>
-  <!--<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>-->
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
   
@@ -224,23 +223,12 @@
         $("#ytplayer_btn").text("Show video");  
       }
     })
-    // reads vcf file as text
-
-    //// sample input files ////
-    // snp_test.vcf
-    // test_data.vcf
-    // indel_test.vcf
-    // VarScan_data.vcf
-    d3.text("input_data/VarScan_data.vcf", function(err, data) {
-      //window.v = data;
-      //console.log(v)
-    // remove lines start with '##'
+    
+    d3.text("sample_data/VarScan_data.vcf", function(err, data) {
+     
       var tmp_1 = data.replace(/^(##)(.*)/gm, '')
-    // remove '#' that places with 'CHROM'
       var tmp_2 = tmp_1.replace(/^#/gm, '')
-    // remove the first blank line
       var tmp_3 = tmp_2.replace(/^\s*$[\n\r]{1,}/gm, '') 
-    // parsing vcf file from variable as tsv format  
       data_raw = d3.tsv.parse(tmp_3)
 
       gen_dataset(data_raw)
@@ -304,6 +292,7 @@
       }
       reader.readAsText(file);
     })
+   
   }); // end $(document).ready
 
   function gen_dataset(data_raw) {
@@ -387,7 +376,6 @@
     high = high + (high*0.1);   // 10% padding of upper limit
     var size = c_list.length;
     var item_num = parseInt($("#bin_num").val());
-    
     if (item_num < 0) {
       alert("Err - Please enter a positive integer value!")
       return;
