@@ -2,23 +2,33 @@
     "use strict";
     $(document).ready(function () {
 
-        var viz_height = $(window).height()/1.2;
-        $('.iframe_demo_radial').css('height', viz_height +'px');
-        $('.iframe_demo_sunburst').css('height', viz_height +'px');
-        $('.iframe_demo_pviz').css('height', ($(window).height()/2.9) +'px');
-        $('.iframe_demo_bedfile').css('height', ($(window).height()/1.6) +'px');
-        $('.iframe_demo_RNASeq').css('height', ($(window).height()/2.2) +'px');
-        $('.iframe_demo_vcf').css('height', ($(window).height()/1.6) +'px');
-        $('.iframe_demo_cuffdiff').css('height', ($(window).height()/2.2) +'px');
-                                    
-        //// The link list of main page visualizations...
-        $('.iframe_demo_radial').attr('src', 'visualizations/PhyloXML_Tree/RadialTree_demo.html');
-        $('.iframe_demo_sunburst').attr('src', 'visualizations/PhyloXML_Tree/Sunburst_demo.html');
-        $('.iframe_demo_pviz').attr('src', 'visualizations/GoogleGenomics/pviz_demo.html');
-        $('.iframe_demo_bedfile').attr('src', 'visualizations/ChIP-Seq/Bedfile_viz.html');
-        $('.iframe_demo_RNASeq').attr('src', 'visualizations/RNA-Seq/RNASeq_viz/RNASeq_viz.html');
-        $('.iframe_demo_vcf').attr('src', 'visualizations/vcf_file_viz/vcf_file_viz.html');
-        $('.iframe_demo_cuffdiff').attr('src', 'visualizations/RNA-Seq/CuffDiff_viz/cuffdiff_demo.html');
+        var wh = $(window).height();
+        var viz_list = [
+        {ele:'.iframe_demo_radial', src:'visualizations/PhyloXML_Tree/RadialTree_demo.html', height:wh/1.2 +'px'},
+        {ele:'.iframe_demo_sunburst', src:'visualizations/PhyloXML_Tree/Sunburst_demo.html', height:wh/1.2 +'px'},
+        {ele:'.iframe_demo_pviz', src:'visualizations/GoogleGenomics/pviz_demo.html', height:wh/2.9 +'px'},
+        {ele:'.iframe_demo_bedfile', src:'visualizations/ChIP-Seq/Bedfile_viz.html', height:wh/1.6 +'px'},
+        {ele:'.iframe_demo_RNASeq', src:'visualizations/RNA-Seq/RNASeq_viz/RNASeq_viz.html', height:wh/2.2 +'px'},
+        {ele:'.iframe_demo_vcf', src:'visualizations/vcf_file_viz/vcf_file_viz.html', height:wh/1.6 +'px'},
+        {ele:'.iframe_demo_cuffdiff', src:'visualizations/RNA-Seq/CuffDiff_viz/cuffdiff_demo.html', height:wh/2.2 +'px'}
+        ]
+
+        var idx = 0;
+        var task_num = 2;
+        var viz_num = viz_list.length;
+        var interval_num = 200;
+        var gen_iframe = setInterval(function(){
+            if (idx < viz_num) {
+                var t = 0;
+                while(t < task_num && idx < viz_num) {
+                    $(viz_list[idx].ele).attr('src',viz_list[idx].src).css('height',viz_list[idx].height);
+                    idx++;
+                    t++;
+                }
+                interval_num *= 2;
+            }
+            else {window.clearInterval(gen_iframe)}
+        },interval_num)
 
         $("#ytplayer").hide();
         $('#ytplayer').css('width', '0 px');
