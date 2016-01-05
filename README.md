@@ -28,5 +28,18 @@ RNA-Seq data visualizations
 - Two different visualizations (line chart, donut + fucus chart).
 - *.tsv, *.diff, and *.tabular file types are accepted.
 
+To clone VOE from GitHub
+```bash
+$ git clone https://github.com/BCIL/VOE.git
+$ cd VOE
+```
+
+Setting up localhost environment
+--------------------------------
+```bash
+$ python -m SimpleHTTPServer 9090
+```
+Then, type "127.0.0.1:9090" in the address bar of your interner browser.
+
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br>
-Last updated on October 27, 2015
+Last updated on January 5, 2016
