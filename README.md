@@ -28,9 +28,9 @@ RNA-Seq data visualizations
 - Two different visualizations (line chart, donut + fucus chart).
 - *.tsv, *.diff, and *.tabular file types are accepted.
 
+<br /><br />
 
-
-### How to run Visual Omics Explorer ###
+### - How to run Visual Omics Explorer - ###
 
 To clone VOE from GitHub
 ------------------------
