@@ -2,7 +2,7 @@
 
 Visual Omics Explorer (VOE)
 ==================
-- The Visual Omics Explorer composed by five visualizations 
+- The Visual Omics Explorer composed by five visualizations__
 (Google Genomics Cloud, PhyloXML trees, ChIP-Seq data, RNA-Seq data, and Variant Call Format data)
 
 Google Genomics browser
