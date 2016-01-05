@@ -1,6 +1,6 @@
-<div style="text-align:center"><img src ="https://github.com/BCIL/PhyloD3/blob/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div>
+<div style="text-align:center"><img src ="https://github.com/BCIL/PhyloD3/blob/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div> <br />
 
-<p style="align:center"> Visual Omics Explorer (VOE) </p>
+Visual Omics Explorer (VOE)
 ==================
 - The Visual Omics Explorer composed by five visualizations <br />
 (Google Genomics Cloud, PhyloXML trees, ChIP-Seq data, RNA-Seq data, and Variant Call Format data)
