@@ -46,5 +46,6 @@ $ python -m SimpleHTTPServer 9090
 ```
 Then, type ["127.0.0.1:9090"](http://127.0.0.1:9090) in the address bar of your interner browser.
 
-[Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br>
+<br />
+[Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br />
 Last updated on January 5, 2016
