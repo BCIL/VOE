@@ -2,13 +2,13 @@
 
 Visual Omics Explorer (VOE)
 ==================
-- The lab website that contains all visualizations (PhyloXML, Google Genomics, and *.bed)
-- All visualizations are used D3.js.
+- The Visual Omics Explorer composed by five visualizations 
+(Google Genomics Cloud, PhyloXML trees, ChIP-Seq data, RNA-Seq data, and Variant Call Format data)
 
 Google Genomics browser
 ---------------
 - Powered by Google Genomics API and pViz.js visualization.
-- The data is pulled from public database that hosted by Google.
+- The data is pulled from Google Genomics database.
 
 PhyloXML trees
 ----------------
@@ -28,7 +28,12 @@ RNA-Seq data visualizations
 - Two different visualizations (line chart, donut + fucus chart).
 - *.tsv, *.diff, and *.tabular file types are accepted.
 
+
+
+### How to run Visual Omics Explorer ###
+
 To clone VOE from GitHub
+------------------------
 ```bash
 $ git clone https://github.com/BCIL/VOE.git
 $ cd VOE
@@ -39,7 +44,7 @@ Setting up localhost environment
 ```bash
 $ python -m SimpleHTTPServer 9090
 ```
-Then, type "127.0.0.1:9090" in the address bar of your interner browser.
+Then, type ["127.0.0.1:9090"](http://127.0.0.1:9090) in the address bar of your interner browser.
 
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br>
 Last updated on January 5, 2016
