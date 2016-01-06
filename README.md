@@ -2,31 +2,28 @@
 
 Visual Omics Explorer (VOE)
 ==================
-- The Visual Omics Explorer composed by five visualizations <br />
-(Google Genomics Cloud, PhyloXML trees, ChIP-Seq data, RNA-Seq data, and Variant Call Format data)
+- The Visual Omics Explorer consist of five visualizations: <br />
+1) Google Genomics Cloud 2) PhyloXML trees 3) ChIP-Seq data 4) RNA-Seq data 5) Genetic Variant data
 
-Google Genomics browser
+Google Genomics Cloud
 ---------------
-- Powered by Google Genomics API and pViz.js visualization.
-- The data is pulled from Google Genomics database.
+- Allows browsing sequence read alignments to the reference human genome from humans genomes projects hosted on Google Genomics.
 
 PhyloXML trees
 ----------------
-- The dedicate python server allows the user to upload own phyloXML file.
-- Three different visualizations, Radial tree, Indented tree, and Sunburst
+- Provides Radial, Sunburst and Indented Tree visualizations of PhyloXML data.
 
 ChIP-Seq data visualization
 ---------------------------
-- The tool uses *.bed file to generate visualization.
+- Visualizes the amount of molecular interaction sites predicted by ChIP-Seq data in *.bed file format.
 
-Variant Call Format data visualization
+Genetic Variant data visualization
 --------------------------------------
-- The tool allows *.vcf file as input.
+- Visualizes the  amount of genetic variantes predicted in Genetic Variant data in *.vcf file format.
 
-RNA-Seq data visualizations
+RNA-Seq data visualization
 --------------------------
-- Two different visualizations (line chart, donut + fucus chart).
-- *.tsv, *.diff, and *.tabular file types are accepted.
+- Displays visualizations in circular chart and line graph of gene expression data in *.tsv, *.diff, and *.tabular file formats.
 
 <br /><br />
 
@@ -44,8 +41,8 @@ Setting up localhost environment
 ```bash
 $ python -m SimpleHTTPServer 9090
 ```
-Then, type ["127.0.0.1:9090"](http://127.0.0.1:9090) in the address bar of your interner browser.
+On any internet browser, type ["127.0.0.1:9090"](http://127.0.0.1:9090) in the address bar.
 
 <br />
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br />
-Last updated on January 5, 2016
+Last updated on January 6, 2016
