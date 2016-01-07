@@ -15,6 +15,7 @@
     <link href="css/nv.d3.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link href="" rel="stylesheet">
     <style>
         text {
           font: 12px sans-serif;
@@ -64,7 +65,7 @@
     </style>
   </head>
   <body>
-  <section class="section_1">
+  <section class="section_1" style="margin-top: 10px; margin-bottom: 5px;">
     <span id="googledrive_chooser">
       <a href="#" class=" googledrive-dropin-btn googledrive-dropin-default">
       <span class="GD-dropin-btn-status"></span>Choose from Google Drive</a>
@@ -83,23 +84,28 @@
 
   <div id="pieChart"> <svg id="pieChart_svg"></svg> </div>
 
-  <g class="download_wrapper">
-    <div> Export visualization:&emsp;&emsp;&emsp;&emsp;
-    <button class="btn btn-success btn-xs" id="download_btn">Download SVG</button></div>
-  </g>
+  <div class="download_wrapper">
+    <span> Export visualization:&emsp;&emsp;&emsp;&emsp;
+    <button class="btn btn-success btn-xs" id="download_btn">Download SVG</button></span>
+  </div>
 
   <div id="p_value_wrapper" ng-app="p_value_input_app" ng-controller="p_value_ctrl">
     <span> p-value:&emsp;</span>
     <input type="text" id="p_value_input" name="peakNumber" ng-model="binNumber" ng:validate="number" value="0"/>&emsp;&emsp;
-    <button class="btn btn-success btn-xs" id="update_btn"> update </button>
+    <button class="btn btn-success btn-xs" id="update_btn"> Update </button>
   </div>
-  
+
+  <div class="show_allchr_wrapper" style="margin-top: 5px">
+    <span> Display All Chromosome:&emsp;&emsp;&emsp;&emsp;
+    <button class="btn btn-primary btn-xs" id="allchr_btn">All Chromosome</button></span>
+  </div>
+
   <div id="general_info">
     <div id="controller"></div>
     <div id="filter_info"></div>
     <span id="chr_label"></span>
   </div>
-
+  <hr />
   <div id="peak_info_frame">
     <div id="peak_detail"></div>
   </div>
@@ -119,8 +125,6 @@
     window.chr_index_list = [];
     window.choice_list = [];
     window.VOE_cuffdiff = true;
-
-    window.input_data_option = "low"  // display low value data by default 
     
     var uploaded_file = "";
     window.main_graph_chk = 1;     // 0: one chr graph,  1: entire graph
@@ -160,21 +164,28 @@
     $("#ytplayer_btn").click(function() {
       var a = $("#ytplayer");
       if(a.attr("status") === "hide") {
-        //$("#ytplayer").show();
         $("#ytplayer").slideDown('show')
         a.attr("status","show");
         $("#ytplayer_btn").text("Hide video");  
       }
       else if(a.attr("status") === "show") {
-        //$("#ytplayer").hide();
         $("#ytplayer").slideUp('hide')
         a.attr("status","hide");
         $("#ytplayer_btn").text("Show video");  
       }
-    })
+    });
+
+    $("#allchr_btn").click(function() {
+      var graph_mod = "all";
+      var user_confirm = confirm("Warning!\nDisplaying all chromosome will take much time if your input data is large.\nDo you want to contunue?");
+      if (user_confirm){
+        gen_graph(input_data, graph_mod);
+      }
+    });
 
     d3.tsv("sample_data/Galaxy5_clean_demo.tabular", function(error, data) {
-      gen_dataSet(data);
+      var graph_mod = "donut";
+      gen_dataSet(data, graph_mod);
       })
     })  // end ready
 
@@ -193,7 +204,6 @@
       obj = []        
       main_graph_chk = 1;
      
-      input_data_option = "low"  // display low value data by default 
       $("#pieChart_svg").empty();
       $("#controller").empty();
       $("#chr_label").empty();
@@ -224,7 +234,8 @@
       var c = Object.keys(data[0]);
       window.y1 = data[0].sample_1;
       var y2 = data[0].sample_2;
-      gen_dataSet(data);
+      var graph_mod = "donut";
+      gen_dataSet(data, graph_mod);
     } // end user chart
 
     function initPicker() {
@@ -258,13 +269,6 @@
       }
     }
 
-    Array.prototype.unique = function() {
-        var o = {}, i, l = this.length, r = [];
-        for(i=0; i<l;i+=1) o[this[i]] = this[i];
-        for(i in o) r.push(o[i]);
-        return r;
-    };
-
     var options = {
       success: function(files) {
           var xhr = new XMLHttpRequest();
@@ -297,7 +301,7 @@
       //update_chart();
     })
 
-    function gen_dataSet(raw_data) {
+    function gen_dataSet(raw_data, graph_mod) {
       chr_index_list = [];
       obj.data_valid = [];
       for (var i=0; i<raw_data.length; i++) { 
@@ -305,6 +309,7 @@
           obj.data_valid.push(raw_data[i]);
         }
       }
+
       test.data_valid = obj.data_valid;
 
         window.sample_1 = {};
@@ -401,15 +406,26 @@
         donut_data.total += input_data_donut[i].count 
       }
       donut_data.chrNum = input_data_donut.length;
-      
-      var sig = 'all';
- 
-      gen_graph(input_data, sig);
+       
+      gen_graph(input_data, graph_mod);
     }
 
     function gen_graph(graph_data, mod){
-
-      nv.addGraph(function() {
+      if (mod === 'all') {
+        donut_chart();
+        focus_chart();
+      }
+      else if (mod === 'donut') {
+        donut_chart();
+      }
+      else if (mod === 'focus') {
+        focus_chart();
+      }
+      else {
+        alert('Error - gen_graph');
+      }
+      function focus_chart() {
+        nv.addGraph(function() {
         window.fchart = nv.models.lineWithFocusChart();
         fchart.brushExtent([50,70]);
         fchart.xAxis.tickFormat(d3.format(',f'));
@@ -424,9 +440,9 @@
             .datum(graph_data)
             .call(fchart);
         return fchart;
-    });
-
-      if (mod === 'all') {
+       });
+      }
+      function donut_chart() {
         var width = 350;
         var height = 350;
         nv.addGraph({
@@ -443,7 +459,7 @@
 
             d3.select("#pieChart svg")
                 .datum(input_data_donut)
-                .transition().duration(1200)
+                .transition().duration(800)
                 .call(dchart);
 
             return dchart;
@@ -485,7 +501,8 @@
       input_data_selected.push(s1);
       input_data_selected.push(s2);
       input_data_selected.push(l2);
-      gen_graph(input_data_selected);
+      var graph_mod = "all";
+      gen_graph(input_data_selected, graph_mod);
     }
 
     function gen_user_pval_dataset(pv) {
@@ -520,7 +537,8 @@
         }
       }
 
-      gen_graph(input_data_pval_filtered);
+      var graph_mod = "all";
+      gen_graph(input_data_pval_filtered, graph_mod);
     }
 
     function open_ucsc () {
