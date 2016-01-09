@@ -1,13 +1,22 @@
-<div style="text-align:center"><img src ="https://github.com/BCIL/PhyloD3/blob/master/Archive/BioITCore_logo/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div> <br />
+<div style="text-align:center"><img src ="http://54.164.172.154/paper/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div> <br />
  
 Visual Omics Explorer (VOE)
 ==================
-- The Visual Omics Explorer consist of five visualizations: <br />
-1) Google Genomics Cloud 2) PhyloXML trees 3) ChIP-Seq data 4) RNA-Seq data 5) Genetic Variant data
+
+- The Visual Omics Explorer consist of five visualizations: 
+<br />
+
+<ol>
+<li>Google Genomics Cloud</li>
+<li>PhyloXML trees</li>
+<li>ChIP-Seq data</li>
+<li>RNA-Seq data</li>
+<li>Genetic Variant data</li>
+</ol>
  
 Google Genomics Cloud
 ---------------
-- Allows browsing sequence read alignments to the reference human genome from humans genomes projects hosted on Google Genomics.
+- Allows browsing sequence read alignments to the reference human genome from various human genome projects hosted on Google Genomics.
  
 PhyloXML trees
 ----------------
@@ -19,33 +28,45 @@ ChIP-Seq data visualization
  
 Genetic Variant data visualization
 --------------------------------------
-- Visualizes the  amount of genetic variantes predicted in Genetic Variant data in *.vcf file format.
+- Visualizes the amount of genetic variants predicted in Genetic Variant data in *.vcf file format.
  
 RNA-Seq data visualization
 --------------------------
 - Displays visualizations in circular chart and line graph of gene expression data in *.tsv, *.diff, and *.tabular file formats.
---------------------------
+ 
 VOE Android App
-- VOE is packaged as a touch enabled, mobile app for the Android system.
-- To install the app on your Android device you'll need to allow installation of applications from Unknown sources on your device. To enable this feature, on your Android device: Tap Home > Tap Menu> Tap Settings > Tap Applications > Tap Unknown sources checkbox to allow install apps from Unknown sources.
-- On any internet browser on your Android device type the link: http://tinyurl.com/voe-apk in the address bar and download with the Android package installer.
+--------------------------
+ 
+- The VOE app requires the Android device to be permitted to install applications from unknown sources. This feature can be enabled in the device’s settings (A) under Security > Unknown sources.
+- To install the app, on any internet browser on an Android device enter the link: http://tinyurl.com/voe-apk in the address bar and select direct download with the Android package installer to download and install.
  
 <br /><br />
  
-### - How to run Visual Omics Explorer - ###
+### - How to run Visual Omics Explorer locally- ###
  
-To clone VOE from GitHub
-------------------------
-```bash
-$ git clone https://github.com/BCIL/VOE.git
-$ cd VOE
-```
+A local copy of VOE’s source code will be required and can be downloaded (https://github.com/BCIL/VOE/archive/master.zip) or cloned (http://bcil.github.io/VOE/) from our Github repository.
  
-Setting up localhost environment
+We provide two ways to set up a local web server to access the machine’s local host in order to run VOE:
+Setting up a local web server via command line:
 --------------------------------
-```bash
-$ python -m SimpleHTTPServer 9090
-```
+ 
+On the terminal, in VOE’s directory from which the source code was obtained, enter the command below to start up a built-in HTTP server program in Python:
+ 
+user@bcil:~/VOE# python -m SimpleHTTPServer 9090
+ 
+To run VOE, on any internet browser, enter “127.0.0.1:9090” in the address bar.
+ 
+Setting up a local web server via graphical user interface:
+--------------------------------
+ 
+-Download and install the web server program Fenix Web servers from: http://fenixwebserver.com/. 
+
+-After installation, to start up a Fenix web server, on the top left menu of the program, click on Web Servers>New.
+
+- Enter VOE’s directory path from which the source code was obtained and port 9090
+
+- To run VOE, on any internet browser, enter “127.0.0.1:9090” in the address bar.
+
 <br />
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br />
 Last updated on January 7, 2016
