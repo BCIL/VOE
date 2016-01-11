@@ -37,8 +37,8 @@ RNA-Seq data visualization
 VOE Android App
 --------------------------
  
-- The VOE app requires the Android device to be permitted to install applications from unknown sources. This feature can be enabled in the device’s settings (A) under Security > Unknown sources.
-- To install the app, on any internet browser on an Android device enter the link: http://tinyurl.com/voe-apk in the address bar and select direct download with the Android package installer to download and install.
+- The VOE app can run on Android device’s version 4.4 or newer and requires the device to be permitted to install applications from unknown sources. This feature can be enabled in the device’s settings (A) under Security > Unknown sources.
+- To install the app, on any internet browser of an Android device enter the link: http://tinyurl.com/voe-apk in the address bar and select direct download with the Android package installer to download and install.
  
 <br /><br />
  
@@ -51,10 +51,11 @@ Setting up a local web server via command line:
 --------------------------------
  
 On the terminal, in VOE’s directory from which the source code was obtained, enter the command below to start up a built-in HTTP server program in Python:
- 
+
+```bash 
 user@bcil:~/VOE# python -m SimpleHTTPServer 9090
- 
-To run VOE, on any internet browser, enter “127.0.0.1:9090” in the address bar.
+```
+To run VOE, open up any internet browser and enter “127.0.0.1:9090” in the address bar.
  
 Setting up a local web server via graphical user interface:
 --------------------------------
@@ -69,4 +70,4 @@ Setting up a local web server via graphical user interface:
 
 <br />
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br />
-Last updated on January 7, 2016
+Last updated on January 11, 2016
