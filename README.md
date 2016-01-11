@@ -51,9 +51,10 @@ Setting up a local web server via command line:
 --------------------------------
  
 On the terminal, in VOE’s directory from which the source code was obtained, enter the command below to start up a built-in HTTP server program in Python:
- 
+
+```bash 
 user@bcil:~/VOE# python -m SimpleHTTPServer 9090
- 
+```
 To run VOE, on any internet browser, enter “127.0.0.1:9090” in the address bar.
  
 Setting up a local web server via graphical user interface:
