@@ -261,6 +261,17 @@
     }
 
     function downloadFile(file, file_name, callback) {
+      var type_chk = false;
+      var list = ['diff','tsv','tabular'];
+      var inputFiletype = file.fileExtension;
+      for (var i=0; i<list.length; i++) {
+        if (list[i] === inputFiletype) {type_chk = true;}
+      }
+      if (!type_chk) {
+        alert("Error - Expected input file type: 'tabular', 'diff', or 'tsv'");
+        return;
+      }
+
       if (file.downloadUrl) {
         var accessToken = gapi.auth.getToken().access_token;
         var xhr = new XMLHttpRequest();

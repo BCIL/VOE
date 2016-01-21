@@ -143,6 +143,10 @@
   }
 
   function downloadFile(file, callback) {
+    if (!(file.fileExtension === 'vcf')) {
+      alert("Error - Expected input file type: vcf");
+      return;
+    }
     if (file.downloadUrl) {
       var accessToken = gapi.auth.getToken().access_token;
       window.xhr = new XMLHttpRequest();
