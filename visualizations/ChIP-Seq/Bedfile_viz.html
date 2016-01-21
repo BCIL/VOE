@@ -143,10 +143,15 @@
   }
 
   function downloadFile(file, callback) {
+    if (!(file.fileExtension === 'bed')) {
+      alert("Error - Expected input file type: bed");
+      return;
+    }
     if (file.downloadUrl) {
       var accessToken = gapi.auth.getToken().access_token;
       window.xhr = new XMLHttpRequest();
       xhr.open('GET', file.downloadUrl);
+      window.test_uploadedFile = file;
       xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
       xhr.onload = function() {        
         userChart(xhr.response)
