@@ -10,7 +10,7 @@
 //// iframe pages
 
 // phyloXML
-	$('#phyloXML_main').attr('src','http://tinyurl.com/phyloxml-main');
+	$('#phyloXML_main').attr('src','http://bit.do/phyloxml_main');
 
 // Google Genomics
 	$('.googlegenomics_main').attr('src','visualizations/GoogleGenomics/GoogleGenomics_main.html');
