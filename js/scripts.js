@@ -3,8 +3,11 @@
     $(document).ready(function () {
 
         $('.username').append(" Visual Omics Explorer").css("font-weight","bold");
+        $('.logo').attr('style','margin-left:7%')
         $('#logoImage').attr('src','images/logo_main.png');
-        $('#author_section').append("<p style='margin-left:5%'> Author: Baekdoo Kim (baegi7942@gmail.com) </p>")
+        $('#author_section').append("<p style='margin-left:5%;margin-top:5%%'> Author: Baekdoo Kim (baegi7942@gmail.com) </p>")
+        $('#members_section').append("<p style='margin-left:5%';'font-size:2em'><b><a href='http://krampis.bioweb.hunter.cuny.edu/index.php?option=com_content&view=article&id=104&Itemid=69' target='_blank'>Check our lab members page</a></b></p>")
+        $('#hunter_logo').attr('src','images/hunter_logo.png');
         /*==Left Navigation Accordion ==*/
         if ($.fn.dcAccordion) {
             $('#nav-accordion').dcAccordion({
