@@ -70,4 +70,8 @@ Setting up a local web server via graphical user interface:
 
 <br />
 [Visual Omics Explorer (VOE)](http://bcil.github.io/VOE/). <br />
+<<<<<<< HEAD
 Last updated on June 17, 2017
+=======
+Last updated on January 11, 2016
+>>>>>>> origin/master
