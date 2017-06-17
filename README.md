@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src ="http://54.164.172.154/paper/BioITCore_Logo_XL.png?raw=true" width=200 height=200/></div> <br />
+<div style="text-align:center"><img src ="https://github.com/BCIL/VOE/blob/master/images/BioITCore_Logo_voe.png?raw=true" width=200 height=200/></div> <br />
  
 Visual Omics Explorer (VOE)
 ==================
