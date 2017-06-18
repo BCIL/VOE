@@ -5,9 +5,10 @@
         $('.username').append(" Visual Omics Explorer").css("font-weight","bold");
         $('.logo').attr('style','margin-left:7%')
         $('#logoImage').attr('src','images/logo_main.png');
-        $('#author_section').append("<p style='margin-left:5%;margin-top:5%%'> Author: Baekdoo Kim (baegi7942@gmail.com) </p>")
+        $('#hunter_logo').attr('src','images/hunter_logo.png').attr('style', 'margin-left:15%;float:left')
+        $('#weill_logo').attr('src','images/weill_cornell_logo.png').attr('style', 'margin-right:15%;float:right')
+        $('#author_section').append("<p style='margin:0 0 5% 3%'> Author: Baekdoo Kim (baegi7942@gmail.com) </p>")
         $('#members_section').append("<iframe style='margin-top:5%' src='http://krampis.bioweb.hunter.cuny.edu/index.php?option=com_content&view=article&id=104&Itemid=69' width='100%' height='2000px'></iframe>")
-        $('#hunter_logo').attr('src','images/hunter_logo.png');
         /*==Left Navigation Accordion ==*/
         if ($.fn.dcAccordion) {
             $('#nav-accordion').dcAccordion({
