@@ -10,7 +10,11 @@
 //// iframe pages
 
 // phyloXML
+<<<<<<< HEAD
 	$('#phyloXML_main').attr('src','http://bit.do/phyloxml_main');
+=======
+	$('#phyloXML_main').attr('src','http://bit.do/PhyloXML-server');
+>>>>>>> master
 
 // Google Genomics
 	$('.googlegenomics_main').attr('src','visualizations/GoogleGenomics/GoogleGenomics_main.html');
